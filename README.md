@@ -45,6 +45,28 @@ If you want to format all files in a directory, you can run `go fmt ./...`.
 The PR will fail if your code is not formatted correctly, so make sure to run
 it before submitting your work.
 
+<details><summary>E.g.</summary>
+
+In commit https://github.com/riraum/forward/commit/00bb7731ad7b4264bfdae135f475b659cb2ae4fd, I added a wrong indentation, and [the lint job failed](https://github.com/riraum/forward/actions/runs/11204189672/job/31142277128):
+
+```shell
+Error: running `go fmt ./...` results in modifications that you must check into version control:
+diff --git a/00_setup/main.go b/00_setup/main.go
+index bd232e6..a7f2504 100644
+--- a/00_setup/main.go
++++ b/00_setup/main.go
+@@ -23,3 +23,3 @@ func main() {
+ 	// E.g. (don't worry about the syntax yet):
+-	  fmt.Println("Hello", "World!", 42, 3.14, true, false, []int{1, 2, 3})
++	fmt.Println("Hello", "World!", 42, 3.14, true, false, []int{1, 2, 3})
+```
+
+This means that the file `00_setup/main.go` is wrongly formatted, and should be
+fixed.
+
+</details>
+
+
 ## Submitting your work
 
 Before starting to work on a new exercise, create a new branch that will be used

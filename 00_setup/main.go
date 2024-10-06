@@ -21,7 +21,7 @@ func main() {
 	// Whenever you are asked to "print" something, you should use fmt.Println.
 
 	// E.g. (don't worry about the syntax yet):
-	  fmt.Println("Hello", "World!", 42, 3.14, true, false, []int{1, 2, 3})
+	fmt.Println("Hello", "World!", 42, 3.14, true, false, []int{1, 2, 3})
 
 	// TODO:
 	// 1. Print "Hello, mom!"
