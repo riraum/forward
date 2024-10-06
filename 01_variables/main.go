@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
 
 Go has variables with fixed types.
@@ -30,15 +32,32 @@ E.g.
 
 There are other types, but we'll get to that later.
 
-Note: Each defined variable must be used, otherwise the code will not run.
-
+Notes:
+- Names in Go are case-sensitive and follow the camelCase convention.
+- Each defined variable must be used, otherwise the code will not run.
+- You cannot declare a variable twice with the same name.
 */
 
 func main() {
+	var theAnswer int = 42
+	fmt.Println(theAnswer)
+
 	// TODO: See how the code fails to run because the variable `unused` is
 	// declared but not used.
 	// Fix the code by removing the unused variable.
 	var unused int
+
+	// TODO: See how the code fails fails to run because the variable
+	// `mustBeUsed` is declared but not used.
+	// Print the value of `mustBeUsed` to fix the error.
+	var mustBeUsed int = 42
+
+	// TODO: See how the code fails to run because the variable `redeclared` is
+	// declared twice.
+	// Fix the error by removing the second declaration.
+	var redeclared int = 42
+	var redeclared int = 43
+	fmt.Println(redeclared)
 
 	// TODO: Declare a variable `name` of type `string` and initialize it to
 	// "Alice"
@@ -56,11 +75,6 @@ func main() {
 
 	// TODO: Print all the variables. Note the default values of the variables that
 	// were not initialized.
-	// Hint, you can pass variables to `fmt.Println` just like you can pass
-	// values. E.g. `fmt.Println("Hello", name)`
-
-	// TODO: Uncomment the following code and note how it fails to run because
-	// the variable `mustBeUsed` is declared but not used.
-	// Print the value of `mustBeUsed` to fix the error.
-	// var mustBeUsed int = 42
+	// Hint, you can use multiple `fmt.Println` statements, or a single
+	// statement. Try both ways.
 }
