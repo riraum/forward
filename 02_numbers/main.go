@@ -50,9 +50,9 @@ func main() {
 
 	// TODO: Define a variable `y` of type `int` and set it to 20
 
-	// TODO: Define a variable `z` without value, what should be its type?
-
-	// TODO: Print the value of `z` to the console.
+	// TODO: Define a variable `z` with the sum of `x` and `y`, what should be
+	// its type?
+	// Print the value of `z`.
 
 	// TODO: Define 2 variables of type `int` and compute their sum, difference,
 	// product, quotient, and remainder. Print all the results.
