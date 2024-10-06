@@ -2,7 +2,7 @@
 
 Learning Go and basics of programming.
 
-## Go
+## Setup
 
 1. Install go: https://formulae.brew.sh/formula/go
 
@@ -17,6 +17,11 @@ Learning Go and basics of programming.
 
     For now, don't try to understand what `package main` means. We will get to
     that later.
+
+> [!IMPORTANT]
+> Don't try setting up your editor with fancy plugins or anything yet. Just
+> make sure you can run terminal commands and that your code is correctly
+> highlighted.
 
 ## Exercises
 
@@ -35,6 +40,28 @@ Once completed, you can run the file and see the output.
 There will be some lines/parts marked with `// IGNORE ME` that you should not
 worry about. They are there to help with the making of the exercises, but are
 not relevant to the exercise itself.
+
+## Reading errors
+
+If your code has an error, you will see an error message when running `go run
+<path to file>`. This message will help you understand what is wrong with your
+code.
+
+E.g. if you run `go run 00_setup/main.go` without completing the exercise, you
+will see:
+
+```shell
+$ go run 00_setup/main.go
+# command-line-arguments // IGNORE ME
+00_setup/main.go:19:10: syntax error: unexpected name code at end of statement
+^ File path             ^ Error message
+                 ^ Error line
+                    ^ Error column
+```
+
+Pay close attention to any error messages you see, as they will help you
+understand what is wrong with your code. If you don't understand the error
+message, don't worry, just ask for help.
 
 ## Formatting your code
 
@@ -66,7 +93,6 @@ fixed.
 
 </details>
 
-
 ## Submitting your work
 
 Before starting to work on a new exercise, create a new branch that will be used
@@ -74,8 +100,10 @@ only for this exercise.
 
 E.g. `git checkout -b 00_setup`
 
-Once you have completed the exercise, commit your changes and push them to
-this branch. Then create a pull request to merge this branch. Any
+Make sure to commit often, ideally after each task is done.
+
+Once you have completed the exercise, push your branch to GitHub. Then create a
+pull request to merge this branch and request review from `nobe4`. Any
 review/comments will be added to the pull request.
 
 Once everything looks good and the PR has been approved, merge it, delete the

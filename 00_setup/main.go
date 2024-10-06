@@ -1,29 +1,36 @@
-package main
+// This is a comment.
 
-import "fmt"
+/*
+   This is a multi-line
+   comment.
+*/
 
+package main // IGNORE ME
+import "fmt" // IGNORE ME
+
+// The function main is what is called at the start of any program.
+// Don't worry about the syntax yet, we'll get to that later.
+// Just know that this is the entry point of the program.
 func main() {
-	// This is a comment.
+	// TODO: This line is badly formatted, run `go fmt` to fix it.
+fmt.     Println(      "Hello, World!"     )
 
-	/*
-	   This is a multi-line
-	   comment.
-	*/
-
-	fmt.Println("Hello, World!")
+    // TODO: This line is wrong, remove it.
+    Invalid code
 
 	// fmt.Println is the generic print function in Go.
-	// It comes from the standard package "fmt".
+	// It comes from the standard package "fmt" that was imported earlier.
+	// Don't worry about imports for now.
 
 	// It is similar to `console.log` in JavaScript and take any number of
-	// arguments.
+	// arguments, with any number of types.
 
 	// Whenever you are asked to "print" something, you should use fmt.Println.
 
 	// E.g. (don't worry about the syntax yet):
 	fmt.Println("Hello", "World!", 42, 3.14, true, false, []int{1, 2, 3})
 
-	// TODO:
-	// 1. Print "Hello, mom!"
-	// 2. Print a couple of numbers
+	// TODO: Print "Hello, mom!"
+
+	// TODO: Print a couple of numbers
 }
