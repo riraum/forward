@@ -49,7 +49,7 @@ If your code has an error, you will see an error message when running `go run
 code.
 
 E.g. if you run `go run 00_setup/main.go` without completing the exercise, you
-will see:
+will see something like:
 
 ```shell
 $ go run 00_setup/main.go
