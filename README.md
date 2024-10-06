@@ -13,15 +13,16 @@ Learning Go and basics of programming.
 
 3. Run the first file: `go run 00_setup/main.go`
 
-    You can run any go file that start with `package main` by running `go run <path to file>`.
+    It should fail with an error message. This is expected.
 
-    For now, don't try to understand what `package main` means. We will get to
-    that later.
+> [!NOTE]
+> You can run any `main.go` file in this repo by running
+> `go run <path to file>`
 
 > [!IMPORTANT]
 > Don't try setting up your editor with fancy plugins or anything yet. Just
 > make sure you can run terminal commands and that your code is correctly
-> highlighted.
+> highlighted. Any plugin will get in the way of learning the basics.
 
 ## Exercises
 
