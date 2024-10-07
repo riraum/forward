@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 /*
-
+TEST
 Go has loops.
 
 Loops are one of the main building blocks of any programming language.
