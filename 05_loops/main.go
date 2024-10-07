@@ -42,37 +42,47 @@ it's also the most explicit.
 */
 
 func main() {
-	var i int = 0
-	for {
-		if i >= 10 {
-			break
-		}
-		fmt.Println(i)
-		i += 1
-	}
+	// var i int = 0
+	// for {
+	// 	if i >= 10 {
+	// 		break
+	// 	}
+	// 	fmt.Println(i)
+	// 	i += 1
+	// }
 
 	// TODO: Write a loop that prints the numbers from 0 to 100, inclusive.
-	var j int = 0
-	for {
-		if j > 100 {
-			break
-		}
-		fmt.Println(j)
-		j += 1
-	}
+	// var j int = 0
+	// for {
+	// 	if j > 100 {
+	// 		break
+	// 	}
+	// 	fmt.Println(j)
+	// 	j += 1
+	// }
 
 	// TODO: Write a loop that prints the numbers from 100 to 0, inclusive.
-	var k int = 100
-	for {
-		if k < 0 {
-			break
-		}
-		fmt.Println(k)
-		k -= 1
-	}
+	// var k int = 100
+	// for {
+	// 	if k < 0 {
+	// 		break
+	// 	}
+	// 	fmt.Println(k)
+	// 	k -= 1
+	// }
 
 	// TODO: Write a loop that print the numbers from 0 to 100, inclusive, but
 	// only the even numbers.
+	var l int = 0
+	for {
+		if l > 100{
+			break
+		}
+		if l % 2 == 0 {
+			fmt.Println(l)
+			}
+		l += 1
+	}
 
 	// TODO: Write a loop that prints the first 100 odd numbers.
 
