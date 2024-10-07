@@ -98,6 +98,16 @@ func main() {
 
 	// TODO: Define a variable and write a loop that calculates the sum of the
 	// numbers from 0 to 100, inclusive. Print the result.
+	// var n int = 0
+	// var sum int 
+	// for {
+	// 	if n > 100 {
+	// 		break
+	// 	}
+	// 	sum += n
+	// 	n += 1
+	// }
+	// fmt.Println(sum)
 
 	// TODO: Write a fizzbuzz.
 
