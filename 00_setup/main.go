@@ -12,11 +12,10 @@ import "fmt" // IGNORE ME
 // Don't worry about the syntax yet, we'll get to that later.
 // Just know that this is the entry point of the program.
 func main() {
-    // TODO: This line is wrong, remove it.
-    Invalid code
+	// TODO: This line is wrong, remove it.
 
 	// TODO: This line is badly formatted, run `go fmt` to fix it.
-fmt.     Println(      "Hello, World!"     )
+	fmt.Println("Hello, World!")
 
 	// fmt.Println is the generic print function in Go.
 	// It comes from the standard package "fmt" that was imported earlier.
@@ -31,6 +30,7 @@ fmt.     Println(      "Hello, World!"     )
 	fmt.Println("Hello", "World!", 42, 3.14, true, false, []int{1, 2, 3})
 
 	// TODO: Print "Hello, mom!"
-
+	fmt.Println("Hello, mom!")
 	// TODO: Print a couple of numbers
+	fmt.Println(333, 3.1773, 1295912)
 }
