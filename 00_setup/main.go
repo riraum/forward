@@ -30,6 +30,7 @@ func main() {
 	fmt.Println("Hello", "World!", 42, 3.14, true, false, []int{1, 2, 3})
 
 	// TODO: Print "Hello, mom!"
-
+	fmt.Println("Hello, mom!")
 	// TODO: Print a couple of numbers
+	fmt.Println("333, 3.1773")
 }
