@@ -62,6 +62,14 @@ func main() {
 	}
 
 	// TODO: Write a loop that prints the numbers from 100 to 0, inclusive.
+	var k int = 100
+	for {
+		if k < 0 {
+			break
+		}
+		fmt.Println(k)
+		k -= 1
+	}
 
 	// TODO: Write a loop that print the numbers from 0 to 100, inclusive, but
 	// only the even numbers.
