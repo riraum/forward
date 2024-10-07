@@ -45,36 +45,45 @@ func main() {
 	// TODO: See how the code fails to run because the variable `unused` is
 	// declared but not used.
 	// Fix the code by removing the unused variable.
-	var unused int
 
 	// TODO: See how the code fails fails to run because the variable
 	// `mustBeUsed` is declared but not used.
 	// Print the value of `mustBeUsed` to fix the error.
 	var mustBeUsed int = 42
+	fmt.Println(mustBeUsed)
 
 	// TODO: See how the code fails to run because the variable `redeclared` is
 	// declared twice.
 	// Fix the error by removing the second declaration.
 	var redeclared int = 42
-	var redeclared int = 43
 	fmt.Println(redeclared)
 
 	// TODO: Declare a variable `name` of type `string` and initialize it to
 	// "Alice"
+	var name string = "Alice"
 
 	// TODO: Declare a variable `count` of type `int` and initialize it to 123
+	var count int = 123
 
 	// TODO: Declare a variable `isAwesome` of type `bool` and initialize it to
 	// true
+	var isAwesome bool = true
 
 	// TODO: Declare a variable `otherName` of type `string` without value.
+	var otherName string
 
 	// TODO: Declare a variable `otherCount` of type `int` without value.
+	var otherCount int
 
 	// TODO: Declare a variable `otherIsAwesome` of type `bool` without value.
+	var otherIsAwesome bool
 
 	// TODO: Print all the variables. Note the default values of the variables that
 	// were not initialized.
 	// Hint, you can use multiple `fmt.Println` statements, or a single
 	// statement. Try both ways.
+	fmt.Println(name, count, isAwesome, otherName, otherCount, otherIsAwesome)
+	fmt.Println(otherName)
+	fmt.Println(otherCount)
+	fmt.Println(otherIsAwesome)
 }
