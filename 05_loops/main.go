@@ -155,4 +155,17 @@ func main() {
 
 	// TODO: Write a loop that prints the first 100 Fibonacci numbers.
 	// Fibonacci sequence is a sequence in which each number is the sum of the two preceding ones
+	var r int = 0
+	var s int = 1
+	var t int = 0
+	for {
+		if t > 100 {
+			break
+		}
+		fmt.Println(r)
+		fmt.Println(s)
+		r = r + s
+		s = r + s
+		t += 1
+	}
 }
