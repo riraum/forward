@@ -110,6 +110,13 @@ func main() {
 	// fmt.Println(sum)
 
 	// TODO: Write a fizzbuzz.
+	// Fizz buzz is a group word game for children to teach them about division.
+	//  Players take turns to count incrementally, replacing 
+	// any number divisible by three with the word "fizz", and any number divisible by five
+	//  with the word "buzz", and any number divisible 
+	// by both three and five with the word "fizzbuzz". 
+	// If none applies, return value.
+
 
 	// TODO: Write a loop that prints the first 100 Fibonacci numbers.
 }
