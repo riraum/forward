@@ -126,8 +126,8 @@ func main() {
 	// If it is not, print "You are someone else".
 	// Change the value of `firstName` and `lastName` to different values and
 	// run the program again to show all cases.
-	var firstName string = "John"
-	var lastName string = "Doe"
+	var firstName string = "No"
+	var lastName string = "No"
 	if firstName == "John" && lastName == "Doe" {
 		fmt.Println("You are John Doe")
 	} else if firstName == "John" && lastName != "Doe" {
@@ -148,8 +148,7 @@ func main() {
 		} else {
 			fmt.Println("You are another John")
 		}
-	}
-	if firstName != "John" {
+	} else {
 		if lastName == "Doe" {
 			fmt.Println("You are another Doe")
 		} else {
