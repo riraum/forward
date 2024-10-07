@@ -73,18 +73,28 @@ func main() {
 
 	// TODO: Write a loop that print the numbers from 0 to 100, inclusive, but
 	// only the even numbers.
-	var l int = 0
-	for {
-		if l > 100{
-			break
-		}
-		if l % 2 == 0 {
-			fmt.Println(l)
-			}
-		l += 1
-	}
+	// var l int = 0
+	// for {
+	// 	if l > 100{
+	// 		break
+	// 	}
+	// 	if l % 2 == 0 {
+	// 		fmt.Println(l)
+	// 		}
+	// 	l += 1
+	// }
 
 	// TODO: Write a loop that prints the first 100 odd numbers.
+	// var m int = 0
+	// for {
+	// 	if m > 100 {
+	// 		break
+	// 	}
+	// 	if m % 2 != 0 {
+	// 		fmt.Println(m)
+	// 	}
+	// 	m += 1
+	// }
 
 	// TODO: Define a variable and write a loop that calculates the sum of the
 	// numbers from 0 to 100, inclusive. Print the result.
