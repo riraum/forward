@@ -99,7 +99,7 @@ func main() {
 	// TODO: Define a variable and write a loop that calculates the sum of the
 	// numbers from 0 to 100, inclusive. Print the result.
 	// var n int = 0
-	// var sum int 
+	// var sum int
 	// for {
 	// 	if n > 100 {
 	// 		break
@@ -111,12 +111,47 @@ func main() {
 
 	// TODO: Write a fizzbuzz.
 	// Fizz buzz is a group word game for children to teach them about division.
-	//  Players take turns to count incrementally, replacing 
+	//  Players take turns to count incrementally, replacing
 	// any number divisible by three with the word "fizz", and any number divisible by five
-	//  with the word "buzz", and any number divisible 
-	// by both three and five with the word "fizzbuzz". 
+	//  with the word "buzz", and any number divisible
+	// by both three and five with the word "fizzbuzz".
 	// If none applies, return value.
-
+	// var o int = 1
+	// var p string = "fizz"
+	// var q string = "buzz"
+	// for {
+	// 	if o > 15 {
+	// 		break
+	// 	}
+	// 	if o % 3 == 0 && o % 5 == 0{
+	// 		fmt.Println(p + q)
+	// 	} else if o % 3 == 0 {
+	// 		fmt.Println(p)
+	// 	} else if o % 5 == 0 {
+	// 		fmt.Println(q)
+	// 	} else {
+	// 		fmt.Println(o)
+	// 	}
+	// 	o += 1
+	// }
+	// Nested logic, to revisit later
+	// for {
+	// 	if o > 15 {
+	// 		break
+	// 	}
+	// 	if o%3 == 0 {
+	// 		if o%5 == 0 {
+	// 			fmt.Println(p + q)
+	// 		} else {
+	// 			fmt.Println(p)
+	// 		}
+	// 		if o%5 == 0 {
+	// 			fmt.Println(q)
+	// 	} else {
+	// 		fmt.Println(o)
+	// 	}
+	// 	o += 1
+	// }
 
 	// TODO: Write a loop that prints the first 100 Fibonacci numbers.
 }
