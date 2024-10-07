@@ -117,18 +117,18 @@ func main() {
 	// by both three and five with the word "fizzbuzz".
 	// If none applies, return value.
 	// var o int = 1
-	// var p string = "fizz"
-	// var q string = "buzz"
+	// var resultOne string = "fizz"
+	// var resultTwo string = "buzz"
 	// for {
 	// 	if o > 15 {
 	// 		break
 	// 	}
 	// 	if o % 3 == 0 && o % 5 == 0{
-	// 		fmt.Println(p + q)
+	// 		fmt.Println(resultOne + resultTwo)
 	// 	} else if o % 3 == 0 {
-	// 		fmt.Println(p)
+	// 		fmt.Println(resultOne)
 	// 	} else if o % 5 == 0 {
-	// 		fmt.Println(q)
+	// 		fmt.Println(resultTwo)
 	// 	} else {
 	// 		fmt.Println(o)
 	// 	}
