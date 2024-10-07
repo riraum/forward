@@ -3,7 +3,6 @@ package main
 import "fmt"
 
 /*
-TEST
 Go has loops.
 
 Loops are one of the main building blocks of any programming language.
@@ -53,6 +52,14 @@ func main() {
 	}
 
 	// TODO: Write a loop that prints the numbers from 0 to 100, inclusive.
+	var j int = 0
+	for {
+		if j > 100 {
+			break
+		}
+		fmt.Println(j)
+		j += 1
+	}
 
 	// TODO: Write a loop that prints the numbers from 100 to 0, inclusive.
 
