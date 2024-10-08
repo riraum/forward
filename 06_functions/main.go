@@ -80,7 +80,7 @@ func main() {
 	// TODO: Write a function that takes two integers as parameters and returns
 	// the difference of the two integers.
 	func diff(a int, b int) int {
-		let sum int = b - a
+		var sum int = b - a
 		return sum
 	}
 	diff(1, 9)
@@ -89,6 +89,11 @@ func main() {
 
 	// TODO: Write a function that takes a string and an integer as parameters.
 	// The function should print the string as many times as the integer.
+	func printInput(c string, d int) int {
+		fmt.Println(c * d)
+	}
+printInput("안녕", 3)
+printInput("go", 7)
 
 	// TODO: Write a function that takes a string and an integer as parameters.
 	// The function should concatenate (i.e. join) the string with itself as
