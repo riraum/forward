@@ -100,7 +100,7 @@ func printInput(c string, d int) {
 		if count > d {
 			break
 		}
-		result += c
+		fmt.Println(c)
 		count++
 	}
 	fmt.Println(result)
@@ -111,6 +111,9 @@ func printInput(c string, d int) {
 // many times as the integer and return the result.
 // Call the function a couple of times with different values and print the
 // results.
+// func concatString(e string, f int) {
+
+// }
 
 // TODO: Write a function that takes a single integer as a parameter and
 // prints all numbers from 1 to that number.
