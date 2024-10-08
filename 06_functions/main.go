@@ -87,6 +87,10 @@ func main() {
 	printToInt(6)
 	fmt.Println(returnStrings("Anna", "Hanna"))
 	length("Gopher")
+	length("Go rocks")
+	lengthAdvanced("A")
+	lengthAdvanced("")
+	lengthAdvanced("Luna")
 }
 
 // For each exercise, call the functions a couple of times with different
@@ -162,6 +166,16 @@ func length(str5 string) {
 
 // TODO: Update the previous function to handle the cases where the string
 // is empty or has a single character.
+func lengthAdvanced(str6 string) {
+	var length = len(str6)
+	if str6 == "" {
+		fmt.Println("Empty string.")
+	} else if length == 1 {
+		fmt.Println("The string", str6, "has", length, "character.")
+	} else {
+		fmt.Println("The string", str6, "has", length, "characters.")
+	}
+}
 
 // TODO: Write two functions mul and add that take two integers as
 // parameters and return the result of the multiplication and addition
