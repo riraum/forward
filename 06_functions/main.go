@@ -87,8 +87,8 @@ func main() {
 // TODO: Write a function that takes two integers as parameters and returns
 // the difference of the two integers.
 func diff(a int, b int) int {
-	var sum int = b - a
-	return sum
+	var diff int = b - a
+	return diff
 }
 
 // TODO: Write a function that takes a string and an integer as parameters.
