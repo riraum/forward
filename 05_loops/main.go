@@ -85,16 +85,23 @@ func main() {
 	// }
 
 	// TODO: Write a loop that prints the first 100 odd numbers.
-	// var m int = 0
-	// for {
-	// 	if m > 100 {
-	// 		break
-	// 	}
-	// 	if m % 2 != 0 {
-	// 		fmt.Println(m)
-	// 	}
-	// 	m += 1
-	// }
+	// Initialize counter
+	// Create loop
+	// 	print uneven number
+	//  +1 to counter
+	// break loop once 100 uneven numbers have been printed
+	var m int = 0
+	var z int = 1
+	for {
+		if m%2 != 0 {
+			fmt.Println(m)
+			z += 1
+		}
+		m += 1
+		if z > 100 {
+			break
+		}
+	}
 
 	// TODO: Define a variable and write a loop that calculates the sum of the
 	// numbers from 0 to 100, inclusive. Print the result.
@@ -155,17 +162,17 @@ func main() {
 
 	// TODO: Write a loop that prints the first 20 Fibonacci numbers.
 	// Fibonacci sequence is a sequence in which each number is the sum of the two preceding ones
-	var r int = 0
-	var s int = 1
-	var t int = 0
-	for {
-		if t > 20 {
-			break
-		}
-		fmt.Println(r)
-		fmt.Println(s)
-		r = r + s
-		s = r + s
-		t += 1
-	}
+	// var r int = 0
+	// var s int = 1
+	// var t int = 0
+	// for {
+	// 	if t > 20 {
+	// 		break
+	// 	}
+	// 	fmt.Println(r)
+	// 	fmt.Println(s)
+	// 	r = r + s
+	// 	s = r + s
+	// 	t += 1
+	// }
 }
