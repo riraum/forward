@@ -73,54 +73,54 @@ Note: functions can be defined in any order in the file.
 
 func main() {
 	sayHello("John")
-
-	// For each exercise, call the functions a couple of times with different
-	// values and print the results.
-
-	// TODO: Write a function that takes two integers as parameters and returns
-	// the difference of the two integers.
-	func diff(a int, b int) int {
-		var sum int = b - a
-		return sum
-	}
 	diff(1, 9)
 	diff(9, 1)
 	diff(4, -10)
-
-	// TODO: Write a function that takes a string and an integer as parameters.
-	// The function should print the string as many times as the integer.
-	func printInput(c string, d int) int {
-		fmt.Println(c * d)
-	}
-printInput("안녕", 3)
-printInput("go", 7)
-
-	// TODO: Write a function that takes a string and an integer as parameters.
-	// The function should concatenate (i.e. join) the string with itself as
-	// many times as the integer and return the result.
-	// Call the function a couple of times with different values and print the
-	// results.
-
-	// TODO: Write a function that takes a single integer as a parameter and
-	// prints all numbers from 1 to that number.
-
-	// TODO: Write a function that takes 2 strings as parameters and returns
-	// the sentence "Hello <name1>, and <name2>."
-	// Prints the result.
-
-	// TODO: Write a function that takes a string as a parameter and prints:
-	// "The string '<the string>' has <number of characters> characters."
-
-	// TODO: Update the previous function to handle the cases where the string
-	// is empty or has a single character.
-
-	// TODO: Write two functions mul and add that take two integers as
-	// parameters and return the result of the multiplication and addition
-	// respectively.
-	// Using those functions, write a function that takes two integers and
-	// returns the result of the following formula: a * b + a
-	// Print the result.
+	// printInput("안녕", 3)
+	// printInput("go", 7)
 }
+
+// For each exercise, call the functions a couple of times with different
+// values and print the results.
+
+// TODO: Write a function that takes two integers as parameters and returns
+// the difference of the two integers.
+func diff(a int, b int) int {
+	var sum int = b - a
+	return sum
+}
+
+// TODO: Write a function that takes a string and an integer as parameters.
+// The function should print the string as many times as the integer.
+// func printInput(c string, d int) {
+// 	fmt.Println(c * d)
+// }
+
+// TODO: Write a function that takes a string and an integer as parameters.
+// The function should concatenate (i.e. join) the string with itself as
+// many times as the integer and return the result.
+// Call the function a couple of times with different values and print the
+// results.
+
+// TODO: Write a function that takes a single integer as a parameter and
+// prints all numbers from 1 to that number.
+
+// TODO: Write a function that takes 2 strings as parameters and returns
+// the sentence "Hello <name1>, and <name2>."
+// Prints the result.
+
+// TODO: Write a function that takes a string as a parameter and prints:
+// "The string '<the string>' has <number of characters> characters."
+
+// TODO: Update the previous function to handle the cases where the string
+// is empty or has a single character.
+
+// TODO: Write two functions mul and add that take two integers as
+// parameters and return the result of the multiplication and addition
+// respectively.
+// Using those functions, write a function that takes two integers and
+// returns the result of the following formula: a * b + a
+// Print the result.
 
 func sayHello(name string) {
 	fmt.Println("Hello " + name)
