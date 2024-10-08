@@ -3,7 +3,6 @@ package main
 import "fmt"
 
 /*
-TEST ONCE AGAIN
 Go has functions.
 
 
@@ -80,6 +79,13 @@ func main() {
 
 	// TODO: Write a function that takes two integers as parameters and returns
 	// the difference of the two integers.
+	func diff(a int, b int) int {
+		let sum int = b - a
+		return sum
+	}
+	diff(1, 9)
+	diff(9, 1)
+	diff(4, -10)
 
 	// TODO: Write a function that takes a string and an integer as parameters.
 	// The function should print the string as many times as the integer.
