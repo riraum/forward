@@ -79,6 +79,9 @@ func main() {
 	printInput("안녕", 3)
 	printInput("go", 7)
 	printInput("ça va", 4)
+	fmt.Println(concatString("CatDog", 5))
+	fmt.Println(concatString("Rice", 5))
+	fmt.Println(concatString("김치", 6))
 }
 
 // For each exercise, call the functions a couple of times with different
@@ -111,9 +114,18 @@ func printInput(str string, times int) {
 // many times as the integer and return the result.
 // Call the function a couple of times with different values and print the
 // results.
-// func concatString(e string, f int) {
-
-// }
+func concatString(str2 string, times2 int) string {
+	var count2 = 1
+	// var result2 = ""
+	for {
+		if count2 > times2 {
+			break
+		}
+		str2 += str2
+		count2++
+	}
+	return str2
+}
 
 // TODO: Write a function that takes a single integer as a parameter and
 // prints all numbers from 1 to that number.
