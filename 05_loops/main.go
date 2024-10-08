@@ -75,12 +75,12 @@ func main() {
 	// only the even numbers.
 	var l int = 0
 	for {
-		if l > 100{
+		if l > 100 {
 			break
 		}
-		if l % 2 == 0 {
+		if l%2 == 0 {
 			fmt.Println(l)
-			}
+		}
 		l += 1
 	}
 
@@ -130,11 +130,11 @@ func main() {
 		if o > 15 {
 			break
 		}
-		if o % 3 == 0 && o % 5 == 0{
+		if o%3 == 0 && o%5 == 0 {
 			fmt.Println(resultOne + resultTwo)
-		} else if o % 3 == 0 {
+		} else if o%3 == 0 {
 			fmt.Println(resultOne)
-		} else if o % 5 == 0 {
+		} else if o%5 == 0 {
 			fmt.Println(resultTwo)
 		} else {
 			fmt.Println(o)
