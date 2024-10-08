@@ -93,14 +93,14 @@ func diff(a int, b int) int {
 
 // TODO: Write a function that takes a string and an integer as parameters.
 // The function should print the string as many times as the integer.
-func printInput(c string, d int) {
+func printInput(str string, times int) {
 	var result = ""
 	var count = 1
 	for {
-		if count > d {
+		if count > times {
 			break
 		}
-		fmt.Println(c)
+		fmt.Println(str)
 		count++
 	}
 	fmt.Println(result)
