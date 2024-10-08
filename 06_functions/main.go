@@ -82,6 +82,9 @@ func main() {
 	fmt.Println(concatString("CatDog", 5))
 	fmt.Println(concatString("Rice", 5))
 	fmt.Println(concatString("김치", 6))
+	printToInt(4)
+	printToInt(9)
+	printToInt(6)
 }
 
 // For each exercise, call the functions a couple of times with different
@@ -129,6 +132,16 @@ func concatString(str2 string, times2 int) string {
 
 // TODO: Write a function that takes a single integer as a parameter and
 // prints all numbers from 1 to that number.
+func printToInt(parInt int) {
+	var count3 = 1
+	for {
+		if count3 > parInt {
+			break
+		}
+		fmt.Println(count3)
+		count3++
+	}
+}
 
 // TODO: Write a function that takes 2 strings as parameters and returns
 // the sentence "Hello <name1>, and <name2>."
