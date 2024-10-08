@@ -184,6 +184,15 @@ func lengthAdvanced(str6 string) {
 // Using those functions, write a function that takes two integers and
 // returns the result of the following formula: a * b + a
 // Print the result.
+func mul(number1 int, number2 int) int {
+	var prod int = number1 * number2
+	return prod
+}
+
+func add(number1 int, number2 int) int {
+	var sum int = number1 + number2
+	return sum
+}
 
 func sayHello(name string) {
 	fmt.Println("Hello " + name)
