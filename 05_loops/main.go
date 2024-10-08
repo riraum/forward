@@ -142,23 +142,26 @@ func main() {
 		o += 1
 	}
 	// Nested logic, to revisit later
-	// for {
-	// 	if o > 15 {
-	// 		break
-	// 	}
-	// 	if o%3 == 0 {
-	// 		if o%5 == 0 {
-	// 			fmt.Println(p + q)
-	// 		} else {
-	// 			fmt.Println(p)
-	// 		}
-	// 		if o%5 == 0 {
-	// 			fmt.Println(q)
-	// 	} else {
-	// 		fmt.Println(o)
-	// 	}
-	// 	o += 1
-	// }
+	var nestCounter int = 1
+	for {
+		if nestCounter > 15 {
+			break
+		}
+		if nestCounter%3 == 0 {
+			if nestCounter%5 == 0 {
+				fmt.Println(resultOne + resultTwo)
+			} else {
+				fmt.Println(resultOne)
+			}
+		} else {
+			if nestCounter%5 == 0 {
+				fmt.Println(resultTwo)
+			} else {
+				fmt.Println(nestCounter)
+			}
+		}
+		nestCounter += 1
+	}
 
 	// TODO: Write a loop that prints the first 20 Fibonacci numbers.
 	// Fibonacci sequence is a sequence in which each number is the sum of the two preceding ones
