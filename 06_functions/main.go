@@ -92,6 +92,7 @@ func main() {
 	lengthAdvanced("")
 	lengthAdvanced("Luna")
 	fmt.Println(doingMath(3, 4))
+	fmt.Println(doingMath(5, 10))
 }
 
 // For each exercise, call the functions a couple of times with different
@@ -197,10 +198,10 @@ func add(number1 int, number2 int) int {
 
 func doingMath(number1 int, number2 int) int {
 	var mulValue = mul(number1, number2)
-	fmt.Println(mulValue)
+	// fmt.Println(mulValue)
 	var addValue int = add(mulValue, number1)
-	fmt.Println(addValue)
-	return mulValue + addValue
+	// fmt.Println(addValue)
+	return addValue
 }
 
 func sayHello(name string) {
