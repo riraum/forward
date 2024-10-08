@@ -86,6 +86,7 @@ func main() {
 	printToInt(9)
 	printToInt(6)
 	fmt.Println(returnStrings("Anna", "Hanna"))
+	length("Gopher")
 }
 
 // For each exercise, call the functions a couple of times with different
@@ -154,6 +155,10 @@ func returnStrings(str3 string, str4 string) string {
 
 // TODO: Write a function that takes a string as a parameter and prints:
 // "The string '<the string>' has <number of characters> characters."
+func length(str5 string) {
+	var length int = len(str5)
+	fmt.Println("The string", str5, "has", length, "characters.")
+}
 
 // TODO: Update the previous function to handle the cases where the string
 // is empty or has a single character.
