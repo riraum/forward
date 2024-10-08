@@ -76,8 +76,8 @@ func main() {
 	fmt.Println(diff(1, 9))
 	fmt.Println(diff(9, 1))
 	fmt.Println(diff(4, -10))
-	// printInput("안녕", 3)
-	// printInput("go", 7)
+	printInput("안녕", 3)
+	printInput("go", 7)
 }
 
 // For each exercise, call the functions a couple of times with different
@@ -92,9 +92,18 @@ func diff(a int, b int) int {
 
 // TODO: Write a function that takes a string and an integer as parameters.
 // The function should print the string as many times as the integer.
-// func printInput(c string, d int) {
-// 	fmt.Println(c * d)
-// }
+func printInput(c string, d int) {
+	var result = ""
+	var count = 1
+	for {
+		if count > d {
+			break
+		}
+		result += c
+		count++
+	}
+	fmt.Println(result)
+}
 
 // TODO: Write a function that takes a string and an integer as parameters.
 // The function should concatenate (i.e. join) the string with itself as
