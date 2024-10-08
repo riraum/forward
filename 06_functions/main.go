@@ -168,6 +168,7 @@ func length(str5 string) {
 // is empty or has a single character.
 func lengthAdvanced(str6 string) {
 	var length = len(str6)
+	// TODO Put generic print text in variable
 	if str6 == "" {
 		fmt.Println("Empty string.")
 	} else if length == 1 {
