@@ -78,6 +78,7 @@ func main() {
 	fmt.Println(diff(4, -10))
 	printInput("안녕", 3)
 	printInput("go", 7)
+	printInput("ça va", 4)
 }
 
 // For each exercise, call the functions a couple of times with different
