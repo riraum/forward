@@ -73,9 +73,9 @@ Note: functions can be defined in any order in the file.
 
 func main() {
 	sayHello("John")
-	diff(1, 9)
-	diff(9, 1)
-	diff(4, -10)
+	fmt.Println(diff(1, 9))
+	fmt.Println(diff(9, 1))
+	fmt.Println(diff(4, -10))
 	// printInput("안녕", 3)
 	// printInput("go", 7)
 }
