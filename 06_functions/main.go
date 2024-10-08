@@ -85,6 +85,7 @@ func main() {
 	printToInt(4)
 	printToInt(9)
 	printToInt(6)
+	fmt.Println(returnStrings("Anna", "Hanna"))
 }
 
 // For each exercise, call the functions a couple of times with different
@@ -146,6 +147,10 @@ func printToInt(parInt int) {
 // TODO: Write a function that takes 2 strings as parameters and returns
 // the sentence "Hello <name1>, and <name2>."
 // Prints the result.
+func returnStrings(str3 string, str4 string) string {
+	var result = "Hello " + str3 + ", and " + str4 + "."
+	return result
+}
 
 // TODO: Write a function that takes a string as a parameter and prints:
 // "The string '<the string>' has <number of characters> characters."
