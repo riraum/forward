@@ -21,6 +21,10 @@ func main() {
 	logicalTable(true, false)
 	logicalTable(false, false)
 	logicalTable(false, true)
+	strIntCheck("", 0)
+	strIntCheck("Gopher", 3)
+	strIntCheck("Git", 2)
+	strIntCheck("Go", 4)
 }
 
 // TODO: Write a function that prints a truth table for all the following
@@ -79,14 +83,19 @@ func logicalTable(bool1 bool, bool2 bool) {
 //
 // - If the string is shorter than the integer, return "shorter"
 func strIntCheck(str string, num int) {
-	var stringLength int = len(str)
-	var integerLength int = len(num)
+	// var stringLength = len(str)
+	// var integerLength = len(num)
 	if str == "" {
 		fmt.Println("empty")
-	} else if len(str) > len(num) {
-		if len(str) == len(num) {
-
+		// TODO find way to get int length
+		// } else if len(str) > len(num) {
+		if len(str)%2 == 0 {
+			fmt.Println("longer and even")
+		} else {
+			fmt.Println("longer and odd")
 		}
+	} else {
+		fmt.Println("shorter")
 	}
 }
 
