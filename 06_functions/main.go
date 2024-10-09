@@ -100,8 +100,8 @@ func main() {
 
 // TODO: Write a function that takes two integers as parameters and returns
 // the difference of the two integers.
-func diff(a int, b int) int {
-	var diff int = b - a
+func diff(num1 int, num2 int) int {
+	var diff int = num2 - num1
 	return diff
 }
 
@@ -123,58 +123,57 @@ func printInput(str string, times int) {
 // many times as the integer and return the result.
 // Call the function a couple of times with different values and print the
 // results.
-func concatString(str2 string, times2 int) string {
-	var count2 = 1
-	// var result2 = ""
+func concatString(str string, times int) string {
+	var count = 1
 	for {
-		if count2 > times2 {
+		if count > times {
 			break
 		}
-		str2 += str2
-		count2++
+		str += str
+		count++
 	}
-	return str2
+	return str
 }
 
 // TODO: Write a function that takes a single integer as a parameter and
 // prints all numbers from 1 to that number.
 func printToInt(parInt int) {
-	var count3 = 1
+	var count = 1
 	for {
-		if count3 > parInt {
+		if count > parInt {
 			break
 		}
-		fmt.Println(count3)
-		count3++
+		fmt.Println(count)
+		count++
 	}
 }
 
 // TODO: Write a function that takes 2 strings as parameters and returns
 // the sentence "Hello <name1>, and <name2>."
 // Prints the result.
-func returnStrings(str3 string, str4 string) string {
-	var result = "Hello " + str3 + ", and " + str4 + "."
+func returnStrings(str1 string, str2 string) string {
+	var result = "Hello " + str1 + ", and " + str2 + "."
 	return result
 }
 
 // TODO: Write a function that takes a string as a parameter and prints:
 // "The string '<the string>' has <number of characters> characters."
-func length(str5 string) {
-	var length int = len(str5)
-	fmt.Println("The string", str5, "has", length, "characters.")
+func length(str string) {
+	var length int = len(str)
+	fmt.Println("The string", str, "has", length, "characters.")
 }
 
 // TODO: Update the previous function to handle the cases where the string
 // is empty or has a single character.
-func lengthAdvanced(str6 string) {
-	var length = len(str6)
+func lengthAdvanced(str string) {
+	var length = len(str)
 	// TODO Put generic print text in variable
-	if str6 == "" {
+	if str == "" {
 		fmt.Println("Empty string.")
 	} else if length == 1 {
-		fmt.Println("The string", str6, "has", length, "character.")
+		fmt.Println("The string", str, "has", length, "character.")
 	} else {
-		fmt.Println("The string", str6, "has", length, "characters.")
+		fmt.Println("The string", str, "has", length, "characters.")
 	}
 }
 
@@ -184,21 +183,19 @@ func lengthAdvanced(str6 string) {
 // Using those functions, write a function that takes two integers and
 // returns the result of the following formula: a * b + a
 // Print the result.
-func mul(number1 int, number2 int) int {
-	var prod int = number1 * number2
+func mul(num1 int, num2 int) int {
+	var prod int = num1 * num2
 	return prod
 }
 
-func add(number1 int, number2 int) int {
-	var sum int = number1 + number2
+func add(num1 int, num2 int) int {
+	var sum int = num1 + num2
 	return sum
 }
 
-func doingMath(number1 int, number2 int) int {
-	var mulValue = mul(number1, number2)
-	// fmt.Println(mulValue)
-	var addValue int = add(mulValue, number1)
-	// fmt.Println(addValue)
+func doingMath(num1 int, num2 int) int {
+	var mulValue = mul(num1, num2)
+	var addValue int = add(mulValue, num1)
 	return addValue
 }
 
