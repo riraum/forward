@@ -88,7 +88,7 @@ func strIntCheck(str string, num int) {
 	if str == "" {
 		fmt.Println("empty")
 		// TODO find way to get int length
-		// } else if len(str) > len(num) {
+	} else if len(str) > num {
 		if len(str)%2 == 0 {
 			fmt.Println("longer and even")
 		} else {
