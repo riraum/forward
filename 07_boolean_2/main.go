@@ -77,7 +77,7 @@ func logicalTable(bool1 bool, bool2 bool) {
 // TODO: Write a function that takes a string and an integer and performs
 // the following checks:
 // - If the string is empty, return "empty"
-// - If the string is longer than the integer
+// - If the string is longer than the value of the integer
 //   - If the integer is even, return "longer and even"
 //   - If the integer is odd, return "longer and odd"
 //
