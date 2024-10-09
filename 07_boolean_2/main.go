@@ -107,16 +107,37 @@ func strIntCheck(str string, num int) {
 //   - If no grade is below 80, return "A+"
 //   - If no grade is below 70, return "A"
 //   - If any grade is below 70, return "A-"
+//
 // - If the average of the grades is greater than or equal to 80, return
 // "B"
 //   - If no grade is below 80, return "B+"
 //   - If no grade is below 70, return "B"
 //   - If any grade is below 60, return "B-"
+//
 // - If the average of the grades is greater than or equal to 70, return
 // "C"
 //   - If no grade is below 70, return "C+"
 //   - If no grade is below 60, return "C"
 //   - If any grade is below 60, return "C-"
+func calcGrade(grade1 int, grade2 int, grade3 int, grade4 int, grade5 int) {
+	var avg = (grade1 + grade2 + grade3 + grade4 + grade5) / 5
+	// var allGradesAnd = grade1 && grade2 && grade3 && grade4 && grade5
+	// var allGradesOr = grade1 || grade2 || grade3 || grade4 || grade5
+	// if grade.. > 100 || grade.. < 0 print invalid
+	if (grade1 < 0 || grade1 > 100) || (grade2 < 0 || grade2 > 100) || (grade3 < 0 || grade3 > 100) || (grade4 < 0 || grade4 > 100) || (grade5 < 0 || grade5 > 100) {
+		fmt.Println(("invalid grade"))
+		// If average grade  >= 90
+	} else if avg >= 90 {
+		if grade1 < 80 && grade2 < 80 && grade3 < 80 && grade4 < 80 && grade5 < 80 {
+			fmt.Println("A+")
+		} else if grade1 < 70 && grade2 < 70 && grade3 < 70 && grade4 < 70 && grade5 < 70 {
+			fmt.Println("A")
+		} else if grade1 < 70 || grade2 < 70 || grade3 < 70 || grade4 < 70 || grade5 < 70 {
+			fmt.Println("A-")
+		}
+	}
+
+}
 
 // TODO: Write a function that takes 3 numbers, representing the sides of a
 // triangle, and returns the type of the triangle:
