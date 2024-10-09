@@ -63,17 +63,12 @@ func logicalTable(bool1 bool, bool2 bool) {
 		fmt.Println("NOR", false)
 	}
 	// XOR
-	if bool1 == true && bool2 == false || bool2 == true && bool1 == false {
+	if bool1 == true && bool2 == false || bool2 == true && bool1 {
 		fmt.Println("XOR", true)
 	} else if bool1 == bool2 || bool2 == bool1 {
 		fmt.Println("XOR", false)
 	}
 }
-
-// logicalTable(true, true)
-// logicalTable(true, false)
-// logicalTable(false, false)
-// logicalTable(false, true)
 
 // TODO: Write a function that takes a string and an integer and performs
 // the following checks:
