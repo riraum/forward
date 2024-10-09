@@ -123,13 +123,13 @@ func printInput(str string, times int) {
 // Call the function a couple of times with different values and print the
 // results.
 func concatString(str string, times int) string {
-	var count = 1
 	for {
-		if count > times {
+		if times < 1 {
 			break
 		}
 		str += str
-		count++
+		times--
+		fmt.Println(times)
 	}
 	return str
 }
