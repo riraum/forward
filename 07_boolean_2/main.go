@@ -55,23 +55,20 @@ func logicalTable(bool1 bool, bool2 bool) {
 	// OR
 	fmt.Println("OR", bool1 || bool2)
 	// NAND
-	if bool1 == true && bool2 == true {
-		fmt.Println("NAND", false)
-	} else {
-		fmt.Println("NAND", true)
-	}
+	// if bool1 == true && bool2 == true
+	fmt.Println("NAND", bool1 != bool2 || bool1 == false || bool2 == false)
 	//  NOR
-	if bool1 == false && bool2 == false {
-		fmt.Println("NOR", true)
-	} else {
-		fmt.Println("NOR", false)
-	}
-	// XOR
-	if bool1 == true && bool2 == false || bool2 == true && bool1 {
-		fmt.Println("XOR", true)
-	} else if bool1 == bool2 || bool2 == bool1 {
-		fmt.Println("XOR", false)
-	}
+	// if bool1 == false && bool2 == false {
+	// 	fmt.Println("NOR", true)
+	// } else {
+	// 	fmt.Println("NOR", false)
+	// }
+	// // XOR
+	// if bool1 == true && bool2 == false || bool2 == true && bool1 {
+	// 	fmt.Println("XOR", true)
+	// } else if bool1 == bool2 || bool2 == bool1 {
+	// 	fmt.Println("XOR", false)
+	// }
 }
 
 // TODO: Write a function that takes a string and an integer and performs
