@@ -76,7 +76,19 @@ func logicalTable(bool1 bool, bool2 bool) {
 // - If the string is longer than the integer
 //   - If the integer is even, return "longer and even"
 //   - If the integer is odd, return "longer and odd"
+//
 // - If the string is shorter than the integer, return "shorter"
+func strIntCheck(str string, num int) {
+	var stringLength int = len(str)
+	var integerLength int = len(num)
+	if str == "" {
+		fmt.Println("empty")
+	} else if len(str) > len(num) {
+		if len(str) == len(num) {
+
+		}
+	}
+}
 
 // TODO: Write a function that takes 5 integers (grades) and returns the
 // following:
