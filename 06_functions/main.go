@@ -101,8 +101,7 @@ func main() {
 // TODO: Write a function that takes two integers as parameters and returns
 // the difference of the two integers.
 func diff(num1 int, num2 int) int {
-	var diff int = num2 - num1
-	return diff
+	return num2 - num1
 }
 
 // TODO: Write a function that takes a string and an integer as parameters.
