@@ -25,7 +25,14 @@ func main() {
 	strIntCheck("Gopher", 3)
 	strIntCheck("Git", 2)
 	strIntCheck("Go", 4)
-	// gradeValid(-10, 101, 101, 101, 90)
+	fmt.Println(gradeValid(-10, 101, 101, 101, 90))
+	fmt.Println(gradeValid(90, 90, 90, 90, 90))
+	fmt.Println(anyGradeUnder(90, 101, 101, 101, 90, 90))
+	fmt.Println(anyGradeUnder(-10, 101, 101, 101, 90, 90))
+	fmt.Println(allGradesOver(-10, 101, 101, 101, 90, 90))
+	fmt.Println(allGradesOver(90, 101, 101, 101, 90, 90))
+	fmt.Println(gradeAvgOver(40, 40, 40, 40, 40, 90))
+	fmt.Println(gradeAvgOver(90, 90, 90, 90, 90, 90))
 }
 
 // TODO: Write a function that prints a truth table for all the following
@@ -111,9 +118,8 @@ func strIntCheck(str string, num int) {
 // 	var avg = (grade1 + grade2 + grade3 + grade4 + grade5) / 5
 // 	// var allGradesAnd = grade1 && grade2 && grade3 && grade4 && grade5
 // 	// var allGradesOr = grade1 || grade2 || grade3 || grade4 || grade5
-// 	// if grade.. > 100 || grade.. < 0 print invalid
-// 	 {
-// 		fmt.Println(("invalid grade"))
+// 	// Check grade validity
+// 		gradeValid(grade1, grade2, grade3, grade4, grade5)
 // 		// If average grade  >= 90
 // 	} if avg >= 90 {
 // 		if grade1 < 80 && grade2 < 80 && grade3 < 80 && grade4 < 80 && grade5 < 80 {
@@ -124,12 +130,43 @@ func strIntCheck(str string, num int) {
 // 			fmt.Println("A-")
 // 		}
 // 	}
+// }
 
-// }
-// func gradeValid(grade1 int, grade2 int, grade3 int, grade4 int, grade5 int) bool {
-// 	(grade1 < 0 || grade1 > 100) || (grade2 < 0 || grade2 > 100) || (grade3 < 0 || grade3 > 100) || (grade4 < 0 || grade4 > 100) || (grade5 < 0 || grade5 > 100)
-// 	return bool
-// }
+// if grade.. > 100 || grade.. < 0 return invalid
+func gradeValid(grade1 int, grade2 int, grade3 int, grade4 int, grade5 int) bool {
+	if (grade1 < 0 || grade1 > 100) || (grade2 < 0 || grade2 > 100) || (grade3 < 0 || grade3 > 100) || (grade4 < 0 || grade4 > 100) || (grade5 < 0 || grade5 > 100) {
+		return false
+	} else {
+		return true
+	}
+}
+
+// check if any grade is < x
+func anyGradeUnder(grade1 int, grade2 int, grade3 int, grade4 int, grade5 int, limit int) bool {
+	if grade1 < limit || grade2 < limit || grade3 < limit || grade4 < limit || grade5 < limit {
+		return true
+	} else {
+		return false
+	}
+}
+
+// check if all grades are >= x
+func allGradesOver(grade1 int, grade2 int, grade3 int, grade4 int, grade5 int, limit int) bool {
+	if grade1 >= limit && grade2 >= limit && grade2 >= limit && grade3 >= limit && grade4 >= limit && grade5 >= limit {
+		return true
+	} else {
+		return false
+	}
+}
+
+// check if grade avg >= limit
+func gradeAvgOver(grade1 int, grade2 int, grade3 int, grade4 int, grade5 int, limit int) bool {
+	if (grade1+grade2+grade3+grade4+grade5)/5 >= limit {
+		return true
+	} else {
+		return false
+	}
+}
 
 // TODO: Write a function that takes 3 numbers, representing the sides of a
 // triangle, and returns the type of the triangle:
