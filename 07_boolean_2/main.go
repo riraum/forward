@@ -25,6 +25,7 @@ func main() {
 	strIntCheck("Gopher", 3)
 	strIntCheck("Git", 2)
 	strIntCheck("Go", 4)
+	// gradeValid(-10, 101, 101, 101, 90)
 }
 
 // TODO: Write a function that prints a truth table for all the following
@@ -56,7 +57,7 @@ func logicalTable(bool1 bool, bool2 bool) {
 	fmt.Println("OR", bool1 || bool2)
 	// NAND
 	// if bool1 == true && bool2 == true
-	fmt.Println("NAND", bool1 != bool2 || bool1 == false || bool2 == false)
+	fmt.Println("NAND", bool1 != bool2 || !bool1 == false || bool2 == false)
 	//  NOR
 	// if bool1 == false && bool2 == false {
 	// 	fmt.Println("NOR", true)
@@ -116,25 +117,29 @@ func strIntCheck(str string, num int) {
 //   - If no grade is below 70, return "C+"
 //   - If no grade is below 60, return "C"
 //   - If any grade is below 60, return "C-"
-func calcGrade(grade1 int, grade2 int, grade3 int, grade4 int, grade5 int) {
-	var avg = (grade1 + grade2 + grade3 + grade4 + grade5) / 5
-	// var allGradesAnd = grade1 && grade2 && grade3 && grade4 && grade5
-	// var allGradesOr = grade1 || grade2 || grade3 || grade4 || grade5
-	// if grade.. > 100 || grade.. < 0 print invalid
-	if (grade1 < 0 || grade1 > 100) || (grade2 < 0 || grade2 > 100) || (grade3 < 0 || grade3 > 100) || (grade4 < 0 || grade4 > 100) || (grade5 < 0 || grade5 > 100) {
-		fmt.Println(("invalid grade"))
-		// If average grade  >= 90
-	} else if avg >= 90 {
-		if grade1 < 80 && grade2 < 80 && grade3 < 80 && grade4 < 80 && grade5 < 80 {
-			fmt.Println("A+")
-		} else if grade1 < 70 && grade2 < 70 && grade3 < 70 && grade4 < 70 && grade5 < 70 {
-			fmt.Println("A")
-		} else if grade1 < 70 || grade2 < 70 || grade3 < 70 || grade4 < 70 || grade5 < 70 {
-			fmt.Println("A-")
-		}
-	}
+// func calcGrade(grade1 int, grade2 int, grade3 int, grade4 int, grade5 int) {
+// 	var avg = (grade1 + grade2 + grade3 + grade4 + grade5) / 5
+// 	// var allGradesAnd = grade1 && grade2 && grade3 && grade4 && grade5
+// 	// var allGradesOr = grade1 || grade2 || grade3 || grade4 || grade5
+// 	// if grade.. > 100 || grade.. < 0 print invalid
+// 	 {
+// 		fmt.Println(("invalid grade"))
+// 		// If average grade  >= 90
+// 	} if avg >= 90 {
+// 		if grade1 < 80 && grade2 < 80 && grade3 < 80 && grade4 < 80 && grade5 < 80 {
+// 			fmt.Println("A+")
+// 		} else if grade1 < 70 && grade2 < 70 && grade3 < 70 && grade4 < 70 && grade5 < 70 {
+// 			fmt.Println("A")
+// 		} else if grade1 < 70 || grade2 < 70 || grade3 < 70 || grade4 < 70 || grade5 < 70 {
+// 			fmt.Println("A-")
+// 		}
+// 	}
 
-}
+// }
+// func gradeValid(grade1 int, grade2 int, grade3 int, grade4 int, grade5 int) bool {
+// 	(grade1 < 0 || grade1 > 100) || (grade2 < 0 || grade2 > 100) || (grade3 < 0 || grade3 > 100) || (grade4 < 0 || grade4 > 100) || (grade5 < 0 || grade5 > 100)
+// 	return bool
+// }
 
 // TODO: Write a function that takes 3 numbers, representing the sides of a
 // triangle, and returns the type of the triangle:
