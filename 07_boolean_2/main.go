@@ -51,25 +51,16 @@ func logicalTable(bool1 bool, bool2 bool) {
 	// 	fmpt.Println("true")
 	// }
 	// Direct print statements
-	// AND
+	// AND // true, true == true || true, false == false || false, false == false || false, true == false
 	fmt.Println("AND", bool1 && bool2)
-	// OR
+	// OR // true, true == true || true, false == true || false, false == false || false, true == true
 	fmt.Println("OR", bool1 || bool2)
-	// NAND
-	// if bool1 == true && bool2 == true
+	// NAND // true, true == false || true, false == true, || false, false == true || false, true == true
 	fmt.Println("NAND", bool1 != bool2 || bool1 == false || bool2 == false)
-	//  NOR
-	// if bool1 == false && bool2 == false {
-	// 	fmt.Println("NOR", true)
-	// } else {
-	// 	fmt.Println("NOR", false)
-	// }
-	// // XOR
-	// if bool1 == true && bool2 == false || bool2 == true && bool1 {
-	// 	fmt.Println("XOR", true)
-	// } else if bool1 == bool2 || bool2 == bool1 {
-	// 	fmt.Println("XOR", false)
-	// }
+	//  NOR // true, true ==  false || true, false == false || false, false == true || false, true == false
+	fmt.Println("NOR", !bool1 && !bool2)
+	// // XOR // true, true == false || true, false == true || false, false == false || false, true == true
+	fmt.Println("XOR", bool1 != bool2)
 }
 
 // TODO: Write a function that takes a string and an integer and performs
