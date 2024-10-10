@@ -152,7 +152,7 @@ func anyGradeUnder(grade1 int, grade2 int, grade3 int, grade4 int, grade5 int, l
 
 // check if all grades are >= x
 func allGradesOver(grade1 int, grade2 int, grade3 int, grade4 int, grade5 int, limit int) bool {
-	if grade1 >= limit && grade2 >= limit && grade2 >= limit && grade3 >= limit && grade4 >= limit && grade5 >= limit {
+	if grade1 >= limit && grade2 >= limit && grade3 >= limit && grade4 >= limit && grade5 >= limit {
 		return true
 	} else {
 		return false
