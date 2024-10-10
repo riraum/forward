@@ -76,7 +76,6 @@ func strIntCheck(str string, num int) {
 	// var integerLength = len(num)
 	if str == "" {
 		fmt.Println("empty")
-		// TODO find way to get int length
 	} else if len(str) > num {
 		if len(str)%2 == 0 {
 			fmt.Println("longer and even")
