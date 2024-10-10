@@ -69,6 +69,8 @@ func logicalTable(bool1 bool, bool2 bool) {
 	fmt.Println("OR", bool1 || bool2)
 	// NAND // true, true == false || true, false == true, || false, false == true || false, true == true
 	fmt.Println("NAND", !bool1 || !bool2)
+	// Alternative
+	fmt.Println("NAND", !(bool1 && bool2))
 	//  NOR // true, true ==  false || true, false == false || false, false == true || false, true == false
 	fmt.Println("NOR", !(bool1 || bool2))
 	// // XOR // true, true == false || true, false == true || false, false == false || false, true == true
