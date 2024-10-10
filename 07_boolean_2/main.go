@@ -33,6 +33,11 @@ func main() {
 	fmt.Println(allGradesOver(90, 101, 101, 101, 90, 90))
 	fmt.Println(gradeAvgOver(40, 40, 40, 40, 40, 90))
 	fmt.Println(gradeAvgOver(90, 90, 90, 90, 90, 90))
+	fmt.Println(checkTriangleType(0, 0, 0))
+	fmt.Println(checkTriangleType(5, 6, 11))
+	fmt.Println(checkTriangleType(5, 5, 5))
+	fmt.Println(checkTriangleType(5, 5, 6))
+	fmt.Println(checkTriangleType(5, 4, 3))
 }
 
 // TODO: Write a function that prints a truth table for all the following
@@ -175,6 +180,7 @@ func calcGrade(grade1 int, grade2 int, grade3 int, grade4 int, grade5 int) strin
 		} else if anyGradeUnder(grade1, grade2, grade3, grade4, grade5, 60) == true {
 			return "B-"
 		}
+	}
 	if gradeAvgOver(grade1, grade2, grade3, grade4, grade5, 70) == true {
 		if allGradesOver(grade1, grade2, grade3, grade4, grade5, 70) == true {
 			return "C+"
@@ -183,9 +189,9 @@ func calcGrade(grade1 int, grade2 int, grade3 int, grade4 int, grade5 int) strin
 		} else if anyGradeUnder(grade1, grade2, grade3, grade4, grade5, 60) == true {
 			return "C-"
 		}
-} 
-
-
+	}
+	return "error"
+}
 
 // TODO: Write a function that takes 3 numbers, representing the sides of a
 // triangle, and returns the type of the triangle:
@@ -195,4 +201,72 @@ func calcGrade(grade1 int, grade2 int, grade3 int, grade4 int, grade5 int) strin
 // - If all three sides are equal, return "equilateral"
 // - If two sides are equal, return "isosceles"
 // - If no sides are equal, return "scalene"
-// }
+
+// any side <= 0 == true
+func anySideLess(side1 int, side2 int, side3 int) bool {
+	if side1 <= 0 || side2 <= 0 || side3 <= 0 {
+		return true
+	} else {
+		return false
+	}
+}
+
+// sum of length of 2 shortest <= longest side == true
+func sumLength(side1 int, side2 int, side3 int) bool {
+	if side1 <= side2 && side3 > side1 && side3 > side2 || side2 <= side1 && side3 > side1 && side3 > side2 {
+		if side1+side2 <= side3 {
+			return true
+		}
+	} else if side3 <= side1 && side2 > side3 && side2 > side1 || side1 <= side3 && side2 > side3 && side2 > side1 {
+		if side3+side1 <= side2 {
+			return true
+		}
+	} else if side2 <= side3 && side1 > side2 && side1 > side3 || side3 <= side2 && side1 > side2 && side1 > side3 {
+		if side2+side3 <= side1 {
+			return true
+		}
+	}
+	return false
+}
+
+// all sides equal == true
+func allSidesEqual(side1 int, side2 int, side3 int) bool {
+	if side1 == side2 && side3 == side1 {
+		return true
+	} else {
+		return false
+	}
+}
+
+// 2 sides equal == true
+func twoSidesEqual(side1 int, side2 int, side3 int) bool {
+	if side1 == side2 || side2 == side3 || side1 == side3 {
+		return true
+	} else {
+		return false
+	}
+}
+
+// no sides equal == true
+func noSidesEqual(side1 int, side2 int, side3 int) bool {
+	if side1 != side2 || side2 != side3 || side1 != side3 {
+		return true
+	} else {
+		return false
+	}
+}
+
+// master calc function
+func checkTriangleType(side1 int, side2 int, side3 int) string {
+	if anySideLess(side1, side2, side3) == true || sumLength(side1, side2, side3) == true {
+		return "invalid"
+	} else if allSidesEqual(side1, side2, side3) == true {
+		return "equilateral"
+	} else if twoSidesEqual(side1, side2, side3) == true {
+		return "isosceles"
+	} else if noSidesEqual(side1, side2, side3) == true {
+		return "scalene"
+	} else {
+		return "error"
+	}
+}
