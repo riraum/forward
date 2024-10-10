@@ -111,26 +111,12 @@ func strIntCheck(str string, num int) {
 //
 // - If the average of the grades is greater than or equal to 70, return
 // "C"
+//
 //   - If no grade is below 70, return "C+"
+//
 //   - If no grade is below 60, return "C"
+//
 //   - If any grade is below 60, return "C-"
-// func calcGrade(grade1 int, grade2 int, grade3 int, grade4 int, grade5 int) {
-// 	var avg = (grade1 + grade2 + grade3 + grade4 + grade5) / 5
-// 	// var allGradesAnd = grade1 && grade2 && grade3 && grade4 && grade5
-// 	// var allGradesOr = grade1 || grade2 || grade3 || grade4 || grade5
-// 	// Check grade validity
-// 		gradeValid(grade1, grade2, grade3, grade4, grade5)
-// 		// If average grade  >= 90
-// 	} if avg >= 90 {
-// 		if grade1 < 80 && grade2 < 80 && grade3 < 80 && grade4 < 80 && grade5 < 80 {
-// 			fmt.Println("A+")
-// 		} else if grade1 < 70 && grade2 < 70 && grade3 < 70 && grade4 < 70 && grade5 < 70 {
-// 			fmt.Println("A")
-// 		} else if grade1 < 70 || grade2 < 70 || grade3 < 70 || grade4 < 70 || grade5 < 70 {
-// 			fmt.Println("A-")
-// 		}
-// 	}
-// }
 
 // if grade.. > 100 || grade.. < 0 return invalid
 func gradeValid(grade1 int, grade2 int, grade3 int, grade4 int, grade5 int) bool {
@@ -167,6 +153,39 @@ func gradeAvgOver(grade1 int, grade2 int, grade3 int, grade4 int, grade5 int, li
 		return false
 	}
 }
+
+func calcGrade(grade1 int, grade2 int, grade3 int, grade4 int, grade5 int) string {
+	if gradeValid(grade1, grade2, grade3, grade4, grade5) == false {
+		return "invalid grade"
+	}
+	if gradeAvgOver(grade1, grade2, grade3, grade4, grade5, 90) == true {
+		if allGradesOver(grade1, grade2, grade3, grade4, grade5, 80) == true {
+			return "A+"
+		} else if allGradesOver(grade1, grade2, grade3, grade4, grade5, 70) == true {
+			return "A"
+		} else if anyGradeUnder(grade1, grade2, grade3, grade4, grade5, 70) == true {
+			return "A-"
+		}
+	}
+	if gradeAvgOver(grade1, grade2, grade3, grade4, grade5, 80) == true {
+		if allGradesOver(grade1, grade2, grade3, grade4, grade5, 80) == true {
+			return "B+"
+		} else if allGradesOver(grade1, grade2, grade3, grade4, grade5, 70) == true {
+			return "B"
+		} else if anyGradeUnder(grade1, grade2, grade3, grade4, grade5, 60) == true {
+			return "B-"
+		}
+	if gradeAvgOver(grade1, grade2, grade3, grade4, grade5, 70) == true {
+		if allGradesOver(grade1, grade2, grade3, grade4, grade5, 70) == true {
+			return "C+"
+		} else if allGradesOver(grade1, grade2, grade3, grade4, grade5, 60) == true {
+			return "C"
+		} else if anyGradeUnder(grade1, grade2, grade3, grade4, grade5, 60) == true {
+			return "C-"
+		}
+} 
+
+
 
 // TODO: Write a function that takes 3 numbers, representing the sides of a
 // triangle, and returns the type of the triangle:
