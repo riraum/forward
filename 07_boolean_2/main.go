@@ -129,11 +129,27 @@ func strIntCheck(str string, num int) {
 
 // if grade.. > 100 || grade.. < 0 return invalid
 func gradeValid(grade1 int, grade2 int, grade3 int, grade4 int, grade5 int) bool {
-	if (grade1 < 0 || grade1 > 100) || (grade2 < 0 || grade2 > 100) || (grade3 < 0 || grade3 > 100) || (grade4 < 0 || grade4 > 100) || (grade5 < 0 || grade5 > 100) {
+	if grade1 < 0 || grade1 > 100 {
 		return false
-	} else {
-		return true
 	}
+
+	if grade2 < 0 || grade2 > 100 {
+		return false
+	}
+
+	if grade3 < 0 || grade3 > 100 {
+
+	}
+
+	if grade4 < 0 || grade4 > 100 {
+		return false
+	}
+
+	if grade5 < 0 || grade5 > 100 {
+		return false
+	}
+
+	return true
 }
 
 // check if any grade is < x
