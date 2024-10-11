@@ -270,6 +270,23 @@ func anySideLess(side1 int, side2 int, side3 int) bool {
 	}
 }
 
+// get sum of 2 biggest sides
+func sumTwoBiggestSides(side1 int, side2 int, side3 int) int {
+	// check if side1 is bigger than others
+	if side1 > side2 && side2 > side3 {
+		return side1 + side2
+	}
+
+	if side1 > side3 && side3 > side2 {
+		return side1 + side3
+	}
+
+	if side2 > side3 && side3 > side1 {
+		return side2 + side3
+	}
+	return 1337
+}
+
 // sum of length of 2 shortest <= longest side == true
 func sumLength(side1 int, side2 int, side3 int) bool {
 	if side1 <= side2 && side3 > side1 && side3 > side2 || side2 <= side1 && side3 > side1 && side3 > side2 {
