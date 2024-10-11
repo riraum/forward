@@ -337,9 +337,9 @@ func noSidesEqual(side1 int, side2 int, side3 int) bool {
 
 // master calc function
 func checkTriangleType(side1 int, side2 int, side3 int) string {
-	// if anySideLess(side1, side2, side3) || sumLength(side1, side2, side3) {
-	// 	return "invalid"
-	// }
+	if anySideLess(side1, side2, side3) || !sumLength(side1, side2, side3) {
+		return "invalid"
+	}
 
 	if allSidesEqual(side1, side2, side3) {
 		return "equilateral"
