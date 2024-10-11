@@ -15,8 +15,6 @@ E.g.:
 */
 
 func main() {
-	// fmt.Println(false && (false || true))
-	// fmt.Println((false && false) || true)
 	logicalTable(true, true)
 	logicalTable(true, false)
 	logicalTable(false, false)
@@ -35,21 +33,7 @@ func main() {
 	fmt.Println("test8", calcGrade(80, 80, 70, 70, 70))
 	fmt.Println("test9", calcGrade(80, 80, 80, 70, 69))
 	fmt.Println("test10", calcGrade(80, 80, 80, 70, 59))
-	// Grade avg test
-	// fmt.Println("test9", gradeAvgOver(80, 80, 80, 70, 69, 70))
-	// fmt.Println("test10", gradeAvgOver(80, 80, 80, 70, 59, 70))
-	// invalid test
-	// fmt.Println(checkTriangleType(0, 0, 0))
-	// // invalid test 2
-	// fmt.Println(checkTriangleType(5, 6, 11))
-	// fmt.Println(checkTriangleType(5, 5, 5))
-	// fmt.Println(checkTriangleType(5, 5, 6))
-	// fmt.Println(checkTriangleType(5, 4, 3))
-	fmt.Println("shortestSum=3", sumTwoShortestSides(1, 2, 3))
-	fmt.Println("longestSide=3", longestSide(1, 2, 3))
-	fmt.Println("sumLength=true", sumLengthNoInversion(5, 6, 11))
 	fmt.Println(checkTriangleTypeNoInversion(0, 0, 0))
-	// invalid test 2
 	fmt.Println(checkTriangleTypeNoInversion(5, 6, 11))
 	fmt.Println(checkTriangleTypeNoInversion(5, 5, 5))
 	fmt.Println(checkTriangleTypeNoInversion(5, 5, 6))
@@ -71,14 +55,6 @@ func main() {
 // ...
 // Call this function for all 4 combinations of true and false.
 func logicalTable(bool1 bool, bool2 bool) {
-	// Varible used
-	// var AND bool = bool1 && bool2
-	// fmt.Println(AND)
-	// Hardcoded print results
-	// if bool1 == true && bool2 == true {
-	// 	fmpt.Println("true")
-	// }
-	// Direct print statements
 	// AND // true, true == true || true, false == false || false, false == false || false, true == false
 	fmt.Println("AND", bool1 && bool2)
 	// OR // true, true == true || true, false == true || false, false == false || false, true == true
@@ -102,8 +78,6 @@ func logicalTable(bool1 bool, bool2 bool) {
 //
 // - If the string is shorter than the integer, return "shorter"
 func strIntCheck(str string, num int) {
-	// var stringLength = len(str)
-	// var integerLength = len(num)
 	if str == "" {
 		fmt.Println("empty")
 	} else if len(str) > num {
@@ -251,25 +225,8 @@ func calcGrade(grade1 int, grade2 int, grade3 int, grade4 int, grade5 int) strin
 
 // any side <= 0 == true
 func anySideLess(side1 int, side2 int, side3 int) bool {
-	if side1 <= 0 || side2 <= 0 || side3 <= 0 {
-		return true
-	}
-	return false
+	return side1 <= 0 || side2 <= 0 || side3 <= 0
 }
-
-// // get sum of 2 biggest sides for sumLength
-// func sumTwoBiggestSides(side1 int, side2 int, side3 int) int {
-// 	// check if side1 is bigger than others
-// 	if side1 > side2 && side2 > side3 {
-// 		return side1 + side2
-// 	}
-
-// 	if side1 > side3 && side3 > side2 {
-// 		return side1 + side3
-// 	}
-
-// 	return side2 + side3
-// }
 
 // get sum of 2 shortest sides for sumLength
 func sumTwoShortestSides(side1 int, side2 int, side3 int) int {
@@ -284,19 +241,6 @@ func sumTwoShortestSides(side1 int, side2 int, side3 int) int {
 	return side2 + side3
 }
 
-// // get smallest side for sumLength
-// func smallestSide(side1 int, side2 int, side3 int) int {
-// 	if side1 > side2 && side2 > side3 {
-// 		return side3
-// 	}
-
-// 	if side1 > side3 && side3 > side2 {
-// 		return side2
-// 	}
-
-// 	return side1
-// }
-
 // get longest side for sumLength
 func longestSide(side1 int, side2 int, side3 int) int {
 	if side1 < side2 && side2 < side3 {
@@ -309,13 +253,6 @@ func longestSide(side1 int, side2 int, side3 int) int {
 
 	return side1
 }
-
-// // sum of length of 2 biggest >= smallest side
-// func sumLength(side1 int, side2 int, side3 int) bool {
-// 	var sum int = sumTwoBiggestSides(side1, side2, side3)
-// 	var smallest int = smallestSide(side1, side2, side3)
-// 	return sum >= smallest
-// }
 
 // sum of length of 2 smallest <= longest side
 func sumLengthNoInversion(side1 int, side2 int, side3 int) bool {
@@ -339,33 +276,8 @@ func noSidesEqual(side1 int, side2 int, side3 int) bool {
 	return side1 != side2 || side2 != side3 || side1 != side3
 }
 
-// // master calc function
-// func checkTriangleType(side1 int, side2 int, side3 int) string {
-// 	if anySideLess(side1, side2, side3) || !sumLength(side1, side2, side3) {
-// 		return "invalid"
-// 	}
-
-// 	if allSidesEqual(side1, side2, side3) {
-// 		return "equilateral"
-// 	}
-
-// 	if twoSidesEqual(side1, side2, side3) {
-// 		return "isosceles"
-// 	}
-
-// 	if noSidesEqual(side1, side2, side3) {
-// 		return "scalene"
-// 	}
-// 	// placeholder/error return
-// 	return "checkTriangleType error"
-// }
-
 func checkTriangleTypeNoInversion(side1 int, side2 int, side3 int) string {
-	if anySideLess(side1, side2, side3) {
-		return "invalid"
-	}
-
-	if sumLengthNoInversion(side1, side2, side3) {
+	if anySideLess(side1, side2, side3) || sumLengthNoInversion(side1, side2, side3) {
 		return "invalid"
 	}
 
