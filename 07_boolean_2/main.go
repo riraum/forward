@@ -265,9 +265,8 @@ func calcGrade(grade1 int, grade2 int, grade3 int, grade4 int, grade5 int) strin
 func anySideLess(side1 int, side2 int, side3 int) bool {
 	if side1 <= 0 || side2 <= 0 || side3 <= 0 {
 		return true
-	} else {
-		return false
 	}
+	return false
 }
 
 // get sum of 2 biggest sides for sumLength
@@ -301,6 +300,7 @@ func smallestSide(side1 int, side2 int, side3 int) int {
 	if side2 > side3 && side3 > side1 {
 		return side1
 	}
+	// Return statement needed, placeholder/error message added
 	return 1337
 }
 
@@ -315,40 +315,43 @@ func sumLength(side1 int, side2 int, side3 int) bool {
 func allSidesEqual(side1 int, side2 int, side3 int) bool {
 	if side1 == side2 && side3 == side1 {
 		return true
-	} else {
-		return false
 	}
+	return false
 }
 
 // 2 sides equal == true
 func twoSidesEqual(side1 int, side2 int, side3 int) bool {
 	if side1 == side2 || side2 == side3 || side1 == side3 {
 		return true
-	} else {
-		return false
 	}
+	return false
 }
 
 // no sides equal == true
 func noSidesEqual(side1 int, side2 int, side3 int) bool {
 	if side1 != side2 || side2 != side3 || side1 != side3 {
 		return true
-	} else {
-		return false
 	}
+	return false
 }
 
 // master calc function
 func checkTriangleType(side1 int, side2 int, side3 int) string {
-	if anySideLess(side1, side2, side3) == true || sumLength(side1, side2, side3) == true {
-		return "invalid"
-	} else if allSidesEqual(side1, side2, side3) == true {
+	// if anySideLess(side1, side2, side3) || sumLength(side1, side2, side3) {
+	// 	return "invalid"
+	// }
+
+	if allSidesEqual(side1, side2, side3) {
 		return "equilateral"
-	} else if twoSidesEqual(side1, side2, side3) == true {
-		return "isosceles"
-	} else if noSidesEqual(side1, side2, side3) == true {
-		return "scalene"
-	} else {
-		return "error"
 	}
+
+	if twoSidesEqual(side1, side2, side3) {
+		return "isosceles"
+	}
+
+	if noSidesEqual(side1, side2, side3) {
+		return "scalene"
+	}
+	// placeholder/error return
+	return "checkTriangleType error"
 }
