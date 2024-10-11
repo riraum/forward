@@ -306,20 +306,9 @@ func smallestSide(side1 int, side2 int, side3 int) int {
 
 // sum of length of 2 shortest <= longest side == true
 func sumLength(side1 int, side2 int, side3 int) bool {
-	if side1 <= side2 && side3 > side1 && side3 > side2 || side2 <= side1 && side3 > side1 && side3 > side2 {
-		if side1+side2 <= side3 {
-			return true
-		}
-	} else if side3 <= side1 && side2 > side3 && side2 > side1 || side1 <= side3 && side2 > side3 && side2 > side1 {
-		if side3+side1 <= side2 {
-			return true
-		}
-	} else if side2 <= side3 && side1 > side2 && side1 > side3 || side3 <= side2 && side1 > side2 && side1 > side3 {
-		if side2+side3 <= side1 {
-			return true
-		}
-	}
-	return false
+	var sum int = sumTwoBiggestSides(side1, side2, side3)
+	var smallest int = smallestSide(side1, side2, side3)
+	return sum >= smallest
 }
 
 // all sides equal == true
