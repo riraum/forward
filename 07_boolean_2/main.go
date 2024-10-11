@@ -226,7 +226,7 @@ func calcGrade(grade1 int, grade2 int, grade3 int, grade4 int, grade5 int) strin
 			return "C-"
 		}
 	}
-	return "grade calc logic not implemented"
+	return "grade calc logic not yet implemented for these grades"
 }
 
 // TODO: Write a function that takes 3 numbers, representing the sides of a
