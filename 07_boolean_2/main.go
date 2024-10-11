@@ -38,11 +38,19 @@ func main() {
 	// Grade avg test
 	// fmt.Println("test9", gradeAvgOver(80, 80, 80, 70, 69, 70))
 	// fmt.Println("test10", gradeAvgOver(80, 80, 80, 70, 59, 70))
+	// invalid test
 	fmt.Println(checkTriangleType(0, 0, 0))
+	// invalid test 2
 	fmt.Println(checkTriangleType(5, 6, 11))
 	fmt.Println(checkTriangleType(5, 5, 5))
 	fmt.Println(checkTriangleType(5, 5, 6))
 	fmt.Println(checkTriangleType(5, 4, 3))
+	fmt.Println(checkTriangleTypeNoInversion(0, 0, 0))
+	// invalid test 2
+	fmt.Println(checkTriangleTypeNoInversion(5, 6, 11))
+	fmt.Println(checkTriangleTypeNoInversion(5, 5, 5))
+	fmt.Println(checkTriangleTypeNoInversion(5, 5, 6))
+	fmt.Println(checkTriangleTypeNoInversion(5, 4, 3))
 }
 
 // TODO: Write a function that prints a truth table for all the following
@@ -257,11 +265,20 @@ func sumTwoBiggestSides(side1 int, side2 int, side3 int) int {
 		return side1 + side3
 	}
 
-	if side2 > side3 && side3 > side1 {
-		return side2 + side3
+	return side2 + side3
+}
+
+// get sum of 2 shortest sides for sumLength
+func sumTwoShortestSides(side1 int, side2 int, side3 int) int {
+	if side1 < side2 && side2 < side3 {
+		return side1 + side2
 	}
-	// Return statement needed, placeholder/error message added
-	return 1337
+
+	if side1 < side3 && side3 < side2 {
+		return side1 + side3
+	}
+
+	return side2 + side3
 }
 
 // get smallest side for sumLength
@@ -274,18 +291,34 @@ func smallestSide(side1 int, side2 int, side3 int) int {
 		return side2
 	}
 
-	if side2 > side3 && side3 > side1 {
-		return side1
-	}
-	// Return statement needed, placeholder/error message added
-	return 1337
+	return side1
 }
 
-// sum of length of 2 smallest >= shortest side == true
+// get longest side for sumLength
+func longestSide(side1 int, side2 int, side3 int) int {
+	if side1 < side2 && side2 < side3 {
+		return side3
+	}
+
+	if side1 < side3 && side3 < side2 {
+		return side2
+	}
+
+	return side1
+}
+
+// sum of length of 2 biggest >= smallest side
 func sumLength(side1 int, side2 int, side3 int) bool {
 	var sum int = sumTwoBiggestSides(side1, side2, side3)
 	var smallest int = smallestSide(side1, side2, side3)
 	return sum >= smallest
+}
+
+// sum of length of 2 smallest <= longest side
+func sumLengthNoInversion(side1 int, side2 int, side3 int) bool {
+	var sum int = sumTwoShortestSides(side1, side2, side3)
+	var biggest int = longestSide(side1, side2, side3)
+	return sum >= biggest
 }
 
 // all sides equal == true
@@ -315,6 +348,26 @@ func noSidesEqual(side1 int, side2 int, side3 int) bool {
 // master calc function
 func checkTriangleType(side1 int, side2 int, side3 int) string {
 	if anySideLess(side1, side2, side3) || !sumLength(side1, side2, side3) {
+		return "invalid"
+	}
+
+	if allSidesEqual(side1, side2, side3) {
+		return "equilateral"
+	}
+
+	if twoSidesEqual(side1, side2, side3) {
+		return "isosceles"
+	}
+
+	if noSidesEqual(side1, side2, side3) {
+		return "scalene"
+	}
+	// placeholder/error return
+	return "checkTriangleType error"
+}
+
+func checkTriangleTypeNoInversion(side1 int, side2 int, side3 int) string {
+	if anySideLess(side1, side2, side3) || !sumLengthNoInversion(side1, side2, side3) {
 		return "invalid"
 	}
 
