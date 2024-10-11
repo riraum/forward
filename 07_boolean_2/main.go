@@ -323,26 +323,17 @@ func sumLengthNoInversion(side1 int, side2 int, side3 int) bool {
 
 // all sides equal == true
 func allSidesEqual(side1 int, side2 int, side3 int) bool {
-	if side1 == side2 && side3 == side1 {
-		return true
-	}
-	return false
+	return side1 == side2 && side3 == side1
 }
 
 // 2 sides equal == true
 func twoSidesEqual(side1 int, side2 int, side3 int) bool {
-	if side1 == side2 || side2 == side3 || side1 == side3 {
-		return true
-	}
-	return false
+	return side1 == side2 || side2 == side3 || side1 == side3
 }
 
 // no sides equal == true
 func noSidesEqual(side1 int, side2 int, side3 int) bool {
-	if side1 != side2 || side2 != side3 || side1 != side3 {
-		return true
-	}
-	return false
+	return side1 != side2 || side2 != side3 || side1 != side3
 }
 
 // master calc function
