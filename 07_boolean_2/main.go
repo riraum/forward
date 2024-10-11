@@ -32,9 +32,12 @@ func main() {
 	fmt.Println("test5", calcGrade(90, 90, 80, 80, 80))
 	fmt.Println("test6", calcGrade(90, 90, 80, 80, 70))
 	fmt.Println("test7", calcGrade(90, 90, 90, 80, 59))
-	fmt.Println("test8", calcGrade(70, 70, 70, 70, 70))
-	fmt.Println("test9", calcGrade(70, 70, 70, 70, 69))
-	fmt.Println("test10", calcGrade(70, 70, 70, 70, 59))
+	fmt.Println("test8", calcGrade(80, 80, 70, 70, 70))
+	fmt.Println("test9", calcGrade(80, 80, 80, 70, 69))
+	fmt.Println("test10", calcGrade(80, 80, 80, 70, 59))
+	// Grade avg test
+	// fmt.Println("test9", gradeAvgOver(80, 80, 80, 70, 69, 70))
+	// fmt.Println("test10", gradeAvgOver(80, 80, 80, 70, 59, 70))
 	fmt.Println(checkTriangleType(0, 0, 0))
 	fmt.Println(checkTriangleType(5, 6, 11))
 	fmt.Println(checkTriangleType(5, 5, 5))
@@ -152,31 +155,6 @@ func gradeValid(grade1 int, grade2 int, grade3 int, grade4 int, grade5 int) bool
 	return true
 }
 
-// check if any grade is < x
-func anyGradeUnder(grade1 int, grade2 int, grade3 int, grade4 int, grade5 int, limit int) bool {
-	if grade1 < limit {
-		return true
-	}
-
-	if grade2 < limit {
-		return true
-	}
-
-	if grade3 < limit {
-		return true
-	}
-
-	if grade4 < limit {
-		return true
-	}
-
-	if grade5 < limit {
-		return true
-	}
-
-	return false
-}
-
 // check if all grades are >= x
 func allGradesOver(grade1 int, grade2 int, grade3 int, grade4 int, grade5 int, limit int) bool {
 	if grade1 < limit {
@@ -220,7 +198,7 @@ func calcGrade(grade1 int, grade2 int, grade3 int, grade4 int, grade5 int) strin
 		if allGradesOver(grade1, grade2, grade3, grade4, grade5, 70) {
 			return "A"
 		}
-		if anyGradeUnder(grade1, grade2, grade3, grade4, grade5, 70) {
+		if !allGradesOver(grade1, grade2, grade3, grade4, grade5, 70) {
 			return "A-"
 		}
 	}
@@ -232,7 +210,7 @@ func calcGrade(grade1 int, grade2 int, grade3 int, grade4 int, grade5 int) strin
 		if allGradesOver(grade1, grade2, grade3, grade4, grade5, 70) {
 			return "B"
 		}
-		if anyGradeUnder(grade1, grade2, grade3, grade4, grade5, 60) {
+		if !allGradesOver(grade1, grade2, grade3, grade4, grade5, 60) {
 			return "B-"
 		}
 	}
@@ -244,12 +222,11 @@ func calcGrade(grade1 int, grade2 int, grade3 int, grade4 int, grade5 int) strin
 		if allGradesOver(grade1, grade2, grade3, grade4, grade5, 60) {
 			return "C"
 		}
-		if anyGradeUnder(grade1, grade2, grade3, grade4, grade5, 60) {
+		if !allGradesOver(grade1, grade2, grade3, grade4, grade5, 60) {
 			return "C-"
 		}
 	}
-
-	return "grade calc error"
+	return "grade calc logic not implemented"
 }
 
 // TODO: Write a function that takes 3 numbers, representing the sides of a
@@ -304,7 +281,7 @@ func smallestSide(side1 int, side2 int, side3 int) int {
 	return 1337
 }
 
-// sum of length of 2 shortest <= longest side == true
+// sum of length of 2 smallest >= shortest side == true
 func sumLength(side1 int, side2 int, side3 int) bool {
 	var sum int = sumTwoBiggestSides(side1, side2, side3)
 	var smallest int = smallestSide(side1, side2, side3)
