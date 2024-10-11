@@ -212,33 +212,43 @@ func calcGrade(grade1 int, grade2 int, grade3 int, grade4 int, grade5 int) strin
 	if gradeValid(grade1, grade2, grade3, grade4, grade5) {
 		return "invalid grade"
 	}
+
 	if gradeAvgOver(grade1, grade2, grade3, grade4, grade5, 90) {
 		if allGradesOver(grade1, grade2, grade3, grade4, grade5, 80) {
 			return "A+"
-		} else if allGradesOver(grade1, grade2, grade3, grade4, grade5, 70) {
+		}
+		if allGradesOver(grade1, grade2, grade3, grade4, grade5, 70) {
 			return "A"
-		} else if anyGradeUnder(grade1, grade2, grade3, grade4, grade5, 70) {
+		}
+		if anyGradeUnder(grade1, grade2, grade3, grade4, grade5, 70) {
 			return "A-"
 		}
 	}
+
 	if gradeAvgOver(grade1, grade2, grade3, grade4, grade5, 80) {
 		if allGradesOver(grade1, grade2, grade3, grade4, grade5, 80) {
 			return "B+"
-		} else if allGradesOver(grade1, grade2, grade3, grade4, grade5, 70) {
+		}
+		if allGradesOver(grade1, grade2, grade3, grade4, grade5, 70) {
 			return "B"
-		} else if anyGradeUnder(grade1, grade2, grade3, grade4, grade5, 60) {
+		}
+		if anyGradeUnder(grade1, grade2, grade3, grade4, grade5, 60) {
 			return "B-"
 		}
 	}
+
 	if gradeAvgOver(grade1, grade2, grade3, grade4, grade5, 70) {
 		if allGradesOver(grade1, grade2, grade3, grade4, grade5, 70) {
 			return "C+"
-		} else if allGradesOver(grade1, grade2, grade3, grade4, grade5, 60) {
+		}
+		if allGradesOver(grade1, grade2, grade3, grade4, grade5, 60) {
 			return "C"
-		} else if anyGradeUnder(grade1, grade2, grade3, grade4, grade5, 60) {
+		}
+		if anyGradeUnder(grade1, grade2, grade3, grade4, grade5, 60) {
 			return "C-"
 		}
 	}
+
 	return "error"
 }
 
