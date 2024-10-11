@@ -26,14 +26,14 @@ func main() {
 	strIntCheck("Git", 2)
 	strIntCheck("Go", 4)
 	fmt.Println("test1", calcGrade(-10, 101, 101, 101, 90))
-	fmt.Println("test2", calcGrade(90, 90, 90, 90, 90))
-	fmt.Println("test3", calcGrade(90, 90, 90, 90, 80))
-	fmt.Println("test4", calcGrade(90, 90, 90, 90, 69))
-	fmt.Println("test5", calcGrade(80, 80, 80, 80, 80))
-	fmt.Println("test6", calcGrade(80, 80, 80, 80, 70))
-	fmt.Println("test7", calcGrade(80, 80, 80, 80, 59))
+	fmt.Println("test2", calcGrade(100, 100, 100, 100, 100))
+	fmt.Println("test3", calcGrade(100, 100, 100, 100, 79))
+	fmt.Println("test4", calcGrade(100, 100, 100, 100, 69))
+	fmt.Println("test5", calcGrade(90, 90, 80, 80, 80))
+	fmt.Println("test6", calcGrade(90, 90, 80, 80, 70))
+	fmt.Println("test7", calcGrade(90, 90, 90, 80, 59))
 	fmt.Println("test8", calcGrade(70, 70, 70, 70, 70))
-	fmt.Println("test9", calcGrade(70, 70, 70, 70, 60))
+	fmt.Println("test9", calcGrade(70, 70, 70, 70, 69))
 	fmt.Println("test10", calcGrade(70, 70, 70, 70, 59))
 	fmt.Println(checkTriangleType(0, 0, 0))
 	fmt.Println(checkTriangleType(5, 6, 11))
@@ -138,7 +138,7 @@ func gradeValid(grade1 int, grade2 int, grade3 int, grade4 int, grade5 int) bool
 	}
 
 	if grade3 < 0 || grade3 > 100 {
-
+		return false
 	}
 
 	if grade4 < 0 || grade4 > 100 {
@@ -209,7 +209,7 @@ func gradeAvgOver(grade1 int, grade2 int, grade3 int, grade4 int, grade5 int, li
 }
 
 func calcGrade(grade1 int, grade2 int, grade3 int, grade4 int, grade5 int) string {
-	if gradeValid(grade1, grade2, grade3, grade4, grade5) {
+	if !gradeValid(grade1, grade2, grade3, grade4, grade5) {
 		return "invalid grade"
 	}
 
@@ -249,7 +249,7 @@ func calcGrade(grade1 int, grade2 int, grade3 int, grade4 int, grade5 int) strin
 		}
 	}
 
-	return "error"
+	return "grade calc error"
 }
 
 // TODO: Write a function that takes 3 numbers, representing the sides of a
