@@ -204,11 +204,8 @@ func allGradesOver(grade1 int, grade2 int, grade3 int, grade4 int, grade5 int, l
 
 // check if grade avg >= limit
 func gradeAvgOver(grade1 int, grade2 int, grade3 int, grade4 int, grade5 int, limit int) bool {
-	if (grade1+grade2+grade3+grade4+grade5)/5 >= limit {
-		return true
-	} else {
-		return false
-	}
+	var avg int = (grade1 + grade2 + grade3 + grade4 + grade5) / 5
+	return avg >= limit
 }
 
 func calcGrade(grade1 int, grade2 int, grade3 int, grade4 int, grade5 int) string {
