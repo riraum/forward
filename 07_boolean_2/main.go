@@ -19,10 +19,10 @@ func main() {
 	logicalTable(true, false)
 	logicalTable(false, false)
 	logicalTable(false, true)
-	strIntCheck("", 0)
-	strIntCheck("Gopher", 3)
-	strIntCheck("Git", 2)
-	strIntCheck("Go", 4)
+	fmt.Println(strIntCheck("", 0))
+	fmt.Println(strIntCheck("Gopher", 3))
+	fmt.Println(strIntCheck("Git", 2))
+	fmt.Println(strIntCheck("Go", 4))
 	fmt.Println("test1", calcGrade(-10, 101, 101, 101, 90))
 	fmt.Println("test2", calcGrade(100, 100, 100, 100, 100))
 	fmt.Println("test3", calcGrade(100, 100, 100, 100, 79))
@@ -33,11 +33,11 @@ func main() {
 	fmt.Println("test8", calcGrade(80, 80, 70, 70, 70))
 	fmt.Println("test9", calcGrade(80, 80, 80, 70, 69))
 	fmt.Println("test10", calcGrade(80, 80, 80, 70, 59))
-	fmt.Println(checkTriangleTypeNoInversion(0, 0, 0))
-	fmt.Println(checkTriangleTypeNoInversion(5, 6, 11))
-	fmt.Println(checkTriangleTypeNoInversion(5, 5, 5))
-	fmt.Println(checkTriangleTypeNoInversion(5, 5, 6))
-	fmt.Println(checkTriangleTypeNoInversion(5, 4, 3))
+	fmt.Println(checkTriangleType(0, 0, 0))
+	fmt.Println(checkTriangleType(5, 6, 11))
+	fmt.Println(checkTriangleType(5, 5, 5))
+	fmt.Println(checkTriangleType(5, 5, 6))
+	fmt.Println(checkTriangleType(5, 4, 3))
 }
 
 // TODO: Write a function that prints a truth table for all the following
@@ -61,12 +61,14 @@ func logicalTable(bool1 bool, bool2 bool) {
 	fmt.Println("OR", bool1 || bool2)
 	// NAND // true, true == false || true, false == true, || false, false == true || false, true == true
 	fmt.Println("NAND", !bool1 || !bool2)
-	// Alternative
-	fmt.Println("NAND", !(bool1 && bool2))
+	// NAND alternative
+	fmt.Println("NAND alternative", !(bool1 && bool2))
 	//  NOR // true, true ==  false || true, false == false || false, false == true || false, true == false
 	fmt.Println("NOR", !(bool1 || bool2))
-	// // XOR // true, true == false || true, false == true || false, false == false || false, true == true
+	// XOR // true, true == false || true, false == true || false, false == false || false, true == true
 	fmt.Println("XOR", (bool1 || bool2) && (!bool1 || !bool2))
+	// XOR alternative
+	fmt.Println("XOR alternative", (bool1 || bool2) && !(bool1 && bool2))
 }
 
 // TODO: Write a function that takes a string and an integer and performs
@@ -77,18 +79,20 @@ func logicalTable(bool1 bool, bool2 bool) {
 //   - If the integer is odd, return "longer and odd"
 //
 // - If the string is shorter than the integer, return "shorter"
-func strIntCheck(str string, num int) {
+func strIntCheck(str string, num int) string {
 	if str == "" {
-		fmt.Println("empty")
-	} else if len(str) > num {
-		if len(str)%2 == 0 {
-			fmt.Println("longer and even")
-		} else {
-			fmt.Println("longer and odd")
-		}
-	} else {
-		fmt.Println("shorter")
+		return "empty"
 	}
+
+	if len(str) > num {
+		if len(str)%2 == 0 {
+			return "longer and even"
+		}
+
+		return "longer and odd"
+	}
+
+	return "shorter"
 }
 
 // TODO: Write a function that takes 5 integers (grades) and returns the
@@ -255,7 +259,7 @@ func longestSide(side1 int, side2 int, side3 int) int {
 }
 
 // sum of length of 2 smallest <= longest side
-func sumLengthNoInversion(side1 int, side2 int, side3 int) bool {
+func sumLengthSmallerLongestSide(side1 int, side2 int, side3 int) bool {
 	var sum int = sumTwoShortestSides(side1, side2, side3)
 	var biggest int = longestSide(side1, side2, side3)
 	return sum <= biggest
@@ -276,8 +280,8 @@ func noSidesEqual(side1 int, side2 int, side3 int) bool {
 	return side1 != side2 || side2 != side3 || side1 != side3
 }
 
-func checkTriangleTypeNoInversion(side1 int, side2 int, side3 int) string {
-	if anySideLess(side1, side2, side3) || sumLengthNoInversion(side1, side2, side3) {
+func checkTriangleType(side1 int, side2 int, side3 int) string {
+	if anySideLess(side1, side2, side3) || sumLengthSmallerLongestSide(side1, side2, side3) {
 		return "invalid"
 	}
 
@@ -293,5 +297,5 @@ func checkTriangleTypeNoInversion(side1 int, side2 int, side3 int) string {
 		return "scalene"
 	}
 	// placeholder/error return
-	return "checkTriangleType error"
+	return "triangle calc logic not yet implemented for this triangle"
 }
