@@ -79,12 +79,12 @@ func main() {
 	printInput("안녕", 3)
 	printInput("go", 7)
 	printInput("ça va", 4)
-	// fmt.Println(concatString("CatDog", 5))
-	// fmt.Println(concatString("Rice", 5))
-	// fmt.Println(concatString("김치", 6))
-	concatString("CatDog", 5)
-	concatString("Rice", 5)
-	concatString("김치", 6)
+	fmt.Println(concatString("CatDog", 5))
+	fmt.Println(concatString("Rice", 5))
+	fmt.Println(concatString("김치", 6))
+	// concatString("CatDog", 5)
+	// concatString("Rice", 5)
+	// concatString("김치", 6)
 	printToInt(4)
 	printToInt(9)
 	printToInt(6)
@@ -126,18 +126,21 @@ func printInput(str string, times int) {
 // Call the function a couple of times with different values and print the
 // results.
 func concatString(str string, times int) string {
-	fmt.Println("pre loop", str)
+	// fmt.Println("pre loop", str)
 	fmt.Println("pre loop time", times)
 	for {
 		// if "6"  < 0 break
-		if times-1 < 0 {
+		if times < 0 {
 			break
 		}
 		// str = str + str
-		str += str
-		fmt.Println("loop str", str)
+		str = str + str
+		// fmt.Println("loop str", str)
 
 		// 6-1=5
+		if times <= 0 {
+			break
+		}
 		times = times - 1
 		fmt.Println("times", times)
 	}
