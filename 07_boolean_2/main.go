@@ -33,11 +33,11 @@ func main() {
 	fmt.Println("test8", calcGrade(80, 80, 70, 70, 70))
 	fmt.Println("test9", calcGrade(80, 80, 80, 70, 69))
 	fmt.Println("test10", calcGrade(80, 80, 80, 70, 59))
-	fmt.Println(checkTriangleTypeNoInversion(0, 0, 0))
-	fmt.Println(checkTriangleTypeNoInversion(5, 6, 11))
-	fmt.Println(checkTriangleTypeNoInversion(5, 5, 5))
-	fmt.Println(checkTriangleTypeNoInversion(5, 5, 6))
-	fmt.Println(checkTriangleTypeNoInversion(5, 4, 3))
+	fmt.Println(checkTriangleType(0, 0, 0))
+	fmt.Println(checkTriangleType(5, 6, 11))
+	fmt.Println(checkTriangleType(5, 5, 5))
+	fmt.Println(checkTriangleType(5, 5, 6))
+	fmt.Println(checkTriangleType(5, 4, 3))
 }
 
 // TODO: Write a function that prints a truth table for all the following
@@ -259,7 +259,7 @@ func longestSide(side1 int, side2 int, side3 int) int {
 }
 
 // sum of length of 2 smallest <= longest side
-func sumLengthNoInversion(side1 int, side2 int, side3 int) bool {
+func sumLengthSmallerLongestSide(side1 int, side2 int, side3 int) bool {
 	var sum int = sumTwoShortestSides(side1, side2, side3)
 	var biggest int = longestSide(side1, side2, side3)
 	return sum <= biggest
@@ -280,8 +280,8 @@ func noSidesEqual(side1 int, side2 int, side3 int) bool {
 	return side1 != side2 || side2 != side3 || side1 != side3
 }
 
-func checkTriangleTypeNoInversion(side1 int, side2 int, side3 int) string {
-	if anySideLess(side1, side2, side3) || sumLengthNoInversion(side1, side2, side3) {
+func checkTriangleType(side1 int, side2 int, side3 int) string {
+	if anySideLess(side1, side2, side3) || sumLengthSmallerLongestSide(side1, side2, side3) {
 		return "invalid"
 	}
 
@@ -297,5 +297,5 @@ func checkTriangleTypeNoInversion(side1 int, side2 int, side3 int) string {
 		return "scalene"
 	}
 	// placeholder/error return
-	return "checkTriangleType error"
+	return "triangle calc logic not yet implemented for this triangle"
 }
