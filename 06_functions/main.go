@@ -130,22 +130,15 @@ func concatString(str string, times int) string {
 	fmt.Println("pre loop time", times)
 	var result string = ""
 	for {
-		// if "6"  < 0 break
 		if times < 0 {
 			break
 		}
-		// str = str + str
-		result += str
-		// fmt.Println("loop str", str)
 
-		// 6-1=5
-		// if times <= 0 {
-		// 	break
-		// }
+		result += str
 		times = times - 1
-		fmt.Println("times", times)
+		// fmt.Println("times", times)
 	}
-	fmt.Println("str", str)
+	// fmt.Println("str", str)
 	return result
 }
 
