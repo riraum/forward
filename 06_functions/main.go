@@ -127,7 +127,7 @@ func printInput(str string, times int) {
 // results.
 func concatString(str string, times int) string {
 	// fmt.Println("pre loop", str)
-	fmt.Println("pre loop time", times)
+	// fmt.Println("pre loop time", times)
 	var result string = ""
 	for {
 		if times < 0 {
