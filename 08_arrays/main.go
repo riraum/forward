@@ -53,6 +53,16 @@ func main() {
 	// TODO: Use a loop to insert 10 integers in an array.
 	// Print the array.
 	var tenInt []int
+	var count int = 1
+	var times int = 10
+	for {
+		if count > times {
+			break
+		}
+		tenInt = append(tenInt, count)
+		count++
+	}
+	fmt.Println(tenInt)
 
 	// TODO: Using the array from the previous step, print the first and the
 	// last elements
