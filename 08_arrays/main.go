@@ -25,6 +25,10 @@ To add elements in the array, you can use the `append` function:
 It's important to note that `append` returns a new array, so you need to assign
 it to the original array.
 
+To get the length of an array, use `len`:
+
+   var l int = len(myArray)
+
 To get an element in the array, you can use the index with an integer:
 
     myArray[0]
