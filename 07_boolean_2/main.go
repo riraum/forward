@@ -80,15 +80,17 @@ func logicalTable(bool1 bool, bool2 bool) {
 func strIntCheck(str string, num int) string {
 	if str == "" {
 		return "empty"
-	} else if len(str) > num {
+	}
+
+	if len(str) > num {
 		if len(str)%2 == 0 {
 			return "longer and even"
-		} else {
-			return "longer and odd"
 		}
-	} else {
-		return "shorter"
+
+		return "longer and odd"
 	}
+
+	return "shorter"
 }
 
 // TODO: Write a function that takes 5 integers (grades) and returns the
