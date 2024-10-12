@@ -66,6 +66,8 @@ func main() {
 
 	// TODO: Using the array from the previous step, print the first and the
 	// last elements
+	fmt.Println(tenInt[0])
+	fmt.Println(tenInt[len(tenInt)-1])
 
 	// TODO: Using the array from the previous step, create a new array
 	// containing the first 5 elements multiplied by 2.
