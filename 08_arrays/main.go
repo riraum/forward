@@ -52,6 +52,7 @@ func main() {
 
 	// TODO: Use a loop to insert 10 integers in an array.
 	// Print the array.
+	var tenInt []int
 
 	// TODO: Using the array from the previous step, print the first and the
 	// last elements
