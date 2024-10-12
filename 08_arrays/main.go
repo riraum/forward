@@ -39,10 +39,10 @@ func main() {
 	// TODO: Fix the errors
 	var a []int
 	a = append(a, 0)
-	a = append(a, "1")
+	a = append(a, 1)
 	a = append(a, 2)
 	fmt.Println(a)
-	fmt.Println(a["0"])
+	fmt.Println(a[0])
 
 	// TODO: Create an array with 5 integers: 1, 2, 3, 4, 5
 	// Print the array.
