@@ -19,10 +19,10 @@ func main() {
 	logicalTable(true, false)
 	logicalTable(false, false)
 	logicalTable(false, true)
-	strIntCheck("", 0)
-	strIntCheck("Gopher", 3)
-	strIntCheck("Git", 2)
-	strIntCheck("Go", 4)
+	fmt.Println(strIntCheck("", 0))
+	fmt.Println(strIntCheck("Gopher", 3))
+	fmt.Println(strIntCheck("Git", 2))
+	fmt.Println(strIntCheck("Go", 4))
 	fmt.Println("test1", calcGrade(-10, 101, 101, 101, 90))
 	fmt.Println("test2", calcGrade(100, 100, 100, 100, 100))
 	fmt.Println("test3", calcGrade(100, 100, 100, 100, 79))
@@ -77,17 +77,17 @@ func logicalTable(bool1 bool, bool2 bool) {
 //   - If the integer is odd, return "longer and odd"
 //
 // - If the string is shorter than the integer, return "shorter"
-func strIntCheck(str string, num int) {
+func strIntCheck(str string, num int) string {
 	if str == "" {
-		fmt.Println("empty")
+		return "empty"
 	} else if len(str) > num {
 		if len(str)%2 == 0 {
-			fmt.Println("longer and even")
+			return "longer and even"
 		} else {
-			fmt.Println("longer and odd")
+			return "longer and odd"
 		}
 	} else {
-		fmt.Println("shorter")
+		return "shorter"
 	}
 }
 
