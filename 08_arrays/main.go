@@ -46,6 +46,9 @@ func main() {
 
 	// TODO: Create an array with 5 integers: 1, 2, 3, 4, 5
 	// Print the array.
+	var fiveInt []int
+	fiveInt = append(fiveInt, 1, 2, 3, 4, 5)
+	fmt.Println(fiveInt)
 
 	// TODO: Use a loop to insert 10 integers in an array.
 	// Print the array.
