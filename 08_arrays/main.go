@@ -140,6 +140,13 @@ func main() {
 	// original array.
 	// E.g.: [1, 2, 3] => ["x", "xx", "xxx"]
 	// Print the new array.
+
+	// create an array with 10 integers, fill it
+	// create emtpy array that will be filled with "x"
+	// loop to the value of intArray and add x as many times as the value to lengthIntArray
+	// print result
+
+	// create new array of 10 ints
 	var intArray [10]int
 	intArray[0] = 2
 	intArray[1] = 5
@@ -151,20 +158,57 @@ func main() {
 	intArray[7] = 4
 	intArray[8] = 6
 	intArray[9] = 4
+	// test print array
 	fmt.Println("Print intArray:", intArray)
 
-	var lengthIntArray [10]int
+	// create new empty array of 10 strings
+	var lengthIntArray [10]string
+	// create filler variable
+	var filler string = "x"
+	// filler multiplier
+	var fillerMultiplier int = 0
+	// create counter
 	var count4 = 0
+	// var length string = len(intArray[count4])
+
+	// create loop with breaking condition beyond 10 array values
+	for {
+		if count4 > 9 {
+			break
+		}
+		// take value if intArray and add get the value of the array * the filler string
+		// add that into the new array
+		fillerMultiplier = intArray[count4] * filler
+		// lengthIntArray[count4] = len(intArray[count4])
+		// lengthIntArray[count4] = len(intArray[count4]) * filler
+		for {
+		fillerMultiplier > 9 {
+			break
+				}
+			lengthIntArray[count4] = 
+		}
+		count4++
+	}
+
+	fmt.Println(fillerMultiplier)
+
+	count4
 
 	for {
 		if count4 > 9 {
 			break
 		}
-		lengthIntArray[count4] = len(intArray[count4])
-		count4++
+		lengthIntArray[count4] = append()
 	}
 
-	fmt.Println(lengthIntArray)
+	// for {
+	// 	count4 > 9 {
+	// 		break
+	// 	}
+	// 	fillerMultiplier = intArray[count4] * filler
+	// 	fmt.Println(fillerMultiplier)
+	// 	count4++
+	// }
 
 	// TODO: Create 2 arrays with 10 integers.
 	// Create 3 more arrays:
