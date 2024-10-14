@@ -103,6 +103,33 @@ func main() {
 	// Hint: Use a loop and the `len` function.
 	// Print the new array.
 
+	var stringArray [10]string
+	stringArray[0] = "So..."
+	stringArray[1] = "how"
+	stringArray[2] = "are"
+	stringArray[3] = "you"
+	stringArray[4] = "holding"
+	stringArray[5] = "up..."
+	stringArray[6] = "BECAUSE"
+	stringArray[7] = "IM"
+	stringArray[8] = "A"
+	stringArray[9] = "POTATO"
+	fmt.Println(stringArray)
+	fmt.Println("len test=", len(stringArray[0]))
+
+	var lengthStringArray [10]int
+	var count3 = 0
+
+	for {
+		if count3 > 9 {
+			break
+		}
+		lengthStringArray[count3] = len(stringArray[count3])
+		count3++
+	}
+
+	fmt.Println(lengthStringArray)
+
 	// TODO: Create an array with 10 integers.
 	// Create a new array containing strings with repeated "x" characters.
 	// The number of "x" characters should be the value of the integer in the
