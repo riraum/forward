@@ -3,7 +3,6 @@ package main
 import "fmt"
 
 /*
-
 Go has functions.
 
 
@@ -74,41 +73,137 @@ Note: functions can be defined in any order in the file.
 
 func main() {
 	sayHello("John")
+	fmt.Println(diff(1, 9))
+	fmt.Println(diff(9, 1))
+	fmt.Println(diff(4, -10))
+	printInput("안녕", 3)
+	printInput("go", 7)
+	printInput("ça va", 4)
+	fmt.Println(concatString("CatDog", 5))
+	fmt.Println(concatString("Rice", 5))
+	fmt.Println(concatString("김치", 6))
+	// concatString("CatDog", 5)
+	// concatString("Rice", 5)
+	// concatString("김치", 6)
+	printToInt(4)
+	printToInt(9)
+	printToInt(6)
+	fmt.Println(returnStrings("Anna", "Hanna"))
+	length("Gopher")
+	length("Go rocks")
+	lengthAdvanced("A")
+	lengthAdvanced("")
+	lengthAdvanced("Luna")
+	fmt.Println(doingMath(3, 4))
+	fmt.Println(doingMath(5, 10))
+}
 
-	// For each exercise, call the functions a couple of times with different
-	// values and print the results.
+// For each exercise, call the functions a couple of times with different
+// values and print the results.
 
-	// TODO: Write a function that takes two integers as parameters and returns
-	// the difference of the two integers.
+// TODO: Write a function that takes two integers as parameters and returns
+// the difference of the two integers.
+func diff(num1 int, num2 int) int {
+	return num2 - num1
+}
 
-	// TODO: Write a function that takes a string and an integer as parameters.
-	// The function should print the string as many times as the integer.
+// TODO: Write a function that takes a string and an integer as parameters.
+// The function should print the string as many times as the integer.
+func printInput(str string, times int) {
+	var count = 1
+	for {
+		if count > times {
+			break
+		}
+		fmt.Println(str)
+		count++
+	}
+}
 
-	// TODO: Write a function that takes a string and an integer as parameters.
-	// The function should concatenate (i.e. join) the string with itself as
-	// many times as the integer and return the result.
-	// Call the function a couple of times with different values and print the
-	// results.
+// TODO: Write a function that takes a string and an integer as parameters.
+// The function should concatenate (i.e. join) the string with itself as
+// many times as the integer and return the result.
+// Call the function a couple of times with different values and print the
+// results.
+func concatString(str string, times int) string {
+	// fmt.Println("pre loop", str)
+	// fmt.Println("pre loop time", times)
+	var result string = ""
+	for {
+		if times < 0 {
+			break
+		}
 
-	// TODO: Write a function that takes a single integer as a parameter and
-	// prints all numbers from 1 to that number.
+		result += str
+		times = times - 1
+		// fmt.Println("times", times)
+	}
+	// fmt.Println("str", str)
+	return result
+}
 
-	// TODO: Write a function that takes 2 strings as parameters and returns
-	// the sentence "Hello <name1>, and <name2>."
-	// Prints the result.
+// TODO: Write a function that takes a single integer as a parameter and
+// prints all numbers from 1 to that number.
+func printToInt(parInt int) {
+	var count = 1
+	for {
+		if count > parInt {
+			break
+		}
+		fmt.Println(count)
+		count++
+	}
+}
 
-	// TODO: Write a function that takes a string as a parameter and prints:
-	// "The string '<the string>' has <number of characters> characters."
+// TODO: Write a function that takes 2 strings as parameters and returns
+// the sentence "Hello <name1>, and <name2>."
+// Prints the result.
+func returnStrings(str1 string, str2 string) string {
+	var result = "Hello " + str1 + ", and " + str2 + "."
+	return result
+}
 
-	// TODO: Update the previous function to handle the cases where the string
-	// is empty or has a single character.
+// TODO: Write a function that takes a string as a parameter and prints:
+// "The string '<the string>' has <number of characters> characters."
+func length(str string) {
+	var length int = len(str)
+	fmt.Println("The string", str, "has", length, "characters.")
+}
 
-	// TODO: Write two functions mul and add that take two integers as
-	// parameters and return the result of the multiplication and addition
-	// respectively.
-	// Using those functions, write a function that takes two integers and
-	// returns the result of the following formula: a * b + a
-	// Print the result.
+// TODO: Update the previous function to handle the cases where the string
+// is empty or has a single character.
+func lengthAdvanced(str string) {
+	var length = len(str)
+	// TODO Put generic print text in variable
+	if str == "" {
+		fmt.Println("Empty string.")
+	} else if length == 1 {
+		fmt.Println("The string", str, "has", length, "character.")
+	} else {
+		fmt.Println("The string", str, "has", length, "characters.")
+	}
+}
+
+// TODO: Write two functions mul and add that take two integers as
+// parameters and return the result of the multiplication and addition
+// respectively.
+// Using those functions, write a function that takes two integers and
+// returns the result of the following formula: a * b + a
+// Print the result.
+func mul(num1 int, num2 int) int {
+	var prod int = num1 * num2
+	return prod
+}
+
+func add(num1 int, num2 int) int {
+	var sum int = num1 + num2
+	return sum
+}
+
+func doingMath(num1 int, num2 int) int {
+	var mulValue = mul(num1, num2)
+	var addValue int = add(mulValue, num1)
+	return addValue
 }
 
 func sayHello(name string) {
