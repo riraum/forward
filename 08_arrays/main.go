@@ -136,6 +136,31 @@ func main() {
 	// original array.
 	// E.g.: [1, 2, 3] => ["x", "xx", "xxx"]
 	// Print the new array.
+	var intArray [10]int
+	intArray[0] = 2
+	intArray[1] = 5
+	intArray[2] = 3
+	intArray[3] = 3
+	intArray[4] = 6
+	intArray[5] = 7
+	intArray[6] = 2
+	intArray[7] = 4
+	intArray[8] = 6
+	intArray[9] = 4
+	fmt.Println("Print intArray:", intArray)
+
+	var lengthIntArray [10]int
+	var count4 = 0
+
+	for {
+		if count4 > 9 {
+			break
+		}
+		lengthIntArray[count4] = len(intArray[count4])
+		count4++
+	}
+
+	fmt.Println(lengthIntArray)
 
 	// TODO: Create 2 arrays with 10 integers.
 	// Create 3 more arrays:
