@@ -80,42 +80,18 @@ func main() {
 	// multiply elements * 2
 	// add elements to new array
 	// print new array
-	var timesTwo []int = tenInt
-	var result [5]int
+	// var timesTwo []int = tenInt
+	var timesTwo [5]int
 	var count2 = 0
-	// var arrayCount = tenInt[]
-	// var x = tenInt[x]
+
 	for {
 		if count2 > 4 {
 			break
 		}
-		result[count2] = (timesTwo[count2] * 2)
-		// result = append(result, timesTwo[count2]*2)
-		// timesTwo[count2] = append(timesTwo,[count2] * 2)
-		// fmt.Println(tenInt[count2] * 2)
+		timesTwo[count2] = (tenInt[count2] * 2)
 		count2++
 	}
-	// timesTwo = append(timesTwo, 5)
-	// var result [5]int
-	fmt.Println(result)
-
-	// var timesTwo []int = tenInt
-	// var result [5]int
-	// var count2 = 0
-	// // var arrayCount = tenInt[]
-	// // var x = tenInt[x]
-	// for {
-	// 	if count2 > 4 {
-	// 		break
-	// 	}
-	// 	// timesTwo[count2] = (timesTwo[count2] * 2)
-	// 	result[count2] = append(timesTwo[count2] * 2)
-	// 	// fmt.Println(tenInt[count2] * 2)
-	// 	count2++
-	// }
-	// // timesTwo = append(timesTwo, 5)
-	// // var result [5]int
-	// fmt.Println(result)
+	fmt.Println(timesTwo)
 
 	// TODO: Create an array with 10 different strings in it.
 	// Using this array, create a new array containing the length of each
