@@ -55,6 +55,7 @@ func main() {
 	var tenInt []int
 	var count int = 1
 	var times int = 10
+
 	for {
 		if count > times {
 			break
@@ -62,6 +63,7 @@ func main() {
 		tenInt = append(tenInt, count)
 		count++
 	}
+
 	fmt.Println(tenInt)
 
 	// TODO: Using the array from the previous step, print the first and the
@@ -91,6 +93,7 @@ func main() {
 		timesTwo[count2] = (tenInt[count2] * 2)
 		count2++
 	}
+
 	fmt.Println(timesTwo)
 
 	// TODO: Create an array with 10 different strings in it.
