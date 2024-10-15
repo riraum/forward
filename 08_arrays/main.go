@@ -133,7 +133,7 @@ func main() {
 	}
 
 	fmt.Println(lengthStringArray)
-
+}
 	// TODO: Create an array with 10 integers.
 	// Create a new array containing strings with repeated "x" characters.
 	// The number of "x" characters should be the value of the integer in the
@@ -164,42 +164,77 @@ func main() {
 	// create new empty array of 10 strings
 	var lengthIntArray [10]string
 	// create filler variable
-	var filler string = "x"
-	// filler multiplier
-	var fillerMultiplier int = 0
+	var filler string = ""
+	// // filler multiplier
+	// var fillerMultiplier int = 0
 	// create counter
 	var count4 = 0
+	var count5 = 0
 	// var length string = len(intArray[count4])
+	// var countfill int = 0
+
+	// concat "x" as many times as the respective element of intArray
+	func concatVariable(count5 int) string {
+	for {
+		// break if counter > respective element of intArray
+		if count4 > intArray[count5]-1 {
+			break
+			// // increase array element
+			// fmt.Println(intArray[count4])
+		}
+		// concat "x"
+		filler += "x"
+		// increaese counter
+		count4++
+
+		// fmt.Println(filler)
+	}
+	fmt.Println(filler)
+	}
+
+	for {
+		if count5 > 10 {
+			break
+		}
+		
+		lengthIntArray = append(lengthIntArray, concatVariable(count5))
+		count5++
+	}
+
+	// for {
+	// 	if count5 > len(intArray)
+	// }
 
 	// create loop with breaking condition beyond 10 array values
-	for {
-		if count4 > 9 {
-			break
-		}
-		// take value if intArray and add get the value of the array * the filler string
-		// add that into the new array
-		fillerMultiplier = intArray[count4] * filler
-		// lengthIntArray[count4] = len(intArray[count4])
-		// lengthIntArray[count4] = len(intArray[count4]) * filler
-		for {
-		fillerMultiplier > 9 {
-			break
-				}
-			lengthIntArray[count4] = 
-		}
-		count4++
-	}
+	// for {
+	// 	if count4 > 9 {
+	// 		break
+	// 	}
+	// 	// take value if intArray and add get the value of the array * the filler string
+	// 	// add that into the new array
+	// 	fillerMultiplier = intArray[count4] * filler
+	// 	// lengthIntArray[count4] = len(intArray[count4])
+	// 	// lengthIntArray[count4] = len(intArray[count4]) * filler
+	// 	for {
+	// 	fillerMultiplier > 9 {
+	// 		break
+	// 			}
+	// 		lengthIntArray[count4] =
+	// 	}
+	// 	count4++
+	// }
 
-	fmt.Println(fillerMultiplier)
+	// fmt.Println(fillerMultiplier)
 
-	count4
+	// var count4 int = 0
 
-	for {
-		if count4 > 9 {
-			break
-		}
-		lengthIntArray[count4] = append()
-	}
+	// for {
+	// 	if intArray[count4] < 0 {
+	// 		break
+	// 	}
+	// 	lengthIntArray[count4] = "x" * count4
+	// 	fmt.Println(lengthIntArray[count4])
+	// 	count4--
 
 	// for {
 	// 	count4 > 9 {
@@ -216,5 +251,5 @@ func main() {
 	// - One with the difference of the elements of the 2 arrays.
 	// - One with the multiplication of the elements of the 2 arrays.
 	// E.g. [1, 2, 3] and [4, 5, 6] => [5, 7, 9], [-3, -3, -3], [4, 10, 18]
-	// Print the 3 new arrays.
-}
+// 	// Print the 3 new arrays.
+// }
