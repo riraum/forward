@@ -147,7 +147,7 @@ func main() {
 	// print result
 
 	// create new array of 10 ints
-	var intArray [10]int
+	var intArray []int
 	intArray[0] = 2
 	intArray[1] = 5
 	intArray[2] = 3
@@ -190,6 +190,7 @@ func main() {
 		// fmt.Println(filler)
 	}
 	fmt.Println(filler)
+	return filler
 	}
 
 	for {
