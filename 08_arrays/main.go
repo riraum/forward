@@ -189,12 +189,12 @@ func main() {
 	// fill it
 	yetAnotherIntArray = append(yetAnotherIntArray, 23, 4, 1, 1, 3, 5, 6, 4, 6, 2)
 
-	// create array for sums of element of the 2 arrays
+	// create array for sums of elements of the 2 arrays
 	var sumArray []int
 	// create array for difference of elements of the 2 arrays
-	// var diffArray []int
+	var diffArray []int
 	// // create array for multiplication of elements of the 2 arrays
-	// var multArray []int
+	var multArray []int
 
 	// create loop for element sum calculation
 	// counter
@@ -212,21 +212,38 @@ func main() {
 	// print result sumArray
 	fmt.Println(sumArray)
 
+	// create loop for element difference calculation
+	// counter
+	var diffCounter int = 0
+	for {
+		// TODO: replace hard coded value with last index of
+		if diffCounter > 9 {
+			break
+		}
+		diffArray = append(diffArray, anotherIntArray[diffCounter]-yetAnotherIntArray[diffCounter])
+		// increase counter
+		diffCounter++
+	}
+	// print result diffArray
+	fmt.Println(diffArray)
+
+	// create loop for element multiplication calculation
+	// counter
+	var multCounter = 0
+	for {
+		// TODO: replace hard coded value with last index of
+		if multCounter > 9 {
+			break
+		}
+		multArray = append(multArray, anotherIntArray[multCounter]*yetAnotherIntArray[multCounter])
+		// increase counter
+		multCounter++
+	}
+	// print result multArray
+	fmt.Println(multArray)
+
 	// close main function, to be able to create function
 }
-
-// math array functions below
-// sum of array elements function
-// counter
-// var mathFunctionsCounter = 0
-// // var sumResult int = 0
-
-// func sumElements(arrayElementOne, arrayElementTwo) {
-// 	if mathFunctionsCounter > arrayElementTwo-1 {
-// 		break
-// 	}
-// 	return arrayElementOne + arrayElementTwo
-// }
 
 // intArray function below
 // create empty variable for "x" string
