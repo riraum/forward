@@ -147,25 +147,13 @@ func main() {
 	// print result
 	var intArray []int
 	intArray = append(intArray, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9)
-	// intArray[0] = 2
-	// intArray[1] = 5
-	// intArray[2] = 3
-	// intArray[3] = 3
-	// intArray[4] = 6
-	// intArray[5] = 7
-	// intArray[6] = 2
-	// intArray[7] = 4
-	// intArray[8] = 6
-	// intArray[9] = 4
-	// test print array
+	// debug
 	fmt.Println("Print intArray:", intArray)
 
 	// create new empty array of 10 strings
 	var lengthIntArray []string
-
+	// counter
 	var arrayAssemblyCounter = 0
-	// var length string = len(intArray[count4])
-	// var countfill int = 0
 
 	// loop to create output array
 	for {
@@ -182,7 +170,6 @@ func main() {
 	}
 	// print result array, task req, DONE
 	fmt.Println(lengthIntArray)
-	// create new array of 10 ints
 
 	// close main function, to be able to create function
 }
@@ -190,7 +177,7 @@ func main() {
 // create empty variable for "x" string
 var arrayString string = ""
 
-// create counter
+// counter
 var concatCounter = 0
 
 // concat "x" as many times as the respective element of intArray
@@ -200,63 +187,18 @@ func concatVariable(arrayElementValue int) string {
 		// break if counter > respective element of intArray
 		if concatCounter > arrayElementValue-1 {
 			break
-			// // increase array element
-			// fmt.Println(intArray[count4])
 		}
 		// concat "x"
 		arrayString += "x"
-		// increaese counter
+		// increase counter
 		concatCounter++
 
-		// fmt.Println(filler)
 	}
+	// debug
 	fmt.Println(arrayString)
+	// return concat'd string
 	return arrayString
 }
-
-// for {
-// 	if count5 > len(intArray)
-// }
-
-// create loop with breaking condition beyond 10 array values
-// for {
-// 	if count4 > 9 {
-// 		break
-// 	}
-// 	// take value if intArray and add get the value of the array * the filler string
-// 	// add that into the new array
-// 	fillerMultiplier = intArray[count4] * filler
-// 	// lengthIntArray[count4] = len(intArray[count4])
-// 	// lengthIntArray[count4] = len(intArray[count4]) * filler
-// 	for {
-// 	fillerMultiplier > 9 {
-// 		break
-// 			}
-// 		lengthIntArray[count4] =
-// 	}
-// 	count4++
-// }
-
-// fmt.Println(fillerMultiplier)
-
-// var count4 int = 0
-
-// for {
-// 	if intArray[count4] < 0 {
-// 		break
-// 	}
-// 	lengthIntArray[count4] = "x" * count4
-// 	fmt.Println(lengthIntArray[count4])
-// 	count4--
-
-// for {
-// 	count4 > 9 {
-// 		break
-// 	}
-// 	fillerMultiplier = intArray[count4] * filler
-// 	fmt.Println(fillerMultiplier)
-// 	count4++
-// }
 
 // TODO: Create 2 arrays with 10 integers.
 // Create 3 more arrays:
