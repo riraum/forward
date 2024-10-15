@@ -82,7 +82,7 @@ func main() {
 	// Print the new array.
 
 	// create copy of array
-	// loop 5 times (first 4 elements needed)
+	// loop 5 times (first 5 elements needed)
 	// multiply elements * 2
 	// add elements to new array
 	// print new array
