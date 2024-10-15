@@ -146,16 +146,17 @@ func main() {
 	// loop to the value of intArray and add x as many times as the value to lengthIntArray
 	// print result
 	var intArray []int
-	intArray[0] = 2
-	intArray[1] = 5
-	intArray[2] = 3
-	intArray[3] = 3
-	intArray[4] = 6
-	intArray[5] = 7
-	intArray[6] = 2
-	intArray[7] = 4
-	intArray[8] = 6
-	intArray[9] = 4
+	intArray = append(intArray, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+	// intArray[0] = 2
+	// intArray[1] = 5
+	// intArray[2] = 3
+	// intArray[3] = 3
+	// intArray[4] = 6
+	// intArray[5] = 7
+	// intArray[6] = 2
+	// intArray[7] = 4
+	// intArray[8] = 6
+	// intArray[9] = 4
 	// test print array
 	fmt.Println("Print intArray:", intArray)
 
