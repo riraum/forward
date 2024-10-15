@@ -124,7 +124,7 @@ func main() {
 	var count3 = 0
 
 	for {
-		if count3 > 9 {
+		if count3 > len(stringArray)-1 {
 			break
 		}
 		lengthStringArray[count3] = len(stringArray[count3])
@@ -199,8 +199,8 @@ func main() {
 	// counter
 	var calcCounter int = 0
 	for {
-		// TODO: replace hard coded value with last index of
-		if calcCounter > 9 {
+		// break if last array element reached
+		if calcCounter > len(anotherIntArray)-1 {
 			break
 		}
 		// do math and append elements of arrays
