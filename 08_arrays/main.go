@@ -171,9 +171,63 @@ func main() {
 	// print result array, task req, DONE
 	fmt.Println(lengthIntArray)
 
+	// TODO: Create 2 arrays with 10 integers.
+	// Create 3 more arrays:
+	// - One with the sum of the elements of the 2 arrays.
+	// - One with the difference of the elements of the 2 arrays.
+	// - One with the multiplication of the elements of the 2 arrays.
+	// E.g. [1, 2, 3] and [4, 5, 6] => [5, 7, 9], [-3, -3, -3], [4, 10, 18]
+	//
+	//	// Print the 3 new arrays.
+
+	// create int array with 10 elements
+	var anotherIntArray []int
+	// fill it
+	anotherIntArray = append(anotherIntArray, 1, 4, 5, 4, 6, 8, 5, 13, 5, 12)
+	// create another
+	var yetAnotherIntArray []int
+	// fill it
+	yetAnotherIntArray = append(yetAnotherIntArray, 23, 4, 1, 1, 3, 5, 6, 4, 6, 2)
+
+	// create array for sums of element of the 2 arrays
+	var sumArray []int
+	// create array for difference of elements of the 2 arrays
+	// var diffArray []int
+	// // create array for multiplication of elements of the 2 arrays
+	// var multArray []int
+
+	// create loop for element sum calculation
+	// counter
+	var sumCounter int = 0
+	for {
+		if sumCounter > 9 {
+			break
+		}
+		// append sum of element of arrays
+		sumArray = append(sumArray, anotherIntArray[sumCounter]+yetAnotherIntArray[sumCounter])
+		// increase counter
+		sumCounter++
+	}
+	// print result sumArray
+	fmt.Println(sumArray)
+
 	// close main function, to be able to create function
 }
 
+// math array functions below
+// sum of array elements function
+// counter
+// var mathFunctionsCounter = 0
+// // var sumResult int = 0
+
+// func sumElements(arrayElementOne, arrayElementTwo) {
+// 	if mathFunctionsCounter > arrayElementTwo-1 {
+// 		break
+// 	}
+// 	return arrayElementOne + arrayElementTwo
+// }
+
+// intArray function below
 // create empty variable for "x" string
 var arrayString string = ""
 
@@ -199,12 +253,3 @@ func concatVariable(arrayElementValue int) string {
 	// return concat'd string
 	return arrayString
 }
-
-// TODO: Create 2 arrays with 10 integers.
-// Create 3 more arrays:
-// - One with the sum of the elements of the 2 arrays.
-// - One with the difference of the elements of the 2 arrays.
-// - One with the multiplication of the elements of the 2 arrays.
-// E.g. [1, 2, 3] and [4, 5, 6] => [5, 7, 9], [-3, -3, -3], [4, 10, 18]
-// 	// Print the 3 new arrays.
-// }
