@@ -246,15 +246,14 @@ func main() {
 }
 
 // intArray function below
-// create empty variable for "x" string
-var arrayString string = ""
-
-// counter
-var concatCounter = 0
 
 // concat "x" as many times as the respective element of intArray
 func concatVariable(arrayElementValue int) string {
-	// var count4 = 0
+	// create empty variable for "x" string
+	var arrayString string = ""
+	// counter
+	var concatCounter = 0
+
 	for {
 		// break if counter > respective element of intArray
 		if concatCounter > arrayElementValue-1 {
