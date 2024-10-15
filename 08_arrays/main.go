@@ -146,7 +146,7 @@ func main() {
 	// loop to the value of intArray and add x as many times as the value to lengthIntArray
 	// print result
 	var intArray []int
-	intArray = append(intArray, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+	intArray = append(intArray, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9)
 	// intArray[0] = 2
 	// intArray[1] = 5
 	// intArray[2] = 3
@@ -176,7 +176,7 @@ func main() {
 		// append "x" to the array, by calling the function with a loop that returns the concat'd string
 		lengthIntArray = append(lengthIntArray, concatVariable(intArray[arrayAssemblyCounter]))
 		// debug
-		fmt.Print("intArray element:", intArray[arrayAssemblyCounter])
+		fmt.Println("intArray element:", intArray[arrayAssemblyCounter])
 		// increase counter to run with the next array element
 		arrayAssemblyCounter++
 	}
@@ -198,7 +198,7 @@ func concatVariable(arrayElementValue int) string {
 	// var count4 = 0
 	for {
 		// break if counter > respective element of intArray
-		if concatCounter > arrayElementValue {
+		if concatCounter > arrayElementValue-1 {
 			break
 			// // increase array element
 			// fmt.Println(intArray[count4])
