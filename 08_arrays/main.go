@@ -58,10 +58,9 @@ func main() {
 	// Print the array.
 	var tenInt []int
 	var count int = 1
-	var times int = 10
 
 	for {
-		if count > times {
+		if count > 10 {
 			break
 		}
 		tenInt = append(tenInt, count)
