@@ -200,6 +200,7 @@ func main() {
 	// counter
 	var sumCounter int = 0
 	for {
+		// TODO: replace hard coded value with last index of
 		if sumCounter > 9 {
 			break
 		}
