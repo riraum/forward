@@ -157,7 +157,7 @@ func main() {
 	// loop to create output array
 	for {
 		// if counter is > than the last/[10] array element break the loop
-		if arrayAssemblyCounter > intArray[arrayAssemblyCounter]-1 {
+		if arrayAssemblyCounter > len(intArray)-1 {
 			break
 		}
 		// append "x" to the array, by calling the function with a loop that returns the concat'd string
