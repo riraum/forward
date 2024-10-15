@@ -196,49 +196,25 @@ func main() {
 	// // create array for multiplication of elements of the 2 arrays
 	var multArray []int
 
-	// create loop for element sum calculation
+	// create loop for element calculations
 	// counter
-	var sumCounter int = 0
+	var calcCounter int = 0
 	for {
 		// TODO: replace hard coded value with last index of
-		if sumCounter > 9 {
+		if calcCounter > 9 {
 			break
 		}
-		// append sum of element of arrays
-		sumArray = append(sumArray, anotherIntArray[sumCounter]+yetAnotherIntArray[sumCounter])
+		// do math and append elements of arrays
+		sumArray = append(sumArray, anotherIntArray[calcCounter]+yetAnotherIntArray[calcCounter])
+		diffArray = append(diffArray, anotherIntArray[calcCounter]-yetAnotherIntArray[calcCounter])
+		multArray = append(multArray, anotherIntArray[calcCounter]*yetAnotherIntArray[calcCounter])
 		// increase counter
-		sumCounter++
+		calcCounter++
 	}
 	// print result sumArray
 	fmt.Println(sumArray)
-
-	// create loop for element difference calculation
-	// counter
-	var diffCounter int = 0
-	for {
-		// TODO: replace hard coded value with last index of
-		if diffCounter > 9 {
-			break
-		}
-		diffArray = append(diffArray, anotherIntArray[diffCounter]-yetAnotherIntArray[diffCounter])
-		// increase counter
-		diffCounter++
-	}
 	// print result diffArray
 	fmt.Println(diffArray)
-
-	// create loop for element multiplication calculation
-	// counter
-	var multCounter = 0
-	for {
-		// TODO: replace hard coded value with last index of
-		if multCounter > 9 {
-			break
-		}
-		multArray = append(multArray, anotherIntArray[multCounter]*yetAnotherIntArray[multCounter])
-		// increase counter
-		multCounter++
-	}
 	// print result multArray
 	fmt.Println(multArray)
 
