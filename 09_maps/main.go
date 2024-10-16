@@ -69,6 +69,7 @@ func main() {
 	fmt.Println(human)
 
 	// TODO: Print the length of the map human
+	fmt.Println(len(human))
 
 	// TODO: Check if the key "age" exists in the map human
 	// If so print "age exists in the map"
