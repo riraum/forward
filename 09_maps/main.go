@@ -75,6 +75,15 @@ func main() {
 	// If so print "age exists in the map"
 	// If not print "age does not exist in the map"
 	// Do the same for the key "weight"
+	var value int
+	var exists bool
+	value, exists = human["age"]
+	if exists {
+		fmt.Println("age exists in the map")
+	}
+	if value == 0 {
+		fmt.Println("age does not exist in the map")
+	}
 
 	// TODO: Change the value of the key "age" to 30.
 	// Print the map.
