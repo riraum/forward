@@ -87,6 +87,8 @@ func main() {
 
 	// TODO: Change the value of the key "age" to 30.
 	// Print the map.
+	human["age"] = 30
+	fmt.Println(human)
 
 	// TODO: Create a new map called "person" with the following key-value
 	// pairs:
