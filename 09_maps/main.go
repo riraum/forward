@@ -88,11 +88,10 @@ func main() {
 
 	// TODO: Create a function that takes a map as an argument and creates a new
 	// map with the following key-value pairs:
-	// - "name" -> "<existing name> + number 2"
-	// - "age" -> "<existing age> + number 2"
+	// - "age" -> <existing age> + 2
 	// - "height" -> <existing height> * 2
 	// - "weight" -> <existing weight> * 2
-	// - "tall" -> true if height > 200, false otherwise
+	// - "tall" -> 1 if height > 200, 0 otherwise
 	// Print the new map.
 
 	// TODO: Create a function that takes a map as an argument and prints the
@@ -104,13 +103,15 @@ func main() {
 	// Hint: Use this function in later exercises.
 
 	// TODO: Create an array of maps called "people" with the following maps:
-	// - { "name": "John", "age": 25, "height": 180, "weight": 70 }
-	// - { "name": "Jane", "age": 30, "height": 160, "weight": 50 }
-	// - { "name": "Jack", "age": 35, "height": 170, "weight": 80 }
-	// - { "name": "Jill", "age": 40, "height": 150, "weight": 60 }
-	// - { "name": "James", "age": 45, "height": 190, "weight": 90 }
+	// - { "height": 180, "weight": 70 }
+	// - { "height": 160, "weight": 50 }
+	// - { "height": 170, "weight": 80 }
+	// - { "height": 150, "weight": 60 }
+	// - { "height": 190, "weight": 90 }
 	// Print the BMI of each person in the array.
 	// Hint: Use a loop.
+
+	// For later exercises, use the same format as the previous one.
 
 	// TODO: Create a function that takes an array of maps as an argument and
 	// prints the average BMI of the people in the array.
