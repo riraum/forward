@@ -97,6 +97,13 @@ func main() {
 	// - "height" -> 180
 	// - "weight" -> 70
 	// Print the map and its length.
+	var person map[string]string = map[string]string{}
+	person["name"] = "John"
+	person["age"] = "25"
+	person["height"] = "180"
+	person["weight"] = "70"
+	fmt.Println(person)
+	fmt.Println(len(person))
 
 	// TODO: Create a function that takes a map as an argument and creates a new
 	// map with the following key-value pairs:
