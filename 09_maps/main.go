@@ -111,35 +111,76 @@ func main() {
 	// - "tall" -> 1 if height > 200, 0 otherwise
 	// Print the new map.
 
-	// TODO: Create a function that takes a map as an argument and prints the
-	// BMI of the person. The formula for BMI is:
-	// BMI = weight / (height * height)
-	// If the map does not have the key "height", print "Height not found".
-	// If the map does not have the key "weight", print "Weight not found".
-	// Otherwise, print "<name>'s BMI is <bmi>".
-	// Hint: Use this function in later exercises.
+	createNewMap(person map)
 
-	// TODO: Create an array of maps called "people" with the following maps:
-	// - { "height": 180, "weight": 70 }
-	// - { "height": 160, "weight": 50 }
-	// - { "height": 170, "weight": 80 }
-	// - { "height": 150, "weight": 60 }
-	// - { "height": 190, "weight": 90 }
-	// Print the BMI of each person in the array.
-	// Hint: Use a loop.
-
-	// For later exercises, use the same format as the previous one.
-
-	// TODO: Create a function that takes an array of maps as an argument and
-	// prints the average BMI of the people in the array.
-
-	// TODO: Create a function that takes an array of maps as an argument and
-	// returns the map with the highest BMI.
-
-	// TODO: Create a function that takes an array of maps as an argument and
-	// add as a new key-value pair to each map the key "bmi" with the value
-	// being the BMI of the corresponding person.
-	// Hint: Use a loop.
-	// Hint: Create a new map for each person.
-	// Hint: Create a new array of maps.
+	// Close main function, to be able to declare another function
 }
+
+// create empty map
+// create function
+// create counter
+// create loop
+// create break condition if counter is > than the key-value pairs the map has
+// operate on the input value of the keys and do math on it
+// add the result to a new map
+// add a new key value element and fill it depending on the value of the input height key
+// print new map
+
+// var person map[string]string = map[string]string{}
+// person["age"] = "25"
+// person["height"] = "180"
+// person["weight"] = "70"
+
+var newMap map[string]int = map[string]int{}
+
+func createNewMap(mapInput map[string]string) {
+	var counter int = 0
+	// // calculate map length
+	// var mapLength =
+	for {
+		if counter > len(mapInput) {
+			break
+		}
+		newMap["age"] = mapInput["age"] + 2
+		newMap["height"] = mapInput["height"] * 2
+		newMap["weight"] = mapInput["weight"] * 2
+		if mapInput["height"] > 200 {
+			newMap["tall"] = 1
+		}
+		newMap["tall"] = 0
+	}
+	fmt.Println(mapInput)
+}
+
+// TODO: Create a function that takes a map as an argument and prints the
+// BMI of the person. The formula for BMI is:
+// BMI = weight / (height * height)
+// If the map does not have the key "height", print "Height not found".
+// If the map does not have the key "weight", print "Weight not found".
+// Otherwise, print "<name>'s BMI is <bmi>".
+// Hint: Use this function in later exercises.
+
+// TODO: Create an array of maps called "people" with the following maps:
+// - { "height": 180, "weight": 70 }
+// - { "height": 160, "weight": 50 }
+// - { "height": 170, "weight": 80 }
+// - { "height": 150, "weight": 60 }
+// - { "height": 190, "weight": 90 }
+// Print the BMI of each person in the array.
+// Hint: Use a loop.
+
+// For later exercises, use the same format as the previous one.
+
+// TODO: Create a function that takes an array of maps as an argument and
+// prints the average BMI of the people in the array.
+
+// TODO: Create a function that takes an array of maps as an argument and
+// returns the map with the highest BMI.
+
+// TODO: Create a function that takes an array of maps as an argument and
+// add as a new key-value pair to each map the key "bmi" with the value
+// being the BMI of the corresponding person.
+// Hint: Use a loop.
+// Hint: Create a new map for each person.
+// Hint: Create a new array of maps.
+// }
