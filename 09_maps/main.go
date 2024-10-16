@@ -92,14 +92,11 @@ func main() {
 
 	// TODO: Create a new map called "person" with the following key-value
 	// pairs:
-	// - "name" -> "John"
 	// - "age" -> 25
 	// - "height" -> 180
 	// - "weight" -> 70
 	// Print the map and its length.
 	var person map[string]string = map[string]string{}
-	person["name"] = "John"
-	// TODO: add rest of the values as string/int pair instead of string/string
 	person["age"] = "25"
 	person["height"] = "180"
 	person["weight"] = "70"
