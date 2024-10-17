@@ -96,10 +96,10 @@ func main() {
 	// - "height" -> 180
 	// - "weight" -> 70
 	// Print the map and its length.
-	var person map[string]string = map[string]string{}
-	person["age"] = "25"
-	person["height"] = "180"
-	person["weight"] = "70"
+	var person map[string]int = map[string]int{}
+	person["age"] = 25
+	person["height"] = 180
+	person["weight"] = 70
 	fmt.Println(person)
 	fmt.Println(len(person))
 
@@ -111,7 +111,7 @@ func main() {
 	// - "tall" -> 1 if height > 200, 0 otherwise
 	// Print the new map.
 
-	createNewMap(person map)
+	createNewMap(person)
 
 	// Close main function, to be able to declare another function
 }
@@ -133,7 +133,7 @@ func main() {
 
 var newMap map[string]int = map[string]int{}
 
-func createNewMap(mapInput map[string]string) {
+func createNewMap(mapInput map[string]int) {
 	var counter int = 0
 	// // calculate map length
 	// var mapLength =
