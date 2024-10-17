@@ -155,27 +155,22 @@ func createNewMap(mapInput map[string]int) {
 // Otherwise, print "<name>'s BMI is <bmi>".
 // Hint: Use this function in later exercises.
 
-func calcBMI(mapInput) {
-	var counter int = 0
-	var key string
+func calcBMI(mapInput map[string]int) {
+	var value int
 	var exists bool
 	var bmi int
 
-	for {
-		if counter > len(mapInput) {
-			break
-		}
-		key, exists = mapInput["height"]
-		if !exists {
-			fmt.Println("Height not found")
-		}
-		key, exists = mapInput["weight"]
-		if !exists {
-			fmt.Println("Weight not found")
-		}
-		bmi = mapInput["weight"] / (mapInput["height"] * mapInput["height"])
+	value, exists = mapInput["height"]
+	if !exists && value == 0 {
+		fmt.Println("Height not found")
 	}
-	fmt.Println(`$name BMI is $bmi`)
+	value, exists = mapInput["weight"]
+	if !exists && value == 0 {
+		fmt.Println("Weight not found")
+	}
+	bmi = mapInput["weight"] / (mapInput["height"] * mapInput["height"])
+
+	fmt.Println(`$name BMI is $bmi`, bmi)
 }
 
 // TODO: Create an array of maps called "people" with the following maps:
