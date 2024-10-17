@@ -161,15 +161,15 @@ func calcBMI(mapInput map[string]int) {
 	var bmi int
 
 	value, exists = mapInput["height"]
-	if !exists && value == 0 {
+	if !exists || value == 0 {
 		fmt.Println("Height not found")
 	}
 	value, exists = mapInput["weight"]
-	if !exists && value == 0 {
+	if !exists || value == 0 {
 		fmt.Println("Weight not found")
 	}
 	bmi = mapInput["weight"] / (mapInput["height"] * mapInput["height"])
-
+	// TODO: check and fix syntax for name and bmi variable
 	fmt.Println(`$name BMI is $bmi`, bmi)
 }
 
@@ -181,6 +181,11 @@ func calcBMI(mapInput map[string]int) {
 // - { "height": 190, "weight": 90 }
 // Print the BMI of each person in the array.
 // Hint: Use a loop.
+
+// create empty array of maps
+// var people []map[string]int
+
+// people[0]["height"] = 180
 
 // For later exercises, use the same format as the previous one.
 
