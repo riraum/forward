@@ -128,19 +128,24 @@ func main() {
 	// people[0]["height"] = 180
 	// people[0]["weight"] = 70
 	people = append(people, map[string]int{"height": 180, "weight": 70})
+	people = append(people, map[string]int{"height": 160, "weight": 50})
+	people = append(people, map[string]int{"height": 170, "weight": 80})
+	people = append(people, map[string]int{"height": 150, "weight": 60})
+	people = append(people, map[string]int{"height": 190, "weight": 90})
 	// print people[0]
-	fmt.Println(people[0])
+	fmt.Println(people)
 	// print BMI
 	// fmt.Println(calcBMI(people[0]))
 	// var counter int = 0
-	// var calcPeople = people[counter]
+	// var calcPeople []map[string]int = people[counter]map[string]int
 
 	// for {
-
 	// 	if counter > len(people) {
 	// 		break
 	// 	}
+	// 	// print bmi by calling the calcBMI with an array value of people
 	// 	fmt.Println(calcBMI(calcPeople))
+	// 	// fmt.Println(calcBMI(people[counter]))
 	// 	counter++
 	// }
 
