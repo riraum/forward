@@ -125,8 +125,9 @@ func main() {
 	// create empty array of maps
 	var people []map[string]int = []map[string]int{}
 	// fill array of maps
-	people[0]["height"] = 180
-	people[0]["weight"] = 70
+	// people[0]["height"] = 180
+	// people[0]["weight"] = 70
+	people = append(people, map[string]int{"height": 180, "weight": 70})
 	// print people[0]
 	fmt.Println(people[0])
 	// print BMI
