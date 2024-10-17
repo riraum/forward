@@ -113,6 +113,38 @@ func main() {
 
 	createNewMap(person)
 
+	// TODO: Create an array of maps called "people" with the following maps:
+	// - { "height": 180, "weight": 70 }
+	// - { "height": 160, "weight": 50 }
+	// - { "height": 170, "weight": 80 }
+	// - { "height": 150, "weight": 60 }
+	// - { "height": 190, "weight": 90 }
+	// Print the BMI of each person in the array.
+	// Hint: Use a loop.
+
+	// create empty array of maps
+	var people []map[string]int = []map[string]int{}
+	// fill array of maps
+	people[0]["height"] = 180
+	people[0]["weight"] = 70
+	// print people[0]
+	fmt.Println(people[0])
+	// print BMI
+	// fmt.Println(calcBMI(people[0]))
+	// var counter int = 0
+	// var calcPeople = people[counter]
+
+	// for {
+
+	// 	if counter > len(people) {
+	// 		break
+	// 	}
+	// 	fmt.Println(calcBMI(calcPeople))
+	// 	counter++
+	// }
+
+	// For later exercises, use the same format as the previous one.
+
 	// Close main function, to be able to declare another function
 }
 
@@ -172,22 +204,6 @@ func calcBMI(mapInput map[string]int) {
 	// TODO: check and fix syntax for name and bmi variable
 	fmt.Println(`$name BMI is $bmi`, bmi)
 }
-
-// TODO: Create an array of maps called "people" with the following maps:
-// - { "height": 180, "weight": 70 }
-// - { "height": 160, "weight": 50 }
-// - { "height": 170, "weight": 80 }
-// - { "height": 150, "weight": 60 }
-// - { "height": 190, "weight": 90 }
-// Print the BMI of each person in the array.
-// Hint: Use a loop.
-
-// create empty array of maps
-// var people []map[string]int
-
-// people[0]["height"] = 180
-
-// For later exercises, use the same format as the previous one.
 
 // TODO: Create a function that takes an array of maps as an argument and
 // prints the average BMI of the people in the array.
