@@ -148,8 +148,9 @@ func createNewMap(mapInput map[string]int) {
 			newMap["tall"] = 1
 		}
 		newMap["tall"] = 0
+		counter++
 	}
-	fmt.Println(mapInput)
+	fmt.Println("createNewMap:", newMap)
 }
 
 // TODO: Create a function that takes a map as an argument and prints the
