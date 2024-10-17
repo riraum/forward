@@ -126,17 +126,11 @@ func main() {
 // add a new key value element and fill it depending on the value of the input height key
 // print new map
 
-// var person map[string]string = map[string]string{}
-// person["age"] = "25"
-// person["height"] = "180"
-// person["weight"] = "70"
-
 var newMap map[string]int = map[string]int{}
 
 func createNewMap(mapInput map[string]int) {
 	var counter int = 0
-	// // calculate map length
-	// var mapLength =
+
 	for {
 		if counter > len(mapInput) {
 			break
