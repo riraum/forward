@@ -135,19 +135,19 @@ func main() {
 	// print people[0]
 	fmt.Println(people)
 	// print BMI
-	// calcBMI(people[0])
-	var counter int = 0
-	// var calcPeople []map[string]int = people[counter]
+	calcBMI(people[0])
+	// var counter int = 0
+	// // var calcPeople []map[string]int = people[counter]
 
-	for {
-		if counter >= len(people) {
-			break
-		}
-		// print bmi by calling the calcBMI with an array value of people
-		// calcBMI(calcPeople)
-		calcBMI(people[counter])
-		counter++
-	}
+	// for {
+	// 	if counter >= len(people) {
+	// 		break
+	// 	}
+	// 	// print bmi by calling the calcBMI with an array value of people
+	// 	// calcBMI(calcPeople)
+	// 	calcBMI(people[counter])
+	// 	counter++
+	// }
 
 	// For later exercises, use the same format as the previous one.
 
@@ -196,7 +196,9 @@ func createNewMap(mapInput map[string]int) {
 func calcBMI(mapInput map[string]int) {
 	var value int
 	var exists bool
-	var bmi int
+	var bmi float32
+	var nonFloatBmi float64
+	// var heighAdjust float32
 
 	value, exists = mapInput["height"]
 	if !exists || value == 0 {
@@ -206,9 +208,25 @@ func calcBMI(mapInput map[string]int) {
 	if !exists || value == 0 {
 		fmt.Println("Weight not found")
 	}
-	bmi = mapInput["weight"] / (mapInput["height"] * mapInput["height"])
+	// debug
+	fmt.Println("weight debug", mapInput["weight"])
+	fmt.Println("height debug", mapInput["height"])
+	// bmi = mapInput["weight"] / (mapInput["height"]/100 * mapInput["height"]/100)
+	// bmi = mapInput["weight"] / (heighAdjust * heighAdjust)
+	// heighAdjust = mapInput["height"] / 100
+	// bmi = 70 / ((180 / 100) * (180 / 100))
+	bmi = (70 / (1.80 * 1.80))
+	nonFloatBmi = (70 / (180 * 180))
+	// debug
+	fmt.Println("nonfloatBMI is", nonFloatBmi)
+	nonFloatBmi = nonFloatBmi * 10000
+	fmt.Println("nonfloatBMI is", nonFloatBmi)
+
+	// debug
+	// fmt.Println(bmi)
+	fmt.Println("nonfloatBMI is", nonFloatBmi)
 	// TODO: check and fix syntax for name and bmi variable
-	fmt.Println(`$name BMI is $bmi`, bmi)
+	fmt.Println("BMI is", bmi)
 }
 
 // TODO: Create a function that takes an array of maps as an argument and
