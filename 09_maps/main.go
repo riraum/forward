@@ -198,7 +198,11 @@ func calcBMI(mapInput map[string]int) {
 	var exists bool
 	var bmi float32
 	var nonFloatBmi float64
-	// var heighAdjust float32
+	var heightAdjust float64
+
+	var heightConvert int = mapInput["height"]
+
+	var heighConverted float64 = float64(heightConvert)
 
 	value, exists = mapInput["height"]
 	if !exists || value == 0 {
@@ -213,9 +217,11 @@ func calcBMI(mapInput map[string]int) {
 	fmt.Println("height debug", mapInput["height"])
 	// bmi = mapInput["weight"] / (mapInput["height"]/100 * mapInput["height"]/100)
 	// bmi = mapInput["weight"] / (heighAdjust * heighAdjust)
-	// heighAdjust = mapInput["height"] / 100
+	// heightConvert = float64((mapInput["height"])
+	heightAdjust = heighConverted / 100
+	// bmi = (mapInput["weight"]) / heighAdjust * heighAdjust
 	// bmi = 70 / ((180 / 100) * (180 / 100))
-	bmi = (70 / (1.80 * 1.80))
+	// bmi = (70 / (1.80 * 1.80))
 	nonFloatBmi = (70 / (180 * 180))
 	// debug
 	fmt.Println("nonfloatBMI is", nonFloatBmi)
