@@ -135,19 +135,19 @@ func main() {
 	// print people[0]
 	fmt.Println(people)
 	// print BMI
-	// fmt.Println(calcBMI(people[0]))
-	// var counter int = 0
-	// var calcPeople []map[string]int = people[counter]map[string]int
+	// calcBMI(people[0])
+	var counter int = 0
+	// var calcPeople []map[string]int = people[counter]
 
-	// for {
-	// 	if counter > len(people) {
-	// 		break
-	// 	}
-	// 	// print bmi by calling the calcBMI with an array value of people
-	// 	fmt.Println(calcBMI(calcPeople))
-	// 	// fmt.Println(calcBMI(people[counter]))
-	// 	counter++
-	// }
+	for {
+		if counter >= len(people) {
+			break
+		}
+		// print bmi by calling the calcBMI with an array value of people
+		// calcBMI(calcPeople)
+		calcBMI(people[counter])
+		counter++
+	}
 
 	// For later exercises, use the same format as the previous one.
 
