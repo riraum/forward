@@ -125,8 +125,6 @@ func main() {
 	// create empty array of maps
 	var people []map[string]int = []map[string]int{}
 	// fill array of maps
-	// people[0]["height"] = 180
-	// people[0]["weight"] = 70
 	people = append(people, map[string]int{"height": 180, "weight": 70})
 	people = append(people, map[string]int{"height": 160, "weight": 50})
 	people = append(people, map[string]int{"height": 170, "weight": 80})
@@ -134,8 +132,7 @@ func main() {
 	people = append(people, map[string]int{"height": 190, "weight": 90})
 	// print people[0]
 	fmt.Println(people)
-	// print BMI
-	// calcBMI(people[0])
+
 	var counter int = 0
 	// // var calcPeople []map[string]int = people[counter]
 
@@ -144,7 +141,6 @@ func main() {
 			break
 		}
 		// print bmi by calling the calcBMI with an array value of people
-		// calcBMI(calcPeople)
 		calcBMI(people[counter])
 		counter++
 	}
@@ -197,16 +193,11 @@ func calcBMI(mapInput map[string]int) {
 	var value int
 	var exists bool
 	var bmi float64
-	// var nonFloatBmi float64
-	var heightAdjust float64
-
 	var heightConvert int = mapInput["height"]
-
 	var heightConverted float64 = float64(heightConvert)
-
 	var weightConvert int = mapInput["weight"]
-
 	var weightConverted float64 = float64(weightConvert)
+
 	value, exists = mapInput["height"]
 	if !exists || value == 0 {
 		fmt.Println("Height not found")
@@ -216,25 +207,15 @@ func calcBMI(mapInput map[string]int) {
 		fmt.Println("Weight not found")
 	}
 	// debug
-	fmt.Println("weight debug", mapInput["weight"])
-	fmt.Println("height debug", mapInput["height"])
-	// bmi = mapInput["weight"] / (mapInput["height"]/100 * mapInput["height"]/100)
-	// bmi = mapInput["weight"] / (heighAdjust * heighAdjust)
-	// heightConvert = float64((mapInput["height"])
-	heightAdjust = heightConverted / 100
+	// fmt.Println("weight debug", mapInput["weight"])
+	// fmt.Println("height debug", mapInput["height"])
 	// debug
-	fmt.Println(heightAdjust)
-	fmt.Println(weightConverted)
-	// bmi = (mapInput["weight"]) / heighAdjust * heighAdjust
-	// bmi = (weightConverted) / (heightAdjust) * int(heightAdjust)
-	// bmi = 70 / ((180 / 100) * (180 / 100))
-	// bmi = (70 / (1.80 * 1.80))
+	// fmt.Println(heightAdjust)
+	// fmt.Println(weightConverted)
 	bmi = (weightConverted / (heightConverted * heightConverted))
-	// debug
 	bmi = bmi * 10000
 	// debug
 	// fmt.Println(bmi)
-	// fmt.Println("nonfloatBMI is", nonFloatBmi)
 	// TODO: check and fix syntax for name and bmi variable
 	fmt.Println("BMI is", bmi)
 }
