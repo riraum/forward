@@ -251,18 +251,21 @@ func calcAvgBMI(arrayOfMapInput []map[string]int) float64 {
 	var counter int
 	var bmiSum float64
 	var avgBMI float64
-	var lenConvert int
-	var lenConverted float64 = float64(lenConvert)
+	// var lenConvert int
+	// var lenConverted float64 = float64(lenConvert)
 	for {
 		if counter >= len(arrayOfMapInput) {
 			break
 		}
 		bmiSum += calcBMI(arrayOfMapInput[counter])
+		// debug
+		fmt.Println(bmiSum)
 		counter++
 	}
-	avgBMI = bmiSum / lenConverted
+	avgBMI = bmiSum / 5
+	// debug
+	fmt.Println("avg debug print", avgBMI)
 	return avgBMI
-	// fmt.Println(avgBMI)
 }
 
 // TODO: Create a function that takes an array of maps as an argument and
