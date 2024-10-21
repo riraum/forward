@@ -147,6 +147,9 @@ func main() {
 
 	// For later exercises, use the same format as the previous one.
 
+	// calculate average BMI
+	calcAvgBMI(people)
+
 	// Close main function, to be able to declare another function
 }
 
@@ -222,6 +225,31 @@ func calcBMI(mapInput map[string]int) {
 
 // TODO: Create a function that takes an array of maps as an argument and
 // prints the average BMI of the people in the array.
+
+// create function
+// accept array of maps as input
+// loop through all arrays (e.g. "people" array of maps)
+// calculate BMI (calcBMI function)
+// add the sum of all array elements
+// increase counter
+// divide through the amount of array elements
+// print result = avg BMI
+func calcAvgBMI(arrayOfMapInput []map[string]int) {
+	var counter int
+	var bmiSum float64
+	var avgBMI float64
+	var lenConvert int
+	var lenConverted float64 = float64(lenConvert)
+	for {
+		if counter > len(arrayOfMapInput) {
+			break
+		}
+		bmiSum += calcBMI(arrayOfMapInput[counter])
+		counter++
+	}
+	avgBMI = bmiSum / lenConverted
+	fmt.Println(avgBMI)
+}
 
 // TODO: Create a function that takes an array of maps as an argument and
 // returns the map with the highest BMI.
