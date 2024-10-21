@@ -141,14 +141,14 @@ func main() {
 			break
 		}
 		// print bmi by calling the calcBMI with an array value of people
-		calcBMI(people[counter])
+		fmt.Println("BMI is", calcBMI(people[counter]))
 		counter++
 	}
 
 	// For later exercises, use the same format as the previous one.
 
 	// calculate average BMI
-	// calcAvgBMI(people)
+	fmt.Println("Avg BMI is", calcAvgBMI(people))
 
 	// Close main function, to be able to declare another function
 }
@@ -192,7 +192,7 @@ func createNewMap(mapInput map[string]int) {
 // Otherwise, print "<name>'s BMI is <bmi>".
 // Hint: Use this function in later exercises.
 
-func calcBMI(mapInput map[string]int) {
+func calcBMI(mapInput map[string]int) float64 {
 	var value int
 	var exists bool
 	var bmi float64
@@ -222,16 +222,17 @@ func calcBMI(mapInput map[string]int) {
 	// debug
 	// fmt.Println(bmi)
 	// TODO: check and fix syntax for name and bmi variable
-	fmt.Println("BMI is", bmi)
+	// fmt.Println("BMI is", bmi)
+	return bmi
 
-	for {
-		var counter int = 0
-		if counter > len(mapInput) {
-			break
-		}
-		counter++
-		return bmi
-	}
+	// for {
+	// 	var counter int = 0
+	// 	if counter > len(mapInput) {
+	// 		break
+	// 	}
+	// 	counter++
+	// 	return bmi
+	// }
 
 }
 
@@ -246,22 +247,23 @@ func calcBMI(mapInput map[string]int) {
 // increase counter
 // divide through the amount of array elements
 // print result = avg BMI
-// func calcAvgBMI(arrayOfMapInput []map[string]int) {
-// 	var counter int
-// 	var bmiSum float64
-// 	var avgBMI float64
-// 	var lenConvert int
-// 	var lenConverted float64 = float64(lenConvert)
-// 	for {
-// 		if counter > len(arrayOfMapInput) {
-// 			break
-// 		}
-// 		bmiSum += calcBMI(arrayOfMapInput[counter])
-// 		counter++
-// 	}
-// 	avgBMI = bmiSum / lenConverted
-// 	fmt.Println(avgBMI)
-// }
+func calcAvgBMI(arrayOfMapInput []map[string]int) float64 {
+	var counter int
+	var bmiSum float64
+	var avgBMI float64
+	var lenConvert int
+	var lenConverted float64 = float64(lenConvert)
+	for {
+		if counter >= len(arrayOfMapInput) {
+			break
+		}
+		bmiSum += calcBMI(arrayOfMapInput[counter])
+		counter++
+	}
+	avgBMI = bmiSum / lenConverted
+	return avgBMI
+	// fmt.Println(avgBMI)
+}
 
 // TODO: Create a function that takes an array of maps as an argument and
 // returns the map with the highest BMI.
