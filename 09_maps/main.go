@@ -150,6 +150,9 @@ func main() {
 	// calculate average BMI
 	fmt.Println("Avg BMI is", calcAvgBMI(people))
 
+	// calculate highest BMI
+	fmt.Println("Highest BMI is", highestBMI(people))
+
 	// Close main function, to be able to declare another function
 }
 
@@ -272,6 +275,31 @@ func calcAvgBMI(arrayOfMapInput []map[string]int) float64 {
 
 // TODO: Create a function that takes an array of maps as an argument and
 // returns the map with the highest BMI.
+
+// create function
+// accept array of maps as input
+// calculate the BMI with function calcBMI for all elements of the array, in a loop
+// compare all elements with each other to get highest value/BMI
+// return map of highest value
+
+func highestBMI(arrayOfMapInput []map[string]int) map[string]int {
+	var counter1 int = 0
+	var counter2 int = 1
+	// for {
+	// var result1 = arrayOfMapInput[counter1]
+	// var result2 = arrayOfMapInput[counter2]
+	// if counter1 >= len(arrayOfMapInput) {
+	// 	break
+	// }
+	if calcBMI(arrayOfMapInput[counter1]) > calcBMI(arrayOfMapInput[counter2]) {
+		return arrayOfMapInput[counter1]
+	}
+	return arrayOfMapInput[counter2]
+
+	// counter1++
+}
+
+// if calcBMI()
 
 // TODO: Create a function that takes an array of maps as an argument and
 // add as a new key-value pair to each map the key "bmi" with the value
