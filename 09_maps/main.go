@@ -351,8 +351,24 @@ func highestBMI(arrayOfMapInput []map[string]int) map[string]int {
 	// 	// if calcBMI(arrayOfMapInput[counter1])
 	// }
 	// test return
-	return arrayOfMapInput[0]
+	// return arrayOfMapInput[0]
 	// return arrayOfMapInput[counter1]
+
+	// if len(arrayOfMapInput) == 0 {
+	// 	TODO:
+	// }
+	var highestBMI = arrayOfMapInput[0]
+	for {
+		var counter int
+		if counter > len(arrayOfMapInput) {
+			break
+		}
+		if calcBMI((arrayOfMapInput[counter])) > calcBMI(highestBMI) {
+			highestBMI = (arrayOfMapInput[counter])
+		}
+		counter++
+	}
+	return highestBMI
 }
 
 // if calcBMI()
