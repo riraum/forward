@@ -153,6 +153,15 @@ func main() {
 	// calculate highest BMI
 	fmt.Println("Highest BMI is", highestBMI(people))
 
+	// test helper int function
+	fmt.Println(largestInt([]int{}))                      // 0
+	fmt.Println(largestInt([]int{1, 2, 3}))               // 3
+	fmt.Println(largestInt([]int{-1, -2, 0}))             // 0
+	fmt.Println(largestInt([]int{100, 0, 3000, 0, -100})) // 3000
+
+	// test helper string function
+	fmt.Println(largestString([]string{"", ""}))           // ""
+	fmt.Println(largestString([]string{"a", "bc", "def"})) // "def"
 	// Close main function, to be able to declare another function
 }
 
@@ -283,11 +292,53 @@ func calcAvgBMI(arrayOfMapInput []map[string]int) float64 {
 // if one element is bigger than ALL of the others, return that element
 // else continue comparing
 
+// helper functions
+// write a function that takes a list of int and return the biggest, or 0.
+func largestInt(s []int) int {
+	if len(s) == 0 {
+		return 0
+	}
+	var largest = s[0]
+
+	for {
+		var counter int
+		if counter > len(s) {
+			break
+		}
+		if s[counter] > largest {
+			largest = s[counter]
+		}
+		counter++
+	}
+	return largest
+}
+
+// helper functions
+// write a function that takes a list of string and return the longest string, or an empty string.
+func largestString(s []string) string {
+	if len(s) == 0 {
+		return ""
+	}
+	var largest = s[0]
+	for {
+		var counter int
+		if counter > len(s) {
+			break
+		}
+		if s[counter] > largest {
+			largest = s[counter]
+		}
+		counter++
+	}
+	return largest
+}
+
+// main function
 func highestBMI(arrayOfMapInput []map[string]int) map[string]int {
 	// testing hard coded array element comparison with AND condition
-	if calcBMI(arrayOfMapInput[0]) > calcBMI(arrayOfMapInput[1]) && calcBMI(arrayOfMapInput[0]) > calcBMI(arrayOfMapInput[2]) && calcBMI(arrayOfMapInput[0]) > calcBMI(arrayOfMapInput[3]) && calcBMI(arrayOfMapInput[0]) > calcBMI(arrayOfMapInput[4]) {
-		return arrayOfMapInput[0]
-	}
+	// if calcBMI(arrayOfMapInput[0]) > calcBMI(arrayOfMapInput[1]) && calcBMI(arrayOfMapInput[0]) > calcBMI(arrayOfMapInput[2]) && calcBMI(arrayOfMapInput[0]) > calcBMI(arrayOfMapInput[3]) && calcBMI(arrayOfMapInput[0]) > calcBMI(arrayOfMapInput[4]) {
+	// 	return arrayOfMapInput[0]
+	// }
 	// var counter1 int = 0
 	// var counter2 int = 0
 	// for {
