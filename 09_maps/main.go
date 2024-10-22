@@ -278,25 +278,30 @@ func calcAvgBMI(arrayOfMapInput []map[string]int) float64 {
 
 // create function
 // accept array of maps as input
-// calculate the BMI with function calcBMI for all elements of the array, in a loop
+// calculate the BMI with function calcBMI for all elements of the array
 // compare all elements with each other to get highest value/BMI
-// return map of highest value
+// if one element is bigger than ALL of the others, return that element
+// else continue comparing
 
 func highestBMI(arrayOfMapInput []map[string]int) map[string]int {
-	var counter1 int = 0
-	var counter2 int = 1
-	// for {
-	// var result1 = arrayOfMapInput[counter1]
-	// var result2 = arrayOfMapInput[counter2]
-	// if counter1 >= len(arrayOfMapInput) {
-	// 	break
-	// }
-	if calcBMI(arrayOfMapInput[counter1]) > calcBMI(arrayOfMapInput[counter2]) {
-		return arrayOfMapInput[counter1]
+	// testing hard coded array element comparison with AND condition
+	if calcBMI(arrayOfMapInput[0]) > calcBMI(arrayOfMapInput[1]) && calcBMI(arrayOfMapInput[0]) > calcBMI(arrayOfMapInput[2]) && calcBMI(arrayOfMapInput[0]) > calcBMI(arrayOfMapInput[3]) && calcBMI(arrayOfMapInput[0]) > calcBMI(arrayOfMapInput[4]) {
+		return arrayOfMapInput[0]
 	}
-	return arrayOfMapInput[counter2]
-
-	// counter1++
+	// var counter1 int = 0
+	// var counter2 int = 0
+	// for {
+	// 	if counter1 >= len(arrayOfMapInput) {
+	// 		break
+	// 	}
+	// 	if calcBMI(arrayOfMapInput[counter1]) > calcBMI(arrayOfMapInput[counter2]) {
+	// 		counter1++
+	// 	}
+	// 	// if calcBMI(arrayOfMapInput[counter1])
+	// }
+	// test return
+	return arrayOfMapInput[0]
+	// return arrayOfMapInput[counter1]
 }
 
 // if calcBMI()
