@@ -156,7 +156,7 @@ func main() {
 	// add BMI to array of maps
 	fmt.Println(addBMI(people))
 
-	// // test helper int function
+	// test helper int function
 	// fmt.Println(largestInt([]int{}))                      // 0
 	// fmt.Println(largestInt([]int{1, 2, 3}))               // 3
 	// fmt.Println(largestInt([]int{-1, -2, 0}))             // 0
@@ -165,6 +165,7 @@ func main() {
 	// // test helper string function
 	// fmt.Println(largestString([]string{"", ""}))           // ""
 	// fmt.Println(largestString([]string{"a", "bc", "def"})) // "def"
+
 	// Close main function, to be able to declare another function
 }
 
@@ -389,15 +390,14 @@ func highestBMI(arrayOfMapInput []map[string]int) map[string]int {
 // Hint: Create a new map for each person.
 // Hint: Create a new array of maps.
 
-// define function that accepts an array of maps as input, with the type of string, int and whose type is the same for output
-func addBMI(arrayOfMapInput []map[string]int) map[string]float64 {
+// define function that accepts an array of maps as input, with the type of string, int and whose type is the same for output, except float64 instead of int, to account for BMI values
+func addBMI(arrayOfMapInput []map[string]int) []map[string]float64 {
+	// debug
+	fmt.Println("DEBUG PRINT", arrayOfMapInput)
 	// counter
-	var counter int
-	// calcBMI variable
-	var calcBMI = calcBMI(arrayOfMapInput[counter])
-	//
-	// var weight = arrayOfMapInput[]map[string]float64{weight: }
-	// define result array of maps
+	var counter int = 0
+	// var lengthOfArrayMapInput = len(arrayOfMapInput)
+	// // define result array of maps
 	var resultArrayOfMaps []map[string]float64 = []map[string]float64{}
 	// loop
 	for {
@@ -405,12 +405,35 @@ func addBMI(arrayOfMapInput []map[string]int) map[string]float64 {
 		if counter > len(arrayOfMapInput)-1 {
 			break
 		}
-		// calculate elements BMI with calcBMI function and append to resultMap
+		// calcBMI variable
+		var calcBMI = calcBMI(arrayOfMapInput[counter])
+		//
+		var weightValue = arrayOfMapInput[counter]["weight"]
+		// debug
+		// fmt.Println("DEBUG WEIGHT VARIABLE", arrayOfMapInput[0]["weight"])
+		// fmt.Println("DEBUG WEIGHT VARIABLE", arrayOfMapInput[1]["weight"])
+		//
+		var heightValue = arrayOfMapInput[counter]["height"]
+		// debug
+		// fmt.Println("DEBUG HEIGHT VARIABLE", arrayOfMapInput[0]["height"])
+		// fmt.Println("DEBUG HEIGHT VARIABLE", arrayOfMapInput[1]["height"])
+		// hard coded
 		// resultArrayOfMaps = append(resultArrayOfMaps, map[string]float64{"weight": 22})
-		resultArrayOfMaps = append(resultArrayOfMaps, map[string]float64{"bmi": calcBMI, "weight": 22, "height": 180})
+		// hard coded2
+		// resultArrayOfMaps = append(resultArrayOfMaps, map[string]float64{"bmi": calcBMI, "weight": 22, "height": 180})
+		// variables used
+		resultArrayOfMaps = append(resultArrayOfMaps, map[string]float64{"bmi": calcBMI, "weight": float64(weightValue), "height": float64(heightValue)})
+		// debug
+		fmt.Println("DEBUG PRINT WEIGHT", weightValue)
 		// increase counter
 		counter++
+		// floatCounter++
 	}
+	// debug
+	fmt.Println("DEBUG PRINT ARRAY OF MAPS", resultArrayOfMaps[0])
+	fmt.Println("DEBUG PRINT ARRAY OF MAPS", resultArrayOfMaps[4])
 	// TODO: return result map
-	return resultArrayOfMaps[0]
+	return resultArrayOfMaps
+	// complete return
+	// return resultArrayOfMaps
 }
