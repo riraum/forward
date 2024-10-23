@@ -157,14 +157,14 @@ func main() {
 	fmt.Println(addBMI(people))
 
 	// test helper int function
-	// fmt.Println(largestInt([]int{}))                      // 0
-	// fmt.Println(largestInt([]int{1, 2, 3}))               // 3
-	// fmt.Println(largestInt([]int{-1, -2, 0}))             // 0
-	// fmt.Println(largestInt([]int{100, 0, 3000, 0, -100})) // 3000
+	fmt.Println(largestInt([]int{}))                      // 0
+	fmt.Println(largestInt([]int{1, 2, 3}))               // 3
+	fmt.Println(largestInt([]int{-1, -2, 0}))             // 0
+	fmt.Println(largestInt([]int{100, 0, 3000, 0, -100})) // 3000
 
-	// // test helper string function
-	// fmt.Println(largestString([]string{"", ""}))           // ""
-	// fmt.Println(largestString([]string{"a", "bc", "def"})) // "def"
+	// test helper string function
+	fmt.Println(largestString([]string{"", ""}))           // ""
+	fmt.Println(largestString([]string{"a", "bc", "def"})) // "def"
 
 	// Close main function, to be able to declare another function
 }
@@ -298,74 +298,61 @@ func calcAvgBMI(arrayOfMapInput []map[string]int) float64 {
 
 // helper functions
 // write a function that takes a list of int and return the biggest, or 0.
-// func largestInt(s []int) int {
-// 	// counter
-// 	var counter int
-// 	// assign variable largest to element [0] of array
-// 	var largest = s[0]
-// 	// if array length is 0, return 0
-// 	if len(s) == 0 {
-// 		return 0
-// 	}
-// 	// loop
-// 	for {
-// 		// if counter is higher than length of array, break
-// 		if counter > len(s)-1 {
-// 			break
-// 		}
-// 		// if int of element of array is higher than largest, reassign that element
-// 		if s[counter] > largest {
-// 			largest = s[counter]
-// 		}
-// 		// increase counter
-// 		counter++
-// 	}
-// 	// return largest int
-// 	return largest
-// }
-
-// func largestInt(s []int) int {
-// 	if len(s) == 0 {
-// 		return 0 // handle empty slice case
-// 	}
-// 	largest := s[0]               // Step 2
-// 	for i := 1; i < len(s); i++ { // Step 1
-// 		if s[i] > largest { // Step 3
-// 			largest = s[i] // Step 4
-// 		}
-// 	}
-// 	return largest // Step 5
-// }
+func largestInt(s []int) int {
+	// counter
+	var counter int
+	// assign variable largest to element [0] of array
+	var largest int
+	// if array length is 0, return 0
+	if len(s) == 0 {
+		return 0
+	}
+	// loop
+	for {
+		// if counter is higher than length of array, break
+		if counter > len(s)-1 {
+			break
+		}
+		// if int of element of array is higher than largest, reassign that element
+		if s[counter] > largest {
+			largest = s[counter]
+		}
+		// increase counter
+		counter++
+	}
+	// return largest int
+	return largest
+}
 
 // helper functions
 // write a function that takes a list of string and return the longest string, or an empty string.
-// func largestString(s []string) string {
-// 	// counter
-// 	var counter int
-// 	// assign string s[0] to variable largest
-// 	var largest = s[0]
-// 	// convert largest from string to int
-// 	var largestConverted int = int(len(s[0]))
-// 	// if array of strings is empty, return empty string
-// 	if len(s) == 0 {
-// 		return ""
-// 	}
-// 	// loop
-// 	for {
-// 		// if counter is higher than the length of array, break
-// 		if counter > len(s)-1 {
-// 			break
-// 		}
-// 		// if length of element of array is higher than variable largest, re assign that length of value to largest
-// 		if len(s[counter]) > largestConverted {
-// 			largest = s[counter]
-// 		}
-// 		// increase counter
-// 		counter++
-// 	}
-// 	// return final, largest result
-// 	return largest
-// }
+func largestString(s []string) string {
+	// counter
+	var counter int
+	// assign string s[0] to variable largest
+	var largest string
+	// convert largest from string to int
+	var largestConverted int = int(len(s[0]))
+	// if array of strings is empty, return empty string
+	if len(s) == 0 {
+		return ""
+	}
+	// loop
+	for {
+		// if counter is higher than the length of array, break
+		if counter > len(s)-1 {
+			break
+		}
+		// if length of element of array is higher than variable largest, re assign that length of value to largest
+		if len(s[counter]) > largestConverted {
+			largest = s[counter]
+		}
+		// increase counter
+		counter++
+	}
+	// return final, largest result
+	return largest
+}
 
 // main function
 func highestBMI(arrayOfMapInput []map[string]int) map[string]int {
@@ -392,12 +379,9 @@ func highestBMI(arrayOfMapInput []map[string]int) map[string]int {
 
 // define function that accepts an array of maps as input, with the type of string, int and whose type is the same for output, except float64 instead of int, to account for BMI values
 func addBMI(arrayOfMapInput []map[string]int) []map[string]float64 {
-	// debug
-	fmt.Println("DEBUG PRINT", arrayOfMapInput)
 	// counter
 	var counter int = 0
-	// var lengthOfArrayMapInput = len(arrayOfMapInput)
-	// // define result array of maps
+	// define result array of maps
 	var resultArrayOfMaps []map[string]float64 = []map[string]float64{}
 	// loop
 	for {
@@ -405,35 +389,15 @@ func addBMI(arrayOfMapInput []map[string]int) []map[string]float64 {
 		if counter > len(arrayOfMapInput)-1 {
 			break
 		}
-		// calcBMI variable
+		// calcBMI variable to calc BMI
 		var calcBMI = calcBMI(arrayOfMapInput[counter])
-		//
+		// weight and height variable
 		var weightValue = arrayOfMapInput[counter]["weight"]
-		// debug
-		// fmt.Println("DEBUG WEIGHT VARIABLE", arrayOfMapInput[0]["weight"])
-		// fmt.Println("DEBUG WEIGHT VARIABLE", arrayOfMapInput[1]["weight"])
-		//
 		var heightValue = arrayOfMapInput[counter]["height"]
-		// debug
-		// fmt.Println("DEBUG HEIGHT VARIABLE", arrayOfMapInput[0]["height"])
-		// fmt.Println("DEBUG HEIGHT VARIABLE", arrayOfMapInput[1]["height"])
-		// hard coded
-		// resultArrayOfMaps = append(resultArrayOfMaps, map[string]float64{"weight": 22})
-		// hard coded2
-		// resultArrayOfMaps = append(resultArrayOfMaps, map[string]float64{"bmi": calcBMI, "weight": 22, "height": 180})
 		// variables used
 		resultArrayOfMaps = append(resultArrayOfMaps, map[string]float64{"bmi": calcBMI, "weight": float64(weightValue), "height": float64(heightValue)})
-		// debug
-		fmt.Println("DEBUG PRINT WEIGHT", weightValue)
 		// increase counter
 		counter++
-		// floatCounter++
 	}
-	// debug
-	fmt.Println("DEBUG PRINT ARRAY OF MAPS", resultArrayOfMaps[0])
-	fmt.Println("DEBUG PRINT ARRAY OF MAPS", resultArrayOfMaps[4])
-	// TODO: return result map
 	return resultArrayOfMaps
-	// complete return
-	// return resultArrayOfMaps
 }
