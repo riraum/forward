@@ -153,6 +153,9 @@ func main() {
 	// calculate highest BMI
 	fmt.Println("Highest BMI is", highestBMI(people))
 
+	// add BMI to array of maps
+	fmt.Println(addBMI(people))
+
 	// // test helper int function
 	// fmt.Println(largestInt([]int{}))                      // 0
 	// fmt.Println(largestInt([]int{1, 2, 3}))               // 3
@@ -365,28 +368,6 @@ func calcAvgBMI(arrayOfMapInput []map[string]int) float64 {
 
 // main function
 func highestBMI(arrayOfMapInput []map[string]int) map[string]int {
-	// testing hard coded array element comparison with AND condition
-	// if calcBMI(arrayOfMapInput[0]) > calcBMI(arrayOfMapInput[1]) && calcBMI(arrayOfMapInput[0]) > calcBMI(arrayOfMapInput[2]) && calcBMI(arrayOfMapInput[0]) > calcBMI(arrayOfMapInput[3]) && calcBMI(arrayOfMapInput[0]) > calcBMI(arrayOfMapInput[4]) {
-	// 	return arrayOfMapInput[0]
-	// }
-	// var counter1 int = 0
-	// var counter2 int = 0
-	// for {
-	// 	if counter1 >= len(arrayOfMapInput) {
-	// 		break
-	// 	}
-	// 	if calcBMI(arrayOfMapInput[counter1]) > calcBMI(arrayOfMapInput[counter2]) {
-	// 		counter1++
-	// 	}
-	// 	// if calcBMI(arrayOfMapInput[counter1])
-	// }
-	// test return
-	// return arrayOfMapInput[0]
-	// return arrayOfMapInput[counter1]
-
-	// if len(arrayOfMapInput) == 0 {
-	// 	TODO:
-	// }
 	var highestBMI = arrayOfMapInput[0]
 	var counter int
 	for {
@@ -401,12 +382,35 @@ func highestBMI(arrayOfMapInput []map[string]int) map[string]int {
 	return highestBMI
 }
 
-// if calcBMI()
-
 // TODO: Create a function that takes an array of maps as an argument and
 // add as a new key-value pair to each map the key "bmi" with the value
 // being the BMI of the corresponding person.
 // Hint: Use a loop.
 // Hint: Create a new map for each person.
 // Hint: Create a new array of maps.
-// }
+
+// define function that accepts an array of maps as input, with the type of string, int and whose type is the same for output
+func addBMI(arrayOfMapInput []map[string]int) map[string]float64 {
+	// counter
+	var counter int
+	// calcBMI variable
+	var calcBMI = calcBMI(arrayOfMapInput[counter])
+	//
+	// var weight = arrayOfMapInput[]map[string]float64{weight: }
+	// define result array of maps
+	var resultArrayOfMaps []map[string]float64 = []map[string]float64{}
+	// loop
+	for {
+		// if counter is bigger than elements in array, break
+		if counter > len(arrayOfMapInput)-1 {
+			break
+		}
+		// calculate elements BMI with calcBMI function and append to resultMap
+		// resultArrayOfMaps = append(resultArrayOfMaps, map[string]float64{"weight": 22})
+		resultArrayOfMaps = append(resultArrayOfMaps, map[string]float64{"bmi": calcBMI, "weight": 22, "height": 180})
+		// increase counter
+		counter++
+	}
+	// TODO: return result map
+	return resultArrayOfMaps[0]
+}
