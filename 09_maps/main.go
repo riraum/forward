@@ -153,15 +153,15 @@ func main() {
 	// calculate highest BMI
 	fmt.Println("Highest BMI is", highestBMI(people))
 
-	// test helper int function
-	fmt.Println(largestInt([]int{}))                      // 0
-	fmt.Println(largestInt([]int{1, 2, 3}))               // 3
-	fmt.Println(largestInt([]int{-1, -2, 0}))             // 0
-	fmt.Println(largestInt([]int{100, 0, 3000, 0, -100})) // 3000
+	// // test helper int function
+	// fmt.Println(largestInt([]int{}))                      // 0
+	// fmt.Println(largestInt([]int{1, 2, 3}))               // 3
+	// fmt.Println(largestInt([]int{-1, -2, 0}))             // 0
+	// fmt.Println(largestInt([]int{100, 0, 3000, 0, -100})) // 3000
 
-	// test helper string function
-	fmt.Println(largestString([]string{"", ""}))           // ""
-	fmt.Println(largestString([]string{"a", "bc", "def"})) // "def"
+	// // test helper string function
+	// fmt.Println(largestString([]string{"", ""}))           // ""
+	// fmt.Println(largestString([]string{"a", "bc", "def"})) // "def"
 	// Close main function, to be able to declare another function
 }
 
@@ -294,44 +294,74 @@ func calcAvgBMI(arrayOfMapInput []map[string]int) float64 {
 
 // helper functions
 // write a function that takes a list of int and return the biggest, or 0.
-func largestInt(s []int) int {
-	if len(s) == 0 {
-		return 0
-	}
-	var largest = s[0]
+// func largestInt(s []int) int {
+// 	// counter
+// 	var counter int
+// 	// assign variable largest to element [0] of array
+// 	var largest = s[0]
+// 	// if array length is 0, return 0
+// 	if len(s) == 0 {
+// 		return 0
+// 	}
+// 	// loop
+// 	for {
+// 		// if counter is higher than length of array, break
+// 		if counter > len(s)-1 {
+// 			break
+// 		}
+// 		// if int of element of array is higher than largest, reassign that element
+// 		if s[counter] > largest {
+// 			largest = s[counter]
+// 		}
+// 		// increase counter
+// 		counter++
+// 	}
+// 	// return largest int
+// 	return largest
+// }
 
-	for {
-		var counter int
-		if counter > len(s) {
-			break
-		}
-		if s[counter] > largest {
-			largest = s[counter]
-		}
-		counter++
-	}
-	return largest
-}
+// func largestInt(s []int) int {
+// 	if len(s) == 0 {
+// 		return 0 // handle empty slice case
+// 	}
+// 	largest := s[0]               // Step 2
+// 	for i := 1; i < len(s); i++ { // Step 1
+// 		if s[i] > largest { // Step 3
+// 			largest = s[i] // Step 4
+// 		}
+// 	}
+// 	return largest // Step 5
+// }
 
 // helper functions
 // write a function that takes a list of string and return the longest string, or an empty string.
-func largestString(s []string) string {
-	if len(s) == 0 {
-		return ""
-	}
-	var largest = s[0]
-	for {
-		var counter int
-		if counter > len(s) {
-			break
-		}
-		if s[counter] > largest {
-			largest = s[counter]
-		}
-		counter++
-	}
-	return largest
-}
+// func largestString(s []string) string {
+// 	// counter
+// 	var counter int
+// 	// assign string s[0] to variable largest
+// 	var largest = s[0]
+// 	// convert largest from string to int
+// 	var largestConverted int = int(len(s[0]))
+// 	// if array of strings is empty, return empty string
+// 	if len(s) == 0 {
+// 		return ""
+// 	}
+// 	// loop
+// 	for {
+// 		// if counter is higher than the length of array, break
+// 		if counter > len(s)-1 {
+// 			break
+// 		}
+// 		// if length of element of array is higher than variable largest, re assign that length of value to largest
+// 		if len(s[counter]) > largestConverted {
+// 			largest = s[counter]
+// 		}
+// 		// increase counter
+// 		counter++
+// 	}
+// 	// return final, largest result
+// 	return largest
+// }
 
 // main function
 func highestBMI(arrayOfMapInput []map[string]int) map[string]int {
@@ -358,13 +388,13 @@ func highestBMI(arrayOfMapInput []map[string]int) map[string]int {
 	// 	TODO:
 	// }
 	var highestBMI = arrayOfMapInput[0]
+	var counter int
 	for {
-		var counter int
-		if counter > len(arrayOfMapInput) {
+		if counter > len(arrayOfMapInput)-1 {
 			break
 		}
-		if calcBMI((arrayOfMapInput[counter])) > calcBMI(highestBMI) {
-			highestBMI = (arrayOfMapInput[counter])
+		if calcBMI(arrayOfMapInput[counter]) > calcBMI(highestBMI) {
+			highestBMI = arrayOfMapInput[counter]
 		}
 		counter++
 	}
