@@ -64,7 +64,7 @@ You can also create a map of maps:
 
 func main() {
 	var human map[string]int = map[string]int{}
-	human["age"] = 0
+	human["age"] = 25
 	human["height"] = 180
 	fmt.Println(human)
 
@@ -205,8 +205,7 @@ func createNewMap(mapInput map[string]int) {
 		newMap["weight"] = mapInput["weight"] * 2
 		if mapInput["height"] > 200 {
 			newMap["tall"] = 1
-		}
-		if mapInput["height"] <= 200 {
+		} else {
 			newMap["tall"] = 0
 		}
 		counter++
