@@ -75,13 +75,19 @@ func main() {
 	// If so print "age exists in the map"
 	// If not print "age does not exist in the map"
 	// Do the same for the key "weight"
-	var value int
-	var exists bool
-	value, exists = human["age"]
-	if exists {
-		fmt.Println("age exists in the map")
-	}
-	fmt.Println("age does not exist in the map")
+	// var value int
+	// var exists bool
+	// value, exists = human["age"]
+	// if exists {
+	// 	fmt.Println("age exists in the map")
+	// }
+	// fmt.Println("age does not exist in the map")
+
+	// value, exists = human["weight"]
+	// if exists {
+	// 	fmt.Println("weight exists in the map")
+	// }
+	// fmt.Println("weight does not exist in the map")
 
 	// TODO: Change the value of the key "age" to 30.
 	// Print the map.
@@ -109,7 +115,15 @@ func main() {
 	// - "tall" -> 1 if height > 200, 0 otherwise
 	// Print the new map.
 
+	// create and print non tall map
 	createNewMap(person)
+	// create and print tall map
+	tallPerson := map[string]int{
+		"age":    30,
+		"height": 210,
+		"weight": 89,
+	}
+	createNewMap(tallPerson)
 
 	// TODO: Create an array of maps called "people" with the following maps:
 	// - { "height": 180, "weight": 70 }
@@ -176,9 +190,8 @@ func main() {
 // add a new key value element and fill it depending on the value of the input height key
 // print new map
 
-var newMap map[string]int = map[string]int{}
-
 func createNewMap(mapInput map[string]int) {
+	var newMap map[string]int = map[string]int{}
 	var counter int = 0
 
 	for {
@@ -191,7 +204,9 @@ func createNewMap(mapInput map[string]int) {
 		if mapInput["height"] > 200 {
 			newMap["tall"] = 1
 		}
-		newMap["tall"] = 0
+		if mapInput["height"] <= 200 {
+			newMap["tall"] = 0
+		}
 		counter++
 	}
 	fmt.Println("createNewMap:", newMap)
@@ -209,26 +224,26 @@ func calcBMI(mapInput map[string]int) float64 {
 	var value int
 	var exists bool
 	var bmi float64
-	var heightConvert int = mapInput["height"]
-	var heightConverted float64 = float64(heightConvert)
-	var weightConvert int = mapInput["weight"]
-	var weightConverted float64 = float64(weightConvert)
+	var heightInt int = mapInput["height"]
+	var weightInt int = mapInput["weight"]
 
 	value, exists = mapInput["height"]
 	if !exists || value == 0 {
 		fmt.Println("Height not found")
 	}
+	var heightFloat float64 = float64(heightInt)
 	value, exists = mapInput["weight"]
 	if !exists || value == 0 {
 		fmt.Println("Weight not found")
 	}
+	var weightFloat float64 = float64(weightInt)
 	// debug
 	// fmt.Println("weight debug", mapInput["weight"])
 	// fmt.Println("height debug", mapInput["height"])
 	// debug
 	// fmt.Println(heightAdjust)
 	// fmt.Println(weightConverted)
-	bmi = (weightConverted / (heightConverted * heightConverted))
+	bmi = (weightFloat / (heightFloat * heightFloat))
 	bmi = bmi * 10000
 	// debug
 	// fmt.Println(bmi)
@@ -251,8 +266,7 @@ func calcAvgBMI(arrayOfMapInput []map[string]int) float64 {
 	var counter int
 	var bmiSum float64
 	var avgBMI float64
-	var lenConvert int = len(arrayOfMapInput)
-	var lenConverted float64 = float64(lenConvert)
+	var mapLen float64 = float64(len(arrayOfMapInput))
 	for {
 		if counter >= len(arrayOfMapInput) {
 			break
@@ -264,7 +278,7 @@ func calcAvgBMI(arrayOfMapInput []map[string]int) float64 {
 	}
 	// debug
 	// fmt.Println(lenConverted)
-	avgBMI = bmiSum / lenConverted
+	avgBMI = bmiSum / mapLen
 	// debug
 	// fmt.Println("avg debug print", avgBMI)
 	return avgBMI
@@ -328,7 +342,7 @@ func largestString(s []string) string {
 			break
 		}
 		// if length of element of array is higher than variable largest, re assign that length of value to largest
-		if len(s[counter]) > largestInitial {
+		if largestInitial > len(s[counter]) {
 			largestStringResult = s[counter]
 		}
 		// increase counter
