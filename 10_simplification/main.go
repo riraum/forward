@@ -214,8 +214,18 @@ func main() {
 	}
 
 	// TODO: declare an array of 5 integers and print it
+	arrayFiveInt := []int{1, 2, 4, 5, 6}
+	fmt.Println("Print arrayFiveInt", arrayFiveInt)
 	// TODO: declare an array of 5 strings and print it
+	arrayFiveStrings := []string{"ISO 8601", "UTC", "FOR", "GLOBAL", "STANDARDS"}
+	fmt.Println("Print arrayFiveStrings", arrayFiveStrings)
 	// TODO: declare a map with 3 key-value pairs and print it
+	mapThreePairs := map[string]string{
+		"area":       "Seoul Metro region",
+		"population": "~25 million",
+		"language":   "Korean",
+	}
+	fmt.Println("Print mapThreePairs", mapThreePairs)
 
 	// close main function
 	fmt.Println("Print sumThreeInt", sumThreeInt(1, 2, 3))
