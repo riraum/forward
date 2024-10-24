@@ -207,16 +207,52 @@ func main() {
 	// TODO: write a loop that sums numbers until it reaches 20, print each new
 	// sum
 	// e.g. 0, 0+1, 0+1+2, 0+1+2+3, ...
-
-	// TODO: write a function that sums 3 `int` and returns the result
-	// TODO: write a function that multiplies 3 `int` and returns the result
-	// TODO: write a function that returns the sum of all numbers between its
-	// parameters.
-	// If the second parameter is less than the first, return 0.
-	// e.g. sum(1, 3) => 1 + 2 + 3 = 6
-	//      sum(2, 5) => 2 + 3 + 4 + 5 = 14
+	var sumTwenty int
+	for r := 0; r < 20; r++ {
+		sumTwenty += r
+		fmt.Println(sumTwenty)
+	}
 
 	// TODO: declare an array of 5 integers and print it
 	// TODO: declare an array of 5 strings and print it
 	// TODO: declare a map with 3 key-value pairs and print it
+
+	// close main function
+	fmt.Println("Print sumThreeInt", sumThreeInt(1, 2, 3))
+
+	fmt.Println("Print mulThreeInt", mulThreeInt(1, 2, 3))
+
+	fmt.Println("Print returnBetween", returnBetween(1, 2))
+	fmt.Println("Print returnBetween", returnBetween(1, 9))
+	fmt.Println("Print returnBetween", returnBetween(-1, 2))
+	fmt.Println("Print returnBetween", returnBetween(0, 0))
+	fmt.Println("Print returnBetween", returnBetween(3, 5))
+
+}
+
+// TODO: write a function that sums 3 `int` and returns the result
+func sumThreeInt(a, b, c int) int {
+	return a + b + c
+}
+
+// TODO: write a function that multiplies 3 `int` and returns the result
+func mulThreeInt(a, b, c int) int {
+	return a * b * c
+}
+
+// TODO: write a function that returns the sum of all numbers between its
+// parameters.
+// If the second parameter is less than the first, return 0.
+// e.g. sum(1, 3) => 1 + 2 + 3 = 6
+//
+//	sum(2, 5) => 2 + 3 + 4 + 5 = 14
+func returnBetween(a, b float64) float64 {
+	var sum float64
+	if b < a {
+		return 0
+	}
+	for i := a; i <= b; i++ {
+		sum += i
+	}
+	return sum
 }
