@@ -171,14 +171,13 @@ func main() {
 		}
 	}
 	// TODO: write a loop that prints the first 10 odd numbers
-	x := 0
-	for l := 0; x <= 10; l++ {
-		if l%2 == 0 {
-			continue
+	for l := 0; l <= 20; l++ {
+		fmt.Println("Print counter", l)
+		if l%2 != 0 {
+			fmt.Println("Print odd numbers", l)
 		}
-		fmt.Println("Print odd numbers", l)
-		x++
 	}
+
 	// TODO: write a loop that calculates the sum of the first 10 numbers
 	var sumFirstTen int
 	for m := 0; m < 10; m++ {
@@ -188,13 +187,11 @@ func main() {
 	fmt.Println("Print sum first 10", sumFirstTen)
 	// TODO: write a loop that calculates the sum of the first 10 odd numbers
 	var sumFirstTenOdd int
-	y := 0
-	for n := 0; y < 10; n++ {
-		if n%2 == 0 {
+	for n := 0; n < 20; n++ {
+		if n%2 != 0 {
 			continue
 		}
 		sumFirstTenOdd += n
-		y++
 	}
 	// debug
 	fmt.Println("Print sum first 10 odd", sumFirstTenOdd)
