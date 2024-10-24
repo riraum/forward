@@ -75,19 +75,21 @@ func main() {
 	// If so print "age exists in the map"
 	// If not print "age does not exist in the map"
 	// Do the same for the key "weight"
-	// var value int
-	// var exists bool
-	// value, exists = human["age"]
-	// if exists {
-	// 	fmt.Println("age exists in the map")
-	// }
-	// fmt.Println("age does not exist in the map")
+	var value int
+	var exists bool
+	value, exists = human["age"]
+	if exists {
+		fmt.Println("age exists in the map", value)
+	} else {
+		fmt.Println("age does not exist in the map")
+	}
 
-	// value, exists = human["weight"]
-	// if exists {
-	// 	fmt.Println("weight exists in the map")
-	// }
-	// fmt.Println("weight does not exist in the map")
+	value, exists = human["weight"]
+	if exists {
+		fmt.Println("weight exists in the map", value)
+	} else {
+		fmt.Println("weight does not exist in the map")
+	}
 
 	// TODO: Change the value of the key "age" to 30.
 	// Print the map.
