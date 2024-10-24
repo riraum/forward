@@ -64,7 +64,7 @@ You can also create a map of maps:
 
 func main() {
 	var human map[string]int = map[string]int{}
-	human["age"] = 25
+	human["age"] = 0
 	human["height"] = 180
 	fmt.Println(human)
 
@@ -81,9 +81,7 @@ func main() {
 	if exists {
 		fmt.Println("age exists in the map")
 	}
-	if value == 0 {
-		fmt.Println("age does not exist in the map")
-	}
+	fmt.Println("age does not exist in the map")
 
 	// TODO: Change the value of the key "age" to 30.
 	// Print the map.
