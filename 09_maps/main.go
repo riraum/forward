@@ -130,11 +130,10 @@ func main() {
 	people = append(people, map[string]int{"height": 170, "weight": 80})
 	people = append(people, map[string]int{"height": 150, "weight": 60})
 	people = append(people, map[string]int{"height": 190, "weight": 90})
-	// print people[0]
+	// debug
 	fmt.Println(people)
 
 	var counter int = 0
-	// // var calcPeople []map[string]int = people[counter]
 
 	for {
 		if counter >= len(people) {
@@ -217,8 +216,6 @@ func calcBMI(mapInput map[string]int) float64 {
 	var weightConvert int = mapInput["weight"]
 	var weightConverted float64 = float64(weightConvert)
 
-	// var result float64 = bmi
-
 	value, exists = mapInput["height"]
 	if !exists || value == 0 {
 		fmt.Println("Height not found")
@@ -237,19 +234,8 @@ func calcBMI(mapInput map[string]int) float64 {
 	bmi = bmi * 10000
 	// debug
 	// fmt.Println(bmi)
-	// TODO: check and fix syntax for name and bmi variable
 	// fmt.Println("BMI is", bmi)
 	return bmi
-
-	// for {
-	// 	var counter int = 0
-	// 	if counter > len(mapInput) {
-	// 		break
-	// 	}
-	// 	counter++
-	// 	return bmi
-	// }
-
 }
 
 // TODO: Create a function that takes an array of maps as an argument and
@@ -329,10 +315,10 @@ func largestInt(s []int) int {
 func largestString(s []string) string {
 	// counter
 	var counter int
-	// assign string s[0] to variable largest
-	var largest string
-	// convert largest from string to int
-	var largestConverted int = int(len(s[0]))
+	// initialize largest
+	var largestStringResult string
+	// get length of s[0], assign to variable
+	var largestInitial int = len(s[0])
 	// if array of strings is empty, return empty string
 	if len(s) == 0 {
 		return ""
@@ -344,14 +330,14 @@ func largestString(s []string) string {
 			break
 		}
 		// if length of element of array is higher than variable largest, re assign that length of value to largest
-		if len(s[counter]) > largestConverted {
-			largest = s[counter]
+		if len(s[counter]) > largestInitial {
+			largestStringResult = s[counter]
 		}
 		// increase counter
 		counter++
 	}
 	// return final, largest result
-	return largest
+	return largestStringResult
 }
 
 // main function
@@ -380,9 +366,9 @@ func highestBMI(arrayOfMapInput []map[string]int) map[string]int {
 // define function that accepts an array of maps as input, with the type of string, int and whose type is the same for output, except float64 instead of int, to account for BMI values
 func addBMI(arrayOfMapInput []map[string]int) []map[string]float64 {
 	// counter
-	var counter int = 0
+	var counter int
 	// define result array of maps
-	var resultArrayOfMaps []map[string]float64 = []map[string]float64{}
+	var resultArrayOfMaps []map[string]float64
 	// loop
 	for {
 		// if counter is bigger than elements in array, break
