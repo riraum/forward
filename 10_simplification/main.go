@@ -210,7 +210,7 @@ func main() {
 	var sumTwenty int
 	for r := 0; r < 20; r++ {
 		sumTwenty += r
-		fmt.Println(sumTwenty)
+		fmt.Println("Print sumTwenty", sumTwenty)
 	}
 
 	// TODO: declare an array of 5 integers and print it
