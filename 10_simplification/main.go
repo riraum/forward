@@ -171,10 +171,13 @@ func main() {
 		}
 	}
 	// TODO: write a loop that prints the first 10 odd numbers
-	for l := 0; l < 10; l++ {
-		if l%2 != 0 {
-			fmt.Println(l)
+	x := 0
+	for l := 0; x <= 10; l++ {
+		if l%2 == 0 {
+			continue
 		}
+		fmt.Println("Print odd numbers", l)
+		x++
 	}
 	// TODO: write a loop that calculates the sum of the first 10 numbers
 	var sumFirstTen int
@@ -182,16 +185,19 @@ func main() {
 		sumFirstTen += m
 	}
 	// debug
-	fmt.Println(sumFirstTen)
+	fmt.Println("Print sum first 10", sumFirstTen)
 	// TODO: write a loop that calculates the sum of the first 10 odd numbers
 	var sumFirstTenOdd int
-	for n := 0; n < 10; n++ {
-		if n%2 != 0 {
-			sumFirstTenOdd += n
+	y := 0
+	for n := 0; y < 10; n++ {
+		if n%2 == 0 {
+			continue
 		}
+		sumFirstTenOdd += n
+		y++
 	}
 	// debug
-	fmt.Println(sumFirstTenOdd)
+	fmt.Println("Print sum first 10 odd", sumFirstTenOdd)
 
 	// TODO: write a loop that prints the first 10 numbers, except 5 and 7
 	for p := 0; p < 10; p++ {
@@ -257,12 +263,13 @@ func mulThreeInt(a, b, c int) int {
 //
 //	sum(2, 5) => 2 + 3 + 4 + 5 = 14
 func returnBetween(a, b float64) float64 {
-	var sum float64
 	if b < a {
 		return 0
 	}
+	var sum float64
 	for i := a; i <= b; i++ {
 		sum += i
 	}
+
 	return sum
 }
