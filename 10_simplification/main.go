@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
 
 This file shows a couple of simpler way to do things you already know.
@@ -145,18 +147,63 @@ can be taken.
 
 func main() {
 	// TODO: declare a variable `x` of type `int` and set it to 10
+	// x := 10
 	// TODO: declare a variable `y` of type `int` and set it to 20
+	// y := 20
 	// TODO: declare a variable `name` of type `string` and set it to "John"
+	// name := "John"
 	// TODO: declare a variable `z` of type `int` without assigning a value
+	// var z int
 	// TODO: assign the sum of `x` and `y` to `z`
-
+	// z = x + y
 	// TODO: write a loop that prints all numbers from 0 to 10
+	for i := 0; i <= 10; i++ {
+		fmt.Println(i)
+	}
 	// TODO: write a loop that prints all numbers from 10 to 0
+	for j := 10; j > 0; j-- {
+		fmt.Println(j)
+	}
 	// TODO: write a loop that prints all even numbers from 0 to 10
+	for k := 0; k < 10; k++ {
+		if k%2 == 0 {
+			fmt.Println(k)
+		}
+	}
 	// TODO: write a loop that prints the first 10 odd numbers
+	for l := 0; l < 10; l++ {
+		if l%2 != 0 {
+			fmt.Println(l)
+		}
+	}
 	// TODO: write a loop that calculates the sum of the first 10 numbers
+	var sumFirstTen int
+	for m := 0; m < 10; m++ {
+		sumFirstTen += m
+	}
+	// debug
+	fmt.Println(sumFirstTen)
 	// TODO: write a loop that calculates the sum of the first 10 odd numbers
+	var sumFirstTenOdd int
+	for n := 0; n < 10; n++ {
+		if n%2 != 0 {
+			sumFirstTenOdd += n
+		}
+	}
+	// debug
+	fmt.Println(sumFirstTenOdd)
+
 	// TODO: write a loop that prints the first 10 numbers, except 5 and 7
+	for p := 0; p < 10; p++ {
+		if p == 5 {
+			continue
+		}
+		if p == 7 {
+			continue
+		}
+		fmt.Println(p)
+	}
+
 	// TODO: write a loop that sums numbers until it reaches 20, print each new
 	// sum
 	// e.g. 0, 0+1, 0+1+2, 0+1+2+3, ...
