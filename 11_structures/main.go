@@ -80,6 +80,14 @@ E.g.
 	}
 */
 
+// TODO: Create a struct named `triangle` with fields `side1`, `side2` and
+// `side3` of type `float64`.
+type triangle struct {
+	side1 float64
+	side2 float64
+	side3 float64
+}
+
 // TODO: Create a function on the structure `area` that returns a `float64`.
 type area struct {
 	side float64
@@ -89,15 +97,60 @@ func (a area) area() float64 {
 	return a.side * a.side
 }
 
+// TODO: Adapt your code from 02_boolean to check the triangle type. The
+// function should return a string with the type of the triangle.
+func (t triangle) triangleType() string {
+	if sumLengthSmallerLongestSide(t.side1, t.side2, t.side3) {
+		return "invalid triangle values"
+	}
+	// any side <=0 return error
+	if t.side1 <= 0 || t.side2 <= 0 || t.side3 <= 0 {
+		return "invalid triangle values"
+	}
+	if t.side1 == t.side2 && t.side1 == t.side3 {
+		return "equilateral"
+	}
+	if t.side1 == t.side2 || t.side1 == t.side3 ||
+		t.side2 == t.side3 {
+		return "isosceles"
+	}
+	if t.side1 != t.side2 || t.side1 != t.side3 ||
+		t.side2 != t.side3 {
+		return "scalene"
+	}
+
+	return "Error 404: Triangle logic not yet found"
+}
+
+func longestSide(side1, side2, side3 float64) float64 {
+	if side1 < side2 && side2 < side3 {
+		return side3
+	}
+	if side1 < side3 && side3 < side2 {
+		return side2
+	}
+	return side1
+}
+
+func sumTwoShortestSides(side1, side2, side3 float64) float64 {
+	if side1 < side2 && side2 < side3 {
+		return side1 + side2
+	}
+	if side1 < side3 && side3 < side2 {
+		return side1 + side3
+	}
+	return side2 + side3
+}
+
+func sumLengthSmallerLongestSide(side1, side2, side3 float64) bool {
+	sum := sumTwoShortestSides(side1, side2, side3)
+	biggest := longestSide(side1, side2, side3)
+	return sum <= biggest
+}
+
 func main() {
 	// TODO: Create a struct named `triangle` with fields `side1`, `side2` and
 	// `side3` of type `float64`.
-	type triangle struct {
-		side1 float64
-		side2 float64
-		side3 float64
-	}
-
 	bigTriangle := triangle{
 		side1: 313.32,
 		side2: 231,
@@ -112,6 +165,44 @@ func main() {
 
 	// TODO: Adapt your code from 02_boolean to check the triangle type. The
 	// function should return a string with the type of the triangle.
+	invalidLenghts := triangle{
+		side1: 4,
+		side2: 6,
+		side3: 40,
+	}
+	fmt.Println(invalidLenghts.triangleType())
+
+	invalidValues := triangle{
+		side1: 0,
+		side2: -10,
+		side3: 41,
+	}
+	fmt.Println(invalidValues.triangleType())
+
+	// all sides equal
+	equilateral := triangle{
+		side1: 10,
+		side2: 10,
+		side3: 10,
+	}
+	fmt.Println(equilateral.triangleType())
+
+	// two sides equal
+	isosceles := triangle{
+		side1: 10,
+		side2: 10,
+		side3: 33,
+	}
+	fmt.Println(isosceles.triangleType())
+
+	// no sides equal
+	scalene := triangle{
+		side1: 11,
+		side2: 12,
+		side3: 13,
+	}
+	fmt.Println(scalene.triangleType())
+
 	// TODO: Create a function `compare` on the structure `triangle` that takes another
 	// triangle as an argument and returns:
 	// - -1 if the area of the first triangle is smaller than the area of the second
