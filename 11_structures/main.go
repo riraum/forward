@@ -184,7 +184,7 @@ func (t1 triangle) compare(t2 triangle) int {
 		return 0
 	}
 	if calcTriangleAreat1 > calcTriangleAreat2 {
-		return -1
+		return 1
 	}
 	// debug, to remove
 	return 6060
