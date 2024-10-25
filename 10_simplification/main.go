@@ -172,9 +172,23 @@ func main() {
 	}
 	// TODO: write a loop that prints the first 10 odd numbers
 	for l := 0; l <= 20; l++ {
+		// debug
 		fmt.Println("Print counter", l)
 		if l%2 != 0 {
 			fmt.Println("Print odd numbers", l)
+		}
+	}
+
+	counter := 0
+	counter2 := 1
+	for {
+		if counter%2 != 0 {
+			fmt.Println("Alt print odd numbers", counter)
+			counter2++
+		}
+		counter++
+		if counter2 > 10 {
+			break
 		}
 	}
 
