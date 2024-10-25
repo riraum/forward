@@ -345,7 +345,7 @@ func largestString(s []string) string {
 			break
 		}
 		// if length of element of array is higher than variable largest, re assign that length of value to largest
-		if largestInitial > len(s[counter]) {
+		if len(s[counter]) > largestInitial {
 			largestStringResult = s[counter]
 		}
 		// increase counter
