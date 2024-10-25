@@ -165,12 +165,12 @@ func main() {
 
 	// TODO: Adapt your code from 02_boolean to check the triangle type. The
 	// function should return a string with the type of the triangle.
-	invalidLenghts := triangle{
+	invalidLengths := triangle{
 		side1: 4,
 		side2: 6,
 		side3: 40,
 	}
-	fmt.Println(invalidLenghts.triangleType())
+	fmt.Println(invalidLengths.triangleType())
 
 	invalidValues := triangle{
 		side1: 0,
