@@ -232,20 +232,21 @@ func calcBMI(mapInput map[string]int) float64 {
 	if !exists || value == 0 {
 		fmt.Println("Height not found")
 	}
-	var heightFloat float64 = float64(mapInput["height"])
+	// var heightFloat float64 = float64(mapInput["height"])
 
 	value, exists = mapInput["weight"]
 	if !exists || value == 0 {
 		fmt.Println("Weight not found")
 	}
-	var weightFloat float64 = float64(mapInput["weight"])
+	// var weightFloat float64 = float64(mapInput["weight"])
 	// debug
 	// fmt.Println("weight debug", mapInput["weight"])
 	// fmt.Println("height debug", mapInput["height"])
 	// debug
 	// fmt.Println(heightAdjust)
 	// fmt.Println(weightConverted)
-	bmi = (weightFloat / (heightFloat * heightFloat))
+	// bmi = (weightFloat / (heightFloat * heightFloat))
+	bmi = (float64(mapInput["weight"]) / (float64(mapInput["height"]) * float64(mapInput["height"])))
 	bmi = bmi * 10000
 	// debug
 	// fmt.Println(bmi)
