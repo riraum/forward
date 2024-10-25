@@ -1,7 +1,8 @@
 package main
 
-/*
+import "fmt"
 
+/*
 Go has structures.
 
 Structures are the closest thing to classes in Go.
@@ -13,35 +14,35 @@ The fields can have different types and must have different names.
 
 E.g.
 
-    type person struct {
-        name string
-        age  int
-        height int
-        weight int
-    }
+	type person struct {
+	    name string
+	    age  int
+	    height int
+	    weight int
+	}
 
-    This defines a new type called `person`.
+	This defines a new type called `person`.
 
-    Note how this is better than a map, because the fields are typed and can
-    have different types.
+	Note how this is better than a map, because the fields are typed and can
+	have different types.
 
-    But, you also can't add/remove fields from a struct, those are fixed.
+	But, you also can't add/remove fields from a struct, those are fixed.
 
 Creating a struct is like creating a variable.
 You can access the fields using the dot operator.
 
 E.g.
 
-    bob := person{} // with a zero value for each field
-    bob.name = "Bob"
-    bob.age = 20
-    fmt.Println(bob.name) // Bob
+	bob := person{} // with a zero value for each field
+	bob.name = "Bob"
+	bob.age = 20
+	fmt.Println(bob.name) // Bob
 
-    alice := person{
-        name: "Alice",
-        age:  30,
-    } // with a mix of zero and custom values
-    fmt.Println(alice.age) // 30
+	alice := person{
+	    name: "Alice",
+	    age:  30,
+	} // with a mix of zero and custom values
+	fmt.Println(alice.age) // 30
 
 Structs can have functions associated with them.
 It means that when defined, you can call a function directly on the struct
@@ -49,13 +50,13 @@ instance.
 
 E.g.
 
-    type square struct {
-        side float64
-    }
+	type square struct {
+	    side float64
+	}
 
-    func (s square) area() float64 {
-        return s.side * s.side
-    }
+	func (s square) area() float64 {
+	    return s.side * s.side
+	}
 
 Here, look closely at the `(s square)` part.
 
@@ -69,21 +70,46 @@ instances inside the function.
 
 E.g.
 
-    type square struct { ... }
+	type square struct { ... }
 
-    func (s square) area() float64 { ... }
+	func (s square) area() float64 { ... }
 
-    func main() {
-        s := square{side: 10}
-        fmt.Println(s.area()) // 100
-    }
-
+	func main() {
+	    s := square{side: 10}
+	    fmt.Println(s.area()) // 100
+	}
 */
+
+// TODO: Create a function on the structure `area` that returns a `float64`.
+type area struct {
+	side float64
+}
+
+func (a area) area() float64 {
+	return a.side * a.side
+}
 
 func main() {
 	// TODO: Create a struct named `triangle` with fields `side1`, `side2` and
 	// `side3` of type `float64`.
+	type triangle struct {
+		side1 float64
+		side2 float64
+		side3 float64
+	}
+
+	bigTriangle := triangle{
+		side1: 313.32,
+		side2: 231,
+		side3: 422.66,
+	}
+
+	fmt.Println(bigTriangle)
+
 	// TODO: Create a function on the structure `area` that returns a `float64`.
+	a := area{side: 5}
+	fmt.Println(a.area())
+
 	// TODO: Adapt your code from 02_boolean to check the triangle type. The
 	// function should return a string with the type of the triangle.
 	// TODO: Create a function `compare` on the structure `triangle` that takes another
