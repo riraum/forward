@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
 
 This file shows a couple of simpler way to do things you already know.
@@ -145,31 +147,148 @@ can be taken.
 
 func main() {
 	// TODO: declare a variable `x` of type `int` and set it to 10
+	// x := 10
 	// TODO: declare a variable `y` of type `int` and set it to 20
+	// y := 20
 	// TODO: declare a variable `name` of type `string` and set it to "John"
+	// name := "John"
 	// TODO: declare a variable `z` of type `int` without assigning a value
+	// var z int
 	// TODO: assign the sum of `x` and `y` to `z`
-
+	// z = x + y
 	// TODO: write a loop that prints all numbers from 0 to 10
+	for i := 0; i <= 10; i++ {
+		fmt.Println(i)
+	}
 	// TODO: write a loop that prints all numbers from 10 to 0
+	for j := 10; j > 0; j-- {
+		fmt.Println(j)
+	}
 	// TODO: write a loop that prints all even numbers from 0 to 10
+	for k := 0; k < 10; k++ {
+		if k%2 == 0 {
+			fmt.Println(k)
+		}
+	}
 	// TODO: write a loop that prints the first 10 odd numbers
+	for l := 0; l <= 20; l++ {
+		// debug
+		fmt.Println("Print counter", l)
+		if l%2 != 0 {
+			fmt.Println("Print odd numbers", l)
+		}
+	}
+	// Alternative first 10 odd loop
+	counter := 0
+	counter2 := 1
+	for {
+		if counter%2 != 0 {
+			fmt.Println("Alt print odd numbers", counter)
+			counter2++
+		}
+		counter++
+		if counter2 > 10 {
+			break
+		}
+	}
+
+	// Yet another alternative first 10 odd loop
+	for z := 0; z < 20; z++ {
+		if z%2 == 0 {
+			continue
+		}
+		fmt.Println("Print another odd numbers", z)
+	}
+
 	// TODO: write a loop that calculates the sum of the first 10 numbers
+	var sumFirstTen int
+	for m := 0; m < 10; m++ {
+		sumFirstTen += m
+	}
+	// debug
+	fmt.Println("Print sum first 10", sumFirstTen)
 	// TODO: write a loop that calculates the sum of the first 10 odd numbers
+	var sumFirstTenOdd int
+	for n := 0; n < 20; n++ {
+		if n%2 != 0 {
+			continue
+		}
+		sumFirstTenOdd += n
+	}
+	// debug
+	fmt.Println("Print sum first 10 odd", sumFirstTenOdd)
+
 	// TODO: write a loop that prints the first 10 numbers, except 5 and 7
+	for p := 0; p < 10; p++ {
+		if p == 5 {
+			continue
+		}
+		if p == 7 {
+			continue
+		}
+		fmt.Println(p)
+	}
+
 	// TODO: write a loop that sums numbers until it reaches 20, print each new
 	// sum
 	// e.g. 0, 0+1, 0+1+2, 0+1+2+3, ...
-
-	// TODO: write a function that sums 3 `int` and returns the result
-	// TODO: write a function that multiplies 3 `int` and returns the result
-	// TODO: write a function that returns the sum of all numbers between its
-	// parameters.
-	// If the second parameter is less than the first, return 0.
-	// e.g. sum(1, 3) => 1 + 2 + 3 = 6
-	//      sum(2, 5) => 2 + 3 + 4 + 5 = 14
+	var sumTwenty int
+	for r := 0; r < 20; r++ {
+		sumTwenty += r
+		fmt.Println("Print sumTwenty", sumTwenty)
+	}
 
 	// TODO: declare an array of 5 integers and print it
+	arrayFiveInt := []int{1, 2, 4, 5, 6}
+	fmt.Println("Print arrayFiveInt", arrayFiveInt)
 	// TODO: declare an array of 5 strings and print it
+	arrayFiveStrings := []string{"ISO 8601", "UTC", "FOR", "GLOBAL", "STANDARDS"}
+	fmt.Println("Print arrayFiveStrings", arrayFiveStrings)
 	// TODO: declare a map with 3 key-value pairs and print it
+	mapThreePairs := map[string]string{
+		"area":       "Seoul Metro region",
+		"population": "~25 million",
+		"language":   "Korean",
+	}
+	fmt.Println("Print mapThreePairs", mapThreePairs)
+
+	// close main function
+	fmt.Println("Print sumThreeInt", sumThreeInt(1, 2, 3))
+
+	fmt.Println("Print mulThreeInt", mulThreeInt(1, 2, 3))
+
+	fmt.Println("Print returnBetween", returnBetween(1, 2))
+	fmt.Println("Print returnBetween", returnBetween(1, 9))
+	fmt.Println("Print returnBetween", returnBetween(-1, 2))
+	fmt.Println("Print returnBetween", returnBetween(0, 0))
+	fmt.Println("Print returnBetween", returnBetween(3, 5))
+
+}
+
+// TODO: write a function that sums 3 `int` and returns the result
+func sumThreeInt(a, b, c int) int {
+	return a + b + c
+}
+
+// TODO: write a function that multiplies 3 `int` and returns the result
+func mulThreeInt(a, b, c int) int {
+	return a * b * c
+}
+
+// TODO: write a function that returns the sum of all numbers between its
+// parameters.
+// If the second parameter is less than the first, return 0.
+// e.g. sum(1, 3) => 1 + 2 + 3 = 6
+//
+//	sum(2, 5) => 2 + 3 + 4 + 5 = 14
+func returnBetween(a, b float64) float64 {
+	if b < a {
+		return 0
+	}
+	var sum float64
+	for i := a; i <= b; i++ {
+		sum += i
+	}
+
+	return sum
 }
