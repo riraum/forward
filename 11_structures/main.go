@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 /*
 Go has structures.
@@ -148,6 +151,45 @@ func sumLengthSmallerLongestSide(side1, side2, side3 float64) bool {
 	return sum <= biggest
 }
 
+// TODO: Create a function `compare` on the structure `triangle` that takes another
+// triangle as an argument and returns:
+// - -1 if the area of the first triangle is smaller than the area of the second
+// - 0 if the area of the first triangle is equal to the area of the second
+// - 1 if the area of the first triangle is greater than the area of the second
+// Hint: func (t1 triangle) compare(t2 triangle) int { ... }
+
+func semiParameter(side1, side2, side3 float64) float64 {
+	return (side1 + side2 + side3) / 0.5
+}
+
+// calculate square root
+// func sqrt(x float64) float64 {
+// }
+// squareRoot :=  math.Sqrt()
+
+func calcTriangleArea(semiParameter, side1, side2, side3 float64) float64 {
+	return math.Sqrt(semiParameter * (semiParameter * side1) * (semiParameter * side2) * (semiParameter * side3))
+}
+
+func (t1 triangle) compare(t2 triangle) int {
+	semiParametert1 := semiParameter(t1.side1, t1.side2, t1.side3)
+	calcTriangleAreat1 := calcTriangleArea(semiParametert1, t1.side1, t1.side2, t1.side3)
+
+	semiParametert2 := semiParameter(t2.side1, t2.side2, t2.side3)
+	calcTriangleAreat2 := calcTriangleArea(semiParametert2, t2.side1, t2.side2, t2.side3)
+	if calcTriangleAreat1 < calcTriangleAreat2 {
+		return -1
+	}
+	if calcTriangleAreat1 == calcTriangleAreat2 {
+		return 0
+	}
+	if calcTriangleAreat1 > calcTriangleAreat2 {
+		return -1
+	}
+	// debug, to remove
+	return 6060
+}
+
 func main() {
 	// TODO: Create a struct named `triangle` with fields `side1`, `side2` and
 	// `side3` of type `float64`.
@@ -209,6 +251,20 @@ func main() {
 	// - 0 if the area of the first triangle is equal to the area of the second
 	// - 1 if the area of the first triangle is greater than the area of the second
 	// Hint: func (t1 triangle) compare(t2 triangle) int { ... }
+	biggerTriangle := triangle{
+		side1: 20,
+		side2: 20,
+		side3: 30,
+	}
+	smallerTriangle := triangle{
+		side1: 5,
+		side2: 10,
+		side3: 5,
+	}
+
+	fmt.Println(smallerTriangle.compare(bigTriangle))
+	fmt.Println(smallerTriangle.compare(smallerTriangle))
+	fmt.Println(biggerTriangle.compare(smallerTriangle))
 
 	// TODO: Create a struct named `person` with fields `name`, `age`, `height` and
 	// `weight` with the types you think are appropriate.
