@@ -178,7 +178,7 @@ func main() {
 			fmt.Println("Print odd numbers", l)
 		}
 	}
-
+	// Alternative first 10 odd loop
 	counter := 0
 	counter2 := 1
 	for {
@@ -190,6 +190,14 @@ func main() {
 		if counter2 > 10 {
 			break
 		}
+	}
+
+	// Yet another alternative first 10 odd loop
+	for z := 0; z < 20; z++ {
+		if z%2 == 0 {
+			continue
+		}
+		fmt.Println("Print another odd numbers", z)
 	}
 
 	// TODO: write a loop that calculates the sum of the first 10 numbers
