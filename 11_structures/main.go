@@ -218,6 +218,14 @@ func (p person) bmi() float64 {
 	return p.weight / (p.height * p.height) * 10000
 }
 
+// TODO: Create an array of 5 `person` instances with random data in it.
+// randomArray := []person{
+// 	name: "John",
+// 	age: 60,
+// 	height: 177,
+// 	weight: 87,
+// }
+
 func main() {
 	// TODO: Create a struct named `triangle` with fields `side1`, `side2` and
 	// `side3` of type `float64`.
@@ -331,7 +339,42 @@ func main() {
 	}
 	fmt.Println(dora.bmi())
 
-	// TODO: Create an array of 5 `person` instances with random data in it.
+	// // TODO: Create an array of 5 `person` instances with random data in it.
+	randomArray := []person{
+		{
+			name:   "John",
+			age:    60,
+			height: 177,
+			weight: 87,
+		},
+		{
+			name:   "Anna",
+			age:    18,
+			height: 190,
+			weight: 78,
+		},
+		{
+			name:   "Francoise",
+			age:    20,
+			height: 176,
+			weight: 60,
+		},
+		{
+			name:   "Francois",
+			age:    31,
+			height: 169,
+			weight: 66,
+		},
+		{
+			name:   "Amelie",
+			age:    64,
+			weight: 71,
+			height: 184,
+		},
+	}
+	// debug
+	fmt.Println(randomArray[0].name)
+
 	// TODO: Create a function that takes a list of person and prints "Hi, my
 	// name is <name>, my BMI is <bmi> and I am <an adult|an infant>".
 	// TODO: Print the name of the oldest person in the array.
