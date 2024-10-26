@@ -208,6 +208,10 @@ func (p person) greet() string {
 
 // TODO: Create a function 'isAdult' on the structure `person` that returns
 // a boolean indicating if the person is over 18 years old.
+func (p person) isAdult() bool {
+	return p.age >= 18
+}
+
 // TODO: Create a function 'bmi' on the structure `person` that returns the
 // body mass index of the person. The formula is weight / (height * height).
 
@@ -289,12 +293,7 @@ func main() {
 
 	// TODO: Create a struct named `person` with fields `name`, `age`, `height` and
 	// `weight` with the types you think are appropriate.
-	// type person struct {
-	// 	name   string
-	// 	age    int
-	// 	height float64
-	// 	weight float64
-	// }
+	// Placed before main function
 
 	// TODO: Create a function 'greet' on the structure `person` that prints "Hello,
 	// <name>!" to the console.
@@ -305,6 +304,16 @@ func main() {
 
 	// TODO: Create a function 'isAdult' on the structure `person` that returns
 	// a boolean indicating if the person is over 18 years old.
+	anna := person{
+		age: 17,
+	}
+	fmt.Println(anna.isAdult())
+
+	hanna := person{
+		age: 20,
+	}
+	fmt.Println(hanna.isAdult())
+
 	// TODO: Create a function 'bmi' on the structure `person` that returns the
 	// body mass index of the person. The formula is weight / (height * height).
 
