@@ -214,6 +214,9 @@ func (p person) isAdult() bool {
 
 // TODO: Create a function 'bmi' on the structure `person` that returns the
 // body mass index of the person. The formula is weight / (height * height).
+func (p person) bmi() float64 {
+	return p.weight / (p.height * p.height) * 10000
+}
 
 func main() {
 	// TODO: Create a struct named `triangle` with fields `side1`, `side2` and
@@ -316,6 +319,17 @@ func main() {
 
 	// TODO: Create a function 'bmi' on the structure `person` that returns the
 	// body mass index of the person. The formula is weight / (height * height).
+	charlie := person{
+		height: 180,
+		weight: 85,
+	}
+	fmt.Println(charlie.bmi())
+
+	dora := person{
+		height: 150,
+		weight: 39,
+	}
+	fmt.Println(dora.bmi())
 
 	// TODO: Create an array of 5 `person` instances with random data in it.
 	// TODO: Create a function that takes a list of person and prints "Hi, my
