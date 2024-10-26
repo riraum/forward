@@ -218,13 +218,27 @@ func (p person) bmi() float64 {
 	return p.weight / (p.height * p.height) * 10000
 }
 
-// TODO: Create an array of 5 `person` instances with random data in it.
-// randomArray := []person{
-// 	name: "John",
-// 	age: 60,
-// 	height: 177,
-// 	weight: 87,
-// }
+// TODO: Create a function that takes a list of person and prints "Hi, my
+// name is <name>, my BMI is <bmi> and I am <an adult|an infant>".
+func (p person) advIntro() string {
+	bmi := p.bmi()
+	// adultOrChild := p.isAdult()
+	// if adultOrChild {
+	// 	return "adult"
+	// }
+	adultOrChild := p.adultOrChild()
+	formatString := fmt.Sprintf("Hi, my name is s%, my BMI is %t and I am an %u", p.name, bmi, adultOrChild)
+	return formatString
+}
+
+// adult or child to string helper function
+func (p person) adultOrChild() string {
+	if p.isAdult() {
+		return "adult"
+	} else {
+		return "infant"
+	}
+}
 
 func main() {
 	// TODO: Create a struct named `triangle` with fields `side1`, `side2` and
@@ -377,6 +391,9 @@ func main() {
 
 	// TODO: Create a function that takes a list of person and prints "Hi, my
 	// name is <name>, my BMI is <bmi> and I am <an adult|an infant>".
+	// debug hard coded
+	fmt.Println(randomArray[0].advIntro())
+
 	// TODO: Print the name of the oldest person in the array.
 	// Hint: create a function that takes a list of person and return the
 	// oldest.
