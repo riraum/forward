@@ -176,8 +176,9 @@ func main() {
 	fmt.Println(largestInt([]int{100, 0, 3000, 0, -100})) // 3000
 
 	// test helper string function
-	fmt.Println(largestString([]string{"", ""}))           // ""
-	fmt.Println(largestString([]string{"a", "bc", "def"})) // "def"
+	fmt.Println(largestString([]string{"", ""}))                         // ""
+	fmt.Println(largestString([]string{"a", "bc", "def"}))               // "def"
+	fmt.Println(largestString([]string{"xyz", "xyzabcd", "qwertyuiop"})) // "qwertyuiop"
 
 	// Close main function, to be able to declare another function
 }
@@ -333,7 +334,7 @@ func largestString(s []string) string {
 	// initialize largest
 	var largestStringResult string
 	// get length of s[0], assign to variable
-	var largestInitial int = len(s[0])
+	// var largestInitial int
 	// if array of strings is empty, return empty string
 	if len(s) == 0 {
 		return ""
@@ -344,8 +345,9 @@ func largestString(s []string) string {
 		if counter > len(s)-1 {
 			break
 		}
-		// if length of element of array is higher than variable largest, re assign that length of value to largest
-		if len(s[counter]) > largestInitial {
+		// if length of element of array is higher than 0
+		if len(s[counter]) > 0 {
+			// assign string to variable for output
 			largestStringResult = s[counter]
 		}
 		// increase counter
