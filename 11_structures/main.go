@@ -96,7 +96,7 @@ type area struct {
 	side float64
 }
 
-func (a area) area() float64 {
+func (a area) areaSize() float64 {
 	return a.side * a.side
 }
 
@@ -190,6 +190,27 @@ func (t1 triangle) compare(t2 triangle) int {
 	return 6060
 }
 
+// TODO: Create a struct named `person` with fields `name`, `age`, `height` and
+// `weight` with the types you think are appropriate.
+type person struct {
+	name   string
+	age    int
+	height float64
+	weight float64
+}
+
+// TODO: Create a function 'greet' on the structure `person` that prints "Hello,
+// <name>!" to the console.
+func (p person) greet() string {
+	formatString := fmt.Sprintf("Hello, %s!", p.name)
+	return formatString
+}
+
+// TODO: Create a function 'isAdult' on the structure `person` that returns
+// a boolean indicating if the person is over 18 years old.
+// TODO: Create a function 'bmi' on the structure `person` that returns the
+// body mass index of the person. The formula is weight / (height * height).
+
 func main() {
 	// TODO: Create a struct named `triangle` with fields `side1`, `side2` and
 	// `side3` of type `float64`.
@@ -203,7 +224,7 @@ func main() {
 
 	// TODO: Create a function on the structure `area` that returns a `float64`.
 	a := area{side: 5}
-	fmt.Println(a.area())
+	fmt.Println(a.areaSize())
 
 	// TODO: Adapt your code from 02_boolean to check the triangle type. The
 	// function should return a string with the type of the triangle.
@@ -268,12 +289,25 @@ func main() {
 
 	// TODO: Create a struct named `person` with fields `name`, `age`, `height` and
 	// `weight` with the types you think are appropriate.
+	// type person struct {
+	// 	name   string
+	// 	age    int
+	// 	height float64
+	// 	weight float64
+	// }
+
 	// TODO: Create a function 'greet' on the structure `person` that prints "Hello,
 	// <name>!" to the console.
+	greetName := person{
+		name: "Gopher",
+	}
+	fmt.Println(greetName.greet())
+
 	// TODO: Create a function 'isAdult' on the structure `person` that returns
 	// a boolean indicating if the person is over 18 years old.
 	// TODO: Create a function 'bmi' on the structure `person` that returns the
 	// body mass index of the person. The formula is weight / (height * height).
+
 	// TODO: Create an array of 5 `person` instances with random data in it.
 	// TODO: Create a function that takes a list of person and prints "Hi, my
 	// name is <name>, my BMI is <bmi> and I am <an adult|an infant>".
