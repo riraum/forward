@@ -178,7 +178,7 @@ func main() {
 	// test helper string function
 	fmt.Println(largestString([]string{"", ""}))                         // ""
 	fmt.Println(largestString([]string{"a", "bc", "def"}))               // "def"
-	fmt.Println(largestString([]string{"xyz", "xyzabcd", "qwertyuiop"})) // "qwertyuiop"
+	fmt.Println(largestString([]string{"qwertyuiop", "xyz", "xyzabcd"})) // "qwertyuiop"
 
 	// Close main function, to be able to declare another function
 }
