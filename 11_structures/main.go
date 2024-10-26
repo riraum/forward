@@ -103,7 +103,7 @@ func (a area) areaSize() float64 {
 // TODO: Adapt your code from 02_boolean to check the triangle type. The
 // function should return a string with the type of the triangle.
 func (t triangle) triangleType() string {
-	if sumLengthSmallerLongestSide(t.side1, t.side2, t.side3) {
+	if t.sumLengthSmallerLongestSide() {
 		return "invalid triangle values"
 	}
 	// any side <=0 return error
@@ -121,33 +121,32 @@ func (t triangle) triangleType() string {
 		t.side2 != t.side3 {
 		return "scalene"
 	}
-
 	return "Error 404: Triangle logic not yet found"
 }
 
-func longestSide(side1, side2, side3 float64) float64 {
-	if side1 < side2 && side2 < side3 {
-		return side3
+func (t triangle) longestSide() float64 {
+	if t.side1 < t.side2 && t.side2 < t.side3 {
+		return t.side3
 	}
-	if side1 < side3 && side3 < side2 {
-		return side2
+	if t.side1 < t.side3 && t.side3 < t.side2 {
+		return t.side2
 	}
-	return side1
+	return t.side1
 }
 
-func sumTwoShortestSides(side1, side2, side3 float64) float64 {
-	if side1 < side2 && side2 < side3 {
-		return side1 + side2
+func (t triangle) sumTwoShortestSides() float64 {
+	if t.side1 < t.side2 && t.side2 < t.side3 {
+		return t.side1 + t.side2
 	}
-	if side1 < side3 && side3 < side2 {
-		return side1 + side3
+	if t.side1 < t.side3 && t.side3 < t.side2 {
+		return t.side1 + t.side3
 	}
-	return side2 + side3
+	return t.side2 + t.side3
 }
 
-func sumLengthSmallerLongestSide(side1, side2, side3 float64) bool {
-	sum := sumTwoShortestSides(side1, side2, side3)
-	biggest := longestSide(side1, side2, side3)
+func (t triangle) sumLengthSmallerLongestSide() bool {
+	sum := t.sumTwoShortestSides()
+	biggest := t.longestSide()
 	return sum <= biggest
 }
 
