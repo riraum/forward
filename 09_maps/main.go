@@ -170,15 +170,20 @@ func main() {
 	fmt.Println(addBMI(people))
 
 	// test helper int function
-	fmt.Println(largestInt([]int{}))                      // 0
-	fmt.Println(largestInt([]int{1, 2, 3}))               // 3
-	fmt.Println(largestInt([]int{-1, -2, 0}))             // 0
-	fmt.Println(largestInt([]int{100, 0, 3000, 0, -100})) // 3000
+	fmt.Println(largestInt([]int{}))                 // 0
+	fmt.Println(largestInt([]int{1, 2, 3}))          // 3
+	fmt.Println(largestInt([]int{-1, -2, 0}))        // 0
+	fmt.Println(largestInt([]int{0, 3000, 0, -100})) // 3000
 
 	// test helper string function
 	fmt.Println(largestString([]string{"", ""}))                         // ""
 	fmt.Println(largestString([]string{"a", "bc", "def"}))               // "def"
 	fmt.Println(largestString([]string{"qwertyuiop", "xyz", "xyzabcd"})) // "qwertyuiop"
+	fmt.Println(largestString([]string{"a", "bcd", "ef"}))               // "bcd"
+	fmt.Println(largestString([]string{"a", "b", "c"}))                  // "a"
+	fmt.Println(largestString([]string{"abc", "de", "f"}))               // "abc"
+	fmt.Println(largestString([]string{"abc", "", "def"}))               // "abc"
+	fmt.Println(largestString([]string{"", "abc", ""}))                  // "abc"
 
 	// Close main function, to be able to declare another function
 }
@@ -331,10 +336,12 @@ func largestInt(s []int) int {
 func largestString(s []string) string {
 	// counter
 	var counter int
+	// length of slice counter
+	// var lengthSlice int = len(s)
 	// initialize largest
 	var largestStringResult string
 	// get length of s[0], assign to variable
-	// var largestInitial int
+	// var largestInitial int = len(s[0])
 	// if array of strings is empty, return empty string
 	if len(s) == 0 {
 		return ""
@@ -346,10 +353,14 @@ func largestString(s []string) string {
 			break
 		}
 		// if length of element of array is higher than 0
-		if len(s[counter]) > 0 {
+		if len(s[counter]) > len(s[0]) {
 			// assign string to variable for output
 			largestStringResult = s[counter]
 		}
+		// if len(s[counter2]) > 0 {
+		// 	// assign string to variable for output
+		// 	largestStringResult = s[counter2]
+		// }
 		// increase counter
 		counter++
 	}
