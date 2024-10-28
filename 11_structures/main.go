@@ -393,11 +393,15 @@ func main() {
 
 	// TODO: Print the name of the oldest person in the array.
 	oldestAge := 0
+	oldestName := ""
 	for j := 0; j < len(randomArray); j++ {
 		if randomArray[j].age > randomArray[0].age {
 			oldestAge = randomArray[j].age
+			oldestName = randomArray[j].name
 		}
-		fmt.Println(oldestAge)
+		if oldestAge != 0 {
+			fmt.Println(oldestName)
+		}
 	}
 
 	// Hint: create a function that takes a list of person and return the
