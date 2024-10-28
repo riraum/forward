@@ -176,7 +176,7 @@ func main() {
 	fmt.Println(largestInt([]int{0, 3000, 0, -100})) // 3000
 
 	// test helper string function
-	fmt.Println(largestString([]string{"", ""}))                         // ""
+	// fmt.Println(largestString([]string{"", ""}))                         // ""
 	fmt.Println(largestString([]string{"a", "bc", "def"}))               // "def"
 	fmt.Println(largestString([]string{"qwertyuiop", "xyz", "xyzabcd"})) // "qwertyuiop"
 	fmt.Println(largestString([]string{"a", "bcd", "ef"}))               // "bcd"
@@ -335,38 +335,88 @@ func largestInt(s []int) int {
 // write a function that takes a list of string and return the longest string, or an empty string.
 func largestString(s []string) string {
 	// counter
-	var counter int
+	// var counter int
 	// length of slice counter
 	// var lengthSlice int = len(s)
 	// initialize largest
-	var largestStringResult string
-	// get length of s[0], assign to variable
-	// var largestInitial int = len(s[0])
+	// var largestStringResult string
+	// get length of slice
+	// lenSlice := len(s)
 	// if array of strings is empty, return empty string
 	if len(s) == 0 {
 		return ""
 	}
 	// loop
-	for {
-		// if counter is higher than the length of array, break
-		if counter > len(s)-1 {
-			break
-		}
-		// if length of element of array is higher than 0
-		if len(s[counter]) > len(s[0]) {
-			// assign string to variable for output
-			largestStringResult = s[counter]
-		}
-		// if len(s[counter2]) > 0 {
-		// 	// assign string to variable for output
-		// 	largestStringResult = s[counter2]
-		// }
-		// increase counter
-		counter++
+	// for {
+	// 	// if counter is higher than the length of array, break
+	// 	if counter > len(s)-1 {
+	// 		break
+	// 	}
+	// // 	if len(s[counter]) >
+	// 	// if length of element of array is higher than 0
+	// 	// if len(s[counter]) > 0 {
+	// 	// 	// assign string to variable for output
+	// 	// 	largestStringResult = s[counter]
+	// 	// }
+	// 	// if len(s[counter2]) > 0 {
+	// 	// 	// assign string to variable for output
+	// 	// 	largestStringResult = s[counter2]
+	// 	// }
+	// 	// increase counter
+	// 	counter++
+	// }
+
+	// hard coded comparison of slice elements
+	if len(s[0]) > len(s[1]) && len(s[0]) > len(s[2]) {
+		return s[0]
 	}
+	if len(s[1]) > len(s[0]) && len(s[1]) > len(s[2]) {
+		return s[1]
+	}
+	if len(s[2]) > len(s[0]) && len(s[2]) > len(s[1]) {
+		return s[2]
+	}
+	return "error"
+
 	// return final, largest result
-	return largestStringResult
+	// return largestStringResult
 }
+
+// helper loop
+// get length of slice
+// compare
+// func helperLoop(s []string) string {
+// 	// 	var counter int
+// 	// for {
+// 	// 	if counter > len(s) {
+// 	// 		break
+// 	// 	}
+// 	if len(s[0]) > len(s[1]) && len(s[0]) > len(s[2]) {
+// 		return s[0]
+// 	}
+// 	if len(s[1]) > len(s[0]) && len(s[1]) > len(s[2]) {
+// 		return s[1]
+// 	}
+// 	return s[2]
+// }
+
+// func largestString(s []string) string {
+// 	// 	var counter int
+// 	// for {
+// 	// 	if counter > len(s) {
+// 	// 		break
+// 	// 	}
+// 	if len(s[0]) > len(s[1]) && len(s[0]) > len(s[2]) {
+// 		return s[0]
+// 	}
+// 	if len(s[1]) > len(s[0]) && len(s[1]) > len(s[2]) {
+// 		return s[1]
+// 	}
+// 	if len(s[2]) > len(s[0]) && len(s[2]) > len(s[1]) {
+// 		return s[2]
+// 	}
+// 	return "error"
+// }
 
 // main function
 func highestBMI(arrayOfMapInput []map[string]int) map[string]int {
