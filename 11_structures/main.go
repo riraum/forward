@@ -216,15 +216,13 @@ func (p person) bmi() float64 {
 
 // TODO: Create a function that takes a list of person and prints "Hi, my
 // name is <name>, my BMI is <bmi> and I am <an adult|an infant>".
-func (p person) advIntro() string {
+func (p person) advIntro() {
+	name := p.name
 	bmi := p.bmi()
-	// adultOrChild := p.isAdult()
-	// if adultOrChild {
-	// 	return "adult"
-	// }
 	adultOrChild := p.adultOrChild()
-	formatString := fmt.Sprintf("Hi, my name is s%, my BMI is %t and I am an %u", p.name, bmi, adultOrChild)
-	return formatString
+	// for i := 0; i < len(person); i++ {
+	fmt.Println("Hi, my name is", name, ", my BMI is", bmi, "and I am an", adultOrChild)
+	// }
 }
 
 // adult or child to string helper function
@@ -350,7 +348,7 @@ func main() {
 	fmt.Println(dora.bmi())
 
 	// // TODO: Create an array of 5 `person` instances with random data in it.
-	randomArray := []person{
+	randomArray := [5]person{
 		{
 			name:   "John",
 			age:    60,
@@ -387,8 +385,11 @@ func main() {
 
 	// TODO: Create a function that takes a list of person and prints "Hi, my
 	// name is <name>, my BMI is <bmi> and I am <an adult|an infant>".
-	// debug hard coded
-	fmt.Println(randomArray[0].advIntro())
+	for i := 0; i < len(randomArray); i++ {
+		randomArray[i].advIntro()
+	}
+	// debug
+	// randomArray[0].advIntro()
 
 	// TODO: Print the name of the oldest person in the array.
 	// Hint: create a function that takes a list of person and return the
