@@ -106,8 +106,7 @@ func main() {
 	person["age"] = 25
 	person["height"] = 180
 	person["weight"] = 70
-	fmt.Println(person)
-	fmt.Println(len(person))
+	fmt.Println(person, len(person))
 
 	// TODO: Create a function that takes a map as an argument and creates a new
 	// map with the following key-value pairs:
@@ -144,8 +143,6 @@ func main() {
 	people = append(people, map[string]int{"height": 170, "weight": 80})
 	people = append(people, map[string]int{"height": 150, "weight": 60})
 	people = append(people, map[string]int{"height": 190, "weight": 90})
-	// debug
-	fmt.Println(people)
 
 	var counter int = 0
 
@@ -243,18 +240,10 @@ func calcBMI(mapInput map[string]int) float64 {
 		fmt.Println("Weight not found")
 	}
 	var weightFloat float64 = float64(value)
-	// debug
-	// fmt.Println("weight debug", mapInput["weight"])
-	// fmt.Println("height debug", mapInput["height"])
-	// debug
-	// fmt.Println(heightAdjust)
-	// fmt.Println(weightConverted)
 	// bmi = (weightFloat / (heightFloat * heightFloat))
 	bmi = (weightFloat) / (heightFloat * heightFloat)
 	bmi = bmi * 10000
-	// debug
-	// fmt.Println(bmi)
-	// fmt.Println("BMI is", bmi)
+
 	return bmi
 }
 
@@ -279,27 +268,34 @@ func calcAvgBMI(arrayOfMapInput []map[string]int) float64 {
 			break
 		}
 		bmiSum += calcBMI(arrayOfMapInput[counter])
-		// debug
-		// fmt.Println(bmiSum)
 		counter++
 	}
-	// debug
-	// fmt.Println(lenConverted)
 	avgBMI = bmiSum / mapLen
-	// debug
-	// fmt.Println("avg debug print", avgBMI)
 	return avgBMI
 }
 
 // TODO: Create a function that takes an array of maps as an argument and
 // returns the map with the highest BMI.
+// create function, accept array of maps as input
+func highestBMI(arrayOfMapInput []map[string]int) map[string]int {
+	var highestBMI = arrayOfMapInput[0]
+	var counter int
+	for {
+		if counter > len(arrayOfMapInput)-1 {
+			break
+		}
+		// calculate the BMI with function calcBMI for all elements of the array
+		// compare all elements with each other to get highest value/BMI
+		// if one element is bigger than ALL of the others, return that element
+		// else continue comparing
+		if calcBMI(arrayOfMapInput[counter]) > calcBMI(highestBMI) {
 
-// create function
-// accept array of maps as input
-// calculate the BMI with function calcBMI for all elements of the array
-// compare all elements with each other to get highest value/BMI
-// if one element is bigger than ALL of the others, return that element
-// else continue comparing
+			highestBMI = arrayOfMapInput[counter]
+		}
+		counter++
+	}
+	return highestBMI
+}
 
 // helper functions
 // write a function that takes a list of int and return the biggest, or 0.
@@ -356,22 +352,6 @@ func largestString(s []string) string {
 	}
 	// return final, largest result
 	return largestStringResult
-}
-
-// main function
-func highestBMI(arrayOfMapInput []map[string]int) map[string]int {
-	var highestBMI = arrayOfMapInput[0]
-	var counter int
-	for {
-		if counter > len(arrayOfMapInput)-1 {
-			break
-		}
-		if calcBMI(arrayOfMapInput[counter]) > calcBMI(highestBMI) {
-			highestBMI = arrayOfMapInput[counter]
-		}
-		counter++
-	}
-	return highestBMI
 }
 
 // TODO: Create a function that takes an array of maps as an argument and
