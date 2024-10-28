@@ -363,7 +363,7 @@ func main() {
 		},
 		{
 			name:   "Francoise",
-			age:    20,
+			age:    16,
 			height: 176,
 			weight: 60,
 		},
@@ -392,6 +392,14 @@ func main() {
 	// randomArray[0].advIntro()
 
 	// TODO: Print the name of the oldest person in the array.
+	oldestAge := 0
+	for j := 0; j < len(randomArray); j++ {
+		if randomArray[j].age > randomArray[0].age {
+			oldestAge = randomArray[j].age
+		}
+		fmt.Println(oldestAge)
+	}
+
 	// Hint: create a function that takes a list of person and return the
 	// oldest.
 	// TODO: Print the name of the person with the highest BMI in the array.
