@@ -157,7 +157,7 @@ func (t triangle) sumLengthSmallerLongestSide() bool {
 // - 1 if the area of the first triangle is greater than the area of the second
 // Hint: func (t1 triangle) compare(t2 triangle) int { ... }
 
-func (t triangle) semiParameter() float64 {
+func (t triangle) semiPerimeter() float64 {
 	return (t.side1 + t.side2 + t.side3) / 0.5
 }
 
@@ -167,7 +167,7 @@ func (t triangle) semiParameter() float64 {
 // squareRoot :=  math.Sqrt()
 
 func (t triangle) calcTriangleArea() float64 {
-	return math.Sqrt(t.semiParameter() * (t.semiParameter() * t.side1) * (t.semiParameter() * t.side2) * (t.semiParameter() * t.side3))
+	return math.Sqrt(t.semiPerimeter() * (t.semiPerimeter() * t.side1) * (t.semiPerimeter() * t.side2) * (t.semiPerimeter() * t.side3))
 }
 
 func (t1 triangle) compare(t2 triangle) int {
