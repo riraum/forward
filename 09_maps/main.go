@@ -231,8 +231,6 @@ func calcBMI(mapInput map[string]int) float64 {
 	var value int
 	var exists bool
 	var bmi float64
-	// var heightInt int = mapInput["height"]
-	// var weightInt int = mapInput["weight"]
 
 	value, exists = mapInput["height"]
 	if !exists || value == 0 {
@@ -336,12 +334,8 @@ func largestInt(s []int) int {
 func largestString(s []string) string {
 	// counter
 	var counter int
-	// length of slice counter
-	// var lengthSlice int = len(s)
 	// initialize largest
 	var largestStringResult string
-	// get length of slice
-	// lenSlice := len(s)
 	// if array of strings is empty, return empty string
 	if len(s) == 0 {
 		return ""
@@ -352,72 +346,17 @@ func largestString(s []string) string {
 		if counter > len(s)-1 {
 			break
 		}
+		// if length of element of slice is higher than 0
 		if len(s[counter]) > len(largestStringResult) {
-			// if length of element of array is higher than 0
-			// if len(s[counter]) > 0
-
 			// assign string to variable for output
 			largestStringResult = s[counter]
 		}
-		// if len(s[counter2]) > 0 {
-		// 	// assign string to variable for output
-		// 	largestStringResult = s[counter2]
-		// }
 		// increase counter
 		counter++
 	}
-
-	// hard coded comparison of slice elements
-	// if len(s[0]) > len(s[1]) && len(s[0]) > len(s[2]) {
-	// 	return s[0]
-	// }
-	// if len(s[1]) > len(s[0]) && len(s[1]) > len(s[2]) {
-	// 	return s[1]
-	// }
-	// if len(s[2]) > len(s[0]) && len(s[2]) > len(s[1]) {
-	// 	return s[2]
-	// }
-	// return "error"
-
 	// return final, largest result
 	return largestStringResult
 }
-
-// helper loop
-// get length of slice
-// compare
-// func helperLoop(s []string) string {
-// 	// 	var counter int
-// 	// for {
-// 	// 	if counter > len(s) {
-// 	// 		break
-// 	// 	}
-// 	if len(s[0]) > len(s[1]) && len(s[0]) > len(s[2]) {
-// 		return s[0]
-// 	}
-// 	if len(s[1]) > len(s[0]) && len(s[1]) > len(s[2]) {
-// 		return s[1]
-// 	}
-// 	return s[2]
-// }
-
-// func largestString(s []string) string {
-// 	// 	var counter int
-// 	// for {
-// 	// 	if counter > len(s) {
-// 	// 		break
-// 	// 	}
-// 	if len(s[0]) > len(s[1]) && len(s[0]) > len(s[2]) {
-// 		return s[0]
-// 	}
-// 	if len(s[1]) > len(s[0]) && len(s[1]) > len(s[2]) {
-// 		return s[1]
-// 	}
-// 	if len(s[2]) > len(s[0]) && len(s[2]) > len(s[1]) {
-// 		return s[2]
-// 	}
-// 	return "error"
-// }
 
 // main function
 func highestBMI(arrayOfMapInput []map[string]int) map[string]int {
