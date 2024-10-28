@@ -234,6 +234,23 @@ func (p person) adultOrChild() string {
 	}
 }
 
+// TODO: Print the name of the oldest person in the array.
+// Hint: create a function that takes a list of person and return the
+// oldest.
+func (p person) oldestPerson() string {
+	oldestAge := 0
+	oldestName := ""
+	for j := 0; j < len(p); j++ {
+		if p[j].age > oldestAge {
+			oldestAge = p[j].age
+			oldestName = p[j].name
+		}
+		if oldestAge != 0 {
+			fmt.Println(oldestName)
+		}
+	}
+}
+
 func main() {
 	// TODO: Create a struct named `triangle` with fields `side1`, `side2` and
 	// `side3` of type `float64`.
@@ -392,20 +409,20 @@ func main() {
 	// randomArray[0].advIntro()
 
 	// TODO: Print the name of the oldest person in the array.
-	oldestAge := 0
-	oldestName := ""
-	for j := 0; j < len(randomArray); j++ {
-		if randomArray[j].age > randomArray[0].age {
-			oldestAge = randomArray[j].age
-			oldestName = randomArray[j].name
-		}
-		if oldestAge != 0 {
-			fmt.Println(oldestName)
-		}
-	}
-
 	// Hint: create a function that takes a list of person and return the
 	// oldest.
+	// oldestAge := 0
+	// oldestName := ""
+	// for j := 0; j < len(randomArray); j++ {
+	// 	if randomArray[j].age > randomArray[0].age {
+	// 		oldestAge = randomArray[j].age
+	// 		oldestName = randomArray[j].name
+	// 	}
+	// 	if oldestAge != 0 {
+	// 		fmt.Println(oldestName)
+	// 	}
+	// }
+
 	// TODO: Print the name of the person with the highest BMI in the array.
 	// Hint: create a function that takes a list of person and return the person
 	// with the highest BMI.
