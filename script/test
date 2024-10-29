@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+go test -cover -coverprofile=coverage ./...
+go tool cover -html=coverage -o coverage.html
