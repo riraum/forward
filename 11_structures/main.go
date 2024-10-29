@@ -254,6 +254,22 @@ func oldestPerson(p []person) string {
 	return oldestName
 }
 
+// TODO: Print the name of the person with the highest BMI in the array.
+// Hint: create a function that takes a list of person and return the person
+// with the highest BMI.
+func getHighestBMI(p []person) string {
+	highestBMI := 0.0
+	highestBMIName := ""
+	// getBMI := bmi()
+	for i := 0; i < len(p); i++ {
+		if p[i].bmi() > highestBMI {
+			highestBMI = p[i].bmi()
+			highestBMIName = p[i].name
+		}
+	}
+	return highestBMIName
+}
+
 func main() {
 	// TODO: Create a struct named `triangle` with fields `side1`, `side2` and
 	// `side3` of type `float64`.
@@ -415,6 +431,7 @@ func main() {
 	// TODO: Print the name of the person with the highest BMI in the array.
 	// Hint: create a function that takes a list of person and return the person
 	// with the highest BMI.
+	fmt.Println(getHighestBMI(randomArray))
 
 	// TODO: Create a struct named "album" with the following fields:
 	// - name: string
