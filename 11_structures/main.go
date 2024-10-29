@@ -167,7 +167,8 @@ func (t triangle) semiPerimeter() float64 {
 // squareRoot :=  math.Sqrt()
 
 func (t triangle) calcTriangleArea() float64 {
-	return math.Sqrt(t.semiPerimeter() * (t.semiPerimeter() * t.side1) * (t.semiPerimeter() * t.side2) * (t.semiPerimeter() * t.side3))
+	semiPerimeter := t.semiPerimeter()
+	return math.Sqrt(semiPerimeter * (semiPerimeter * t.side1) * (semiPerimeter * t.side2) * (semiPerimeter * t.side3))
 }
 
 func (t1 triangle) compare(t2 triangle) int {
@@ -237,19 +238,25 @@ func (p person) adultOrChild() string {
 // TODO: Print the name of the oldest person in the array.
 // Hint: create a function that takes a list of person and return the
 // oldest.
-func (p person) oldestPerson() string {
-	oldestAge := 0
-	oldestName := ""
-	for j := 0; j < len(p); j++ {
-		if p[j].age > oldestAge {
-			oldestAge = p[j].age
-			oldestName = p[j].name
-		}
-		if oldestAge != 0 {
-			fmt.Println(oldestName)
-		}
-	}
-}
+// func (p person) oldestPerson() string {
+// 	oldestAge := 0
+// 	oldestName := ""
+// 	// age := 0
+// 	// var counter int
+// 	// for {
+// 	// 	if counter > len(p) -1
+// 	// }
+// 	for j := 0; j < len(p); j++ {
+// 		if p[j].age > oldestAge {
+// 			oldestAge = p[j].age
+// 			oldestName = p[j].name
+// 		}
+// 		if oldestAge != 0 {
+// 			continue
+// 		}
+// 	}
+// 	return oldestName
+// }
 
 func main() {
 	// TODO: Create a struct named `triangle` with fields `side1`, `side2` and
