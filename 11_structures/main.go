@@ -217,7 +217,7 @@ func (p person) bmi() float64 {
 
 // TODO: Create a function that takes a list of person and prints "Hi, my
 // name is <name>, my BMI is <bmi> and I am <an adult|an infant>".
-func advInto(p []person) {
+func advIntro(p []person) {
 	for i := 0; i < len(p); i++ {
 		name := p[i].name
 		bmi := p[i].bmi()
@@ -425,7 +425,7 @@ func main() {
 	// }
 	// debug
 	// randomArray[0].advIntro()
-	advInto(randomArray[:])
+	advIntro(randomArray[:])
 
 	// TODO: Print the name of the oldest person in the array.
 	// Hint: create a function that takes a list of person and return the
