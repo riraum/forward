@@ -373,7 +373,7 @@ func main() {
 	fmt.Println(dora.bmi())
 
 	// // TODO: Create an array of 5 `person` instances with random data in it.
-	randomArray := [5]person{
+	randomArray := []person{
 		{
 			name:   "John",
 			age:    60,
@@ -410,7 +410,7 @@ func main() {
 
 	// TODO: Create a function that takes a list of person and prints "Hi, my
 	// name is <name>, my BMI is <bmi> and I am <an adult|an infant>".
-	advIntro(randomArray[:])
+	advIntro(randomArray)
 
 	// TODO: Print the name of the oldest person in the array.
 	// Hint: create a function that takes a list of person and return the
