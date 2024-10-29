@@ -260,10 +260,10 @@ func oldestPerson(p []person) string {
 func getHighestBMI(p []person) string {
 	highestBMI := 0.0
 	highestBMIName := ""
-	// getBMI := bmi()
 	for i := 0; i < len(p); i++ {
-		if p[i].bmi() > highestBMI {
-			highestBMI = p[i].bmi()
+		getBMI := p[i].bmi()
+		if getBMI > highestBMI {
+			highestBMI = getBMI
 			highestBMIName = p[i].name
 		}
 	}
