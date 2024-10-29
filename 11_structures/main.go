@@ -217,14 +217,25 @@ func (p person) bmi() float64 {
 
 // TODO: Create a function that takes a list of person and prints "Hi, my
 // name is <name>, my BMI is <bmi> and I am <an adult|an infant>".
-func (p person) advIntro() {
-	name := p.name
-	bmi := p.bmi()
-	adultOrChild := p.adultOrChild()
+func (p []person) advIntro() {
+	for i := 0; i < len(p); i++ {
+		name := p[i].name
+		bmi := p[i].bmi()
+		adultOrChild := p[i].adultOrChild()
+		fmt.Println("Hi, my name is", name, ", my BMI is", bmi, "and I am an", adultOrChild)
+	}
 	// for i := 0; i < len(person); i++ {
-	fmt.Println("Hi, my name is", name, ", my BMI is", bmi, "and I am an", adultOrChild)
 	// }
 }
+
+// func (p person) advIntro() {
+// 	name := p.name
+// 	bmi := p.bmi()
+// 	adultOrChild := p.adultOrChild()
+// 	// for i := 0; i < len(person); i++ {
+// 	fmt.Println("Hi, my name is", name, ", my BMI is", bmi, "and I am an", adultOrChild)
+// 	// }
+// }
 
 // adult or child to string helper function
 func (p person) adultOrChild() string {
@@ -409,9 +420,9 @@ func main() {
 
 	// TODO: Create a function that takes a list of person and prints "Hi, my
 	// name is <name>, my BMI is <bmi> and I am <an adult|an infant>".
-	for i := 0; i < len(randomArray); i++ {
-		randomArray[i].advIntro()
-	}
+	// for i := 0; i < len(randomArray); i++ {
+	// 	randomArray[i].advIntro()
+	// }
 	// debug
 	// randomArray[0].advIntro()
 
