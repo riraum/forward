@@ -270,6 +270,33 @@ func getHighestBMI(p []person) string {
 	return highestBMIName
 }
 
+// TODO: Create a struct named "album" with the following fields:
+// - name: string
+// - year: int
+type album struct {
+	name string
+	year int
+}
+
+// TODO: Create a struct named "artist" with the following fields:
+// - name: string
+// - members: a list of strings
+// - albums: a map[int]album where (int) is the year of the album
+type artist struct {
+	name    string
+	members []string
+	albums  map[int]album
+}
+
+// TODO: Create a function on the artist struct that prints the list of all
+// the albums of the artist.
+func (a artist) getDisco() {
+
+}
+
+// TODO: Create a function that takes a list of artists and prints the first
+// and last album ever released.
+
 func main() {
 	// TODO: Create a struct named `triangle` with fields `side1`, `side2` and
 	// `side3` of type `float64`.
@@ -433,16 +460,55 @@ func main() {
 	// with the highest BMI.
 	fmt.Println(getHighestBMI(randomArray))
 
-	// TODO: Create a struct named "album" with the following fields:
-	// - name: string
-	// - year: int
-	// TODO: Create a struct named "artist" with the following fields:
-	// - name: string
-	// - members: a list of strings
-	// - albums: a map[int]album where (int) is the year of the album
+	// // TODO: Create a struct named "album" with the following fields:
+	// // - name: string
+	// // - year: int
+	// type album struct {
+	// 	name string
+	// 	year int
+	// }
+
+	// Added before main function
+
+	// // TODO: Create a struct named "artist" with the following fields:
+	// // - name: string
+	// // - members: a list of strings
+	// // - albums: a map[int]album where (int) is the year of the album
+
+	// Added before main function
+
 	// TODO: Create a couple of albums and artists.
+	xulu := album{
+		name: "Xulu",
+		year: 2024,
+	}
+
+	zeppelin := album{
+		name: "Zeppelin",
+		year: 2020,
+	}
+
+	yellow := artist{
+		name:    "Yellow",
+		members: []string{"Jay", "Otay", "Luna"},
+		albums:  map[int]album{2020: zeppelin, 2024: xulu},
+		// albums:  []map[int]album{[]map[yellow]int yellow:, 2020},
+		// albums:  album{Xulu, Zeppelin},
+		// albums: [int]string album{yellow, zeppelin},
+		// albums: map[int]string{Xulu, Zeppelin},
+	}
+
+	blue := artist{
+		name:    "Blue",
+		members: []string{"Fox", "Dax", "Naomi", "Vitay"},
+		albums:  map[int]album{2020: zeppelin, 2024: xulu},
+	}
+
+	fmt.Println(yellow, blue)
+
 	// TODO: Create a function on the artist struct that prints the list of all
 	// the albums of the artist.
+
 	// TODO: Create a function that takes a list of artists and prints the first
 	// and last album ever released.
 }
