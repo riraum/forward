@@ -291,11 +291,24 @@ type artist struct {
 // TODO: Create a function on the artist struct that prints the list of all
 // the albums of the artist.
 func (a artist) getDisco() {
-
+	fmt.Println(a.albums)
 }
 
 // TODO: Create a function that takes a list of artists and prints the first
 // and last album ever released.
+func getFirstandLastAlbum(a []artist) {
+	firstAlbumYear := 0
+	// lastAlbumYear := 0
+	firstAlbumName := ""
+	lastAlbumName := ""
+	for i := 0; i < len(a); i++ {
+		if a[i].albums[i] < firstAlbumYear {
+			firstAlbumYear = a[i].albums[i]
+			firstAlbumName = a[i].albums[i]
+		}
+	}
+	fmt.Println(firstAlbumName, lastAlbumName)
+}
 
 func main() {
 	// TODO: Create a struct named `triangle` with fields `side1`, `side2` and
@@ -508,7 +521,24 @@ func main() {
 
 	// TODO: Create a function on the artist struct that prints the list of all
 	// the albums of the artist.
+	blue.getDisco()
+	yellow.getDisco()
 
 	// TODO: Create a function that takes a list of artists and prints the first
 	// and last album ever released.
+	artistArray := []artist{
+		{
+			name:    "Yellow",
+			members: []string{"Jay", "Otay", "Luna"},
+			albums:  map[int]album{2020: zeppelin, 2024: xulu},
+		},
+		{
+			name:    "Blue",
+			members: []string{"Fox", "Dax", "Naomi", "Vitay"},
+			albums:  map[int]album{2020: zeppelin, 2024: xulu},
+		},
+	}
+	// debug
+	fmt.Println(artistArray)
+	getFirstandLastAlbum(artistArray)
 }
