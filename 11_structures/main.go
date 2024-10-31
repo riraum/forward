@@ -297,21 +297,28 @@ func (a artist) getDisco() {
 // TODO: Create a function that takes a list of artists and prints the first
 // and last album ever released.
 func getFirstandLastAlbum(a []artist) {
-	// firstAlbumYear := 0
-	// // lastAlbumYear := 0
+	firstAlbumYear := map[int]album{}
+	// debug
+	fmt.Println("First album year debug", firstAlbumYear)
 	// firstAlbumName := ""
+	// lastAlbumYear := 0
 	// lastAlbumName := ""
-	// // debug
-	// // fmt.Println(a[i].albums[i])
-	// for i := 0; i < len(a); i++ {
-	// 	if a[i].albums[i] < firstAlbumYear {
-	// 		firstAlbumYear = a[i].albums[i]
-	// 		firstAlbumName = a[i].albums[i]
-	// 	}
-	// }
-	// // debug
-	//fmt.Println(a[i].albums[i])
-	// fmt.Println(firstAlbumName, lastAlbumName)
+	// debug
+	// fmt.Println(a[i].albums[i])
+	for i := 0; i < len(a); i++ {
+		// debug
+		fmt.Println("Function debug print", a[i].albums,
+			map[int]album{})
+		if a[i].albums[i] < firstAlbumYear {
+			firstAlbumYear = a[i].albums[i]
+			// firstAlbumName = a[i].albums[i]
+		}
+	}
+	// debug
+	fmt.Println("Function debug print", a[0].albums,
+		map[int]album{})
+	// result
+	// fmt.Println(firstAlbumName)
 }
 
 func main() {
@@ -550,6 +557,10 @@ func main() {
 	}
 	// debug
 	fmt.Println("Print artistArray", artistArray)
-	fmt.Println("Print specific artistArray album", artistArray[0].albums)
-	// getFirstandLastAlbum(artistArray)
+	fmt.Println(
+		"Print specific artistArray album",
+		artistArray[0].albums,
+		map[int]album{},
+	)
+	getFirstandLastAlbum(artistArray)
 }
