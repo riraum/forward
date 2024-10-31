@@ -545,7 +545,7 @@ func main() {
 		{
 			name:    "Blue",
 			members: []string{"Fox", "Dax", "Naomi", "Vitay"},
-			albums:  map[int]album{2020: zeppelin, 2024: xulu},
+			albums:  map[int]album{1999: sweetSummer, 2001: harshWinter},
 		},
 	}
 	// debug
