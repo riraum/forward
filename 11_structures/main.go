@@ -307,12 +307,12 @@ func getFirstandLastAlbum(a []artist) {
 	// fmt.Println(a[i].albums[i])
 	for i := 0; i < len(a); i++ {
 		// debug
-		fmt.Println("Function debug print", a[i].albums,
+		fmt.Println("Function loop debug print", a[i].albums,
 			map[int]album{})
-		if a[i].albums[i] < firstAlbumYear {
-			firstAlbumYear = a[i].albums[i]
-			// firstAlbumName = a[i].albums[i]
-		}
+		// if a[i].albums[i] < firstAlbumYear {
+		// 	firstAlbumYear = a[i].albums[i]
+		// 	// firstAlbumName = a[i].albums[i]
+		// }
 	}
 	// debug
 	fmt.Println("Function debug print", a[0].albums,
@@ -558,9 +558,33 @@ func main() {
 	// debug
 	fmt.Println("Print artistArray", artistArray)
 	fmt.Println(
-		"Print specific artistArray album",
+		"Print specific artistArray album map:",
 		artistArray[0].albums,
-		map[int]album{},
 	)
+	fmt.Println(
+		"Print specific album map:",
+		map[int]album{2020: zeppelin},
+	)
+	fmt.Println(
+		"Print specific album:",
+		zeppelin,
+	)
+	fmt.Println(
+		"Print all artistArray albums of specific artist:",
+		artistArray[0].albums,
+	)
+	// TO FIX
+	fmt.Println(
+		"Print specific artistArray album:",
+		artistArray[0].albums, map[int]album{2020: zeppelin},
+	)
+	fmt.Println(
+		"Print specific album year:",
+		zeppelin.year,
+	)
+	// fmt.Println(
+	// 	"Print specific artistArray album year:",
+	// 	artistArray[0].albums, map[int]album{2020: zeppelin.year},
+	// )
 	getFirstandLastAlbum(artistArray)
 }
