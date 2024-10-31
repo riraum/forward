@@ -297,17 +297,21 @@ func (a artist) getDisco() {
 // TODO: Create a function that takes a list of artists and prints the first
 // and last album ever released.
 func getFirstandLastAlbum(a []artist) {
-	firstAlbumYear := 0
-	// lastAlbumYear := 0
-	firstAlbumName := ""
-	lastAlbumName := ""
-	for i := 0; i < len(a); i++ {
-		if a[i].albums[i] < firstAlbumYear {
-			firstAlbumYear = a[i].albums[i]
-			firstAlbumName = a[i].albums[i]
-		}
-	}
-	fmt.Println(firstAlbumName, lastAlbumName)
+	// firstAlbumYear := 0
+	// // lastAlbumYear := 0
+	// firstAlbumName := ""
+	// lastAlbumName := ""
+	// // debug
+	// // fmt.Println(a[i].albums[i])
+	// for i := 0; i < len(a); i++ {
+	// 	if a[i].albums[i] < firstAlbumYear {
+	// 		firstAlbumYear = a[i].albums[i]
+	// 		firstAlbumName = a[i].albums[i]
+	// 	}
+	// }
+	// // debug
+	//fmt.Println(a[i].albums[i])
+	// fmt.Println(firstAlbumName, lastAlbumName)
 }
 
 func main() {
@@ -501,20 +505,26 @@ func main() {
 		year: 2020,
 	}
 
+	sweetSummer := album{
+		name: "Sweet Summer",
+		year: 1999,
+	}
+
+	harshWinter := album{
+		name: "Harsh Winter",
+		year: 2001,
+	}
+
 	yellow := artist{
 		name:    "Yellow",
 		members: []string{"Jay", "Otay", "Luna"},
 		albums:  map[int]album{2020: zeppelin, 2024: xulu},
-		// albums:  []map[int]album{[]map[yellow]int yellow:, 2020},
-		// albums:  album{Xulu, Zeppelin},
-		// albums: [int]string album{yellow, zeppelin},
-		// albums: map[int]string{Xulu, Zeppelin},
 	}
 
 	blue := artist{
 		name:    "Blue",
 		members: []string{"Fox", "Dax", "Naomi", "Vitay"},
-		albums:  map[int]album{2020: zeppelin, 2024: xulu},
+		albums:  map[int]album{1999: sweetSummer, 2001: harshWinter},
 	}
 
 	fmt.Println(yellow, blue)
@@ -539,6 +549,7 @@ func main() {
 		},
 	}
 	// debug
-	fmt.Println(artistArray)
-	getFirstandLastAlbum(artistArray)
+	fmt.Println("Print artistArray", artistArray)
+	fmt.Println("Print specific artistArray album", artistArray[0].albums)
+	// getFirstandLastAlbum(artistArray)
 }
