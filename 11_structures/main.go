@@ -296,45 +296,67 @@ func (a artist) getDisco() {
 
 // TODO: Create a function that takes a list of artists and prints the first
 // and last album ever released.
-func getFirstandLastAlbum(a []artist) int {
-	firstAlbumYear := a[0].albums[2020].year
+
+// Create function that accepts array of artist struct and returns a string of album name
+func getFirstandLastAlbum(a []artist) string {
+	// Create variable for album year
+	firstAlbumYear := map[int]album{}
 	// debug
-	fmt.Println("First album year debug", firstAlbumYear)
-	// firstAlbumName := ""
-	lastAlbumYear := album{year: 0}
-	// debug
-	fmt.Println("Last album year debug", lastAlbumYear)
-	// lastAlbumName := ""
-	// debug
-	// fmt.Println(a[i].albums[i])
-	for i := 0; i < len(a); i++ {
-		// debug
-		fmt.Println("Function loop debug print", a[i].albums)
-		// if a[i].albums[i] < firstAlbumYear {
-		// 	firstAlbumYear = a[i].albums[i]
-		// 	// firstAlbumName = a[i].albums[i]
-		// }
-	}
-	// range for loop
-	for index, value := range a {
-		// debug
-		fmt.Println("Range for print", index, ":", value.albums)
-		// debug
-		fmt.Println("Loop print", value.albums[index].year)
-		if value.albums[index].year > 0 {
-			firstAlbumYear = value.albums[index].year
+	fmt.Println(firstAlbumYear)
+	// Create variable for album name
+	firstAlbumName := ""
+	// range loop
+		for _, value := range a {
+			value.albums > firstAlbumYear {
+				firstAlbumYear = value.albums
+				firstAlbumName = value.albums.name
+			}
 		}
-		// return firstAlbumYear
-	}
-	// debug
-	fmt.Println("Function debug print", a[0].albums[2020].year)
-	fmt.Println("Function debug print", a[0].albums[2020].year)
-	// result
-	// fmt.Println(firstAlbumName)
-	// debug
-	fmt.Println("Function return print", firstAlbumYear)
-	return firstAlbumYear
+	return firstAlbumName
 }
+
+// func getFirstandLastAlbum(a []artist) album {
+// 	firstAlbumYear := a[0].albums[2020]
+// 	// debug
+// 	fmt.Println("First album year debug", firstAlbumYear)
+// 	// firstAlbumName := ""
+// 	lastAlbumYear := album{
+// 		name: "",
+// 		year: 0,
+// 	}
+// 	// debug
+// 	fmt.Println("Last album year debug", lastAlbumYear)
+// 	// lastAlbumName := ""
+// 	// debug
+// 	// fmt.Println(a[i].albums[i])
+// 	for i := 0; i < len(a); i++ {
+// 		// debug
+// 		fmt.Println("Function loop debug print", a[i].albums)
+// 		// if a[i].albums[i] < firstAlbumYear {
+// 		// 	firstAlbumYear = a[i].albums[i]
+// 		// 	// firstAlbumName = a[i].albums[i]
+// 		// }
+// 	}
+// 	// range for loop
+// 	for index, value := range a {
+// 		// debug
+// 		fmt.Println("Range for print", index, ":", value.albums)
+// 		// debug
+// 		fmt.Println("Loop print", value.albums[index].year)
+// 		if value.albums[index].year > 0 {
+// 			firstAlbumYear = value.albums[index]
+// 		}
+// 		// return firstAlbumYear
+// 	}
+// 	// debug
+// 	fmt.Println("Function debug print", a[0].albums[2020].year)
+// 	fmt.Println("Function debug print", a[0].albums[2020].year)
+// 	// result
+// 	// fmt.Println(firstAlbumName)
+// 	// debug
+// 	fmt.Println("Function return print", firstAlbumYear)
+// 	return firstAlbumYear
+// }
 
 func main() {
 	// TODO: Create a struct named `triangle` with fields `side1`, `side2` and
