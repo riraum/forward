@@ -298,7 +298,7 @@ func (a artist) getDisco() {
 // and last album ever released.
 
 // Create function that accepts array of artist struct and returns a string of album name
-func getFirstandLastAlbum(a []artist) {
+func getFirstAndLastAlbum(a []artist) {
 	// Create variable for album years
 	earliestYear := 3000
 	latestYear := 0
@@ -310,9 +310,9 @@ func getFirstandLastAlbum(a []artist) {
 		// Range loop for albums of artist
 		for _, albumValue := range artistValue.albums {
 			// debug
-			fmt.Println("Album year print", albumValue.year)
-			fmt.Println("Earliest year print", earliestYear)
-			fmt.Println("Latest year print", latestYear)
+			// fmt.Println("Loop album year print", albumValue.year)
+			// fmt.Println("Loop earliest year print", earliestYear)
+			// fmt.Println("Loop latest year print", latestYear)
 			// If year of album map is lower than earliestYear variable, reassign that year to it. Assign corresponding album name
 			if albumValue.year < earliestYear {
 				earliestYear = albumValue.year
@@ -325,11 +325,11 @@ func getFirstandLastAlbum(a []artist) {
 		}
 	}
 	// debug
-	fmt.Println("Function print earliest year", earliestYear)
-	fmt.Println("Function print latest year", latestYear)
+	// fmt.Println("Function print earliest year", earliestYear)
+	// fmt.Println("Function print latest year", latestYear)
 	// Print result albums
-	fmt.Println("Function print earliest album", earliestAlbum, earliestYear)
-	fmt.Println("Function print latest album", latestAlbum, latestYear)
+	fmt.Println("Earliest album", earliestAlbum, earliestYear)
+	fmt.Println("Latest album", latestAlbum, latestYear)
 }
 
 func main() {
@@ -567,33 +567,29 @@ func main() {
 		},
 	}
 	// debug
-	fmt.Println("Print artistArray", artistArray)
-	fmt.Println(
-		"Print specific artistArray album map:",
-		artistArray[0].albums,
-	)
-	fmt.Println(
-		"Print specific album map:",
-		map[int]album{2020: zeppelin},
-	)
-	fmt.Println(
-		"Print specific album:",
-		zeppelin,
-	)
-	fmt.Println(
-		"Print all artistArray albums of specific artist:",
-		artistArray[0].albums,
-	)
-	fmt.Println(
-		"Print specific artistArray album year:",
-		artistArray[0].albums[2020].year)
-	fmt.Println(
-		"Print specific album year:",
-		zeppelin.year,
-	)
+	// fmt.Println("Print artistArray", artistArray)
+	// fmt.Println(
+	// 	"Print specific artistArray album map:",
+	// 	artistArray[0].albums,
+	// )
+	// fmt.Println(
+	// 	"Print specific album map:",
+	// 	map[int]album{2020: zeppelin},
+	// )
+	// fmt.Println(
+	// 	"Print specific album:",
+	// 	zeppelin,
+	// )
+	// fmt.Println(
+	// 	"Print all artistArray albums of specific artist:",
+	// 	artistArray[0].albums,
+	// )
 	// fmt.Println(
 	// 	"Print specific artistArray album year:",
-	// 	artistArray[0].albums, map[int]album{2020: zeppelin.year},
+	// 	artistArray[0].albums[2020].year)
+	// fmt.Println(
+	// 	"Print specific album year:",
+	// 	zeppelin.year,
 	// )
-	getFirstandLastAlbum(artistArray)
+	getFirstAndLastAlbum(artistArray)
 }
