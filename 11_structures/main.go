@@ -298,7 +298,7 @@ func (a artist) getDisco() {
 // and last album ever released.
 
 // Create function that accepts array of artist struct and returns a string of album name
-func getFirstAndLastAlbum(a []artist) {
+func getEarliestAndLatestAlbum(a []artist) {
 	// Create variable for album years
 	earliestYear := 3000
 	latestYear := 0
@@ -328,8 +328,7 @@ func getFirstAndLastAlbum(a []artist) {
 	// fmt.Println("Function print earliest year", earliestYear)
 	// fmt.Println("Function print latest year", latestYear)
 	// Print result albums
-	fmt.Println("Earliest album", earliestAlbum, earliestYear)
-	fmt.Println("Latest album", latestAlbum, latestYear)
+	fmt.Printf("Earliest album is %s released in %d and latest album is %s released in %d \n", earliestAlbum, earliestYear, latestAlbum, latestYear)
 }
 
 func main() {
@@ -591,5 +590,5 @@ func main() {
 	// 	"Print specific album year:",
 	// 	zeppelin.year,
 	// )
-	getFirstAndLastAlbum(artistArray)
+	getEarliestAndLatestAlbum(artistArray)
 }
