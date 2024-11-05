@@ -166,21 +166,21 @@ func (t triangle) semiPerimeter() float64 {
 // }
 // squareRoot :=  math.Sqrt()
 
-func (t triangle) calcTriangleArea() float64 {
+func (t triangle) area() float64 {
 	semiPerimeter := t.semiPerimeter()
 	return math.Sqrt(semiPerimeter * (semiPerimeter * t.side1) * (semiPerimeter * t.side2) * (semiPerimeter * t.side3))
 }
 
 func (t1 triangle) compare(t2 triangle) int {
-	calcTriangleAreat1 := t1.calcTriangleArea()
-	calcTriangleAreat2 := t2.calcTriangleArea()
-	if calcTriangleAreat1 < calcTriangleAreat2 {
+	areat1 := t1.area()
+	areat2 := t2.area()
+	if areat1 < areat2 {
 		return -1
 	}
-	if calcTriangleAreat1 == calcTriangleAreat2 {
+	if areat1 == areat2 {
 		return 0
 	}
-	if calcTriangleAreat1 > calcTriangleAreat2 {
+	if areat1 > areat2 {
 		return 1
 	}
 	// debug, to remove
