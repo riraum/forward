@@ -92,13 +92,8 @@ type triangle struct {
 }
 
 // TODO: Create a function on the structure `area` that returns a `float64`.
-type area struct {
-	side float64
-}
 
-func (a area) areaSize() float64 {
-	return a.side * a.side
-}
+// done later
 
 // TODO: Adapt your code from 02_boolean to check the triangle type. The
 // function should return a string with the type of the triangle.
@@ -134,14 +129,18 @@ func (t triangle) longestSide() float64 {
 	return t.side1
 }
 
+// func (t triangle) sumTwoShortestSides() float64 {
+// 	if t.side1 < t.side2 && t.side2 < t.side3 {
+// 		return t.side1 + t.side2
+// 	}
+// 	if t.side1 < t.side3 && t.side3 < t.side2 {
+// 		return t.side1 + t.side3
+// 	}
+// 	return t.side2 + t.side3
+// }
+
 func (t triangle) sumTwoShortestSides() float64 {
-	if t.side1 < t.side2 && t.side2 < t.side3 {
-		return t.side1 + t.side2
-	}
-	if t.side1 < t.side3 && t.side3 < t.side2 {
-		return t.side1 + t.side3
-	}
-	return t.side2 + t.side3
+	return t.side1 + t.side2 + t.side3 - t.longestSide()
 }
 
 func (t triangle) sumLengthSmallerLongestSide() bool {
@@ -343,8 +342,8 @@ func main() {
 	fmt.Println(bigTriangle)
 
 	// TODO: Create a function on the structure `area` that returns a `float64`.
-	a := area{side: 5}
-	fmt.Println(a.areaSize())
+	// a := area{side: 5}
+	// fmt.Println(a.areaSize())
 
 	// TODO: Adapt your code from 02_boolean to check the triangle type. The
 	// function should return a string with the type of the triangle.
