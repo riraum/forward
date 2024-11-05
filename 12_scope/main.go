@@ -39,24 +39,23 @@ var globalA = 42
 func main() {
 	fmt.Println(globalA)
 
-	localA := 21
-	fmt.Println(localA)
-
 	printSomething()
 	globalShadowing()
 	paramShadowing(41)
 	ifScope()
+	forScope()
 }
 
 func printSomething() {
 	// TODO: fix this code to print the value of the localA variable from the
 	// main function.
+	localA := 21
 	fmt.Println(localA)
 }
 
 func globalShadowing() {
 	fmt.Println(globalA)
-
+	var globalA = 1337
 	// TODO: shadow the variable globalA by declaring a new variable with the
 	// same name.
 	fmt.Println(globalA)
@@ -65,16 +64,20 @@ func globalShadowing() {
 func paramShadowing(paramA int) {
 	fmt.Println(paramA)
 	// TODO: fix this code to update the value of the paramA variable.
-	paramA := 42
+	paramA = 42
 	fmt.Println(paramA)
 }
 
 func ifScope() {
 	a := 3
+	nextIntFunc := 0
 
 	if a%2 == 0 {
 		// nextInt is only accessible inside the if statement.
 		nextInt := a + 1
+		if nextInt != 0 {
+			nextIntFunc = nextInt
+		}
 		fmt.Println(nextInt, " is not odd")
 	} else {
 		fmt.Println(a, " is not odd")
@@ -83,16 +86,18 @@ func ifScope() {
 	// TODO: fix this code to print the value of the nextInt variable if it is
 	// defined.
 	// Hint: you need an extra variable.
-	fmt.Println(nextInt)
+	fmt.Println(nextIntFunc)
 }
 
 func forScope() {
 	for i := 0; i < 10; i++ {
-		fmt.Println(i)
+		if i == 10 {
+			fmt.Println(i)
+		}
 	}
 
 	// See how the code complains when you try to print the value of the i
 	// variable here.
 	// TODO: fix the code to print the last value of the i variable here.
-	fmt.Println(i)
+	// fmt.Println(i)
 }
