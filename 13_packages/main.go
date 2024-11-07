@@ -57,8 +57,6 @@ import (
 	"fmt"
 
 	"github.com/riraum/forward/internal/geometry"
-
-	"github.com/riraum/forward/internal/person"
 )
 
 func main() {
@@ -115,18 +113,17 @@ func main() {
 	// string greeting the person by name.
 
 	// DONE
-	Anna := Person{
-		Name: "Anna",
-		Age: 20,
-		Height: 177,
-		Weight: 49,
-	}
-	fmt.Printf(Greet(Anna))
+	// Future debug
+	// Anna := Person{
+	// 	Name:   "Anna",
+	// 	Age:    20,
+	// 	Height: 177,
+	// 	Weight: 49,
+	// }
+	// fmt.Printf(Greet(Anna))
 
 	// TODO: Add a method to the 'Person' type called 'BMI' that returns the
 	// Body Mass Index of the person.
-
-
 
 	// TODO: Add a method to the 'Person' type called 'IsAdult' that returns a
 	// boolean indicating if the person is an adult (i.e. 18 years or older).
