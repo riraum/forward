@@ -57,6 +57,8 @@ import (
 	"fmt"
 
 	"github.com/riraum/forward/internal/geometry"
+
+	"github.com/riraum/forward/internal/person"
 )
 
 func main() {
@@ -97,16 +99,35 @@ func main() {
 	//   Perimeter: 12.0,
 	// }"
 
-	//
+	// WIP
 
 	// TODO: Create a new package called 'person'
+
+	// DONE
+
 	// TODO: In this package, create a new type called 'Person' with fields
 	// 'Name' of type 'string' and 'Age' of type 'int', 'Height' of type
 	// 'float64', and 'Weight' of type 'float64'.
+
+	// DONE
+
 	// TODO: Add a method to the 'Person' type called 'Greet' that returns a
 	// string greeting the person by name.
+
+	// DONE
+	Anna := Person{
+		Name: "Anna",
+		Age: 20,
+		Height: 177,
+		Weight: 49,
+	}
+	fmt.Printf(Greet(Anna))
+
 	// TODO: Add a method to the 'Person' type called 'BMI' that returns the
 	// Body Mass Index of the person.
+
+
+
 	// TODO: Add a method to the 'Person' type called 'IsAdult' that returns a
 	// boolean indicating if the person is an adult (i.e. 18 years or older).
 

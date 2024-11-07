@@ -1,6 +1,7 @@
 package geometry
 
 import "math"
+// import "encoding/json"
 
 type Triangle struct {
 	A Point
@@ -40,7 +41,7 @@ func (t Triangle) Perimeter() float64 {
 	return (t.addAXY() + t.addBXY() + t.addCXY())
 }
 
-// func (t Triangle) String() string{
+// func (t Triangle) String() {
 // 	// Get coordinates
 // 	A := t.addAXY()
 // 	B := t.addBXY()
@@ -50,5 +51,4 @@ func (t Triangle) Perimeter() float64 {
 // 	// Get Perimeter of triangle
 // 	Perimeter := t.Perimeter()
 // 	// Return data in req formatting
-// 	return "Triangle{\n A: %s,\n B: %s,\n C: %s,\n Area: %s,\n Perimeter: %s,\n,}", A, B, C, Area, Perimeter
-// }
+// 	return json.Marshal("Triangle{A: %s, B: %s, C: %s, Area: %s, Perimeter: %s,", A, B, C, Area, Perimeter,})
