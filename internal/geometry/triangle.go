@@ -8,8 +8,13 @@ type Triangle struct {
 	C Point
 }
 
+// Add debug
+
 func (t Triangle) semiPerimeter() {
-	return (t.A + t.B + t.B) / 0.5
+	// Draft
+	// return (t.A + t.B + t.B) / 0.5
+	//  fmt.Println( Add(t.A))
+	fullA := Add(t.A)
 }
 
 func (t Triangle) Area() float64 {
@@ -32,5 +37,5 @@ func (t Triangle) String() {
 	// Get Perimeter of triangle
 	Perimeter := t.Perimeter()
 	// Return data in req formatting
-	return fmt.Sprintf("Triangle{\n A: %s,\n B: %s,\n C: %s,\n Area: %s,\n Perimeter: %s,\n,}", A, B, C, Area, Perimeter)
+	return "Triangle{\n A: %s,\n B: %s,\n C: %s,\n Area: %s,\n Perimeter: %s,\n,}", A, B, C, Area, Perimeter
 }
