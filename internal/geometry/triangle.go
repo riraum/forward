@@ -1,6 +1,7 @@
 package geometry
 
 import "math"
+
 // import "encoding/json"
 
 type Triangle struct {
