@@ -8,34 +8,47 @@ type Triangle struct {
 	C Point
 }
 
-// Add debug
+// Create function that adds X, Y values of A, B, C of Triangle, in order to be able to use it for the coming functions and calculations of Triangle values
+func (t Triangle) addAXY() float64 {
+	return t.A.X + t.A.Y
+}
 
-func (t Triangle) semiPerimeter() {
+func (t Triangle) addBXY() float64 {
+	return t.B.X + t.B.Y
+}
+
+func (t Triangle) addCXY() float64 {
+	return t.C.X + t.C.Y
+}
+
+func (t Triangle) semiPerimeter() float64 {
 	// Draft
 	// return (t.A + t.B + t.B) / 0.5
 	//  fmt.Println( Add(t.A))
-	fullA := Add(t.A)
+	fullA := t.addAXY()
+	fullB := t.addBXY()
+	fullC := t.addCXY()
+	return (fullA + fullB + fullC) / 0.5
 }
 
 func (t Triangle) Area() float64 {
 	semiPerimeter := t.semiPerimeter()
-	return math.Sqrt(semiPerimeter * (semiPerimeter * t.A) * (semiPerimeter * t.B) * (semiPerimeter * t.C))
+	return math.Sqrt(semiPerimeter * (semiPerimeter * t.addAXY()) * (semiPerimeter * t.addBXY()) * (semiPerimeter * t.addCXY()))
 }
 
-func (t Triangle) Perimeter() {
-	return (t.A + t.B + t.C)
+func (t Triangle) Perimeter() float64 {
+	return (t.addAXY() + t.addBXY() + t.addCXY())
 }
 
-func (t Triangle) String() {
-	// Get coordinates
-	A := t.A
-	B := t.B
-	C := t.C
-	// Get area of triangle
-	// Get area of triangle
-	Area := t.Area()
-	// Get Perimeter of triangle
-	Perimeter := t.Perimeter()
-	// Return data in req formatting
-	return "Triangle{\n A: %s,\n B: %s,\n C: %s,\n Area: %s,\n Perimeter: %s,\n,}", A, B, C, Area, Perimeter
-}
+// func (t Triangle) String() string{
+// 	// Get coordinates
+// 	A := t.addAXY()
+// 	B := t.addBXY()
+// 	C := t.addCXY()
+// 	// Get area of triangle
+// 	Area := t.Area()
+// 	// Get Perimeter of triangle
+// 	Perimeter := t.Perimeter()
+// 	// Return data in req formatting
+// 	return "Triangle{\n A: %s,\n B: %s,\n C: %s,\n Area: %s,\n Perimeter: %s,\n,}", A, B, C, Area, Perimeter
+// }

@@ -69,12 +69,24 @@ func main() {
 
 	// TODO: create a new file in the internal/geometry package called
 	// 'triangle.go'.
+
+	// DONE
+
 	// TODO: In this file, create a new type called 'Triangle' with
 	// fields 'A', 'B', and 'C' of type 'Point'.
+
+	// DONE
+
 	// TODO: Add a method to the 'Triangle' type called 'Area' that returns the
 	// area of the triangle.
+
+	// DONE
+
 	// TODO: Add a method to the 'Triangle' type called 'Perimeter' that returns
 	// the perimeter of the triangle.
+
+	// DONE
+
 	// TODO: Add a method to the 'Triangle' type called 'String' that returns
 	// a string representation of the triangle in the following format:
 	// "Triangle{
@@ -84,6 +96,8 @@ func main() {
 	//   Area: 6.0,
 	//   Perimeter: 12.0,
 	// }"
+
+	//
 
 	// TODO: Create a new package called 'person'
 	// TODO: In this package, create a new type called 'Person' with fields
@@ -102,7 +116,7 @@ func main() {
 	// a person representing the average age, height, and weight of the people.
 	// TODO: Add a method to the 'People' type called 'Oldest' that returns
 	// the oldest person.
-	// TODO: Add a mehtod to the 'People' type called 'Greets' that returns
+	// TODO: Add a method to the 'People' type called 'Greets' that returns
 	// a slice of strings of the people greeting each other.
 	// E.g. if there are 2 people, the first person should greet the second
 	// person, and the second person should greet the first person.
