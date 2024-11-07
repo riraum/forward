@@ -131,7 +131,6 @@ func main() {
 
 	// TODO: Add a method to the 'People' type called 'Average' that returns
 	// a person representing the average age, height, and weight of the people.
-	
 
 	// TODO: Add a method to the 'People' type called 'Oldest' that returns
 	// the oldest person.
@@ -151,4 +150,5 @@ func main() {
     `
 	fmt.Println(heredoc.Doc(s))
 }
+
 // DONE
