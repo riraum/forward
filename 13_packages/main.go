@@ -109,13 +109,35 @@ func main() {
 	// string greeting the person by name.
 	// DONE
 	// Future debug
-	// Anna := Person{
+	// anna := Person{
 	// 	Name:   "Anna",
-	// 	Age:    20,
+	// 	Age:    17,
 	// 	Height: 177,
 	// 	Weight: 49,
 	// }
-	// fmt.Printf(Greet(Anna))
+
+	// luna := Person{
+	// 	Name: "Luna",
+	// 	Age: 30,
+	// 	Height: 156,
+	// 	Weight: 39,
+	// }
+
+	// jan := Person{
+	// 	Name: "Jan",
+	// 	Age: 29,
+	// 	Height: 188,
+	// 	Weight: 90,
+	// }
+
+	// tay := Person{
+	// 	Name: "Tay",
+	// 	Age: 33,
+	// 	Height: 190,
+	// 	Weight, 87,
+	// }
+
+	// fmt.Printf(Greet(anna))
 
 	// TODO: Add a method to the 'Person' type called 'BMI' that returns the
 	// Body Mass Index of the person.
@@ -124,13 +146,20 @@ func main() {
 	// TODO: Add a method to the 'Person' type called 'IsAdult' that returns a
 	// boolean indicating if the person is an adult (i.e. 18 years or older).
 	// DONE
+	// IsAdult(anna)
+	// IsAdult(luna)
 
 	// TODO: In the package 'person', create a new type called 'People' with
 	// a field 'People' of type '[]Person'.
 	// DONE
+	// team := []People{
+	// 	"anna", "luna", "jan", "tay",
+	// }
 
 	// TODO: Add a method to the 'People' type called 'Average' that returns
 	// a person representing the average age, height, and weight of the people.
+
+	// WIP
 
 	// TODO: Add a method to the 'People' type called 'Oldest' that returns
 	// the oldest person.

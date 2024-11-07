@@ -46,6 +46,16 @@ type People struct {
 // TODO: Add a method to the 'People' type called 'Average' that returns
 // a person representing the average age, height, and weight of the people.
 
-func (p People) Oldest() {
-
+// Create method
+func (p People) Average() {
+	// Get amount of person in the slice
+	amount := len(p)
+	sumAge := 0
+	// Add the Age, Height and Weight
+	for _, sumAge := range p.People {
+		sumAge += p.People.Age
+	}
+	// Dived by amount
+	avgAge := sumAge / amount
+	// Return Person struct? Maybe just values?
 }
