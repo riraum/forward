@@ -57,6 +57,8 @@ import (
 	"fmt"
 
 	"github.com/riraum/forward/internal/geometry"
+
+	"github.com/MakeNowJust/heredoc/v2"
 )
 
 func main() {
@@ -69,22 +71,18 @@ func main() {
 
 	// TODO: create a new file in the internal/geometry package called
 	// 'triangle.go'.
-
 	// DONE
 
 	// TODO: In this file, create a new type called 'Triangle' with
 	// fields 'A', 'B', and 'C' of type 'Point'.
-
 	// DONE
 
 	// TODO: Add a method to the 'Triangle' type called 'Area' that returns the
 	// area of the triangle.
-
 	// DONE
 
 	// TODO: Add a method to the 'Triangle' type called 'Perimeter' that returns
 	// the perimeter of the triangle.
-
 	// DONE
 
 	// TODO: Add a method to the 'Triangle' type called 'String' that returns
@@ -100,18 +98,15 @@ func main() {
 	// WIP
 
 	// TODO: Create a new package called 'person'
-
 	// DONE
 
 	// TODO: In this package, create a new type called 'Person' with fields
 	// 'Name' of type 'string' and 'Age' of type 'int', 'Height' of type
 	// 'float64', and 'Weight' of type 'float64'.
-
 	// DONE
 
 	// TODO: Add a method to the 'Person' type called 'Greet' that returns a
 	// string greeting the person by name.
-
 	// DONE
 	// Future debug
 	// Anna := Person{
@@ -124,14 +119,20 @@ func main() {
 
 	// TODO: Add a method to the 'Person' type called 'BMI' that returns the
 	// Body Mass Index of the person.
+	// DONE
 
 	// TODO: Add a method to the 'Person' type called 'IsAdult' that returns a
 	// boolean indicating if the person is an adult (i.e. 18 years or older).
+	// DONE
 
 	// TODO: In the package 'person', create a new type called 'People' with
 	// a field 'People' of type '[]Person'.
+	// DONE
+
 	// TODO: Add a method to the 'People' type called 'Average' that returns
 	// a person representing the average age, height, and weight of the people.
+	
+
 	// TODO: Add a method to the 'People' type called 'Oldest' that returns
 	// the oldest person.
 	// TODO: Add a method to the 'People' type called 'Greets' that returns
@@ -148,5 +149,6 @@ func main() {
         the indentation is wrong
         please fix the code
     `
-	fmt.Println(s)
+	fmt.Println(heredoc.Doc(s))
 }
+// DONE
