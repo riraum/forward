@@ -134,7 +134,7 @@ func main() {
 	anna := person.Person{
 		Name:   "Anna",
 		Age:    17,
-		Height: 177,
+		Height: 160,
 		Weight: 49,
 	}
 
@@ -142,7 +142,7 @@ func main() {
 		Name:   "Luna",
 		Age:    30,
 		Height: 156,
-		Weight: 39,
+		Weight: 48,
 	}
 
 	jan := person.Person{
@@ -165,6 +165,10 @@ func main() {
 	// TODO: Add a method to the 'Person' type called 'BMI' that returns the
 	// Body Mass Index of the person.
 	// DONE
+
+	fmt.Println("Anna's BMI", anna.BMI())
+	fmt.Println("Luna's BMI", luna.BMI())
+	fmt.Println("Jan's BMI", jan.BMI())
 
 	// TODO: Add a method to the 'Person' type called 'IsAdult' that returns a
 	// boolean indicating if the person is an adult (i.e. 18 years or older).
