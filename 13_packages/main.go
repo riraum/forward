@@ -58,6 +58,8 @@ import (
 
 	"github.com/riraum/forward/internal/geometry"
 
+	"github.com/riraum/forward/internal/person"
+
 	"github.com/MakeNowJust/heredoc/v2"
 )
 
@@ -81,9 +83,19 @@ func main() {
 	// area of the triangle.
 	// DONE
 
+	demoTriangle := geometry.Triangle{
+		A: geometry.Point{X: 0, Y: 0},
+		B: geometry.Point{X: 0, Y: 4},
+		C: geometry.Point{X: 3, Y: 0},
+	}
+
+	fmt.Println("demoTriangle Area", demoTriangle.Area())
+
 	// TODO: Add a method to the 'Triangle' type called 'Perimeter' that returns
 	// the perimeter of the triangle.
 	// DONE
+
+	fmt.Println("demoTriangle Perimeter", demoTriangle.Perimeter())
 
 	// TODO: Add a method to the 'Triangle' type called 'String' that returns
 	// a string representation of the triangle in the following format:
@@ -109,35 +121,36 @@ func main() {
 	// string greeting the person by name.
 	// DONE
 	// Future debug
-	// anna := Person{
-	// 	Name:   "Anna",
-	// 	Age:    17,
-	// 	Height: 177,
-	// 	Weight: 49,
-	// }
+	anna := person.Person{
+		Name:   "Anna",
+		Age:    17,
+		Height: 177,
+		Weight: 49,
+	}
 
-	// luna := Person{
-	// 	Name: "Luna",
-	// 	Age: 30,
-	// 	Height: 156,
-	// 	Weight: 39,
-	// }
+	luna := person.Person{
+		Name:   "Luna",
+		Age:    30,
+		Height: 156,
+		Weight: 39,
+	}
 
-	// jan := Person{
-	// 	Name: "Jan",
-	// 	Age: 29,
-	// 	Height: 188,
-	// 	Weight: 90,
-	// }
+	jan := person.Person{
+		Name:   "Jan",
+		Age:    29,
+		Height: 188,
+		Weight: 90,
+	}
 
-	// tay := Person{
-	// 	Name: "Tay",
-	// 	Age: 33,
-	// 	Height: 190,
-	// 	Weight, 87,
-	// }
+	tay := person.Person{
+		Name:   "Tay",
+		Age:    33,
+		Height: 190,
+		Weight: 87,
+	}
 
-	// fmt.Printf(Greet(anna))
+	fmt.Println("Jan Greet", jan.Greet())
+	fmt.Println("Tay Greet", tay.Greet())
 
 	// TODO: Add a method to the 'Person' type called 'BMI' that returns the
 	// Body Mass Index of the person.
@@ -146,13 +159,13 @@ func main() {
 	// TODO: Add a method to the 'Person' type called 'IsAdult' that returns a
 	// boolean indicating if the person is an adult (i.e. 18 years or older).
 	// DONE
-	// IsAdult(anna)
-	// IsAdult(luna)
+	fmt.Println("Anna IsAdult:", anna.IsAdult())
+	fmt.Println("Luna IsAdult:", luna.IsAdult())
 
 	// TODO: In the package 'person', create a new type called 'People' with
 	// a field 'People' of type '[]Person'.
 	// DONE
-	// team := []People{
+	// team := []person.People{
 	// 	"anna", "luna", "jan", "tay",
 	// }
 

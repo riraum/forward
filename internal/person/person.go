@@ -33,6 +33,8 @@ func (p Person) BMI() float64 {
 func (p Person) IsAdult() bool {
 	if p.Age >= 18 {
 		return true
+	} else {
+		return false
 	}
 }
 
@@ -47,15 +49,16 @@ type People struct {
 // a person representing the average age, height, and weight of the people.
 
 // Create method
-func (p People) Average() {
-	// Get amount of person in the slice
-	amount := len(p)
-	sumAge := 0
-	// Add the Age, Height and Weight
-	for _, sumAge := range p.People {
-		sumAge += p.People.Age
-	}
-	// Dived by amount
-	avgAge := sumAge / amount
-	// Return Person struct? Maybe just values?
-}
+// func (p People) Average() {
+// 	// Get amount of person in the slice
+// 	amount := len(p.People)
+// 	sumAge := 0
+// 	// Add the Age, Height and Weight
+// 	for _, sumAge := range p.People.Person {
+// 		sumAge += p.People.Person.Age
+// 	}
+// 	// Dived by amount
+// 	avgAge := sumAge / amount
+// 	// Return Person struct? Maybe just values?
+// 	return avgAge
+// }
