@@ -167,7 +167,7 @@ func (t triangle) semiPerimeter() float64 {
 
 func (t triangle) area() float64 {
 	semiPerimeter := t.semiPerimeter()
-	return math.Sqrt(semiPerimeter * (semiPerimeter * t.side1) * (semiPerimeter * t.side2) * (semiPerimeter * t.side3))
+	return math.Sqrt(semiPerimeter * (semiPerimeter - t.side1) * (semiPerimeter - t.side2) * (semiPerimeter - t.side3))
 }
 
 func (t1 triangle) compare(t2 triangle) int {
