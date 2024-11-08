@@ -179,9 +179,30 @@ func main() {
 	// TODO: In the package 'person', create a new type called 'People' with
 	// a field 'People' of type '[]Person'.
 	// DONE
-	// team := []person.People{
-	// 	"anna", "luna", "jan", "tay",
+	// team := person.People{
+	// 	{People: []Person{anna},
+	// 		People: []Person{luna},
+	// 		People: []Person{jan},
+	// 		People: []Person{tay},
+	// 	},
 	// }
+
+	team := person.People{
+		People: []person.Person{
+			{Name: "Anna",
+				Age:    17,
+				Height: 160,
+				Weight: 49,
+			},
+			{
+				Name:   "Luna",
+				Age:    30,
+				Height: 156,
+				Weight: 48,
+			},
+		},
+	}
+	fmt.Println("Print team", team)
 
 	// TODO: Add a method to the 'People' type called 'Average' that returns
 	// a person representing the average age, height, and weight of the people.

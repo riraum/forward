@@ -82,5 +82,5 @@ func (t Triangle) String() string {
 	// 	panic(err)
 	// }
 	// fmt.Println(string(out))
-	return fmt.Sprintf("Triangle{\nA: %v, \nB: %v, \nC: %v, \nArea: %v, \nPerimeter: %v,", t.A, t.B, t.C, t.Area(), t.Perimeter())
+	return fmt.Sprintf("Triangle{\nA: %+v, \nB: %+v, \nC: %+v, \nArea: %+v, \nPerimeter: %+v,", t.A, t.B, t.C, t.Area(), t.Perimeter())
 }
