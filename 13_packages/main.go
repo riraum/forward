@@ -89,7 +89,16 @@ func main() {
 		C: geometry.Point{X: 3, Y: 0},
 	}
 
+	demoTriangleY := geometry.Triangle{
+		A: geometry.Point{X: 0, Y: 4},
+		B: geometry.Point{X: 0, Y: 4},
+		C: geometry.Point{X: 3, Y: 1},
+	}
+
+	// fmt.Println("demoTriangle SemiPerimeter", demoTriangle.SemiPerimeter())
+	// TO CHECK
 	fmt.Println("demoTriangle Area", demoTriangle.Area())
+	fmt.Println("demoTriangle Area", demoTriangleY.Area())
 
 	// TODO: Add a method to the 'Triangle' type called 'Perimeter' that returns
 	// the perimeter of the triangle.
@@ -108,6 +117,7 @@ func main() {
 	// }"
 
 	// WIP
+	fmt.Println("demoTriangle String", demoTriangle.String())
 
 	// TODO: Create a new package called 'person'
 	// DONE
