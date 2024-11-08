@@ -49,16 +49,46 @@ type People struct {
 // a person representing the average age, height, and weight of the people.
 
 // Create method
-// func (p People) Average() Person {
-// 	// Get amount of person in the slice
-// 	amount := len(p.People)
-// 	sumAge := 0
-// 	// Add the Age, Height and Weight
-// 	for _, sumAge := range p.People {
-// 		sumAge += Person{}
-// 	}
-// 	// Dived by amount
-// 	avgAge := sumAge / amount
-// 	// Return Person struct? Maybe just values?
-// 	return avgAge
-// }
+func (p People) Average() Person {
+	// Get amount of person in the slice
+	amount := len(p.People)
+	// debug
+	fmt.Println("Print length", amount)
+	sumAge := 0
+	sumHeight := 0
+	sumWeight := 0
+	// Add the Age, Height and Weight
+	for _, sum := range p.People {
+		sumAge += sum.Age
+		// debug
+		fmt.Println("Print sumAge", sumAge)
+		// for _, sumActualAge := range sumAge.Age {
+		// 	sumAge += Person{}
+		// }
+	}
+
+	for _, sum := range p.People {
+		sumHeight += int(sum.Height)
+	}
+
+	for _, sum := range p.People {
+		sumWeight += int(sum.Weight)
+	}
+	avgAge := sumAge / amount
+	avgHeight := sumHeight / amount
+	avgWeight := sumWeight / amount
+	// Dived by amount
+	// 	avgAge := sumAge / amount
+	// 	// Return Person struct? Maybe just values?
+	// 	return avgAge
+	avgPerson := Person{
+		Name:   "AveragePerson",
+		Age:    avgAge,
+		Height: float64(avgHeight),
+		Weight: float64(avgWeight),
+	}
+	return avgPerson
+	// return sumAge
+	// return sumHeight
+	// return sumWeight
+}

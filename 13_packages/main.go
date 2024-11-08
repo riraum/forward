@@ -207,7 +207,7 @@ func main() {
 	// TODO: Add a method to the 'People' type called 'Average' that returns
 	// a person representing the average age, height, and weight of the people.
 
-	// WIP
+	fmt.Println("Print team", team.Average())
 
 	// TODO: Add a method to the 'People' type called 'Oldest' that returns
 	// the oldest person.
