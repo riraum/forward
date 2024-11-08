@@ -40,13 +40,12 @@ func (t Triangle) semiPerimeter() float64 {
 	return (fullA + fullB + fullC) / 0.5
 }
 
-// TO CHECK
 func (t Triangle) Area() float64 {
 	fullA := t.addAXY()
 	fullB := t.addBXY()
 	fullC := t.addCXY()
 	semiPerimeter := t.semiPerimeter()
-	return math.Sqrt(semiPerimeter * (semiPerimeter * fullA) * (semiPerimeter * fullB) * (semiPerimeter * fullC))
+	return math.Sqrt(semiPerimeter * (semiPerimeter - fullA) * (semiPerimeter - fullB) * (semiPerimeter - fullC))
 }
 
 // TODO: Add a method to the 'Triangle' type called 'Perimeter' that returns
@@ -76,11 +75,5 @@ func (t Triangle) String() string {
 	// Get Perimeter of triangle
 	// perimeter := t.Perimeter()
 	// Return data in req formatting
-	// return json.Marshal("Triangle{A: %s, B: %s, C: %s, Area: %s, Perimeter: %s,", t.A, t.B, t.C, t.Area(), t.Perimeter()})
-	// out, err := json.Marshal(t)
-	// if err != nil {
-	// 	panic(err)
-	// }
-	// fmt.Println(string(out))
 	return fmt.Sprintf("\nTriangle{\nA: %+v, \nB: %+v, \nC: %+v, \nArea: %+v, \nPerimeter: %+v,\n}", t.A, t.B, t.C, t.Area(), t.Perimeter())
 }

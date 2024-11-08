@@ -49,13 +49,13 @@ type People struct {
 // a person representing the average age, height, and weight of the people.
 
 // Create method
-// func (p People) Average() {
+// func (p People) Average() Person {
 // 	// Get amount of person in the slice
 // 	amount := len(p.People)
 // 	sumAge := 0
 // 	// Add the Age, Height and Weight
-// 	for _, sumAge := range p.People.Person {
-// 		sumAge += p.People.Person.Age
+// 	for _, sumAge := range p.People {
+// 		sumAge += Person{}
 // 	}
 // 	// Dived by amount
 // 	avgAge := sumAge / amount
