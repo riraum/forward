@@ -1,6 +1,8 @@
 package person
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // TODO: In this package, create a new type called 'Person' with fields
 // 'Name' of type 'string' and 'Age' of type 'int', 'Height' of type
@@ -123,11 +125,25 @@ func (p People) Greet() {
 	// Greet each other Person through string with name variable (with another loop?)
 	amount := len(p.People)
 	// debug
-	fmt.Println(amount)
+	fmt.Println("Debug len of p.People", amount)
 	names := p.People
 	// for _, value := range p.People {
 	names = append(names, p.People...)
+	namesSlice := []string{}
+	// for _, value := range names {
+	for _, value := range p.People {
+		namesSlice = append(namesSlice, value.Name)
+	}
+	// namesSlice = append(namesSlice, p)
+	// }
 	// debug
-	fmt.Println(names)
+	fmt.Println("Print names slice", namesSlice)
+	fmt.Println("Print names", names)
+	for _, value := range namesSlice {
+		// range for both from receiver/sender
+		fmt.Printf("Hi %v from %v!\n", value, value)
+		//
+		fmt.Printf("Hi %v from %v!\n", value, namesSlice[0])
+	}
 	// }
 }
