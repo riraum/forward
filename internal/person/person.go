@@ -39,9 +39,11 @@ func (p Person) IsAdult() bool {
 // TODO: In the package 'person', create a new type called 'People' with
 // a field 'People' of type '[]Person'.
 
-type People struct {
-	People []Person
-}
+// type People struct {
+// 	People []Person
+// }
+
+type People []Person
 
 // TODO: Add a method to the 'People' type called 'Average' that returns
 // a person representing the average age, height, and weight of the people.
@@ -49,12 +51,12 @@ type People struct {
 // Create method
 func (p People) Average() Person {
 	// Get amount of person in the slice
-	amount := float64(len(p.People))
+	amount := float64(len(p))
 	sumAge := 0
 	sumHeight := 0.0
 	sumWeight := 0.0
 	// Add the Age, Height and Weight
-	for _, value := range p.People {
+	for _, value := range p {
 		sumAge += value.Age
 		sumHeight += value.Height
 		sumWeight += value.Weight
@@ -79,7 +81,7 @@ func (p People) Average() Person {
 func (p People) Oldest() Person {
 	oldestAge := 0
 	oldestPerson := Person{}
-	for _, value := range p.People {
+	for _, value := range p {
 
 		if value.Age > oldestAge {
 			oldestAge = value.Age
@@ -103,16 +105,16 @@ func (p People) Greet() []string {
 	namesSlice := []string{}
 	result := []string{}
 	// for _, value := range names {
-	for _, value := range p.People {
-		namesSlice = append(namesSlice, value.Name)
+	for _, firstName := range p {
+		namesSlice = append(namesSlice, firstName.Name)
 	}
 
 	for _, value := range namesSlice {
-		for _, secondValue := range namesSlice {
-			if value == secondValue {
+		for _, familyName := range namesSlice {
+			if value == familyName {
 				continue
 			}
-			result = append(result, fmt.Sprintf("Hi %v from %v!\n", value, secondValue))
+			result = append(result, fmt.Sprintf("Hi %v from %v!\n", value, familyName))
 		}
 	}
 	return result
