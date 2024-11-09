@@ -200,6 +200,18 @@ func main() {
 				Height: 156,
 				Weight: 48,
 			},
+			{
+				Name:   "Jan",
+				Age:    29,
+				Height: 188,
+				Weight: 90,
+			},
+			{
+				Name:   "Tay",
+				Age:    33,
+				Height: 190,
+				Weight: 87,
+			},
 		},
 	}
 	fmt.Println("Print team", team)
@@ -211,12 +223,19 @@ func main() {
 
 	// TODO: Add a method to the 'People' type called 'Oldest' that returns
 	// the oldest person.
+
+	// WIP
+	fmt.Println("Print oldest", team.Oldest())
+
 	// TODO: Add a method to the 'People' type called 'Greets' that returns
 	// a slice of strings of the people greeting each other.
 	// E.g. if there are 2 people, the first person should greet the second
 	// person, and the second person should greet the first person.
 	// If there are 3 people, the first person should greet the second and
 	// third person, and so on.
+
+	// WIP
+	team.Greet()
 
 	// TODO: Use the external package https://github.com/MakeNowJust/heredoc
 	// to fix the rendering of the following text.

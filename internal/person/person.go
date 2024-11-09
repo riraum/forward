@@ -58,8 +58,8 @@ func (p People) Average() Person {
 	sumHeight := 0
 	sumWeight := 0
 	// Add the Age, Height and Weight
-	for _, sum := range p.People {
-		sumAge += sum.Age
+	for _, value := range p.People {
+		sumAge += value.Age
 		// debug
 		fmt.Println("Print sumAge", sumAge)
 		// for _, sumActualAge := range sumAge.Age {
@@ -67,12 +67,12 @@ func (p People) Average() Person {
 		// }
 	}
 
-	for _, sum := range p.People {
-		sumHeight += int(sum.Height)
+	for _, value := range p.People {
+		sumHeight += int(value.Height)
 	}
 
-	for _, sum := range p.People {
-		sumWeight += int(sum.Weight)
+	for _, value := range p.People {
+		sumWeight += int(value.Weight)
 	}
 	avgAge := sumAge / amount
 	avgHeight := sumHeight / amount
@@ -91,4 +91,43 @@ func (p People) Average() Person {
 	// return sumAge
 	// return sumHeight
 	// return sumWeight
+}
+
+// TODO: Add a method to the 'People' type called 'Oldest' that returns
+// the oldest person.
+
+func (p People) Oldest() Person {
+	oldestAge := 0
+	oldestPerson := Person{}
+	for _, value := range p.People {
+		// debug
+		fmt.Println("Print loop oldest", oldestAge)
+		if value.Age > oldestAge {
+			oldestAge = value.Age
+			oldestPerson = value
+		}
+	}
+	return oldestPerson
+}
+
+// TODO: Add a method to the 'People' type called 'Greets' that returns
+// a slice of strings of the people greeting each other.
+// E.g. if there are 2 people, the first person should greet the second
+// person, and the second person should greet the first person.
+// If there are 3 people, the first person should greet the second and
+// third person, and so on.
+
+func (p People) Greet() {
+	// Get length of Person slice in People struct
+	// loop through People struct to get all names of Person
+	// Greet each other Person through string with name variable (with another loop?)
+	amount := len(p.People)
+	// debug
+	fmt.Println(amount)
+	names := p.People
+	// for _, value := range p.People {
+	names = append(names, p.People...)
+	// debug
+	fmt.Println(names)
+	// }
 }
