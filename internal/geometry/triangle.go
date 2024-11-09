@@ -18,22 +18,26 @@ type Triangle struct {
 // area of the triangle.
 
 // Create function that adds X, Y values of A, B, C of Triangle, in order to be able to use it for the coming functions and calculations of Triangle values
-func (t Triangle) addAXY() float64 {
-	return t.A.X + t.A.Y
-}
+// func (t Triangle) addAXY() float64 {
+// 	return t.A.X + t.A.Y
+// }
 
-func (t Triangle) addBXY() float64 {
-	return t.B.X + t.B.Y
-}
+// func (t Triangle) addBXY() float64 {
+// 	return t.B.X + t.B.Y
+// }
 
-func (t Triangle) addCXY() float64 {
-	return t.C.X + t.C.Y
+//	func (t Triangle) addCXY() float64 {
+//		return t.C.X + t.C.Y
+//	}
+func (t Triangle) addXY() float64 {
+	return t.A.X + t.A.Y + t.B.X + t.B.Y + t.C.X + t.C.Y
 }
 
 func (t Triangle) semiPerimeter() float64 {
-	fullA := t.addAXY()
-	fullB := t.addBXY()
-	fullC := t.addCXY()
+	result := 0.0
+	for _, fullSides := range t {
+
+	}
 	return (fullA + fullB + fullC) / 0.5
 }
 
