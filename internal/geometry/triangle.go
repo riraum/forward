@@ -31,9 +31,6 @@ func (t Triangle) addCXY() float64 {
 }
 
 func (t Triangle) semiPerimeter() float64 {
-	// Draft
-	// return (t.A + t.B + t.B) / 0.5
-	//  fmt.Println( Add(t.A))
 	fullA := t.addAXY()
 	fullB := t.addBXY()
 	fullC := t.addCXY()
