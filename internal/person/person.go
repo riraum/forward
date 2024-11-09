@@ -119,17 +119,18 @@ func (p People) Oldest() Person {
 // If there are 3 people, the first person should greet the second and
 // third person, and so on.
 
-func (p People) Greet() {
+func (p People) Greet() []string {
 	// Get length of Person slice in People struct
 	// loop through People struct to get all names of Person
 	// Greet each other Person through string with name variable (with another loop?)
-	amount := len(p.People)
+	// amount := len(p.People)
 	// debug
-	fmt.Println("Debug len of p.People", amount)
-	names := p.People
+	// fmt.Println("Debug len of p.People", amount)
+	// names := p.People
 	// for _, value := range p.People {
-	names = append(names, p.People...)
+	// names = append(names, p.People...)
 	namesSlice := []string{}
+	result := []string{}
 	// for _, value := range names {
 	for _, value := range p.People {
 		namesSlice = append(namesSlice, value.Name)
@@ -137,19 +138,19 @@ func (p People) Greet() {
 	// namesSlice = append(namesSlice, p)
 	// }
 	// debug
-	fmt.Println("Print names slice", namesSlice)
-	fmt.Println("Print names", names)
+	// fmt.Println("Print names slice", namesSlice)
+	// fmt.Println("Print names", names)
 	for _, value := range namesSlice {
 		for _, secondValue := range namesSlice {
 			if value == secondValue {
 				continue
 			}
-			fmt.Printf("(double loop) Hi %v from %v!\n", value, secondValue)
+			result = append(result, fmt.Sprintf("Hi %v from %v!\n", value, secondValue))
 		}
-		// range for both from receiver/sender
-		fmt.Printf("(value, value)Hi %v from %v!\n", value, value)
-		//
-		fmt.Printf("(hardcoded)Hi %v from %v!\n", value, namesSlice[0])
 	}
-	// }
+	return result
+	// range for both from receiver/sender
+	// fmt.Printf("(value, value)Hi %v from %v!\n", value, value)
+	//
+	// fmt.Printf("(hardcoded)Hi %v from %v!\n", value, namesSlice[0])
 }

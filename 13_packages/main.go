@@ -233,8 +233,7 @@ func main() {
 	// If there are 3 people, the first person should greet the second and
 	// third person, and so on.
 
-	// WIP
-	team.Greet()
+	fmt.Println(team.Greet())
 
 	// TODO: Use the external package https://github.com/MakeNowJust/heredoc
 	// to fix the rendering of the following text.
