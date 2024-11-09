@@ -140,10 +140,16 @@ func (p People) Greet() {
 	fmt.Println("Print names slice", namesSlice)
 	fmt.Println("Print names", names)
 	for _, value := range namesSlice {
+		for _, secondValue := range namesSlice {
+			if value == secondValue {
+				continue
+			}
+			fmt.Printf("(double loop) Hi %v from %v!\n", value, secondValue)
+		}
 		// range for both from receiver/sender
-		fmt.Printf("Hi %v from %v!\n", value, value)
+		fmt.Printf("(value, value)Hi %v from %v!\n", value, value)
 		//
-		fmt.Printf("Hi %v from %v!\n", value, namesSlice[0])
+		fmt.Printf("(hardcoded)Hi %v from %v!\n", value, namesSlice[0])
 	}
 	// }
 }
