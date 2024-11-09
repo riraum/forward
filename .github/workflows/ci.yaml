@@ -1,6 +1,8 @@
 # IGNORE ME
 name: CI
 
+import: "goimports"
+
 on:
   push:
     branches: [ master ]
@@ -34,6 +36,7 @@ jobs:
               fi
             }
 
+            assert-nothing-changed go fmt ./...
             assert-nothing-changed go goimports ./...
             assert-nothing-changed go mod tidy
 
