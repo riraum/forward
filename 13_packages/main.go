@@ -175,31 +175,32 @@ func main() {
 	// a field 'People' of type '[]Person'.
 
 	team := person.People{
-		{Name: "Anna",
-			Age:    17,
-			Height: 160,
-			Weight: 49,
-		},
-		{
-			Name:   "Luna",
-			Age:    30,
-			Height: 156,
-			Weight: 48,
-		},
-		{
-			Name:   "Jan",
-			Age:    29,
-			Height: 188,
-			Weight: 90,
-		},
-		{
-			Name:   "Tay",
-			Age:    33,
-			Height: 190,
-			Weight: 87,
+		People: []person.Person{
+			{Name: "Anna",
+				Age:    17,
+				Height: 160,
+				Weight: 49,
+			},
+			{
+				Name:   "Luna",
+				Age:    30,
+				Height: 156,
+				Weight: 48,
+			},
+			{
+				Name:   "Jan",
+				Age:    29,
+				Height: 188,
+				Weight: 90,
+			},
+			{
+				Name:   "Tay",
+				Age:    33,
+				Height: 190,
+				Weight: 87,
+			},
 		},
 	}
-
 	fmt.Println("Print team", team)
 
 	// TODO: Add a method to the 'People' type called 'Average' that returns
