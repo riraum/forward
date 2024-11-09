@@ -224,7 +224,6 @@ func main() {
 	// TODO: Add a method to the 'People' type called 'Oldest' that returns
 	// the oldest person.
 
-	// WIP
 	fmt.Println("Print oldest", team.Oldest())
 
 	// TODO: Add a method to the 'People' type called 'Greets' that returns

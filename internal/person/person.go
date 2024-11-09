@@ -53,7 +53,7 @@ func (p People) Average() Person {
 	// Get amount of person in the slice
 	amount := len(p.People)
 	// debug
-	fmt.Println("Print length", amount)
+	// fmt.Println("Print length", amount)
 	sumAge := 0
 	sumHeight := 0
 	sumWeight := 0
@@ -61,7 +61,7 @@ func (p People) Average() Person {
 	for _, value := range p.People {
 		sumAge += value.Age
 		// debug
-		fmt.Println("Print sumAge", sumAge)
+		// fmt.Println("Print sumAge", sumAge)
 		// for _, sumActualAge := range sumAge.Age {
 		// 	sumAge += Person{}
 		// }
@@ -101,7 +101,7 @@ func (p People) Oldest() Person {
 	oldestPerson := Person{}
 	for _, value := range p.People {
 		// debug
-		fmt.Println("Print loop oldest", oldestAge)
+		// fmt.Println("Print loop oldest", oldestAge)
 		if value.Age > oldestAge {
 			oldestAge = value.Age
 			oldestPerson = value
