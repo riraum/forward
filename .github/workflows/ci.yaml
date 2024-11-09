@@ -1,7 +1,8 @@
 # IGNORE ME
 name: CI
 
-import: "goimports"
+- name: Install goimports
+  run: go install golang.org/x/tools/cmd/goimports@latest
 
 on:
   push:
@@ -37,7 +38,7 @@ jobs:
             }
 
             assert-nothing-changed go fmt ./...
-            assert-nothing-changed go goimports ./...
+            assert-nothing-changed goimports ./...
             assert-nothing-changed go mod tidy
 
             exit $STATUS
