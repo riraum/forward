@@ -2,12 +2,11 @@ name: CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
-
   lint:
     runs-on: ubuntu-latest
 
@@ -18,13 +17,13 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
-          go-version-file: 'go.mod'
+          go-version-file: "go.mod"
 
       # Python
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version-file: '.python-version'
+          python-version-file: ".python-version"
 
       - name: Install Black
         run: pip install black
@@ -40,7 +39,7 @@ jobs:
       - name: Set up Javascript
         uses: actions/setup-node@v4
         with:
-          node-version-file: '.node-version'
+          node-version-file: ".node-version"
 
       - name: Install Prettier
         run: npm install prettier
@@ -48,21 +47,21 @@ jobs:
       # Taken from https://github.com/cli/cli/blob/trunk/.github/workflows/lint.yml
       - name: Lint
         run: |
-            STATUS=0
-            assert-nothing-changed() {
-              local diff
-              "$@" >/dev/null || return 1
-              if ! diff="$(git diff -U1 --color --exit-code)"; then
-                printf '\e[31mError: running `\e[1m%s\e[22m` results in modifications that you must check into version control:\e[0m\n%s\n\n' "$*" "$diff" >&2
-                git checkout -- .
-                STATUS=1
-              fi
-            }
+          STATUS=0
+          assert-nothing-changed() {
+            local diff
+            "$@" >/dev/null || return 1
+            if ! diff="$(git diff -U1 --color --exit-code)"; then
+              printf '\e[31mError: running `\e[1m%s\e[22m` results in modifications that you must check into version control:\e[0m\n%s\n\n' "$*" "$diff" >&2
+              git checkout -- .
+              STATUS=1
+            fi
+          }
 
-            assert-nothing-changed go fmt ./...
-            assert-nothing-changed go mod tidy
-            assert-nothing-changed black .
-            assert-nothing-changed rubocop **/*.rb
-            assert-nothing-changed npx prettier -w .
+          assert-nothing-changed go fmt ./...
+          assert-nothing-changed go mod tidy
+          assert-nothing-changed black .
+          assert-nothing-changed rubocop **/*.rb
+          assert-nothing-changed npx prettier -w .
 
-            exit $STATUS
+          exit $STATUS
