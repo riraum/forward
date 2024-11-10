@@ -31,18 +31,16 @@ jobs:
 
       # Ruby
       - name: Set up Ruby
-        uses: actions/setup-ruby@v5
-        with:
-          python-version-file: '.ruby-version'
+        uses: ruby/setup-ruby@v1
 
       - name: Install Rubocop
         run: gem install rubocop
 
       # Javascript
       - name: Set up Javascript
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v4
         with:
-          python-version-file: '.node-version'
+          node-version-file: '.node-version'
 
       - name: Install Prettier
         run: npm install prettier
