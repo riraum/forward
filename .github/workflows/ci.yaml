@@ -1,4 +1,3 @@
-# IGNORE ME
 name: CI
 
 on:
@@ -15,10 +14,38 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Golang
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
           go-version-file: 'go.mod'
+
+      # Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version-file: '.python-version'
+
+      - name: Install Black
+        run: pip install black
+
+      # Ruby
+      - name: Set up Ruby
+        uses: actions/setup-ruby@v5
+        with:
+          python-version-file: '.ruby-version'
+
+      - name: Install Rubocop
+        run: gem install rubocop
+
+      # Javascript
+      - name: Set up Javascript
+        uses: actions/setup-node@v5
+        with:
+          python-version-file: '.node-version'
+
+      - name: Install Prettier
+        run: npm install prettier
 
       # Taken from https://github.com/cli/cli/blob/trunk/.github/workflows/lint.yml
       - name: Lint
@@ -36,5 +63,8 @@ jobs:
 
             assert-nothing-changed go fmt ./...
             assert-nothing-changed go mod tidy
+            assert-nothing-changed black */**.py
+            assert-nothing-changed rubocop */**.rb
+            assert-nothing-changed npx prettier -w **/*.js
 
             exit $STATUS
