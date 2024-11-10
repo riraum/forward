@@ -52,7 +52,7 @@ jobs:
           assert-nothing-changed() {
             local diff
             echo -e "\n\nRunning '$@'"
-            "$@" || echo -e "\n'$@' failed" && STATUS=1
+            "$@" || (echo -e "\n'$@' failed" && STATUS=1)
             if ! diff="$(git diff -U1 --color --exit-code)"; then
               printf '\e[31mError: running `\e[1m%s\e[22m` results in modifications that you must check into version control:\e[0m\n%s\n\n' "$*" "$diff" >&2
               git checkout -- .
