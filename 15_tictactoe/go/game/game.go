@@ -3,8 +3,8 @@ package game
 import (
 	"fmt"
 
-	"github.com/riraum/forward/15_tictactoe/grid"
-	"github.com/riraum/forward/15_tictactoe/io"
+	"github.com/riraum/forward/15_tictactoe/go/grid"
+	"github.com/riraum/forward/15_tictactoe/go/io"
 )
 
 func Play() {

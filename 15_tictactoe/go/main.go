@@ -1,6 +1,6 @@
 package main
 
-import "github.com/riraum/forward/15_tictactoe/game"
+import "github.com/riraum/forward/15_tictactoe/go/game"
 
 /*
 
