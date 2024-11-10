@@ -7,5 +7,3 @@
 # - use only the standard library
 # - use random plays for the computer
 # - use a similar model to the go code
-
-A
