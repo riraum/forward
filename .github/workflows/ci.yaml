@@ -47,7 +47,6 @@ jobs:
       # Taken from https://github.com/cli/cli/blob/trunk/.github/workflows/lint.yml
       - name: Lint
         run: |
-          set -x
           STATUS=0
           assert-nothing-changed() {
             local diff
