@@ -17,32 +17,10 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
-          go-version-file: "go.mod"
+          go-version-file: 'go.mod'
 
-      # Python
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version-file: ".python-version"
-
-      - name: Install Black
-        run: pip install black
-
-      # Ruby
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-
-      - name: Install Rubocop
-        run: gem install rubocop
-
-      # Javascript
-      - name: Set up Javascript
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: ".node-version"
-
-      - name: Install Prettier
-        run: npm install prettier
+      - name: Install goimports
+        run: go install golang.org/x/tools/cmd/goimports@latest
 
       # Taken from https://github.com/cli/cli/blob/trunk/.github/workflows/lint.yml
       - name: Lint
