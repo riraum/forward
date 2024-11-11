@@ -18,41 +18,28 @@ type Triangle struct {
 // area of the triangle.
 
 // Create function that adds X, Y values of A, B, C of Triangle, in order to be able to use it for the coming functions and calculations of Triangle values
-func (t Triangle) addAXY() float64 {
-	return t.A.X + t.A.Y
-}
 
-func (t Triangle) addBXY() float64 {
-	return t.B.X + t.B.Y
-}
-
-func (t Triangle) addCXY() float64 {
-	return t.C.X + t.C.Y
+func (t Triangle) AddXY() (float64, float64, float64) {
+	return t.A.X + t.A.Y, t.B.X + t.B.Y, t.C.X + t.C.Y
 }
 
 func (t Triangle) semiPerimeter() float64 {
-	// Draft
-	// return (t.A + t.B + t.B) / 0.5
-	//  fmt.Println( Add(t.A))
-	fullA := t.addAXY()
-	fullB := t.addBXY()
-	fullC := t.addCXY()
-	return (fullA + fullB + fullC) / 0.5
+	sideA, sideB, sideC := t.AddXY()
+	return (sideA + sideB + sideC) / 0.5
 }
 
 func (t Triangle) Area() float64 {
-	fullA := t.addAXY()
-	fullB := t.addBXY()
-	fullC := t.addCXY()
+	sideA, sideB, sideC := t.AddXY()
 	semiPerimeter := t.semiPerimeter()
-	return math.Sqrt(semiPerimeter * (semiPerimeter - fullA) * (semiPerimeter - fullB) * (semiPerimeter - fullC))
+	return math.Sqrt(semiPerimeter * (semiPerimeter - sideA) * (semiPerimeter - sideB) * (semiPerimeter - sideC))
 }
 
 // TODO: Add a method to the 'Triangle' type called 'Perimeter' that returns
 // the perimeter of the triangle.
 
 func (t Triangle) Perimeter() float64 {
-	return (t.addAXY() + t.addBXY() + t.addCXY())
+	sideA, sideB, sideC := t.AddXY()
+	return (sideA + sideB + sideC)
 }
 
 // TODO: Add a method to the 'Triangle' type called 'String' that returns

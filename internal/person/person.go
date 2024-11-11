@@ -33,19 +33,17 @@ func (p Person) BMI() float64 {
 // boolean indicating if the person is an adult (i.e. 18 years or older).
 
 func (p Person) IsAdult() bool {
-	if p.Age >= 18 {
-		return true
-	} else {
-		return false
-	}
+	return p.Age >= 18
 }
 
 // TODO: In the package 'person', create a new type called 'People' with
 // a field 'People' of type '[]Person'.
 
-type People struct {
-	People []Person
-}
+// type People struct {
+// 	People []Person
+// }
+
+type People []Person
 
 // TODO: Add a method to the 'People' type called 'Average' that returns
 // a person representing the average age, height, and weight of the people.
@@ -53,46 +51,28 @@ type People struct {
 // Create method
 func (p People) Average() Person {
 	// Get amount of person in the slice
-	amount := len(p.People)
-	// debug
-	// fmt.Println("Print length", amount)
+	amount := float64(len(p))
 	sumAge := 0
-	sumHeight := 0
-	sumWeight := 0
+	sumHeight := 0.0
+	sumWeight := 0.0
 	// Add the Age, Height and Weight
-	for _, value := range p.People {
+	for _, value := range p {
 		sumAge += value.Age
-		// debug
-		// fmt.Println("Print sumAge", sumAge)
-		// for _, sumActualAge := range sumAge.Age {
-		// 	sumAge += Person{}
-		// }
+		sumHeight += value.Height
+		sumWeight += value.Weight
 	}
 
-	for _, value := range p.People {
-		sumHeight += int(value.Height)
-	}
-
-	for _, value := range p.People {
-		sumWeight += int(value.Weight)
-	}
-	avgAge := sumAge / amount
+	avgAge := sumAge / int(amount)
 	avgHeight := sumHeight / amount
 	avgWeight := sumWeight / amount
-	// Dived by amount
-	// 	avgAge := sumAge / amount
-	// 	// Return Person struct? Maybe just values?
-	// 	return avgAge
+
 	avgPerson := Person{
 		Name:   "AveragePerson",
 		Age:    avgAge,
-		Height: float64(avgHeight),
-		Weight: float64(avgWeight),
+		Height: avgHeight,
+		Weight: avgWeight,
 	}
 	return avgPerson
-	// return sumAge
-	// return sumHeight
-	// return sumWeight
 }
 
 // TODO: Add a method to the 'People' type called 'Oldest' that returns
@@ -101,9 +81,8 @@ func (p People) Average() Person {
 func (p People) Oldest() Person {
 	oldestAge := 0
 	oldestPerson := Person{}
-	for _, value := range p.People {
-		// debug
-		// fmt.Println("Print loop oldest", oldestAge)
+	for _, value := range p {
+
 		if value.Age > oldestAge {
 			oldestAge = value.Age
 			oldestPerson = value
@@ -123,34 +102,20 @@ func (p People) Greet() []string {
 	// Get length of Person slice in People struct
 	// loop through People struct to get all names of Person
 	// Greet each other Person through string with name variable (with another loop?)
-	// amount := len(p.People)
-	// debug
-	// fmt.Println("Debug len of p.People", amount)
-	// names := p.People
-	// for _, value := range p.People {
-	// names = append(names, p.People...)
 	namesSlice := []string{}
 	result := []string{}
 	// for _, value := range names {
-	for _, value := range p.People {
-		namesSlice = append(namesSlice, value.Name)
+	for _, firstName := range p {
+		namesSlice = append(namesSlice, firstName.Name)
 	}
-	// namesSlice = append(namesSlice, p)
-	// }
-	// debug
-	// fmt.Println("Print names slice", namesSlice)
-	// fmt.Println("Print names", names)
+
 	for _, value := range namesSlice {
-		for _, secondValue := range namesSlice {
-			if value == secondValue {
+		for _, familyName := range namesSlice {
+			if value == familyName {
 				continue
 			}
-			result = append(result, fmt.Sprintf("Hi %v from %v!\n", value, secondValue))
+			result = append(result, fmt.Sprintf("Hi %v from %v!\n", value, familyName))
 		}
 	}
 	return result
-	// range for both from receiver/sender
-	// fmt.Printf("(value, value)Hi %v from %v!\n", value, value)
-	//
-	// fmt.Printf("(hardcoded)Hi %v from %v!\n", value, namesSlice[0])
 }

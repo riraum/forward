@@ -81,7 +81,6 @@ func main() {
 
 	// TODO: Add a method to the 'Triangle' type called 'Area' that returns the
 	// area of the triangle.
-	// DONE
 
 	demoTriangle := geometry.Triangle{
 		A: geometry.Point{X: 0, Y: 0},
@@ -96,13 +95,12 @@ func main() {
 	}
 
 	// fmt.Println("demoTriangle SemiPerimeter", demoTriangle.SemiPerimeter())
-	// TO CHECK
+
 	fmt.Println("demoTriangle Area", demoTriangle.Area())
 	fmt.Println("demoTriangle Area", demoTriangleY.Area())
 
 	// TODO: Add a method to the 'Triangle' type called 'Perimeter' that returns
 	// the perimeter of the triangle.
-	// DONE
 
 	fmt.Println("demoTriangle Perimeter", demoTriangle.Perimeter())
 
@@ -116,7 +114,6 @@ func main() {
 	//   Perimeter: 12.0,
 	// }"
 
-	// WIP
 	fmt.Println("demoTriangle String", demoTriangle.String())
 
 	// TODO: Create a new package called 'person'
@@ -129,8 +126,7 @@ func main() {
 
 	// TODO: Add a method to the 'Person' type called 'Greet' that returns a
 	// string greeting the person by name.
-	// DONE
-	// Future debug
+
 	anna := person.Person{
 		Name:   "Anna",
 		Age:    17,
@@ -164,7 +160,6 @@ func main() {
 
 	// TODO: Add a method to the 'Person' type called 'BMI' that returns the
 	// Body Mass Index of the person.
-	// DONE
 
 	fmt.Println("Anna's BMI", anna.BMI())
 	fmt.Println("Luna's BMI", luna.BMI())
@@ -172,48 +167,39 @@ func main() {
 
 	// TODO: Add a method to the 'Person' type called 'IsAdult' that returns a
 	// boolean indicating if the person is an adult (i.e. 18 years or older).
-	// DONE
+
 	fmt.Println("Anna IsAdult:", anna.IsAdult())
 	fmt.Println("Luna IsAdult:", luna.IsAdult())
 
 	// TODO: In the package 'person', create a new type called 'People' with
 	// a field 'People' of type '[]Person'.
-	// DONE
-	// team := person.People{
-	// 	{People: []Person{anna},
-	// 		People: []Person{luna},
-	// 		People: []Person{jan},
-	// 		People: []Person{tay},
-	// 	},
-	// }
 
 	team := person.People{
-		People: []person.Person{
-			{Name: "Anna",
-				Age:    17,
-				Height: 160,
-				Weight: 49,
-			},
-			{
-				Name:   "Luna",
-				Age:    30,
-				Height: 156,
-				Weight: 48,
-			},
-			{
-				Name:   "Jan",
-				Age:    29,
-				Height: 188,
-				Weight: 90,
-			},
-			{
-				Name:   "Tay",
-				Age:    33,
-				Height: 190,
-				Weight: 87,
-			},
+		{Name: "Anna",
+			Age:    17,
+			Height: 160,
+			Weight: 49,
+		},
+		{
+			Name:   "Luna",
+			Age:    30,
+			Height: 156,
+			Weight: 48,
+		},
+		{
+			Name:   "Jan",
+			Age:    29,
+			Height: 188,
+			Weight: 90,
+		},
+		{
+			Name:   "Tay",
+			Age:    33,
+			Height: 190,
+			Weight: 87,
 		},
 	}
+
 	fmt.Println("Print team", team)
 
 	// TODO: Add a method to the 'People' type called 'Average' that returns
@@ -244,5 +230,3 @@ func main() {
     `
 	fmt.Println(heredoc.Doc(s))
 }
-
-// DONE
