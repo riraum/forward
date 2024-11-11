@@ -8,12 +8,12 @@ Learning Go and basics of programming.
 
 2. Confirm it is installed: `go version`
 
-    If you see something like `go version go1.XX.X <OS>/<ARCH>`, you are good to
-    go.
+   If you see something like `go version go1.XX.X <OS>/<ARCH>`, you are good to
+   go.
 
 3. Run the first file: `go run 00_setup/main.go`
 
-    It should fail with an error message. This is expected.
+   It should fail with an error message. This is expected.
 
 > [!NOTE]
 > You can run any `main.go` file in this repo by running
