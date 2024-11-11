@@ -57,6 +57,10 @@ import (
 	"fmt"
 
 	"github.com/riraum/forward/internal/geometry"
+
+	"github.com/riraum/forward/internal/person"
+
+	"github.com/MakeNowJust/heredoc/v2"
 )
 
 func main() {
@@ -69,12 +73,37 @@ func main() {
 
 	// TODO: create a new file in the internal/geometry package called
 	// 'triangle.go'.
+	// DONE
+
 	// TODO: In this file, create a new type called 'Triangle' with
 	// fields 'A', 'B', and 'C' of type 'Point'.
+	// DONE
+
 	// TODO: Add a method to the 'Triangle' type called 'Area' that returns the
 	// area of the triangle.
+
+	demoTriangle := geometry.Triangle{
+		A: geometry.Point{X: 0, Y: 0},
+		B: geometry.Point{X: 0, Y: 4},
+		C: geometry.Point{X: 3, Y: 0},
+	}
+
+	demoTriangleY := geometry.Triangle{
+		A: geometry.Point{X: 0, Y: 4},
+		B: geometry.Point{X: 0, Y: 4},
+		C: geometry.Point{X: 3, Y: 1},
+	}
+
+	// fmt.Println("demoTriangle SemiPerimeter", demoTriangle.SemiPerimeter())
+
+	fmt.Println("demoTriangle Area", demoTriangle.Area())
+	fmt.Println("demoTriangle Area", demoTriangleY.Area())
+
 	// TODO: Add a method to the 'Triangle' type called 'Perimeter' that returns
 	// the perimeter of the triangle.
+
+	fmt.Println("demoTriangle Perimeter", demoTriangle.Perimeter())
+
 	// TODO: Add a method to the 'Triangle' type called 'String' that returns
 	// a string representation of the triangle in the following format:
 	// "Triangle{
@@ -85,29 +114,112 @@ func main() {
 	//   Perimeter: 12.0,
 	// }"
 
+	fmt.Println("demoTriangle String", demoTriangle.String())
+
 	// TODO: Create a new package called 'person'
+	// DONE
+
 	// TODO: In this package, create a new type called 'Person' with fields
 	// 'Name' of type 'string' and 'Age' of type 'int', 'Height' of type
 	// 'float64', and 'Weight' of type 'float64'.
+	// DONE
+
 	// TODO: Add a method to the 'Person' type called 'Greet' that returns a
 	// string greeting the person by name.
+
+	anna := person.Person{
+		Name:   "Anna",
+		Age:    17,
+		Height: 160,
+		Weight: 49,
+	}
+
+	luna := person.Person{
+		Name:   "Luna",
+		Age:    30,
+		Height: 156,
+		Weight: 48,
+	}
+
+	jan := person.Person{
+		Name:   "Jan",
+		Age:    29,
+		Height: 188,
+		Weight: 90,
+	}
+
+	tay := person.Person{
+		Name:   "Tay",
+		Age:    33,
+		Height: 190,
+		Weight: 87,
+	}
+
+	fmt.Println("Jan Greet", jan.Greet())
+	fmt.Println("Tay Greet", tay.Greet())
+
 	// TODO: Add a method to the 'Person' type called 'BMI' that returns the
 	// Body Mass Index of the person.
+
+	fmt.Println("Anna's BMI", anna.BMI())
+	fmt.Println("Luna's BMI", luna.BMI())
+	fmt.Println("Jan's BMI", jan.BMI())
+
 	// TODO: Add a method to the 'Person' type called 'IsAdult' that returns a
 	// boolean indicating if the person is an adult (i.e. 18 years or older).
 
+	fmt.Println("Anna IsAdult:", anna.IsAdult())
+	fmt.Println("Luna IsAdult:", luna.IsAdult())
+
 	// TODO: In the package 'person', create a new type called 'People' with
 	// a field 'People' of type '[]Person'.
+
+	team := person.People{
+		{Name: "Anna",
+			Age:    17,
+			Height: 160,
+			Weight: 49,
+		},
+		{
+			Name:   "Luna",
+			Age:    30,
+			Height: 156,
+			Weight: 48,
+		},
+		{
+			Name:   "Jan",
+			Age:    29,
+			Height: 188,
+			Weight: 90,
+		},
+		{
+			Name:   "Tay",
+			Age:    33,
+			Height: 190,
+			Weight: 87,
+		},
+	}
+
+	fmt.Println("Print team", team)
+
 	// TODO: Add a method to the 'People' type called 'Average' that returns
 	// a person representing the average age, height, and weight of the people.
+
+	fmt.Println("Print team", team.Average())
+
 	// TODO: Add a method to the 'People' type called 'Oldest' that returns
 	// the oldest person.
-	// TODO: Add a mehtod to the 'People' type called 'Greets' that returns
+
+	fmt.Println("Print oldest", team.Oldest())
+
+	// TODO: Add a method to the 'People' type called 'Greets' that returns
 	// a slice of strings of the people greeting each other.
 	// E.g. if there are 2 people, the first person should greet the second
 	// person, and the second person should greet the first person.
 	// If there are 3 people, the first person should greet the second and
 	// third person, and so on.
+
+	fmt.Println(team.Greet())
 
 	// TODO: Use the external package https://github.com/MakeNowJust/heredoc
 	// to fix the rendering of the following text.
@@ -116,5 +228,5 @@ func main() {
         the indentation is wrong
         please fix the code
     `
-	fmt.Println(s)
+	fmt.Println(heredoc.Doc(s))
 }
