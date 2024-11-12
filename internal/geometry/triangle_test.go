@@ -12,35 +12,36 @@ import "testing"
 // 		{Point{1, 1}, Point{-1, -1}, Point{0, 0}},
 // 	}
 
-// 	for _, test := range tests {
-// 		got := test.p.Add(test.q)
-// 		if !got.Eq(test.want) {
-// 			t.Errorf("PointAdd(%v, %v) = %v, want %v", test.p, test.q, got, test.want)
-// 		}
-// 	}
-// }
+//		for _, test := range tests {
+//			got := test.p.Add(test.q)
+//			if !got.Eq(test.want) {
+//				t.Errorf("PointAdd(%v, %v) = %v, want %v", test.p, test.q, got, test.want)
+//			}
+//		}
+//	}
 func TestAddXY(t *testing.T) {
 	tests := []struct {
-		ta Triangle
+		ta    Triangle
 		want1 float64
 		want2 float64
 		want3 float64
 		// want []float64
 	}{
 		Triangle{
-			Point{0, 0},
-			Point{0, 4},
-			Point{3, 0},
-		}
+			{0, 0},
+			{0, 4},
+			{3, 0},
+		}, {0, 4, 3},
 	}
-		// []float64{0, 4, 3},
+	// []float64{0, 4, 3},
 	for _, test := range tests {
-		got := test.ta.AddXY()
-		if got != test.want {
-			t.Errorf("AddXY(%v) = %v, want %v, %v and %v", test.ta, got, test.want1, test.want2, test.want3)
+		got1, got2, got3 := test.ta.AddXY()
+		if got1 != test.want1 && got2 != test.want2 && got3 != test.want3 {
+			t.Errorf("AddXY(%v) = %v, %v, %v, want %v, %v and %v", test.ta, got1, got2, got3, test.want1, test.want2, test.want3)
 		}
 	}
 }
+
 // Test syntax from gotests
 // func TestTriangle_AddXY(t *testing.T) {
 // 	type fields struct {
