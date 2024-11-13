@@ -186,47 +186,60 @@ func TestOldest(t *testing.T) {
 	}
 }
 
-// func TestPeopleGreet(t *testing.T) {
-// 	team := People{
-// 		{Name: "Anna",
-// 			Age:    17,
-// 			Height: 160,
-// 			Weight: 49,
-// 		},
-// 		{
-// 			Name:   "Luna",
-// 			Age:    30,
-// 			Height: 156,
-// 			Weight: 48,
-// 		},
-// 		{
-// 			Name:   "Jan",
-// 			Age:    29,
-// 			Height: 188,
-// 			Weight: 90,
-// 		},
-// 		{
-// 			Name:   "Tay",
-// 			Age:    33,
-// 			Height: 190,
-// 			Weight: 87,
-// 		},
-// 	}
-// 	test := team.Greet()
-// 	wantedResult := []string{"Hi Anna from Luna!",
-// 		"Hi Anna from Jan!",
-// 		"Hi Anna from Tay!",
-// 		"Hi Luna from Anna!",
-// 		"Hi Luna from Jan!",
-// 		"Hi Luna from Tacdy!",
-// 		"Hi Jan from Anna!",
-// 		"Hi Jan from Luna!",
-// 		"Hi Jan from Tay!",
-// 		"Hi Tay from Anna!",
-// 		"Hi Tay from Luna!",
-// 		"Hi Tay from Jan!"}
-// 	if test != wantedResult {
+func TestPeopleGreet(t *testing.T) {
+	team := People{
+		{Name: "Anna",
+			Age:    17,
+			Height: 160,
+			Weight: 49,
+		},
+		{
+			Name:   "Luna",
+			Age:    30,
+			Height: 156,
+			Weight: 48,
+		},
+		{
+			Name:   "Jan",
+			Age:    29,
+			Height: 188,
+			Weight: 90,
+		},
+		{
+			Name:   "Tay",
+			Age:    33,
+			Height: 190,
+			Weight: 87,
+		},
+	}
+	test := team.Greet()
+	namesSlice := []string{}
+	wantedResult := []string{}
+	for _, firstName := range team {
+		namesSlice = append(namesSlice, firstName.Name)
+	}
 
-// 		t.Errorf("team.Greet() = %v; want %v", test, wantedResult)
-// 	}
-// }
+	for _, value := range namesSlice {
+		for_, familyName := range namesSlice {
+			if value == familyName {
+				continue
+			}
+		}
+	}
+	// wantedResult := []string{"Hi Anna from Luna!",
+	// 	"Hi Anna from Jan!",
+	// 	"Hi Anna from Tay!",
+	// 	"Hi Luna from Anna!",
+	// 	"Hi Luna from Jan!",
+	// 	"Hi Luna from Tacdy!",
+	// 	"Hi Jan from Anna!",
+	// 	"Hi Jan from Luna!",
+	// 	"Hi Jan from Tay!",
+	// 	"Hi Tay from Anna!",
+	// 	"Hi Tay from Luna!",
+	// 	"Hi Tay from Jan!"}
+	// if test != wantedResult {
+
+		t.Errorf("team.Greet() = %v; want %v", test, wantedResult)
+	}
+}
