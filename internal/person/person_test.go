@@ -50,7 +50,8 @@ func TestBMI(t *testing.T) {
 				Height: 188,
 				Weight: 90,
 			},
-			want: 25.464010864644635},
+			want: 25.464010864644635,
+		},
 	}
 
 	for _, test := range tests {
@@ -100,7 +101,8 @@ func TestIsAdult(t *testing.T) {
 				Height: 190,
 				Weight: 87,
 			},
-			want: true},
+			want: true,
+		},
 	}
 
 	for _, test := range tests {
@@ -113,7 +115,8 @@ func TestIsAdult(t *testing.T) {
 
 func TestAverage(t *testing.T) {
 	team := People{
-		{Name: "Anna",
+		{
+			Name:   "Anna",
 			Age:    17,
 			Height: 160,
 			Weight: 49,
@@ -151,7 +154,8 @@ func TestAverage(t *testing.T) {
 
 func TestOldest(t *testing.T) {
 	team := People{
-		{Name: "Anna",
+		{
+			Name:   "Anna",
 			Age:    17,
 			Height: 160,
 			Weight: 49,
@@ -186,7 +190,8 @@ func TestOldest(t *testing.T) {
 
 func TestPeopleGreet(t *testing.T) {
 	team := People{
-		{Name: "Anna",
+		{
+			Name:   "Anna",
 			Age:    17,
 			Height: 160,
 			Weight: 49,
