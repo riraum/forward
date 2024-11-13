@@ -150,15 +150,9 @@ func TestString(t *testing.T) {
 		B: Point{X: 0, Y: 4},
 		C: Point{X: 3, Y: 0},
 	}
-	test := fmt.Sprintf("\nTriangle{\nA: %+v, \nB: %+v, \nC: %+v, \nArea: %+v, \nPerimeter: %+v,\n}", ta.A, ta.B, ta.C, ta.Area(), ta.Perimeter())
+	test := fmt.Sprintf("%v", ta)
 	// wantedResult := ta
-	wantedResult := fmt.Sprintf(`Triangle{
-	A: {X:0 Y:0},
-	B: {X:0 Y:4},
-	C: {X:3 Y:0},
-	Area: 146.83323874382123,
-	Perimeter: 7,
-	}`)
+	wantedResult := fmt.Sprintf("\nTriangle{\nA: %+v, \nB: %+v, \nC: %+v, \nArea: %+v, \nPerimeter: %+v,\n}", ta.A, ta.B, ta.C, ta.Area(), ta.Perimeter())
 	if test != wantedResult {
 		t.Errorf("Triangle.String() = %v; want %v", test, wantedResult)
 	}
