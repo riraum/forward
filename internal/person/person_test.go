@@ -28,12 +28,37 @@ func TestBMI(t *testing.T) {
 		Height: 160,
 		Weight: 49,
 	}
+	luna := Person{
+		Name:   "Luna",
+		Age:    30,
+		Height: 156,
+		Weight: 48,
+	}
+	jan := Person{
+		Name:   "Jan",
+		Age:    29,
+		Height: 188,
+		Weight: 90,
+	}
 	test := anna.BMI()
 	wantedResult := 19.140625
 	if test != wantedResult {
 
 		t.Errorf("anna.BMI() = %v; want %v", test, wantedResult)
 	}
+	test2 := luna.BMI()
+	wantedResult2 := 19.723865877712033
+	if test2 != wantedResult2 {
+
+		t.Errorf("luna.BMI() = %v; want %v", test2, wantedResult2)
+	}
+	test3 := jan.BMI()
+	wantedResult3 := 25.464010864644635
+	if test3 != wantedResult3 {
+
+		t.Errorf("jan.BMI() = %v; want %v", test3, wantedResult3)
+	}
+
 }
 
 func TestIsAdult(t *testing.T) {
