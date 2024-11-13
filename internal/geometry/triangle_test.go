@@ -91,3 +91,19 @@ func TestAddXY(t *testing.T) {
 // 		})
 // 	}
 // }
+
+func TestSemiPerimeter(t *testing.T) {
+	ta := Triangle{
+		A: Point{X: 0, Y: 0},
+		B: Point{X: 0, Y: 4},
+		C: Point{X: 3, Y: 0},
+	}
+
+	sideA, sideB, sideC := ta.AddXY()
+	test := (sideA + sideB + sideC) / 0.5
+	wantedResult := 14
+	if test != float64(wantedResult) {
+
+		t.Errorf("Triangle.SemiPerimeter() = %v; want %v", test, wantedResult)
+	}
+}
