@@ -1,6 +1,9 @@
 package person
 
-import "testing"
+import (
+	"slices"
+	"testing"
+)
 
 // func (p Person) Greet() string {
 // 	return fmt.Sprintf("Hello %s", p.Name)
@@ -214,31 +217,45 @@ func TestPeopleGreet(t *testing.T) {
 	}
 	test := team.Greet()
 	namesSlice := []string{}
-	wantedResult := []string{}
+	// wantedResult := []string{}
 	for _, firstName := range team {
 		namesSlice = append(namesSlice, firstName.Name)
 	}
 
 	for _, value := range namesSlice {
-		for_, familyName := range namesSlice {
+		for _, familyName := range namesSlice {
 			if value == familyName {
 				continue
 			}
 		}
 	}
-	// wantedResult := []string{"Hi Anna from Luna!",
-	// 	"Hi Anna from Jan!",
-	// 	"Hi Anna from Tay!",
-	// 	"Hi Luna from Anna!",
-	// 	"Hi Luna from Jan!",
-	// 	"Hi Luna from Tacdy!",
-	// 	"Hi Jan from Anna!",
-	// 	"Hi Jan from Luna!",
-	// 	"Hi Jan from Tay!",
-	// 	"Hi Tay from Anna!",
-	// 	"Hi Tay from Luna!",
-	// 	"Hi Tay from Jan!"}
+
+	// 	numbers := []int{0, 42, 8}
+	// 	fmt.Println(slices.Equal(numbers, []int{0, 42, 8}))
+	// 	fmt.Println(slices.Equal(numbers, []int{10}))
+	// }
+
+	// numbers := []string{"A", "B", "CD"}
+	// fmt.Println(slices.Equal(numbers, []string{"A", "B", "CD"}))
+	// fmt.Println(slices.Equal(numbers, []string{"C"}))
+
+	wantedResult := []string{
+		"Hi Anna from Luna!",
+		"Hi Anna from Jan!",
+		"Hi Anna from Tay!",
+		"Hi Luna from Anna!",
+		"Hi Luna from Jan!",
+		"Hi Luna from Tacdy!",
+		"Hi Jan from Anna!",
+		"Hi Jan from Luna!",
+		"Hi Jan from Tay!",
+		"Hi Tay from Anna!",
+		"Hi Tay from Luna!",
+		"Hi Tay from Jan!",
+	}
 	// if test != wantedResult {
+
+	if slices.Equal(test, wantedResult) {
 
 		t.Errorf("team.Greet() = %v; want %v", test, wantedResult)
 	}

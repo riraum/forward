@@ -67,8 +67,8 @@ See https://pkg.go.dev/testing for more information on testing.
 
 // Intentionally left the main function out, it's not needed here.
 // TODO: Write tests for the `Triangle` type.
-// WIP
+// DONE
 // TODO: Write tests for the `Person` type.
 // DONE
 // TODO: Write tests for the `People` type.
-// WIP
+// DONE
