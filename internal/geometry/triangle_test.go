@@ -27,19 +27,11 @@ func TestAddXY(t *testing.T) {
 		want3 float64
 		// want []float64
 	}{
-
-		// 		{
-		// 	ta: Triangle{A: Point{0, 0}, B: Point{0, 4}, C: Point{3, 0}},
-		// 	want1: 0,
-		// 	want2: 0,
-		// 	want3: 0,
-		// },
-		{
-		  ta: Triangle{
-			  A: Point{X: 0, Y: 0},
-			  B: Point{X: 0, Y: 4},
-			  C: Point{X: 3, Y: 0},
-		  },
+		{ta: Triangle{
+			A: Point{X: 0, Y: 0},
+			B: Point{X: 0, Y: 4},
+			C: Point{X: 3, Y: 0},
+		},
 			want1: 0,
 			want2: 4,
 			want3: 3,
