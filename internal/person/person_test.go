@@ -68,11 +68,47 @@ func TestIsAdult(t *testing.T) {
 		Height: 160,
 		Weight: 49,
 	}
+	luna := Person{
+		Name:   "Luna",
+		Age:    30,
+		Height: 156,
+		Weight: 48,
+	}
+	jan := Person{
+		Name:   "Jan",
+		Age:    29,
+		Height: 188,
+		Weight: 90,
+	}
+	tay := Person{
+		Name:   "Tay",
+		Age:    18,
+		Height: 190,
+		Weight: 87,
+	}
 	test := anna.IsAdult()
 	wantedResult := false
 	if test != wantedResult {
 
 		t.Errorf("anna.IsAdult() = %v; want %v", test, wantedResult)
+	}
+	test2 := luna.IsAdult()
+	wantedResult2 := true
+	if test2 != wantedResult2 {
+
+		t.Errorf("luna.IsAdult() = %v; want %v", test2, wantedResult2)
+	}
+	test3 := jan.IsAdult()
+	wantedResult3 := true
+	if test3 != wantedResult3 {
+
+		t.Errorf("jan.IsAdult() = %v; want %v", test3, wantedResult3)
+	}
+	test4 := tay.IsAdult()
+	wantedResult4 := true
+	if test4 != wantedResult4 {
+
+		t.Errorf("tay.IsAdult() = %v; want %v", test4, wantedResult4)
 	}
 }
 
