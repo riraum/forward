@@ -5,10 +5,6 @@ import (
 	"testing"
 )
 
-// func (p Person) Greet() string {
-// 	return fmt.Sprintf("Hello %s", p.Name)
-// }
-
 func TestPersonGreet(t *testing.T) {
 	anna := Person{
 		Name:   "Anna",
@@ -56,24 +52,6 @@ func TestBMI(t *testing.T) {
 			},
 			want: 25.464010864644635},
 	}
-	// test := anna.BMI()
-	// wantedResult := 19.140625
-	// if test != wantedResult {
-
-	// 	t.Errorf("anna.BMI() = %v; want %v", test, wantedResult)
-	// }
-	// test2 := luna.BMI()
-	// wantedResult2 := 19.723865877712033
-	// if test2 != wantedResult2 {
-
-	// 	t.Errorf("luna.BMI() = %v; want %v", test2, wantedResult2)
-	// }
-	// test3 := jan.BMI()
-	// wantedResult3 := 25.464010864644635
-	// if test3 != wantedResult3 {
-
-	// 	t.Errorf("jan.BMI() = %v; want %v", test3, wantedResult3)
-	// }
 
 	for _, test := range tests {
 		got := test.p.BMI()
@@ -125,31 +103,6 @@ func TestIsAdult(t *testing.T) {
 			want: true},
 	}
 
-	// test := anna.IsAdult()
-	// wantedResult := false
-	// if test != wantedResult {
-
-	// 	t.Errorf("anna.IsAdult() = %v; want %v", test, wantedResult)
-	// }
-	// test2 := luna.IsAdult()
-	// wantedResult2 := true
-	// if test2 != wantedResult2 {
-
-	// 	t.Errorf("luna.IsAdult() = %v; want %v", test2, wantedResult2)
-	// }
-	// test3 := jan.IsAdult()
-	// wantedResult3 := true
-	// if test3 != wantedResult3 {
-
-	// 	t.Errorf("jan.IsAdult() = %v; want %v", test3, wantedResult3)
-	// }
-	// test4 := tay.IsAdult()
-	// wantedResult4 := true
-	// if test4 != wantedResult4 {
-
-	// 	t.Errorf("tay.IsAdult() = %v; want %v", test4, wantedResult4)
-	// }
-
 	for _, test := range tests {
 		got := test.p.IsAdult()
 		if got != test.want {
@@ -192,7 +145,6 @@ func TestAverage(t *testing.T) {
 		Weight: 68.5,
 	}
 	if test != wantedResult {
-
 		t.Errorf("team.Average() = %v; want %v", test, wantedResult)
 	}
 }
@@ -260,7 +212,6 @@ func TestPeopleGreet(t *testing.T) {
 	}
 	test := team.Greet()
 	namesSlice := []string{}
-	// wantedResult := []string{}
 	for _, firstName := range team {
 		namesSlice = append(namesSlice, firstName.Name)
 	}
@@ -272,15 +223,6 @@ func TestPeopleGreet(t *testing.T) {
 			}
 		}
 	}
-
-	// 	numbers := []int{0, 42, 8}
-	// 	fmt.Println(slices.Equal(numbers, []int{0, 42, 8}))
-	// 	fmt.Println(slices.Equal(numbers, []int{10}))
-	// }
-
-	// numbers := []string{"A", "B", "CD"}
-	// fmt.Println(slices.Equal(numbers, []string{"A", "B", "CD"}))
-	// fmt.Println(slices.Equal(numbers, []string{"C"}))
 
 	wantedResult := []string{
 		"Hi Anna from Luna!",
@@ -296,10 +238,8 @@ func TestPeopleGreet(t *testing.T) {
 		"Hi Tay from Luna!",
 		"Hi Tay from Jan!",
 	}
-	// if test != wantedResult {
 
 	if slices.Equal(test, wantedResult) {
-
 		t.Errorf("team.Greet() = %v; want %v", test, wantedResult)
 	}
 }
