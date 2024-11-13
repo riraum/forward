@@ -36,7 +36,20 @@ func TestAddXY(t *testing.T) {
 
 	for _, test := range tests {
 		got1, got2, got3 := test.ta.AddXY()
+
 		if got1 != test.want1 && got2 != test.want2 && got3 != test.want3 {
+			t.Errorf("AddXY(%v) = %v, %v, %v, want %v, %v and %v", test.ta, got1, got2, got3, test.want1, test.want2, test.want3)
+		}
+
+		if got1 != test.want1 || got2 != test.want2 || got3 != test.want3 {
+			t.Errorf("AddXY(%v) = %v, %v, %v, want %v, %v and %v", test.ta, got1, got2, got3, test.want1, test.want2, test.want3)
+		}
+
+		if got1 != test.want1 || got2 != test.want2 && got3 != test.want3 {
+			t.Errorf("AddXY(%v) = %v, %v, %v, want %v, %v and %v", test.ta, got1, got2, got3, test.want1, test.want2, test.want3)
+		}
+
+		if got1 != test.want1 && got2 != test.want2 || got3 != test.want3 {
 			t.Errorf("AddXY(%v) = %v, %v, %v, want %v, %v and %v", test.ta, got1, got2, got3, test.want1, test.want2, test.want3)
 		}
 	}
