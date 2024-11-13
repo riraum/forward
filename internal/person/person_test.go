@@ -25,93 +25,136 @@ func TestPersonGreet(t *testing.T) {
 }
 
 func TestBMI(t *testing.T) {
-	anna := Person{
-		Name:   "Anna",
-		Age:    17,
-		Height: 160,
-		Weight: 49,
+	tests := []struct {
+		p    Person
+		want float64
+	}{
+		{
+			p: Person{
+				Name:   "Anna",
+				Age:    17,
+				Height: 160,
+				Weight: 49,
+			},
+			want: 19.140625,
+		},
+		{
+			p: Person{
+				Name:   "Luna",
+				Age:    30,
+				Height: 156,
+				Weight: 48,
+			},
+			want: 19.723865877712033,
+		},
+		{
+			p: Person{
+				Name:   "Jan",
+				Age:    29,
+				Height: 188,
+				Weight: 90,
+			},
+			want: 25.464010864644635},
 	}
-	luna := Person{
-		Name:   "Luna",
-		Age:    30,
-		Height: 156,
-		Weight: 48,
-	}
-	jan := Person{
-		Name:   "Jan",
-		Age:    29,
-		Height: 188,
-		Weight: 90,
-	}
-	test := anna.BMI()
-	wantedResult := 19.140625
-	if test != wantedResult {
+	// test := anna.BMI()
+	// wantedResult := 19.140625
+	// if test != wantedResult {
 
-		t.Errorf("anna.BMI() = %v; want %v", test, wantedResult)
-	}
-	test2 := luna.BMI()
-	wantedResult2 := 19.723865877712033
-	if test2 != wantedResult2 {
+	// 	t.Errorf("anna.BMI() = %v; want %v", test, wantedResult)
+	// }
+	// test2 := luna.BMI()
+	// wantedResult2 := 19.723865877712033
+	// if test2 != wantedResult2 {
 
-		t.Errorf("luna.BMI() = %v; want %v", test2, wantedResult2)
-	}
-	test3 := jan.BMI()
-	wantedResult3 := 25.464010864644635
-	if test3 != wantedResult3 {
+	// 	t.Errorf("luna.BMI() = %v; want %v", test2, wantedResult2)
+	// }
+	// test3 := jan.BMI()
+	// wantedResult3 := 25.464010864644635
+	// if test3 != wantedResult3 {
 
-		t.Errorf("jan.BMI() = %v; want %v", test3, wantedResult3)
-	}
+	// 	t.Errorf("jan.BMI() = %v; want %v", test3, wantedResult3)
+	// }
 
+	for _, test := range tests {
+		got := test.p.BMI()
+		if got != test.want {
+			t.Errorf("BMI(%v) = %v; want %v", test.p, got, test.want)
+		}
+	}
 }
 
 func TestIsAdult(t *testing.T) {
-	anna := Person{
-		Name:   "Anna",
-		Age:    17,
-		Height: 160,
-		Weight: 49,
+	tests := []struct {
+		p    Person
+		want bool
+	}{
+		{
+			p: Person{
+				Name:   "Anna",
+				Age:    17,
+				Height: 160,
+				Weight: 49,
+			},
+			want: false,
+		},
+		{
+			p: Person{
+				Name:   "Luna",
+				Age:    30,
+				Height: 156,
+				Weight: 48,
+			},
+			want: true,
+		},
+		{
+			p: Person{
+				Name:   "Jan",
+				Age:    29,
+				Height: 188,
+				Weight: 90,
+			},
+			want: true,
+		},
+		{
+			p: Person{
+				Name:   "Tay",
+				Age:    18,
+				Height: 190,
+				Weight: 87,
+			},
+			want: true},
 	}
-	luna := Person{
-		Name:   "Luna",
-		Age:    30,
-		Height: 156,
-		Weight: 48,
-	}
-	jan := Person{
-		Name:   "Jan",
-		Age:    29,
-		Height: 188,
-		Weight: 90,
-	}
-	tay := Person{
-		Name:   "Tay",
-		Age:    18,
-		Height: 190,
-		Weight: 87,
-	}
-	test := anna.IsAdult()
-	wantedResult := false
-	if test != wantedResult {
 
-		t.Errorf("anna.IsAdult() = %v; want %v", test, wantedResult)
-	}
-	test2 := luna.IsAdult()
-	wantedResult2 := true
-	if test2 != wantedResult2 {
+	// test := anna.IsAdult()
+	// wantedResult := false
+	// if test != wantedResult {
 
-		t.Errorf("luna.IsAdult() = %v; want %v", test2, wantedResult2)
-	}
-	test3 := jan.IsAdult()
-	wantedResult3 := true
-	if test3 != wantedResult3 {
+	// 	t.Errorf("anna.IsAdult() = %v; want %v", test, wantedResult)
+	// }
+	// test2 := luna.IsAdult()
+	// wantedResult2 := true
+	// if test2 != wantedResult2 {
 
-		t.Errorf("jan.IsAdult() = %v; want %v", test3, wantedResult3)
-	}
-	test4 := tay.IsAdult()
-	wantedResult4 := true
-	if test4 != wantedResult4 {
+	// 	t.Errorf("luna.IsAdult() = %v; want %v", test2, wantedResult2)
+	// }
+	// test3 := jan.IsAdult()
+	// wantedResult3 := true
+	// if test3 != wantedResult3 {
 
-		t.Errorf("tay.IsAdult() = %v; want %v", test4, wantedResult4)
+	// 	t.Errorf("jan.IsAdult() = %v; want %v", test3, wantedResult3)
+	// }
+	// test4 := tay.IsAdult()
+	// wantedResult4 := true
+	// if test4 != wantedResult4 {
+
+	// 	t.Errorf("tay.IsAdult() = %v; want %v", test4, wantedResult4)
+	// }
+
+	for _, test := range tests {
+		got := test.p.IsAdult()
+		if got != test.want {
+			t.Errorf("IsAdult(%v) = %v, want %v", test.p, got, test.want)
+		}
 	}
 }
 
