@@ -1,6 +1,7 @@
 package geometry
 
 import (
+	"fmt"
 	"math"
 	"testing"
 )
@@ -140,5 +141,25 @@ func TestPerimeter(t *testing.T) {
 	if test != float64(wantedResult) {
 
 		t.Errorf("Triangle.Perimeter() =  %v; want %v", test, wantedResult)
+	}
+}
+
+func TestString(t *testing.T) {
+	ta := Triangle{
+		A: Point{X: 0, Y: 0},
+		B: Point{X: 0, Y: 4},
+		C: Point{X: 3, Y: 0},
+	}
+	test := fmt.Sprintf("\nTriangle{\nA: %+v, \nB: %+v, \nC: %+v, \nArea: %+v, \nPerimeter: %+v,\n}", ta.A, ta.B, ta.C, ta.Area(), ta.Perimeter())
+	// wantedResult := ta
+	wantedResult := fmt.Sprintf(`Triangle{
+	A: {X:0 Y:0},
+	B: {X:0 Y:4},
+	C: {X:3 Y:0},
+	Area: 146.83323874382123,
+	Perimeter: 7,
+	}`)
+	if test != wantedResult {
+		t.Errorf("Triangle.String() = %v; want %v", test, wantedResult)
 	}
 }
