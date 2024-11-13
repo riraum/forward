@@ -126,5 +126,19 @@ func TestArea(t *testing.T) {
 
 		t.Errorf("Triangle.Area() = %v; want %v", test, wantedResult)
 	}
+}
 
+func TestPerimeter(t *testing.T) {
+	ta := Triangle{
+		A: Point{X: 0, Y: 0},
+		B: Point{X: 0, Y: 4},
+		C: Point{X: 3, Y: 0},
+	}
+	sideA, sideB, sideC := ta.AddXY()
+	test := sideA + sideB + sideC
+	wantedResult := 7
+	if test != float64(wantedResult) {
+
+		t.Errorf("Triangle.Perimeter() =  %v; want %v", test, wantedResult)
+	}
 }
