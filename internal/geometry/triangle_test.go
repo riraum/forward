@@ -1,6 +1,9 @@
 package geometry
 
-import "testing"
+import (
+	"math"
+	"testing"
+)
 
 // func TestPointAdd(t *testing.T) {
 // 	tests := []struct {
@@ -106,4 +109,22 @@ func TestSemiPerimeter(t *testing.T) {
 
 		t.Errorf("Triangle.SemiPerimeter() = %v; want %v", test, wantedResult)
 	}
+}
+
+func TestArea(t *testing.T) {
+	ta := Triangle{
+		A: Point{X: 0, Y: 0},
+		B: Point{X: 0, Y: 4},
+		C: Point{X: 3, Y: 0},
+	}
+
+	sideA, sideB, sideC := ta.AddXY()
+	semiPerimeter := ta.semiPerimeter()
+	test := math.Sqrt(semiPerimeter * (semiPerimeter - sideA) * (semiPerimeter - sideB) * (semiPerimeter - sideC))
+	wantedResult := 146.83323874382123
+	if test != wantedResult {
+
+		t.Errorf("Triangle.Area() = %v; want %v", test, wantedResult)
+	}
+
 }
