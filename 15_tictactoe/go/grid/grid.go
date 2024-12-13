@@ -1,5 +1,9 @@
 package grid
 
+import (
+	"fmt"
+)
+
 // Define column and row
 type Grid struct {
 	Cells []int
@@ -17,10 +21,34 @@ func (g Grid) String() string {
 	// |__|__|__|
 	// row := g.Cells * "__"
 	// column := g.Cells
-	Cells := []string{}
-	result = ""
+	// Cells := []string{}
+	// result = ""
 	// for _, value := range row {
 	// 	result += "__"
 	// }
-	return ""
+	// return ""
+	// 	"|__|",
+	// cell := "|__|"
+	// count := g.Cells
+
+	return fmt.Sprintf(
+		"%v", g.Cells,
+		// g.Cells...
+	)
 }
+
+// 	return fmt.Sprintf(
+// 		"%s", cell, strings.Repeat(cell, count),
+// 		// g.Cells...
+// 	)
+// }
+
+// func (g Grid) String() string {
+//   return fmt.Sprintf(
+//     "<TODO>",
+//     // g.Cells...
+//   )
+// }
+
+// g = Grid struct
+// .Cells = defines how many cells there are in this struct
