@@ -32,7 +32,7 @@ func (g Grid) String() string {
 	// count := g.Cells
 
 	return fmt.Sprintf(
-		"%v", g.Cells,
+		"%v\n%v\n%v\n", g.Cells, g.Cells, g.Cells,
 		// g.Cells...
 	)
 }
