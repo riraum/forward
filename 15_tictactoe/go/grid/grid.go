@@ -32,10 +32,14 @@ func (g Grid) String() string {
 	// count := g.Cells
 
 	return fmt.Sprintf(
-		"%v\n%v\n%v\n", g.Cells, g.Cells, g.Cells,
+		"%v %v %v\n %v %v %v\n %v %v %v\n", g.Cells[0], g.Cells[1], g.Cells[2], g.Cells[0], g.Cells[1], g.Cells[2], g.Cells[0], g.Cells[1], g.Cells[2],
 		// g.Cells...
 	)
 }
+
+// Create variable for empty cell, filled with X and with O
+// Return row of cells based on slice length, target index of slice and assign one of the 3 cell types
+// Return column of cells based and do the same as with the row
 
 // 	return fmt.Sprintf(
 // 		"%s", cell, strings.Repeat(cell, count),
@@ -52,3 +56,11 @@ func (g Grid) String() string {
 
 // g = Grid struct
 // .Cells = defines how many cells there are in this struct
+
+// +---+---+---+
+// | X |   |   |
+// +---+---+---+
+// |   | O | O |
+// +---+---+---+
+// | X |   |   |
+// +---+---+---+
