@@ -37,6 +37,10 @@ Create array of cells
     - Create a 9 cell structure
     - Change some cells and fill them with X, or 0
 
+Print grid as strings
+ - Create 3x3 grid, with line breaks
+ - Input grid value of empty, X or O
+
 */
 
 func main() {
@@ -52,4 +56,8 @@ func main() {
 	gameGrid.Cells[4] = 0
 	gameGrid.Cells[7] = 1
 	gameGrid.Cells[8] = 1
+
+	// func (g Grid) String() string {
+	//     return fmt.Sprintf()
+	// }
 }
