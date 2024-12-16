@@ -1,7 +1,5 @@
 package main
 
-import "github.com/riraum/forward/15_tictactoe/go/game"
-
 /*
 
 Write a tictactoe game in Go. The game should be played on the command line and
@@ -33,6 +31,25 @@ Guidance:
 
 */
 
+/*
+Create array of cells
+    - Create struct(ure)
+    - Create a 9 cell structure
+    - Change some cells and fill them with X, or 0
+
+*/
+
 func main() {
-	game.Play()
+	// game.Play()
+	type Grid struct {
+		Cells [9]int
+	}
+	gameGrid := Grid{
+		Cells: [9]int{}}
+	// x = 1, 0 = 0
+	gameGrid.Cells[0] = 0
+	gameGrid.Cells[1] = 1
+	gameGrid.Cells[4] = 0
+	gameGrid.Cells[7] = 1
+	gameGrid.Cells[8] = 1
 }

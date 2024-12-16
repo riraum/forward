@@ -9,9 +9,7 @@ import (
 
 func Play() {
 	// TODO
-	g := grid.Grid{
-		Cells: []int{3},
-	}
+	g := grid.Grid{}
 	fmt.Println(g.String())
 
 	move := io.Read("What's your move?")
