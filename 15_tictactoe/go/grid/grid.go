@@ -6,7 +6,7 @@ import (
 
 // Define column and row
 type Grid struct {
-	Cells []int
+	Cells [9]int
 }
 
 // testGrid := Grid {
@@ -14,8 +14,8 @@ type Grid struct {
 // }
 
 func (g Grid) String() string {
-	1 := "X"
-	0 := "O"
+	// 1 := "X"
+	// 0 := "O"
 	// TODO
 	// |||____
 	// |__|__|__|
@@ -32,14 +32,14 @@ func (g Grid) String() string {
 	// 	"|__|",
 	// cell := "|__|"
 	// count := g.Cells
-	return fmt.Sprintf(`\n
-+---+---+---+\n
-| %+v | %+v  | %+v |\n
-+---+---+---+\n
-| %+v  | %+v | %+v |\n
-+---+---+---+\n
-| %+v | %+v  | %+v |\n
-+---+---+---+\n`, g.Cells[0], g.Cells[1], g.Cells[2], g.Cells[3], g.Cells[4], g.Cells[5], g.Cells[6], g.Cells[7], g.Cells[8],
+	return fmt.Sprintf(`
++---+---+---+
+| %+v | %+v | %+v |
++---+---+---+
+| %+v | %+v | %+v |
++---+---+---+
+| %+v | %+v | %+v |
++---+---+---+`, g.Cells[0], g.Cells[1], g.Cells[2], g.Cells[3], g.Cells[4], g.Cells[5], g.Cells[6], g.Cells[7], g.Cells[8],
 	)
 
 	// return fmt.Sprintf(

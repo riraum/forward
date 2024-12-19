@@ -1,5 +1,7 @@
 package main
 
+import "github.com/riraum/forward/15_tictactoe/go/game"
+
 /*
 
 Write a tictactoe game in Go. The game should be played on the command line and
@@ -44,19 +46,20 @@ Print grid as strings
 */
 
 func main() {
-	// game.Play()
-	type Grid struct {
-		Cells [9]int
-	}
-	gameGrid := Grid{
-		Cells: [9]int{}}
-	// x = 1, 0 = 0
-	gameGrid.Cells[0] = 0
-	gameGrid.Cells[1] = 1
-	gameGrid.Cells[4] = 0
-	gameGrid.Cells[7] = 1
-	gameGrid.Cells[8] = 1
-
+	game.Play()
+	// type Grid struct {
+	// 	Cells [9]int
+	// }
+	// gameGrid := Grid{
+	// 	Cells: [9]int{}}
+	// X := 1
+	// O := 0
+	// gameGrid.Cells[0] = X
+	// gameGrid.Cells[1] = O
+	// gameGrid.Cells[4] = O
+	// gameGrid.Cells[7] = X
+	// gameGrid.Cells[8] = X
+	// fmt.Println(gameGrid.String())
 	// func (g Grid) String() string {
 	//     return fmt.Sprintf()
 	// }
