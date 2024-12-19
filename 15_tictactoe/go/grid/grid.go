@@ -75,3 +75,50 @@ func (g Grid) String() string {
 // +---+---+---+
 // | X |   |   |
 // +---+---+---+
+
+func (g Grid) IsWin() (bool, string) {
+	// 1st row top to bottom horizontally
+	if g.Cells[0] == "X" && g.Cells[1] == "X" && g.Cells[2] == "X" ||
+		// 2nd row top to bottom horizontally
+		g.Cells[3] == "X" && g.Cells[4] == "X" && g.Cells[5] == "X" ||
+		// 3rd row top to bottom horizontally
+		g.Cells[6] == "X" && g.Cells[7] == "X" && g.Cells[8] == "X" ||
+		// 1st row top to bottom diagonally left to right
+		g.Cells[0] == "X" && g.Cells[4] == "X" && g.Cells[8] == "X" ||
+		// 2nd row top to bottom diagonally right to left
+		g.Cells[2] == "X" && g.Cells[4] == "X" && g.Cells[6] == "X" {
+		return true, "X"
+	}
+
+	// 1st row top to bottom vertically
+	if g.Cells[0] == "X" && g.Cells[3] == "X" && g.Cells[6] == "X" ||
+		// 2nd row top to bottom vertically
+		g.Cells[1] == "X" && g.Cells[4] == "X" && g.Cells[7] == "X" ||
+		// 3rd row top to bottom vertically
+		g.Cells[2] == "X" && g.Cells[5] == "X" && g.Cells[8] == "X" {
+		return true, "X"
+	}
+
+	// 1st row top to bottom horizontally
+	if g.Cells[0] == "O" && g.Cells[1] == "O" && g.Cells[2] == "O" ||
+		// 2nd row top to bottom horizontally
+		g.Cells[3] == "O" && g.Cells[4] == "O" && g.Cells[5] == "O" ||
+		// 3rd row top to bottom horizontally
+		g.Cells[6] == "O" && g.Cells[7] == "O" && g.Cells[8] == "O" ||
+		// 1st row top to bottom diagonally left to right
+		g.Cells[0] == "O" && g.Cells[4] == "O" && g.Cells[8] == "O" ||
+		// 2nd row top to bottom diagonally right to left
+		g.Cells[2] == "O" && g.Cells[4] == "O" && g.Cells[6] == "O" {
+		return true, "O"
+	}
+
+	// 1st row top to bottom vertically
+	if g.Cells[0] == "O" && g.Cells[3] == "O" && g.Cells[6] == "O" ||
+		// 2nd row top to bottom vertically
+		g.Cells[1] == "O" && g.Cells[4] == "O" && g.Cells[7] == "O" ||
+		// 3rd row top to bottom vertically
+		g.Cells[2] == "O" && g.Cells[5] == "O" && g.Cells[8] == "O" {
+		return true, "O"
+	}
+	return false, "Debug"
+}

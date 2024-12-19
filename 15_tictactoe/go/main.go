@@ -33,7 +33,7 @@ Guidance:
 
 */
 
-/*
+/* PSEUDO CODE
 Create array of cells
     - Create struct(ure)
     - Create a 9 cell structure
@@ -42,6 +42,10 @@ Create array of cells
 Print grid as strings
  - Create 3x3 grid, with line breaks
  - Input grid value of empty, X or O
+
+`function (g Grid) IsWin() (bool, string) {}` that returns if the grid is a win and who won
+ - Check if there are 3 markers of each type horizontally or vertically
+ - Return boolean if markers are 3 in a row or not and string of marker type/winner
 
 */
 
