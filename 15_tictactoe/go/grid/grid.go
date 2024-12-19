@@ -6,7 +6,7 @@ import (
 
 // Define column and row
 type Grid struct {
-	Cells [9]int
+	Cells [9]string
 }
 
 // testGrid := Grid {
