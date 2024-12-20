@@ -122,3 +122,13 @@ func (g Grid) IsWin() (bool, string) {
 	}
 	return false, "Debug"
 }
+
+func (g Grid) FreeCells() []string {
+	var resultArray []string
+	for i := 0; i <= 8; i++ {
+		if g.Cells[i] == " " {
+			resultArray = append(resultArray, g.Cells[i])
+		}
+	}
+	return resultArray
+}

@@ -34,6 +34,8 @@ func Play() {
 
 	fmt.Println(g.IsWin())
 
+	fmt.Println(g.FreeCells())
+
 	move := io.Read("What's your move?")
 	fmt.Println("You chose", move)
 }
