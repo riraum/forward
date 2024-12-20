@@ -33,6 +33,44 @@ Guidance:
 
 */
 
+/* PSEUDO CODE
+Create array of cells
+	- Create struct(ure)
+  - Create a 9 cell structure
+  - Change some cells and fill them with X, or 0
+
+Print grid as strings
+	- Create 3x3 grid, with line breaks
+	- Input grid value of empty, X or O
+
+`function (g Grid) IsWin() (bool, string) {}` that returns if the grid is a win and who won
+	- Check if there are 3 markers of each type horizontally or vertically
+	- Return boolean if markers are 3 in a row or not and string of marker type/winner
+
+ `function (g Grid) FreeCells() []int {}` that returns the indexes of free cells
+	- Initialize result array
+	- Loop through grid array
+	- If empty, add index to result array/check if Cell has either "X" or "O". If not, return respective index
+	- Return result array which by now has all the empty indexes
+
+*/
+
 func main() {
 	game.Play()
+	// type Grid struct {
+	// 	Cells [9]int
+	// }
+	// gameGrid := Grid{
+	// 	Cells: [9]int{}}
+	// X := 1
+	// O := 0
+	// gameGrid.Cells[0] = X
+	// gameGrid.Cells[1] = O
+	// gameGrid.Cells[4] = O
+	// gameGrid.Cells[7] = X
+	// gameGrid.Cells[8] = X
+	// fmt.Println(gameGrid.String())
+	// func (g Grid) String() string {
+	//     return fmt.Sprintf()
+	// }
 }
