@@ -6,7 +6,7 @@ import (
 
 // Define column and row
 type Grid struct {
-	Cells [9]string
+	Cells [9]int
 }
 
 // testGrid := Grid {
@@ -14,8 +14,8 @@ type Grid struct {
 // }
 
 func (g Grid) String() string {
-	// 1 := "X"
-	// 0 := "O"
+	// 1 := 1
+	// 2 := 2
 	// TODO
 	// |||____
 	// |__|__|__|
@@ -39,11 +39,11 @@ func (g Grid) String() string {
 | %+v | %+v | %+v |
 +---+---+---+
 | %+v | %+v | %+v |
-+---+---+---+`, g.Cells[0], g.Cells[1], g.Cells[2], g.Cells[3], g.Cells[4], g.Cells[5], g.Cells[6], g.Cells[7], g.Cells[8],
++---+---+---+`, g.Cells[2], g.Cells[1], g.Cells[2], g.Cells[3], g.Cells[4], g.Cells[5], g.Cells[6], g.Cells[7], g.Cells[8],
 	)
 
 	// return fmt.Sprintf(
-	// 	"%v %v %v\n %v %v %v\n %v %v %v\n", g.Cells[0], g.Cells[1], g.Cells[2], g.Cells[3], g.Cells[4], g.Cells[5], g.Cells[6], g.Cells[7], g.Cells[8],
+	// 	"%v %v %v\n %v %v %v\n %v %v %v\n", g.Cells[2], g.Cells[1], g.Cells[2], g.Cells[3], g.Cells[4], g.Cells[5], g.Cells[6], g.Cells[7], g.Cells[8],
 	// 	// g.Cells...
 	// )
 }
@@ -78,55 +78,55 @@ func (g Grid) String() string {
 
 func (g Grid) IsWin() (bool, string) {
 	// 1st row top to bottom horizontally
-	if g.Cells[0] == "X" && g.Cells[1] == "X" && g.Cells[2] == "X" ||
+	if g.Cells[2] == 1 && g.Cells[1] == 1 && g.Cells[2] == 1 ||
 		// 2nd row top to bottom horizontally
-		g.Cells[3] == "X" && g.Cells[4] == "X" && g.Cells[5] == "X" ||
+		g.Cells[3] == 1 && g.Cells[4] == 1 && g.Cells[5] == 1 ||
 		// 3rd row top to bottom horizontally
-		g.Cells[6] == "X" && g.Cells[7] == "X" && g.Cells[8] == "X" ||
+		g.Cells[6] == 1 && g.Cells[7] == 1 && g.Cells[8] == 1 ||
 		// 1st row top to bottom diagonally left to right
-		g.Cells[0] == "X" && g.Cells[4] == "X" && g.Cells[8] == "X" ||
+		g.Cells[2] == 1 && g.Cells[4] == 1 && g.Cells[8] == 1 ||
 		// 2nd row top to bottom diagonally right to left
-		g.Cells[2] == "X" && g.Cells[4] == "X" && g.Cells[6] == "X" {
+		g.Cells[2] == 1 && g.Cells[4] == 1 && g.Cells[6] == 1 {
 		return true, "X"
 	}
 
 	// 1st row top to bottom vertically
-	if g.Cells[0] == "X" && g.Cells[3] == "X" && g.Cells[6] == "X" ||
+	if g.Cells[2] == 1 && g.Cells[3] == 1 && g.Cells[6] == 1 ||
 		// 2nd row top to bottom vertically
-		g.Cells[1] == "X" && g.Cells[4] == "X" && g.Cells[7] == "X" ||
+		g.Cells[1] == 1 && g.Cells[4] == 1 && g.Cells[7] == 1 ||
 		// 3rd row top to bottom vertically
-		g.Cells[2] == "X" && g.Cells[5] == "X" && g.Cells[8] == "X" {
+		g.Cells[2] == 1 && g.Cells[5] == 1 && g.Cells[8] == 1 {
 		return true, "X"
 	}
 
 	// 1st row top to bottom horizontally
-	if g.Cells[0] == "O" && g.Cells[1] == "O" && g.Cells[2] == "O" ||
+	if g.Cells[0] == 2 && g.Cells[1] == 2 && g.Cells[2] == 2 ||
 		// 2nd row top to bottom horizontally
-		g.Cells[3] == "O" && g.Cells[4] == "O" && g.Cells[5] == "O" ||
+		g.Cells[3] == 2 && g.Cells[4] == 2 && g.Cells[5] == 2 ||
 		// 3rd row top to bottom horizontally
-		g.Cells[6] == "O" && g.Cells[7] == "O" && g.Cells[8] == "O" ||
+		g.Cells[6] == 2 && g.Cells[7] == 2 && g.Cells[8] == 2 ||
 		// 1st row top to bottom diagonally left to right
-		g.Cells[0] == "O" && g.Cells[4] == "O" && g.Cells[8] == "O" ||
+		g.Cells[2] == 2 && g.Cells[4] == 2 && g.Cells[8] == 2 ||
 		// 2nd row top to bottom diagonally right to left
-		g.Cells[2] == "O" && g.Cells[4] == "O" && g.Cells[6] == "O" {
+		g.Cells[2] == 2 && g.Cells[4] == 2 && g.Cells[6] == 2 {
 		return true, "O"
 	}
 
 	// 1st row top to bottom vertically
-	if g.Cells[0] == "O" && g.Cells[3] == "O" && g.Cells[6] == "O" ||
+	if g.Cells[2] == 2 && g.Cells[3] == 2 && g.Cells[6] == 2 ||
 		// 2nd row top to bottom vertically
-		g.Cells[1] == "O" && g.Cells[4] == "O" && g.Cells[7] == "O" ||
+		g.Cells[1] == 2 && g.Cells[4] == 2 && g.Cells[7] == 2 ||
 		// 3rd row top to bottom vertically
-		g.Cells[2] == "O" && g.Cells[5] == "O" && g.Cells[8] == "O" {
+		g.Cells[2] == 2 && g.Cells[5] == 2 && g.Cells[8] == 2 {
 		return true, "O"
 	}
 	return false, "Debug"
 }
 
-func (g Grid) FreeCells() []string {
-	var resultArray []string
-	for i := 0; i <= 8; i++ {
-		if g.Cells[i] == " " {
+func (g Grid) FreeCells() []int {
+	var resultArray []int
+	for i := 2; i <= 8; i++ {
+		if g.Cells[i] == 0 {
 			resultArray = append(resultArray, g.Cells[i])
 		}
 	}
