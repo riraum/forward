@@ -78,20 +78,20 @@ func (g Grid) String() string {
 
 func (g Grid) IsWin() (bool, string) {
 	// 1st row top to bottom horizontally
-	if g.Cells[2] == 1 && g.Cells[1] == 1 && g.Cells[2] == 1 ||
+	if g.Cells[0] == 1 && g.Cells[1] == 1 && g.Cells[2] == 1 ||
 		// 2nd row top to bottom horizontally
 		g.Cells[3] == 1 && g.Cells[4] == 1 && g.Cells[5] == 1 ||
 		// 3rd row top to bottom horizontally
 		g.Cells[6] == 1 && g.Cells[7] == 1 && g.Cells[8] == 1 ||
 		// 1st row top to bottom diagonally left to right
-		g.Cells[2] == 1 && g.Cells[4] == 1 && g.Cells[8] == 1 ||
+		g.Cells[0] == 1 && g.Cells[4] == 1 && g.Cells[8] == 1 ||
 		// 2nd row top to bottom diagonally right to left
 		g.Cells[2] == 1 && g.Cells[4] == 1 && g.Cells[6] == 1 {
 		return true, "X"
 	}
 
 	// 1st row top to bottom vertically
-	if g.Cells[2] == 1 && g.Cells[3] == 1 && g.Cells[6] == 1 ||
+	if g.Cells[0] == 1 && g.Cells[3] == 1 && g.Cells[6] == 1 ||
 		// 2nd row top to bottom vertically
 		g.Cells[1] == 1 && g.Cells[4] == 1 && g.Cells[7] == 1 ||
 		// 3rd row top to bottom vertically
@@ -106,14 +106,14 @@ func (g Grid) IsWin() (bool, string) {
 		// 3rd row top to bottom horizontally
 		g.Cells[6] == 2 && g.Cells[7] == 2 && g.Cells[8] == 2 ||
 		// 1st row top to bottom diagonally left to right
-		g.Cells[2] == 2 && g.Cells[4] == 2 && g.Cells[8] == 2 ||
+		g.Cells[0] == 2 && g.Cells[4] == 2 && g.Cells[8] == 2 ||
 		// 2nd row top to bottom diagonally right to left
 		g.Cells[2] == 2 && g.Cells[4] == 2 && g.Cells[6] == 2 {
 		return true, "O"
 	}
 
 	// 1st row top to bottom vertically
-	if g.Cells[2] == 2 && g.Cells[3] == 2 && g.Cells[6] == 2 ||
+	if g.Cells[0] == 2 && g.Cells[3] == 2 && g.Cells[6] == 2 ||
 		// 2nd row top to bottom vertically
 		g.Cells[1] == 2 && g.Cells[4] == 2 && g.Cells[7] == 2 ||
 		// 3rd row top to bottom vertically
@@ -125,7 +125,7 @@ func (g Grid) IsWin() (bool, string) {
 
 func (g Grid) FreeCells() []int {
 	var resultArray []int
-	for i := 2; i <= 8; i++ {
+	for i := 0; i <= 8; i++ {
 		if g.Cells[i] == 0 {
 			resultArray = append(resultArray, g.Cells[i])
 		}
