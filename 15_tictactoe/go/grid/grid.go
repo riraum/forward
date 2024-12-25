@@ -130,5 +130,13 @@ func (g Grid) FreeCells() []int {
 			resultArray = append(resultArray, g.Cells[i])
 		}
 	}
-	return resultArray
+	return IndexOf(resultArray)
+}
+
+func IndexOf(a []int) []int {
+	var output []int
+	for index, value := range a {
+		output = append(output, index, value)
+	}
+	return output
 }
