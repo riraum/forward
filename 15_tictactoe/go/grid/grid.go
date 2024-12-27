@@ -138,24 +138,3 @@ func (g Grid) FreeCells() []int {
 	return resultIndexArray
 	// return resultValueArray
 }
-
-// ages := []int{11, 16, 23, 38, 45}
-// adults := []int{}
-// for _, age := range ages {
-//     if age > 18 {
-//         adults = append(adults, age)
-//     }
-// }
-// languages := [5]string{"English", "Spanish", "Japanese", "German", "French"}
-
-// for index := range languages {
-//     fmt.Println(index)
-// }
-
-// func IndexOf(a []int) []int {
-// 	var output []int
-// 	for index, value := range a {
-// 		output = append(output, index, value)
-// 	}
-// 	return output
-// }
