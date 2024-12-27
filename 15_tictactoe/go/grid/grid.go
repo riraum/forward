@@ -124,18 +124,28 @@ func (g Grid) IsWin() (bool, string) {
 }
 
 func (g Grid) FreeCells() []int {
-	var resultArray []int
-	for index := range g.Cells {
+	var resultIndexArray []int
+	// var resultValueArray []int
+
+	for index, value := range g.Cells {
 		// for i := 0; i <= 8; i++ {
-		// if g.Cells[value] == 0
-		{
-			resultArray = append(resultArray, g.Cells[index])
+		if value == 0 {
+			resultIndexArray = append(resultIndexArray, index)
+			// resultValueArray = append(resultValueArray, g.Cells[value])
 		}
 	}
 	// return IndexOf(resultArray)
-	return resultArray
+	return resultIndexArray
+	// return resultValueArray
 }
 
+// ages := []int{11, 16, 23, 38, 45}
+// adults := []int{}
+// for _, age := range ages {
+//     if age > 18 {
+//         adults = append(adults, age)
+//     }
+// }
 // languages := [5]string{"English", "Spanish", "Japanese", "German", "French"}
 
 // for index := range languages {
