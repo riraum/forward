@@ -39,7 +39,7 @@ func (g Grid) String() string {
 | %+v | %+v | %+v |
 +---+---+---+
 | %+v | %+v | %+v |
-+---+---+---+`, g.Cells[2], g.Cells[1], g.Cells[2], g.Cells[3], g.Cells[4], g.Cells[5], g.Cells[6], g.Cells[7], g.Cells[8],
++---+---+---+`, g.Cells[0], g.Cells[1], g.Cells[2], g.Cells[3], g.Cells[4], g.Cells[5], g.Cells[6], g.Cells[7], g.Cells[8],
 	)
 
 	// return fmt.Sprintf(
