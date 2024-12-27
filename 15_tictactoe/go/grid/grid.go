@@ -125,18 +125,27 @@ func (g Grid) IsWin() (bool, string) {
 
 func (g Grid) FreeCells() []int {
 	var resultArray []int
-	for i := 0; i <= 8; i++ {
-		if g.Cells[i] == 0 {
-			resultArray = append(resultArray, g.Cells[i])
+	for index := range g.Cells {
+		// for i := 0; i <= 8; i++ {
+		// if g.Cells[value] == 0
+		{
+			resultArray = append(resultArray, g.Cells[index])
 		}
 	}
-	return IndexOf(resultArray)
+	// return IndexOf(resultArray)
+	return resultArray
 }
 
-func IndexOf(a []int) []int {
-	var output []int
-	for index, value := range a {
-		output = append(output, index, value)
-	}
-	return output
-}
+// languages := [5]string{"English", "Spanish", "Japanese", "German", "French"}
+
+// for index := range languages {
+//     fmt.Println(index)
+// }
+
+// func IndexOf(a []int) []int {
+// 	var output []int
+// 	for index, value := range a {
+// 		output = append(output, index, value)
+// 	}
+// 	return output
+// }
