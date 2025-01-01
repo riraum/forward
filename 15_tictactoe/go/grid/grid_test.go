@@ -72,27 +72,43 @@ func TestFreeCells(t *testing.T) {
 	// 	},
 	// }
 
-	testGrids := []Grid{
-		{
-			Cells: [9]int{1, 1, 1, 0, 2, 1, 0, 1, 1},
-		},
-		{
-			Cells: [9]int{0, 0, 0, 0, 0, 0, 0, 0, 0},
-		},
+	// testGrid := []struct {
+	// 	Cells [9]int
+	// }{
+	// 	{
+	// 		Cells: [9]int{1, 1, 1, 0, 2, 1, 0, 1, 1},
+	// 	},
+	// }
+
+	testGridU := Grid{
+		Cells: [9]int{
+			1, 1, 1, 0, 2, 1, 0, 1, 1},
 	}
 
-	test := testGrids.FreeCells()
-	var resultIndexArray []int
-	for index, value := range testGrids.Cells {
-		if value == 0 {
-			resultIndexArray = append(resultIndexArray, index)
-		}
-	}
+	testGridF := testGridU.FreeCells()
 
-	wantedResult := []int{3, 6, 0, 1, 2, 3, 4, 5, 6, 7, 8}
+	// test := testGrids.Cells.FreeCells()
+	// var resultIndexArray []int
+	// for index, value := range testGrids.Cells {
+	// 	if value == 0 {
+	// 		resultIndexArray = append(resultIndexArray, index)
+	// 	}
+	// }
 
-	if slices.Equal(test, wantedResult) {
-		t.Errorf("testGrids.Freecells() = %v; want %v", test, wantedResult)
+	// wantedResult := []int{3, 6}
+
+	// wantedResult := []struct {
+	// 	Cells []int
+	// }{
+	// 	{
+	// 		Cells: []int{3, 6},
+	// 	},
+	// }
+
+	wantedResult2 := []int{3, 6}
+
+	if !slices.Equal(testGridF, wantedResult2) {
+		t.Errorf("testGridF = %v; want %v", testGridF, wantedResult2)
 	}
 }
 
