@@ -74,13 +74,17 @@ func TestFreeCells(t *testing.T) {
 
 	// testGrid struct to test multiple cases
 	testGrid := []struct {
-		Cells []int
+		g Grid
 	}{
 		{
-			Cells: []int{1, 1, 1, 0, 2, 1, 0, 1, 1},
+			g: Grid{
+				Cells: [9]int{1, 1, 1, 0, 2, 1, 0, 1, 1},
+			},
 		},
 		{
-			Cells: []int{0, 0, 0, 0, 0, 0, 0, 0, 0},
+			g: Grid{
+				Cells: [9]int{0, 0, 0, 0, 0, 0, 0, 0, 0},
+			},
 		},
 	}
 
@@ -114,19 +118,26 @@ func TestFreeCells(t *testing.T) {
 		},
 	}
 
+	// testGridFree := []struct
+
+	// for _, value := range testGrid {
+
+	// }
 	// wantedGridResult := Grid{}
 
 	// wantedResult2 := []int{3, 6}
 
-	for _, value := range testGrid {
-		cells := value.Cells
+	for index, value := range testGrid {
+	
+		testGridFree = append(testGridFree, index.g.FreeCells(),
+		
 	}
 
 	// comparison of slices
-	if !slices.Equal(testGrid, wantedResult) {
-		t.Errorf("testGridF = %v; want %v", testGrid, wantedResult)
-	}
-}
+// 	if !slices.Equal(testGrid, wantedResult) {
+// 		t.Errorf("testGridF = %v; want %v", testGrid, wantedResult)
+// 	}
+// }
 
 // test := tests.IsWin()
 // for _, test := range tests {
