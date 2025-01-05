@@ -26,22 +26,22 @@ func TestString(t *testing.T) {
 
 func TestIsWin(t *testing.T) {
 	tests := []struct {
-		g     Grid
-		wantIsWin bool
+		g          Grid
+		wantIsWin  bool
 		wantWinner string
 	}{
 		{
 			g: Grid{
 				Cells: [9]int{1, 1, 1, 0, 2, 1, 0, 1, 1},
 			},
-			wantIsWin: true,
+			wantIsWin:  true,
 			wantWinner: "X",
 		},
 		{
 			g: Grid{
 				Cells: [9]int{0, 0, 0, 0, 0, 0, 0, 0, 0},
 			},
-			wantIsWin: false,
+			wantIsWin:  false,
 			wantWinner: ""},
 	}
 
@@ -54,86 +54,100 @@ func TestIsWin(t *testing.T) {
 }
 
 func TestFreeCells(t *testing.T) {
-	// tests := []struct {
-	// 	g    Grid
-	// 	want []int
-	// }{
-	// 	{
-	// 		g: Grid{
-	// 			Cells: [9]int{1, 1, 1, 0, 2, 1, 0, 1, 1},
-	// 		},
-	// 		want: []int{3, 6},
-	// 	},
-	// 	{
-	// 		g: Grid{
-	// 			Cells: [9]int{0, 0, 0, 0, 0, 0, 0, 0, 0},
-	// 		},
-	// 		want: []int{0, 1, 2, 3, 4, 5, 6, 7, 8},
-	// 	},
-	// }
-
-	// testGrid struct to test multiple cases
 	testGrid := []struct {
-		g Grid
+		g    Grid
+		want []int
 	}{
 		{
 			g: Grid{
 				Cells: [9]int{1, 1, 1, 0, 2, 1, 0, 1, 1},
 			},
+			want: []int{3, 6},
 		},
 		{
 			g: Grid{
 				Cells: [9]int{0, 0, 0, 0, 0, 0, 0, 0, 0},
 			},
+			want: []int{0, 1, 2, 3, 4, 5, 6, 7, 8},
 		},
 	}
 
-	// Single testGrid
-	// testGridU := Grid{
-	// 	Cells: [9]int{
-	// 		1, 1, 1, 0, 2, 1, 0, 1, 1},
-	// }
-	// apply function to testGrid
-	// testGridF := testGridU.FreeCells()
-
-	// test := testGrids.Cells.FreeCells()
-	// var resultIndexArray []int
-	// for index, value := range testGrids.Cells {
-	// 	if value == 0 {
-	// 		resultIndexArray = append(resultIndexArray, index)
-	// 	}
-	// }
-
-	// wantedResult := []int{3, 6}
-
-	// wantedResults has multiple results that can confirm correct functions in struct
-	wantedResult := []struct {
-		Cells []int
-	}{
-		{
-			Cells: []int{3, 6},
-		},
-		{
-			Cells: []int{0, 0, 0, 0, 0, 0, 0, 0},
-		},
+	for _, value := range testGrid {
+		got := value.g.FreeCells()
+		if !slices.Equal(got, value.want) {
+			t.Errorf("testGrid = %vl want %v", got, value.want)
+		}
 	}
+}
 
-	// testGridFree := []struct
+// comparison of slices
+// 	if !slices.Equal(testGrid, wantedResult) {
+// 		t.Errorf("testGridF = %v; want %v", testGrid, wantedResult)
+// 	}
+// }
 
-	// for _, value := range testGrid {
+// testGrid struct to test multiple cases
+// testGrid := []struct {
+// 	g Grid
+// }{
+// 	{
+// 		g: Grid{
+// 			Cells: [9]int{1, 1, 1, 0, 2, 1, 0, 1, 1},
+// 		},
+// 	},
+// 	{
+// 		g: Grid{
+// 			Cells: [9]int{0, 0, 0, 0, 0, 0, 0, 0, 0},
+// 		},
+// 	},
+// }
 
-	// }
-	// wantedGridResult := Grid{}
+// Single testGrid
+// testGridU := Grid{
+// 	Cells: [9]int{
+// 		1, 1, 1, 0, 2, 1, 0, 1, 1},
+// }
+// apply function to testGrid
+// testGridF := testGridU.FreeCells()
 
-	// wantedResult2 := []int{3, 6}
+// test := testGrids.Cells.FreeCells()
+// var resultIndexArray []int
+// for index, value := range testGrids.Cells {
+// 	if value == 0 {
+// 		resultIndexArray = append(resultIndexArray, index)
+// 	}
+// }
 
-	for index, value := range testGrid {
-	
-		testGridFree = append(testGridFree, index.g.FreeCells(),
-		
-	}
+// wantedResult := []int{3, 6}
 
-	// comparison of slices
+// wantedResults has multiple results that can confirm correct functions in struct
+// wantedResult := []struct {
+// 	Cells []int
+// }{
+// 	{
+// 		Cells: []int{3, 6},
+// 	},
+// 	{
+// 		Cells: []int{0, 0, 0, 0, 0, 0, 0, 0},
+// 	},
+// }
+
+// testGridFree := []struct
+
+// for _, value := range testGrid {
+
+// }
+// wantedGridResult := Grid{}
+
+// wantedResult2 := []int{3, 6}
+
+// for index, value := range testGrid {
+
+// 	testGridFree = append(testGridFree, index.g.FreeCells(),
+
+// }
+
+// comparison of slices
 // 	if !slices.Equal(testGrid, wantedResult) {
 // 		t.Errorf("testGridF = %v; want %v", testGrid, wantedResult)
 // 	}
