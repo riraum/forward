@@ -9,29 +9,7 @@ type Grid struct {
 	Cells [9]int
 }
 
-// testGrid := Grid {
-// 	Cells: []int{3,3},
-// }
-
 func (g Grid) String() string {
-	// 1 := 1
-	// 2 := 2
-	// TODO
-	// |||____
-	// |__|__|__|
-	// |__|__|__|
-	// |__|__|__|
-	// row := g.Cells * "__"
-	// column := g.Cells
-	// Cells := []string{}
-	// result = ""
-	// for _, value := range row {
-	// 	result += "__"
-	// }
-	// return ""
-	// 	"|__|",
-	// cell := "|__|"
-	// count := g.Cells
 	return fmt.Sprintf(`
 +---+---+---+
 | %+v | %+v | %+v |
@@ -41,11 +19,6 @@ func (g Grid) String() string {
 | %+v | %+v | %+v |
 +---+---+---+`, g.Cells[0], g.Cells[1], g.Cells[2], g.Cells[3], g.Cells[4], g.Cells[5], g.Cells[6], g.Cells[7], g.Cells[8],
 	)
-
-	// return fmt.Sprintf(
-	// 	"%v %v %v\n %v %v %v\n %v %v %v\n", g.Cells[2], g.Cells[1], g.Cells[2], g.Cells[3], g.Cells[4], g.Cells[5], g.Cells[6], g.Cells[7], g.Cells[8],
-	// 	// g.Cells...
-	// )
 }
 
 // Create variable for empty cell, filled with X and with O
@@ -125,16 +98,12 @@ func (g Grid) IsWin() (bool, string) {
 
 func (g Grid) FreeCells() []int {
 	var resultIndexArray []int
-	// var resultValueArray []int
 
 	for index, value := range g.Cells {
 		// for i := 0; i <= 8; i++ {
 		if value == 0 {
 			resultIndexArray = append(resultIndexArray, index)
-			// resultValueArray = append(resultValueArray, g.Cells[value])
 		}
 	}
-	// return IndexOf(resultArray)
 	return resultIndexArray
-	// return resultValueArray
 }
