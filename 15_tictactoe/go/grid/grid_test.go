@@ -7,16 +7,16 @@ import (
 
 func TestString(t *testing.T) {
 	testGrid := Grid{
-		Cells: [9]int{1, 1, 1, 0, 2, 1, 0, 1, 1},
+		Cells: [9]string{"X", "X", "X", " ", "O", "X", " ", "X", "X"},
 	}
 	test := testGrid.String()
 	wantedResult := `
 +---+---+---+
-| 1 | 1 | 1 |
+| X | X | X |
 +---+---+---+
-| 0 | 2 | 1 |
+|   | O | X |
 +---+---+---+
-| 0 | 1 | 1 |
+|   | X | X |
 +---+---+---+`
 	if test != wantedResult {
 
@@ -32,14 +32,14 @@ func TestIsWin(t *testing.T) {
 	}{
 		{
 			g: Grid{
-				Cells: [9]int{1, 1, 1, 0, 2, 1, 0, 1, 1},
+				Cells: [9]string{"X", "X", "X", "", "O", "X", "", "X", "X"},
 			},
 			wantIsWin:  true,
 			wantWinner: "X",
 		},
 		{
 			g: Grid{
-				Cells: [9]int{0, 0, 0, 0, 0, 0, 0, 0, 0},
+				Cells: [9]string{},
 			},
 			wantIsWin:  false,
 			wantWinner: ""},
@@ -60,13 +60,13 @@ func TestFreeCells(t *testing.T) {
 	}{
 		{
 			g: Grid{
-				Cells: [9]int{1, 1, 1, 0, 2, 1, 0, 1, 1},
+				Cells: [9]string{"X", "X", "X", "", "O", "X", "", "X", "X"},
 			},
 			want: []int{3, 6},
 		},
 		{
 			g: Grid{
-				Cells: [9]int{0, 0, 0, 0, 0, 0, 0, 0, 0},
+				Cells: [9]string{},
 			},
 			want: []int{0, 1, 2, 3, 4, 5, 6, 7, 8},
 		},

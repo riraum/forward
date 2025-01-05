@@ -6,7 +6,7 @@ import (
 
 // Define column and row
 type Grid struct {
-	Cells [9]int
+	Cells [9]string
 }
 
 func (g Grid) String() string {
@@ -51,46 +51,46 @@ func (g Grid) String() string {
 
 func (g Grid) IsWin() (bool, string) {
 	// 1st row top to bottom horizontally
-	if g.Cells[0] == 1 && g.Cells[1] == 1 && g.Cells[2] == 1 ||
+	if g.Cells[0] == "X" && g.Cells[1] == "X" && g.Cells[2] == "X" ||
 		// 2nd row top to bottom horizontally
-		g.Cells[3] == 1 && g.Cells[4] == 1 && g.Cells[5] == 1 ||
+		g.Cells[3] == "X" && g.Cells[4] == "X" && g.Cells[5] == "X" ||
 		// 3rd row top to bottom horizontally
-		g.Cells[6] == 1 && g.Cells[7] == 1 && g.Cells[8] == 1 ||
+		g.Cells[6] == "X" && g.Cells[7] == "X" && g.Cells[8] == "X" ||
 		// 1st row top to bottom diagonally left to right
-		g.Cells[0] == 1 && g.Cells[4] == 1 && g.Cells[8] == 1 ||
+		g.Cells[0] == "X" && g.Cells[4] == "X" && g.Cells[8] == "X" ||
 		// 2nd row top to bottom diagonally right to left
-		g.Cells[2] == 1 && g.Cells[4] == 1 && g.Cells[6] == 1 {
+		g.Cells[2] == "X" && g.Cells[4] == "X" && g.Cells[6] == "X" {
 		return true, "X"
 	}
 
 	// 1st row top to bottom vertically
-	if g.Cells[0] == 1 && g.Cells[3] == 1 && g.Cells[6] == 1 ||
+	if g.Cells[0] == "X" && g.Cells[3] == "X" && g.Cells[6] == "X" ||
 		// 2nd row top to bottom vertically
-		g.Cells[1] == 1 && g.Cells[4] == 1 && g.Cells[7] == 1 ||
+		g.Cells[1] == "X" && g.Cells[4] == "X" && g.Cells[7] == "X" ||
 		// 3rd row top to bottom vertically
-		g.Cells[2] == 1 && g.Cells[5] == 1 && g.Cells[8] == 1 {
+		g.Cells[2] == "X" && g.Cells[5] == "X" && g.Cells[8] == "X" {
 		return true, "X"
 	}
 
 	// 1st row top to bottom horizontally
-	if g.Cells[0] == 2 && g.Cells[1] == 2 && g.Cells[2] == 2 ||
+	if g.Cells[0] == "O" && g.Cells[1] == "O" && g.Cells[2] == "O" ||
 		// 2nd row top to bottom horizontally
-		g.Cells[3] == 2 && g.Cells[4] == 2 && g.Cells[5] == 2 ||
+		g.Cells[3] == "O" && g.Cells[4] == "O" && g.Cells[5] == "O" ||
 		// 3rd row top to bottom horizontally
-		g.Cells[6] == 2 && g.Cells[7] == 2 && g.Cells[8] == 2 ||
+		g.Cells[6] == "O" && g.Cells[7] == "O" && g.Cells[8] == "O" ||
 		// 1st row top to bottom diagonally left to right
-		g.Cells[0] == 2 && g.Cells[4] == 2 && g.Cells[8] == 2 ||
+		g.Cells[0] == "O" && g.Cells[4] == "O" && g.Cells[8] == "O" ||
 		// 2nd row top to bottom diagonally right to left
-		g.Cells[2] == 2 && g.Cells[4] == 2 && g.Cells[6] == 2 {
+		g.Cells[2] == "O" && g.Cells[4] == "O" && g.Cells[6] == "O" {
 		return true, "O"
 	}
 
 	// 1st row top to bottom vertically
-	if g.Cells[0] == 2 && g.Cells[3] == 2 && g.Cells[6] == 2 ||
+	if g.Cells[0] == "O" && g.Cells[3] == "O" && g.Cells[6] == "O" ||
 		// 2nd row top to bottom vertically
-		g.Cells[1] == 2 && g.Cells[4] == 2 && g.Cells[7] == 2 ||
+		g.Cells[1] == "O" && g.Cells[4] == "O" && g.Cells[7] == "O" ||
 		// 3rd row top to bottom vertically
-		g.Cells[2] == 2 && g.Cells[5] == 2 && g.Cells[8] == 2 {
+		g.Cells[2] == "O" && g.Cells[5] == "O" && g.Cells[8] == "O" {
 		return true, "O"
 	}
 	return false, "Debug"
@@ -101,7 +101,7 @@ func (g Grid) FreeCells() []int {
 
 	for index, value := range g.Cells {
 		// for i := 0; i <= 8; i++ {
-		if value == 0 {
+		if value == "" {
 			resultIndexArray = append(resultIndexArray, index)
 		}
 	}
