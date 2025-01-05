@@ -72,20 +72,25 @@ func TestFreeCells(t *testing.T) {
 	// 	},
 	// }
 
-	// testGrid := []struct {
-	// 	Cells [9]int
-	// }{
-	// 	{
-	// 		Cells: [9]int{1, 1, 1, 0, 2, 1, 0, 1, 1},
-	// 	},
-	// }
-
-	testGridU := Grid{
-		Cells: [9]int{
-			1, 1, 1, 0, 2, 1, 0, 1, 1},
+	// testGrid struct to test multiple cases
+	testGrid := []struct {
+		Cells []int
+	}{
+		{
+			Cells: []int{1, 1, 1, 0, 2, 1, 0, 1, 1},
+		},
+		{
+			Cells: []int{0, 0, 0, 0, 0, 0, 0, 0, 0},
+		},
 	}
 
-	testGridF := testGridU.FreeCells()
+	// Single testGrid
+	// testGridU := Grid{
+	// 	Cells: [9]int{
+	// 		1, 1, 1, 0, 2, 1, 0, 1, 1},
+	// }
+	// apply function to testGrid
+	// testGridF := testGridU.FreeCells()
 
 	// test := testGrids.Cells.FreeCells()
 	// var resultIndexArray []int
@@ -97,18 +102,29 @@ func TestFreeCells(t *testing.T) {
 
 	// wantedResult := []int{3, 6}
 
-	// wantedResult := []struct {
-	// 	Cells []int
-	// }{
-	// 	{
-	// 		Cells: []int{3, 6},
-	// 	},
-	// }
+	// wantedResults has multiple results that can confirm correct functions in struct
+	wantedResult := []struct {
+		Cells []int
+	}{
+		{
+			Cells: []int{3, 6},
+		},
+		{
+			Cells: []int{0, 0, 0, 0, 0, 0, 0, 0},
+		},
+	}
 
-	wantedResult2 := []int{3, 6}
+	// wantedGridResult := Grid{}
 
-	if !slices.Equal(testGridF, wantedResult2) {
-		t.Errorf("testGridF = %v; want %v", testGridF, wantedResult2)
+	// wantedResult2 := []int{3, 6}
+
+	for _, value := range testGrid {
+		cells := value.Cells
+	}
+
+	// comparison of slices
+	if !slices.Equal(testGrid, wantedResult) {
+		t.Errorf("testGridF = %v; want %v", testGrid, wantedResult)
 	}
 }
 
