@@ -42,6 +42,10 @@ func Play() {
 
 	fmt.Println(random.Choose(intSlice))
 
+	// promptText := "Hurr durr"
+
+	// fmt.Println(io.Read(promptText))
+
 	move := io.Read("What's your move?")
 	fmt.Println("You chose", move)
 }
