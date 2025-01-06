@@ -101,7 +101,7 @@ func (g Grid) FreeCells() []int {
 
 	for index, value := range g.Cells {
 		// for i := 0; i <= 8; i++ {
-		if value == "" {
+		if value == " " {
 			resultIndexArray = append(resultIndexArray, index)
 		}
 	}
