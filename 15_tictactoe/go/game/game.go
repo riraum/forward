@@ -5,6 +5,7 @@ import (
 
 	"github.com/riraum/forward/15_tictactoe/go/grid"
 	"github.com/riraum/forward/15_tictactoe/go/io"
+	"github.com/riraum/forward/15_tictactoe/go/random"
 )
 
 func Play() {
@@ -35,6 +36,11 @@ func Play() {
 	fmt.Println(g.IsWin())
 
 	fmt.Println(g.FreeCells())
+
+	//debug int slice
+	intSlice := []int{1, 5, 6, 8}
+
+	fmt.Println(random.Choose(intSlice))
 
 	move := io.Read("What's your move?")
 	fmt.Println("You chose", move)
