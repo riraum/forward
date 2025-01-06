@@ -1,6 +1,10 @@
 package random
 
+import (
+	"math/rand"
+)
+
 func Choose(values []int) int {
-	// FIXME
-	return 0
+	// Select a random value from slice of values
+	return values[rand.Intn(len(values))]
 }
