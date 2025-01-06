@@ -4,7 +4,7 @@ import "fmt"
 
 func Read(prompt string) string {
 	var input string
-	fmt.Scan(&input)
 	fmt.Printf("%s > ", prompt)
+	fmt.Scan(&input)
 	return input
 }
