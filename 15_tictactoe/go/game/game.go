@@ -31,29 +31,38 @@ func Play() {
 	g := grid.Grid{
 		Cells: [9]string{" ", " ", " ", " ", " ", " ", " ", " ", " "},
 	}
-	// Output empty grid to help understand the concept?
-	fmt.Println(g.String())
-	// Ask player to select a grid index
-	PlayerMove := io.Read("What's your choice? (Enter index 0-8 if not taken before)")
-	fmt.Println("You chose", PlayerMove)
-	// Add player marker to correct index of grid
-	g.Cells[PlayerMove] = "X"
-	// Output grid to visualize choice
-	fmt.Println(g.String())
-	// Check if there is a winner
-	fmt.Println(g.IsWin())
-	// Get freecells
-	freeCellSlice := []int{}
-	freeCellSlice = append(freeCellSlice, g.FreeCells()...)
-	// Make random computer choice, based on freecells
-	computerMove := random.Choose(freeCellSlice)
-	// Add computer marker to correct index of grid
-	g.Cells[computerMove] = "O"
-	// Output grid to visualize result
-	fmt.Println(g.String())
-	// Check if there is a winner, if yes, exit, if no, continue from the start
-	fmt.Println(g.IsWin())
 
+	for i := 0; i <= len(g.Cells); i++ {
+		if i == len(g.Cells) {
+			fmt.Println("Grid full, no win!")
+			break
+		}
+		// Output empty grid to help understand the concept?
+		fmt.Println(g.String())
+		// Ask player to select a grid index
+		PlayerMove := io.Read("What's your choice? (Enter index 0-8 if not taken before)")
+		fmt.Println("You chose", PlayerMove)
+		// Add player marker to correct index of grid
+		g.Cells[PlayerMove] = "X"
+		// Output grid to visualize choice
+		fmt.Println(g.String())
+		// Check if there is a winner
+		fmt.Println(g.IsWin())
+		if g.IsWin() == true, "X won" || g.IsWin() == true, "O won" {
+			break
+		}
+		// Get freecells
+		freeCellSlice := []int{}
+		freeCellSlice = append(freeCellSlice, g.FreeCells()...)
+		// Make random computer choice, based on freecells
+		computerMove := random.Choose(freeCellSlice)
+		// Add computer marker to correct index of grid
+		g.Cells[computerMove] = "O"
+		// Output grid to visualize result
+		fmt.Println(g.String())
+		// Check if there is a winner, if yes, exit, if no, continue from the start
+		fmt.Println(g.IsWin())
+	}
 }
 
 func Debug() {
