@@ -32,7 +32,7 @@ func Play() {
 		Cells: [9]string{" ", " ", " ", " ", " ", " ", " ", " ", " "},
 	}
 
-	for i := 0; i <= len(g.Cells); i++ {
+	for i := 0; i <= 8; i++ {
 		// if i == len(g.Cells) {
 		// 	fmt.Println("Grid full, no win!")
 		// 	break
@@ -48,17 +48,19 @@ func Play() {
 		fmt.Println(g.String())
 		// Check if there is a winner
 		fmt.Println(g.IsWin())
-		// WIP break condition
-		win, _ := g.IsWin()
-		if win {
+		//  Break condition in case of winner
+		playerWin, _ := g.IsWin()
+		if playerWin {
 			break
 		}
-		// if g.IsWin() == true, "X won" || g.IsWin() == true, "O won" {
-		// 	break
-		// }
 		// Get freecells
 		freeCellSlice := []int{}
 		freeCellSlice = append(freeCellSlice, g.FreeCells()...)
+		// Break condition in case of no free cell
+		freeCells := g.FreeCells()
+		if len(freeCells) == 0 {
+			break
+		}
 		// Make random computer choice, based on freecells
 		computerMove := random.Choose(freeCellSlice)
 		// Add computer marker to correct index of grid
@@ -67,9 +69,9 @@ func Play() {
 		fmt.Println(g.String())
 		// Check if there is a winner, if yes, exit, if no, continue from the start
 		fmt.Println(g.IsWin())
-		// WIP break condition
-		win2, _ := g.IsWin()
-		if win2 {
+		// Break condition in case of winner
+		computerWin, _ := g.IsWin()
+		if computerWin {
 			break
 		}
 	}
