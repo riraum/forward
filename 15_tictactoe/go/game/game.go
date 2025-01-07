@@ -32,25 +32,26 @@ func Play() {
 		Cells: [9]string{" ", " ", " ", " ", " ", " ", " ", " ", " "},
 	}
 
-	for i := 0; i <= 8; i++ {
+	for i := 0; i <= 9; i++ {
 		// if i == len(g.Cells) {
 		// 	fmt.Println("Grid full, no win!")
 		// 	break
 		// }
 		// Output empty grid to help understand the concept?
-		fmt.Println(g.String())
 		// Ask player to select a grid index
+		fmt.Println(g.String())
 		PlayerMove := io.Read("What's your choice? (Enter index 0-8 if not taken before)")
 		fmt.Println("You chose", PlayerMove)
 		// Add player marker to correct index of grid
 		g.Cells[PlayerMove] = "X"
 		// Output grid to visualize choice
-		fmt.Println(g.String())
+		// fmt.Println(g.String())
 		// Check if there is a winner
 		fmt.Println(g.IsWin())
 		//  Break condition in case of winner
 		playerWin, _ := g.IsWin()
 		if playerWin {
+			fmt.Println(g.String())
 			break
 		}
 		// Get freecells
@@ -66,12 +67,13 @@ func Play() {
 		// Add computer marker to correct index of grid
 		g.Cells[computerMove] = "O"
 		// Output grid to visualize result
-		fmt.Println(g.String())
+		// fmt.Println(g.String())
 		// Check if there is a winner, if yes, exit, if no, continue from the start
-		fmt.Println(g.IsWin())
+		// fmt.Println(g.IsWin())
 		// Break condition in case of winner
 		computerWin, _ := g.IsWin()
 		if computerWin {
+			fmt.Println(g.String())
 			break
 		}
 	}
