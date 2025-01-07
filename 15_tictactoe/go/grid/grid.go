@@ -60,7 +60,7 @@ func (g Grid) IsWin() (bool, string) {
 		g.Cells[0] == "X" && g.Cells[4] == "X" && g.Cells[8] == "X" ||
 		// 2nd row top to bottom diagonally right to left
 		g.Cells[2] == "X" && g.Cells[4] == "X" && g.Cells[6] == "X" {
-		return true, "X"
+		return true, "X won"
 	}
 
 	// 1st row top to bottom vertically
@@ -69,7 +69,7 @@ func (g Grid) IsWin() (bool, string) {
 		g.Cells[1] == "X" && g.Cells[4] == "X" && g.Cells[7] == "X" ||
 		// 3rd row top to bottom vertically
 		g.Cells[2] == "X" && g.Cells[5] == "X" && g.Cells[8] == "X" {
-		return true, "X"
+		return true, "X won"
 	}
 
 	// 1st row top to bottom horizontally
@@ -82,7 +82,7 @@ func (g Grid) IsWin() (bool, string) {
 		g.Cells[0] == "O" && g.Cells[4] == "O" && g.Cells[8] == "O" ||
 		// 2nd row top to bottom diagonally right to left
 		g.Cells[2] == "O" && g.Cells[4] == "O" && g.Cells[6] == "O" {
-		return true, "O"
+		return true, "O won"
 	}
 
 	// 1st row top to bottom vertically
@@ -93,7 +93,7 @@ func (g Grid) IsWin() (bool, string) {
 		g.Cells[2] == "O" && g.Cells[5] == "O" && g.Cells[8] == "O" {
 		return true, "O"
 	}
-	return false, "Debug"
+	return false, "No winner"
 }
 
 func (g Grid) FreeCells() []int {
