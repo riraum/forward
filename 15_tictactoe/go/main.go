@@ -56,7 +56,5 @@ Print grid as strings
 */
 
 func main() {
-	// debug
-	// game.Debug()
 	game.Play()
 }

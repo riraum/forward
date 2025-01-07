@@ -25,30 +25,6 @@ func (g Grid) String() string {
 // Return row of cells based on slice length, target index of slice and assign one of the 3 cell types
 // Return column of cells based and do the same as with the row
 
-// 	return fmt.Sprintf(
-// 		"%s", cell, strings.Repeat(cell, count),
-// 		// g.Cells...
-// 	)
-// }
-
-// func (g Grid) String() string {
-//   return fmt.Sprintf(
-//     "<TODO>",
-//     // g.Cells...
-//   )
-// }
-
-// g = Grid struct
-// .Cells = defines how many cells there are in this struct
-
-// +---+---+---+
-// | X |   |   |
-// +---+---+---+
-// |   | O | O |
-// +---+---+---+
-// | X |   |   |
-// +---+---+---+
-
 func (g Grid) IsWin() (bool, string) {
 	// 1st row top to bottom horizontally
 	if g.Cells[0] == "X" && g.Cells[1] == "X" && g.Cells[2] == "X" ||
