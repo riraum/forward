@@ -36,7 +36,8 @@ func Play() {
 	move := io.Read("What's your choice? (Enter index 0-8 if not taken before)")
 	fmt.Println("You chose", move)
 	// Add player marker to correct index of grid
-	g.Cells[0] = move
+	g.Cells[move] = "X"
+	fmt.Println(g.String())
 	// Check if there is a winner
 	fmt.Println(g.IsWin())
 	// Get freecells
@@ -45,6 +46,7 @@ func Play() {
 	// Make random computer choice, based on freecells
 	random.Choose(freeCellSlice)
 	// Output grid to visualize result
+	fmt.Println(g.String())
 
 }
 
