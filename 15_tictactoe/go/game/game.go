@@ -51,8 +51,8 @@ func Play() {
 			break
 		}
 		// Get freecells
-		freeCellSlice := []int{g.FreeCells()[]}
-		// freeCellSlice = append(freeCellSlice, g.FreeCells()...)
+		freeCellSlice := []int{}
+		freeCellSlice = append(freeCellSlice, g.FreeCells()...)
 		// Break condition in case of no free cell
 		freeCells := g.FreeCells()
 		if len(freeCells) == 0 {
@@ -65,7 +65,7 @@ func Play() {
 		// Output grid to visualize result
 		// fmt.Println(g.String())
 		// Check if there is a winner, if yes, exit, if no, continue from the start
-		// fmt.Println(g.IsWin())
+		fmt.Println(g.IsWin())
 		// Break condition in case of winner
 		computerWin, _ := g.IsWin()
 		if computerWin {
