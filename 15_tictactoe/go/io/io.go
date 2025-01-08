@@ -14,10 +14,10 @@ func Read(prompt string) int {
 
 		fmt.Printf("%s > ", prompt)
 		value, err := fmt.Scan(&input)
-		if err != nil {
-			continue
-		} else {
+		if err == nil {
 			fmt.Println(err)
+		} else {
+			continue
 		}
 		if value >= 0 && value <= 8 {
 			break
