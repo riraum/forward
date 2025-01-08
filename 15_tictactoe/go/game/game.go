@@ -54,6 +54,7 @@ func Play() {
 		// freeCellSlice := []int{}
 		// freeCellSlice = append(freeCellSlice, g.FreeCells()...)
 		freeCellSlice := g.FreeCells()
+		fmt.Println(freeCellSlice)
 		// Break condition in case of no free cell
 		freeCells := g.FreeCells()
 		if len(freeCells) == 0 {
