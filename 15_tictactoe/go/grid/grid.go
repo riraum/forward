@@ -25,30 +25,6 @@ func (g Grid) String() string {
 // Return row of cells based on slice length, target index of slice and assign one of the 3 cell types
 // Return column of cells based and do the same as with the row
 
-// 	return fmt.Sprintf(
-// 		"%s", cell, strings.Repeat(cell, count),
-// 		// g.Cells...
-// 	)
-// }
-
-// func (g Grid) String() string {
-//   return fmt.Sprintf(
-//     "<TODO>",
-//     // g.Cells...
-//   )
-// }
-
-// g = Grid struct
-// .Cells = defines how many cells there are in this struct
-
-// +---+---+---+
-// | X |   |   |
-// +---+---+---+
-// |   | O | O |
-// +---+---+---+
-// | X |   |   |
-// +---+---+---+
-
 func (g Grid) IsWin() (bool, string) {
 	// 1st row top to bottom horizontally
 	if g.Cells[0] == "X" && g.Cells[1] == "X" && g.Cells[2] == "X" ||
@@ -60,7 +36,7 @@ func (g Grid) IsWin() (bool, string) {
 		g.Cells[0] == "X" && g.Cells[4] == "X" && g.Cells[8] == "X" ||
 		// 2nd row top to bottom diagonally right to left
 		g.Cells[2] == "X" && g.Cells[4] == "X" && g.Cells[6] == "X" {
-		return true, "X"
+		return true, "Human won"
 	}
 
 	// 1st row top to bottom vertically
@@ -69,7 +45,7 @@ func (g Grid) IsWin() (bool, string) {
 		g.Cells[1] == "X" && g.Cells[4] == "X" && g.Cells[7] == "X" ||
 		// 3rd row top to bottom vertically
 		g.Cells[2] == "X" && g.Cells[5] == "X" && g.Cells[8] == "X" {
-		return true, "X"
+		return true, "Human won"
 	}
 
 	// 1st row top to bottom horizontally
@@ -82,7 +58,7 @@ func (g Grid) IsWin() (bool, string) {
 		g.Cells[0] == "O" && g.Cells[4] == "O" && g.Cells[8] == "O" ||
 		// 2nd row top to bottom diagonally right to left
 		g.Cells[2] == "O" && g.Cells[4] == "O" && g.Cells[6] == "O" {
-		return true, "O"
+		return true, "Computer won"
 	}
 
 	// 1st row top to bottom vertically
@@ -91,9 +67,9 @@ func (g Grid) IsWin() (bool, string) {
 		g.Cells[1] == "O" && g.Cells[4] == "O" && g.Cells[7] == "O" ||
 		// 3rd row top to bottom vertically
 		g.Cells[2] == "O" && g.Cells[5] == "O" && g.Cells[8] == "O" {
-		return true, "O"
+		return true, "Computer Won"
 	}
-	return false, "Debug"
+	return false, "No winner"
 }
 
 func (g Grid) FreeCells() []int {
@@ -101,7 +77,7 @@ func (g Grid) FreeCells() []int {
 
 	for index, value := range g.Cells {
 		// for i := 0; i <= 8; i++ {
-		if value == "" {
+		if value == " " {
 			resultIndexArray = append(resultIndexArray, index)
 		}
 	}

@@ -60,13 +60,13 @@ func TestFreeCells(t *testing.T) {
 	}{
 		{
 			g: Grid{
-				Cells: [9]string{"X", "X", "X", "", "O", "X", "", "X", "X"},
+				Cells: [9]string{"X", "X", "X", " ", "O", "X", " ", "X", "X"},
 			},
 			want: []int{3, 6},
 		},
 		{
 			g: Grid{
-				Cells: [9]string{},
+				Cells: [9]string{" ", " ", " ", " ", " ", " ", " ", " ", " "},
 			},
 			want: []int{0, 1, 2, 3, 4, 5, 6, 7, 8},
 		},
