@@ -60,6 +60,7 @@ func Play() {
 		}
 		// Make random computer choice, based on freecells
 		computerMove := random.Choose(freeCellSlice)
+		fmt.Println("Computer chose", computerMove)
 		// Add computer marker to correct index of grid
 		g.Cells[computerMove] = "O"
 		// Output grid to visualize result
