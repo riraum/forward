@@ -56,8 +56,8 @@ func Play() {
 		freeCellSlice := g.FreeCells()
 		fmt.Println("Free cells:", freeCellSlice)
 		// Break condition in case of no free cell
-		freeCells := g.FreeCells()
-		if len(freeCells) == 0 {
+		// freeCells := g.FreeCells()
+		if len(freeCellSlice) == 0 {
 			break
 		}
 		// Make random computer choice, based on freecells
