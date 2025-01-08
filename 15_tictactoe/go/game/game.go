@@ -34,6 +34,11 @@ func Play() {
 
 	for i := 0; i <= 9; i++ {
 		// Output empty grid to help understand the concept?
+		freeCellSlice := g.FreeCells()
+		fmt.Println("Free cells:", freeCellSlice)
+		if len(freeCellSlice) == 0 {
+			break
+		}
 		// Ask player to select a grid index
 		fmt.Println(g.String())
 		PlayerMove := io.Read("What's your choice? (Enter index 0-8 if not taken before)")
@@ -53,7 +58,6 @@ func Play() {
 		// Get freecells
 		// freeCellSlice := []int{}
 		// freeCellSlice = append(freeCellSlice, g.FreeCells()...)
-		freeCellSlice := g.FreeCells()
 		fmt.Println("Free cells:", freeCellSlice)
 		// Break condition in case of no free cell
 		// freeCells := g.FreeCells()
@@ -67,6 +71,10 @@ func Play() {
 		g.Cells[computerMove] = "O"
 		// Output grid to visualize result
 		// fmt.Println(g.String())
+		fmt.Println("Free cells:", freeCellSlice)
+		if len(freeCellSlice) == 0 {
+			break
+		}
 		// Check if there is a winner, if yes, exit, if no, continue from the start
 		fmt.Println(g.IsWin())
 		// Break condition in case of winner
