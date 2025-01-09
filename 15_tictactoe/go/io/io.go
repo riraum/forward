@@ -14,8 +14,8 @@ func Read(prompt string) int {
 	for i := 0; i <= 3; i++ {
 
 		fmt.Printf("%s > ", prompt)
-		value, err := fmt.Scan(&input)
-		if valid(value, err) {
+		_, err := fmt.Scan(&input)
+		if valid(input) {
 			continue
 		} else {
 			fmt.Println(err)
@@ -25,14 +25,16 @@ func Read(prompt string) int {
 	return input
 }
 
-func valid(value int, err error) bool {
+func valid(input int) bool {
 	// var result bool
-	if err != nil {
-		return true
-	} else {
-		if value >= 0 && value <= 8 {
-			return false
-		}
+	// if err != nil {
+	// 	return true
+	// }
+	// if value == 00 {
+	// 	return true
+	// }
+	if input >= 0 && input <= 8 {
+		return false
 	}
 	return false
 }
