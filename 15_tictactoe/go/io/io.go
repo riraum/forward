@@ -30,7 +30,6 @@ func valid(value int, err error) bool {
 	if err != nil {
 		return true
 	} else {
-		fmt.Println(err)
 		if value >= 0 && value <= 8 {
 			return false
 		}
