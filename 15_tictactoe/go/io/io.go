@@ -11,19 +11,50 @@ Break loop if input is on a free cell, else keep looping
 
 func Read(prompt string) int {
 	var input int
-	for i := 0; i <= 3; i++ {
+	for i := 0; i <= 999; i++ {
 
 		fmt.Printf("%s > ", prompt)
 		_, err := fmt.Scan(&input)
 		if valid(input) {
-			continue
+			fmt.Printf("Valid input\n")
+			return input
+		}
+
+		if !valid(input) {
+			fmt.Printf("Invalid input!\n")
+			// return input
 		} else {
-			fmt.Println(err)
+			fmt.Println("Test scan error", err)
 			break
 		}
 	}
-	return input
+	return 999
 }
+
+// func Read(prompt string) int {
+// 	var input int
+// 	for {
+// 		i := 0
+// 		fmt.Printf("%s > ", prompt)
+// 		_, err := fmt.Scan(&input)
+// 		if valid(input) {
+// 			fmt.Printf("Valid input\n")
+// 			i++
+// 			return input
+// 		}
+
+// 		if !valid(input) {
+// 			fmt.Printf("Invalid input!\n")
+// 			i++
+// 			return input
+// 		} else {
+// 			fmt.Println("Test scan error", err)
+// 			break
+// 		}
+
+// 	}
+// 	return 999
+// }
 
 func valid(input int) bool {
 	// var result bool
@@ -33,8 +64,8 @@ func valid(input int) bool {
 	// if value == 00 {
 	// 	return true
 	// }
-	if input >= 0 && input <= 8 {
-		return false
+	if input == 0 || input == 1 || input == 2 || input == 3 || input == 4 || input == 5 || input == 6 || input == 7 || input == 8 {
+		return true
 	}
 	return false
 }
