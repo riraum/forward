@@ -14,43 +14,24 @@ Break loop if input is on a free cell, else keep looping
 
 func Read(prompt string) int {
 	var input string
-	var checkedInput int
 	for {
-		// i := 0
 		fmt.Printf("%s > ", prompt)
-		_, err := fmt.Scan(&input)
-		// fmt.Println("Print input", input)
-		// fmt.Println("Print value", value)
+		fmt.Scan(&input)
+
 		if valid(input) {
-			// fmt.Printf("Valid input\n")
-			// i++
-			checkedInput, err = strconv.Atoi(input)
-			if err != nil {
-				fmt.Printf("Error with string to int conversion!")
-			}
-			return checkedInput
+			validInput, _ := strconv.Atoi(input)
+			return validInput
 		}
-
-		if !valid(input) {
-			// fmt.Printf("Invalid input!\n")
-			// i++
-		} else {
-			fmt.Println("Test scan error", err)
-			break
-		}
-
 	}
-	return 999
 }
 
 func valid(input string) bool {
 	intInput, err := strconv.Atoi(input)
 	if err != nil {
-		fmt.Print("Error with string to int conversion=Invalid input!\n")
+		fmt.Print("Invalid input! Only single digit numbers allowed!\n")
 		return false
 	}
 	if intInput >= 0 && intInput <= 8 {
-		fmt.Println("Print valid input", input)
 		return true
 	}
 
