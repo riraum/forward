@@ -15,11 +15,11 @@ import (
 
 func TestValid(t *testing.T) {
 	tests := []struct {
-		input int
+		input string
 		want  bool
 	}{
-		{3, true},
-		{99, false},
+		{"3", true},
+		{"99", false},
 	}
 
 	for _, test := range tests {
