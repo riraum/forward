@@ -20,6 +20,8 @@ func TestValid(t *testing.T) {
 	}{
 		{"3", true},
 		{"99", false},
+		{"", false},
+		{"abc", false},
 	}
 
 	for _, test := range tests {
