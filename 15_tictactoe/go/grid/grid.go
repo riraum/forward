@@ -10,19 +10,6 @@ type Grid struct {
 	Cells [9]string
 }
 
-// loop for range to check if cell is free, if it is print index, if it's taken, print X/O
-// func (g Grid) String() string {
-// 	return fmt.Sprintf(`
-// +---+---+---+
-// | %+v | %+v | %+v |
-// +---+---+---+
-// | %+v | %+v | %+v |
-// +---+---+---+
-// | %+v | %+v | %+v |
-// +---+---+---+`, g.Cells[0], g.Cells[1], g.Cells[2], g.Cells[3], g.Cells[4], g.Cells[5], g.Cells[6], g.Cells[7], g.Cells[8],
-// 	)
-// }
-
 // create empty grid
 func EmptyGrid() Grid {
 	return Grid{
@@ -31,6 +18,8 @@ func EmptyGrid() Grid {
 }
 
 // print grid
+// loop for range to check if cell is free, if it is print index, if it's taken, print X/O
+
 func (g Grid) String() string {
 	var resultIndexArray []string
 	for index, value := range g.Cells {
@@ -39,9 +28,7 @@ func (g Grid) String() string {
 		if value == " " {
 			resultIndexArray = append(resultIndexArray, index)
 		}
-		if value != " " {
-			resultIndexArray = append(resultIndexArray, value)
-		}
+		// resultIndexArray = append(resultIndexArray, value)
 	}
 	return fmt.Sprintf(`
 +---+---+---+
@@ -53,25 +40,6 @@ func (g Grid) String() string {
 +---+---+---+`, resultIndexArray[0], resultIndexArray[1], resultIndexArray[2], resultIndexArray[3], resultIndexArray[4], resultIndexArray[5], resultIndexArray[6], resultIndexArray[7], resultIndexArray[8],
 	)
 }
-
-// for index, value := range g.Cells {
-// 	// for i := 0; i <= 8; i++ {
-// 	if value == " " {
-// 		resultIndexArray = append(resultIndexArray, index)
-// 	}
-// }
-
-// 	func (g Grid) String() string {
-// 	return fmt.Sprintf(`
-// +---+---+---+
-// | %+v%+v| %+v | %+v |
-// +---+---+---+
-// | %+v | %+v | %+v |
-// +---+---+---+
-// | %+v | %+v | %+v |
-// +---+---+---+`, "0", g.Cells[0], g.Cells[1], g.Cells[2], g.Cells[3], g.Cells[4], g.Cells[5], g.Cells[6], g.Cells[7], g.Cells[8],
-// 	)
-// }
 
 // Create variable for empty cell, filled with X and with O
 // Return row of cells based on slice length, target index of slice and assign one of the 3 cell types
