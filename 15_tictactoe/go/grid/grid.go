@@ -43,12 +43,9 @@ func (g Grid) IsWin() (bool, string) {
 		// 1st row top to bottom diagonally left to right
 		g.Cells[0] == "X" && g.Cells[4] == "X" && g.Cells[8] == "X" ||
 		// 2nd row top to bottom diagonally right to left
-		g.Cells[2] == "X" && g.Cells[4] == "X" && g.Cells[6] == "X" {
-		return true, "Human won"
-	}
-
-	// 1st row top to bottom vertically
-	if g.Cells[0] == "X" && g.Cells[3] == "X" && g.Cells[6] == "X" ||
+		g.Cells[2] == "X" && g.Cells[4] == "X" && g.Cells[6] == "X" ||
+		// 1st row top to bottom vertically
+		g.Cells[0] == "X" && g.Cells[3] == "X" && g.Cells[6] == "X" ||
 		// 2nd row top to bottom vertically
 		g.Cells[1] == "X" && g.Cells[4] == "X" && g.Cells[7] == "X" ||
 		// 3rd row top to bottom vertically
@@ -65,17 +62,14 @@ func (g Grid) IsWin() (bool, string) {
 		// 1st row top to bottom diagonally left to right
 		g.Cells[0] == "O" && g.Cells[4] == "O" && g.Cells[8] == "O" ||
 		// 2nd row top to bottom diagonally right to left
-		g.Cells[2] == "O" && g.Cells[4] == "O" && g.Cells[6] == "O" {
-		return true, "Computer won"
-	}
-
-	// 1st row top to bottom vertically
-	if g.Cells[0] == "O" && g.Cells[3] == "O" && g.Cells[6] == "O" ||
+		g.Cells[2] == "O" && g.Cells[4] == "O" && g.Cells[6] == "O" ||
+		// 1st row top to bottom vertically
+		g.Cells[0] == "O" && g.Cells[3] == "O" && g.Cells[6] == "O" ||
 		// 2nd row top to bottom vertically
 		g.Cells[1] == "O" && g.Cells[4] == "O" && g.Cells[7] == "O" ||
 		// 3rd row top to bottom vertically
 		g.Cells[2] == "O" && g.Cells[5] == "O" && g.Cells[8] == "O" {
-		return true, "Computer Won"
+		return true, "Computer won"
 	}
 	return false, "No winner"
 }
