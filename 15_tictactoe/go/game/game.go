@@ -30,7 +30,8 @@ func Play() {
 	// Initialize empty grid
 	g := grid.EmptyGrid()
 
-	for i := 0; i <= 9; i++ {
+	for {
+		i := 0
 		// Output empty grid to help understand the concept
 		// Ask player to select a grid index
 		fmt.Println(g.String())
@@ -46,6 +47,7 @@ func Play() {
 		fmt.Println("Computer chose", computerMove)
 		// Add computer marker to correct index of grid
 		g.Cells[computerMove] = "O"
+		i++
 		//  Break condition in case of winner
 		checkWin, _ := g.IsWin()
 		if checkWin {
