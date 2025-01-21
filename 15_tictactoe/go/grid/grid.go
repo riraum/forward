@@ -32,7 +32,22 @@ func (g Grid) String() string {
 // Create variable for empty cell, filled with X and with O
 // Return row of cells based on slice length, target index of slice and assign one of the 3 cell types
 // Return column of cells based and do the same as with the row
-
+func (g Grid) IsWinSimple() (bool, string) {
+	// check horizontal
+	if g.Cells[0] == g.Cells[1] && g.Cells[0] == g.Cells[2] ||
+		g.Cells[3] == g.Cells[4] && g.Cells[3] == g.Cells[5] ||
+		g.Cells[6] == g.Cells[7] && g.Cells[6] == g.Cells[8] ||
+		//  check vertical
+		g.Cells[0] == g.Cells[3] && g.Cells[0] == g.Cells[6] ||
+		g.Cells[1] == g.Cells[4] && g.Cells[1] == g.Cells[7] ||
+		g.Cells[2] == g.Cells[5] && g.Cells[2] == g.Cells[8] ||
+		// check diagonally
+		g.Cells[0] == g.Cells[4] && g.Cells[0] == g.Cells[8] ||
+		g.Cells[2] == g.Cells[4] && g.Cells[2] == g.Cells[6] {
+		return true, "Winner!"
+	}
+	return false, "No winner"
+}
 func (g Grid) IsWin() (bool, string) {
 	// 1st row top to bottom horizontally
 	if g.Cells[0] == "X" && g.Cells[1] == "X" && g.Cells[2] == "X" ||
