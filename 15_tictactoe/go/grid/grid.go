@@ -27,8 +27,9 @@ func (g Grid) String() string {
 		index := strconv.Itoa(index)
 		if value == " " {
 			resultIndexArray = append(resultIndexArray, index)
+		} else {
+			resultIndexArray = append(resultIndexArray, value)
 		}
-		// resultIndexArray = append(resultIndexArray, value)
 	}
 	return fmt.Sprintf(`
 +---+---+---+
