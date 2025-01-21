@@ -31,7 +31,9 @@ func (g Grid) String() string {
 		if value == " " {
 			resultIndexArray = append(resultIndexArray, index)
 		}
-		// resultIndexArray = append(resultIndexArray, value)
+		if value != " " {
+			resultIndexArray = append(resultIndexArray, value)
+		}
 	}
 	return fmt.Sprintf(`
 +---+---+---+
