@@ -28,10 +28,9 @@ Check if there is a winner, if yes, exit, if no, continue from the start
 
 func Play() {
 	// Initialize empty grid
-	g := grid.EmptyGrid()
-	// g := grid.Grid{
-	// 	Cells: [9]string{" ", " ", " ", " ", " ", " ", " ", " ", " "},
-	// }
+	g := grid.Grid{
+		Cells: [9]string{" ", " ", " ", " ", " ", " ", " ", " ", " "},
+	}
 	fmt.Println(g.String())
 
 	for i := 0; i <= 9; i++ {
