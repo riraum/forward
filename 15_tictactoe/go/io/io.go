@@ -36,9 +36,10 @@ func valid(input string) bool {
 		return false
 	}
 
-	for value := range input {
+	for value := range takenCells {
 		if value == intInput {
 			fmt.Println("Already taken")
+			return false
 		}
 	}
 
