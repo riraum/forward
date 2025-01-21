@@ -29,24 +29,26 @@ Check if there is a winner, if yes, exit, if no, continue from the start
 func Play() {
 	// Initialize empty grid
 	g := grid.EmptyGrid()
-
+	i := 0
 	for {
-		i := 0
 		// Output empty grid to help understand the concept
 		// Ask player to select a grid index
 		fmt.Println(g.String())
 		freeCellSlice := g.FreeCells()
 		fmt.Println("Free cells:", freeCellSlice)
 		// User choice
-		PlayerMove := io.Read("What's your choice? (Enter index 0-8 if not taken before)")
-		fmt.Println("You chose", PlayerMove)
-		// Add player marker to correct index of grid
-		g.Cells[PlayerMove] = "X"
-		// Make random computer choice, based on freecells
-		computerMove := random.Choose(freeCellSlice)
-		fmt.Println("Computer chose", computerMove)
-		// Add computer marker to correct index of grid
-		g.Cells[computerMove] = "O"
+		if i%2 == 0 {
+			PlayerMove := io.Read("What's your choice? (Enter index 0-8 if not taken before)")
+			fmt.Println("You chose", PlayerMove)
+			// Add player marker to correct index of grid
+			g.Cells[PlayerMove] = "X"
+		} else {
+			// Make random computer choice, based on freecells
+			computerMove := random.Choose(freeCellSlice)
+			fmt.Println("Computer chose", computerMove)
+			// Add computer marker to correct index of grid
+			g.Cells[computerMove] = "O"
+		}
 		i++
 		//  Break condition in case of winner
 		checkWin, _ := g.IsWin()
