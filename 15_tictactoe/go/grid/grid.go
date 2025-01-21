@@ -2,6 +2,7 @@ package grid
 
 import (
 	"fmt"
+	"strconv"
 )
 
 // Define column and row
@@ -18,6 +19,16 @@ func EmptyGrid() Grid {
 
 // print grid
 func (g Grid) String() string {
+	var resultIndexArray []string
+	for index, value := range g.Cells {
+		// for i := 0; i <= 8; i++ {
+		index := strconv.Itoa(index)
+		if value == " " {
+			resultIndexArray = append(resultIndexArray, index)
+		} else {
+			resultIndexArray = append(resultIndexArray, value)
+		}
+	}
 	return fmt.Sprintf(`
 +---+---+---+
 | %+v | %+v | %+v |
