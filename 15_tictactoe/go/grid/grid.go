@@ -9,6 +9,14 @@ type Grid struct {
 	Cells [9]string
 }
 
+// create empty grid
+func EmptyGrid() Grid {
+	return Grid{
+		Cells: [9]string{" ", " ", " ", " ", " ", " ", " ", " ", " "},
+	}
+}
+
+// print grid
 func (g Grid) String() string {
 	return fmt.Sprintf(`
 +---+---+---+
