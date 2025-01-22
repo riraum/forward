@@ -55,7 +55,7 @@ func Play() {
 			break
 		}
 		// Output grid to visualize result
-		freeCellSlice = g.FreeCells()
+		// freeCellSlice = g.FreeCells()
 		// fmt.Println("Free cells:", freeCellSlice)
 		// fmt.Println(g.String())
 		if len(freeCellSlice) == 0 {

@@ -13,7 +13,7 @@ Break loop if input is on a free cell, else keep looping
 */
 
 // Logic to check if duplicate user input only
-var takenCells []int
+// var takenCells []int
 
 func Read(prompt string, freeCellSlice []int) int {
 	var input string
@@ -24,7 +24,7 @@ func Read(prompt string, freeCellSlice []int) int {
 		if valid(input, freeCellSlice) {
 			validInput, _ := strconv.Atoi(input)
 			// to remove
-			takenCells = append(takenCells, validInput)
+			// takenCells = append(takenCells, validInput)
 			return validInput
 		}
 	}
@@ -50,52 +50,9 @@ func valid(input string, freeCellSlice []int) bool {
 			fmt.Printf("%v not taken\n", value)
 			return true
 		}
-		// if intInput != value {
-		// 	fmt.Printf("%v already taken!\n", value)
-		// 	return false
-		// }
 	}
-	// for value := range takenCells {
-	// 	fmt.Println("Print value", value)
-	// 	fmt.Println("Print intInput", intInput)
-	// 	if value == intInput {
-	// 		fmt.Println("Already taken")
-	// 		return false
-	// 	}
-	// }
-
-	// if intInput >= 0 && intInput <= 8 {
-	// 	return true
-	// }
 
 	fmt.Println("Print invalid input, already taken", intInput)
 	return false
 
 }
-
-/*
-Check user input and return invalid if cell index is already chosen
-
-Existing code, `grid.FreeCells`
-Used in game.go with `freeCellSlice` to print the free cells
-
-Find a way to loop? the user user input through the `freeCellSlice` and return the correct boolean
-
-Can't import and use freeCellSlice from `game.go` due to import cycle.
-
-Can import other package `grid.go`
-*/
-
-// func freeCell(input int) bool {
-// 		g := grid.Grid{
-// 		Cells: [9]string{" ", " ", " ", " ", " ", " ", " ", " ", " "},
-// 	}
-// 	freeCellSlice := g.FreeCells()
-// 	for index, value := range intInput {
-// 		if intInput == freeCellSlice {
-// 			fmt.Println("Freecell error")
-// 			break
-// 		}
-// 	}
-
-// }
