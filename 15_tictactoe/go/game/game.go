@@ -34,10 +34,10 @@ func Play() {
 		// Ask player to select a grid index
 		fmt.Println(g.String())
 		freeCellSlice := g.FreeCells()
-		fmt.Println("Free cells:", freeCellSlice)
+		fmt.Println("Available choices:", freeCellSlice)
 		// User choice
 		if i%2 == 0 {
-			PlayerMove := io.Read("What's your choice? (Enter index 0-8 if not taken before)")
+			PlayerMove := io.Read("What's your choice?")
 			fmt.Println("You chose", PlayerMove)
 			// Add player marker to correct index of grid
 			g.Cells[PlayerMove] = "X"
@@ -49,9 +49,9 @@ func Play() {
 			g.Cells[computerMove] = "O"
 		}
 		//  Break condition in case of winner
-		checkWin, _ := g.IsWin()
-		if checkWin {
-			fmt.Println(g.IsWin())
+		winTrue, winner := g.IsWin()
+		if winTrue {
+			fmt.Println(winner)
 			break
 		}
 		// Output grid to visualize result
