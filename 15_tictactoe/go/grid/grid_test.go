@@ -14,9 +14,9 @@ func TestString(t *testing.T) {
 +---+---+---+
 | X | X | X |
 +---+---+---+
-| 3 | O | X |
+|   | O | X |
 +---+---+---+
-| 6 | X | X |
+|   | X | X |
 +---+---+---+`
 	if test != wantedResult {
 
