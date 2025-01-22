@@ -37,7 +37,7 @@ func Play() {
 		fmt.Println("Free cells:", freeCellSlice)
 		// User choice
 		if i%2 == 0 {
-			PlayerMove := io.Read("What's your choice? (Enter index 0-8 if not taken before)")
+			PlayerMove := io.Read("What's your choice? (Enter index 0-8 if not taken before)", freeCellSlice)
 			fmt.Println("You chose", PlayerMove)
 			// Add player marker to correct index of grid
 			g.Cells[PlayerMove] = "X"

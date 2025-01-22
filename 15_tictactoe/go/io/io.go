@@ -12,23 +12,27 @@ Break loop if input is an integer, else keep looping
 Break loop if input is on a free cell, else keep looping
 */
 
+// Logic to check if duplicate user input only
 var takenCells []int
 
-func Read(prompt string) int {
+func Read(prompt string, freeCellSlice []int) int {
 	var input string
 	for {
 		fmt.Printf("%s > ", prompt)
 		fmt.Scan(&input)
 
-		if valid(input) {
+		if valid(input, freeCellSlice) {
 			validInput, _ := strconv.Atoi(input)
+			// to remove
 			takenCells = append(takenCells, validInput)
 			return validInput
 		}
 	}
 }
 
-func valid(input string) bool {
+func valid(input string, freeCellSlice []int) bool {
+	// debug
+	fmt.Println("Debug freeSlice", freeCellSlice)
 	intInput, err := strconv.Atoi(input)
 	// var value int
 	if err != nil {
@@ -36,18 +40,35 @@ func valid(input string) bool {
 		return false
 	}
 
-	for value := range takenCells {
-		if value == intInput {
-			fmt.Println("Already taken")
-			return false
+	for index, value := range freeCellSlice {
+		// debug
+		fmt.Println("Debug index", index)
+		fmt.Println("Debug value", value)
+		fmt.Println("Debug intInput", intInput)
+		if intInput == value {
+			// debug
+			fmt.Printf("%v not taken\n", value)
+			return true
 		}
+		// if intInput != value {
+		// 	fmt.Printf("%v already taken!\n", value)
+		// 	return false
+		// }
 	}
+	// for value := range takenCells {
+	// 	fmt.Println("Print value", value)
+	// 	fmt.Println("Print intInput", intInput)
+	// 	if value == intInput {
+	// 		fmt.Println("Already taken")
+	// 		return false
+	// 	}
+	// }
 
-	if intInput >= 0 && intInput <= 8 {
-		return true
-	}
+	// if intInput >= 0 && intInput <= 8 {
+	// 	return true
+	// }
 
-	fmt.Println("Print invalid input", intInput)
+	fmt.Println("Print invalid input, already taken", intInput)
 	return false
 
 }
