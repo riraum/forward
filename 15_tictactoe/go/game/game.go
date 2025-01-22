@@ -52,6 +52,7 @@ func Play() {
 		winTrue, winner := g.IsWin()
 		if winTrue {
 			fmt.Println(winner)
+			fmt.Println(g.String())
 			break
 		}
 		// Output grid to visualize result
