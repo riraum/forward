@@ -2,6 +2,7 @@ package game
 
 import (
 	"fmt"
+	"time"
 
 	"github.com/riraum/forward/15_tictactoe/go/grid"
 	"github.com/riraum/forward/15_tictactoe/go/io"
@@ -41,12 +42,16 @@ func Play() {
 			fmt.Println("You chose", PlayerMove)
 			// Add player marker to correct index of grid
 			g.Cells[PlayerMove] = "X"
+			// Slow down output
+			time.Sleep(300 * (time.Millisecond))
 		} else {
 			// Make random computer choice, based on freecells
 			computerMove := random.Choose(freeCellSlice)
 			fmt.Println("Computer chose", computerMove)
 			// Add computer marker to correct index of grid
 			g.Cells[computerMove] = "O"
+			// Slow down output
+			time.Sleep(300 * (time.Millisecond))
 		}
 		//  Break condition in case of winner
 		winTrue, winner := g.IsWin()
