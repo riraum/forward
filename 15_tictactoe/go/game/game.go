@@ -28,59 +28,37 @@ Check if there is a winner, if yes, exit, if no, continue from the start
 
 func Play() {
 	// Initialize empty grid
-	g := grid.Grid{
-		Cells: [9]string{" ", " ", " ", " ", " ", " ", " ", " ", " "},
-	}
-	fmt.Println(g.String())
-	for i := 0; i <= 9; i++ {
-		// Output empty grid to help understand the concept?
+	g := grid.EmptyGrid()
+	for i := 0; ; i++ {
+		// Output empty grid to help understand the concept
 		// Ask player to select a grid index
-		// fmt.Println(g.String())
-		PlayerMove := io.Read("What's your choice? (Enter index 0-8 if not taken before)")
-		fmt.Println("You chose", PlayerMove)
-		// Add player marker to correct index of grid
-		g.Cells[PlayerMove] = "X"
-		// Output grid to visualize choice
 		fmt.Println(g.String())
-		// Check if there is a winner
-		fmt.Println(g.IsWin())
-		//  Break condition in case of winner
-		playerWin, _ := g.IsWin()
-		if playerWin {
-			// fmt.Println(g.String())
-			break
-		}
-		// Get freecells
-		// freeCellSlice := []int{}
-		// freeCellSlice = append(freeCellSlice, g.FreeCells()...)
 		freeCellSlice := g.FreeCells()
 		fmt.Println("Free cells:", freeCellSlice)
-		if len(freeCellSlice) == 0 {
+		// User choice
+		if i%2 == 0 {
+			PlayerMove := io.Read("What's your choice? (Enter index 0-8 if not taken before)")
+			fmt.Println("You chose", PlayerMove)
+			// Add player marker to correct index of grid
+			g.Cells[PlayerMove] = "X"
+		} else {
+			// Make random computer choice, based on freecells
+			computerMove := random.Choose(freeCellSlice)
+			fmt.Println("Computer chose", computerMove)
+			// Add computer marker to correct index of grid
+			g.Cells[computerMove] = "O"
+		}
+		//  Break condition in case of winner
+		checkWin, _ := g.IsWin()
+		if checkWin {
+			fmt.Println(g.IsWin())
 			break
 		}
-		fmt.Println("Free cells:", freeCellSlice)
-		// Break condition in case of no free cell
-		// freeCells := g.FreeCells()
-		if len(freeCellSlice) == 0 {
-			break
-		}
-		// Make random computer choice, based on freecells
-		computerMove := random.Choose(freeCellSlice)
-		fmt.Println("Computer chose", computerMove)
-		// Add computer marker to correct index of grid
-		g.Cells[computerMove] = "O"
 		// Output grid to visualize result
-		fmt.Println(g.String())
-		fmt.Println("Free cells:", freeCellSlice)
+		freeCellSlice = g.FreeCells()
+		// fmt.Println("Free cells:", freeCellSlice)
+		// fmt.Println(g.String())
 		if len(freeCellSlice) == 0 {
-			break
-		}
-		// Check if there is a winner, if yes, exit, if no, continue from the start
-		fmt.Println(g.IsWin())
-		// Break condition in case of winner
-		computerWin, _ := g.IsWin()
-		if computerWin {
-			// fmt.Println(g.String())
 			break
 		}
 	}
