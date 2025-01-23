@@ -27,10 +27,8 @@ func valid(input string, freeCellSlice []int) bool {
 		return false
 	}
 
-	for _, value := range freeCellSlice {
-		if slices.Contains(freeCellSlice, value) {
-			return true
-		}
+	if slices.Contains(freeCellSlice, intInput) {
+		return true
 	}
 
 	fmt.Printf("'%v' is already taken! Try another choice\n", intInput)
