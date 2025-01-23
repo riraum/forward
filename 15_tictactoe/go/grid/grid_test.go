@@ -35,14 +35,14 @@ func TestIsWin(t *testing.T) {
 				Cells: [9]string{"X", "X", "X", "", "O", "X", "", "X", "X"},
 			},
 			wantIsWin:  true,
-			wantWinner: "X",
+			wantWinner: "Human wins!",
 		},
 		{
 			g: Grid{
 				Cells: [9]string{},
 			},
 			wantIsWin:  false,
-			wantWinner: ""},
+			wantWinner: "Computer wins!"},
 	}
 
 	for _, test := range tests {
