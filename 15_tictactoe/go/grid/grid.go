@@ -36,7 +36,7 @@ func (g Grid) String() string {
 | %+v | %+v | %+v |
 +---+---+---+
 | %+v | %+v | %+v |
-+---+---+---+`, g.Cells[0], g.Cells[1], g.Cells[2], g.Cells[3], g.Cells[4], g.Cells[5], g.Cells[6], g.Cells[7], g.Cells[8],
++---+---+---+`, resultIndexArray[0], resultIndexArray[1], resultIndexArray[2], resultIndexArray[3], resultIndexArray[4], resultIndexArray[5], resultIndexArray[6], resultIndexArray[7], resultIndexArray[8],
 	)
 }
 
