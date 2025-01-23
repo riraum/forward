@@ -49,11 +49,17 @@ func (g Grid) checkLine(x, y, z int) (bool, string) {
 // Return column of cells based and do the same as with the row
 func (g Grid) IsWin() (bool, string) {
 	// check horizontal
-	g.checkLine(0, 1, 2)
+	if win, winner := g.checkLine(0, 1, 2); win {
+		return win, winner
+	}
 	//  check vertical
-	g.checkLine(0, 3, 6)
+	if win, winner := g.checkLine(0, 3, 6); win {
+		return win, winner
+	}
 	// check diagonally
-	g.checkLine(0, 4, 8)
+	if win, winner := g.checkLine(0, 4, 8); win {
+		return win, winner
+	}
 	return false, "No winner"
 }
 
