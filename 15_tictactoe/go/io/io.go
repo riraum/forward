@@ -2,6 +2,7 @@ package io
 
 import (
 	"fmt"
+	"slices"
 	"strconv"
 )
 
@@ -27,7 +28,7 @@ func valid(input string, freeCellSlice []int) bool {
 	}
 
 	for _, value := range freeCellSlice {
-		if intInput == value {
+		if slices.Contains(freeCellSlice, value) {
 			return true
 		}
 	}
