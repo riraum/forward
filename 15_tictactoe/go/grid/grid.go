@@ -29,6 +29,21 @@ func (g Grid) String() string {
 	)
 }
 
+func (g Grid) checkLine(x, y, z int) (bool, string) {
+	computerWin := "Computer wins!"
+	humanWin := "Human wins!"
+
+	if g.Cells[x] != g.Cells[y] || g.Cells[x] != g.Cells[z] {
+		return false, ""
+	}
+
+	if g.Cells[x] == "X" {
+		return true, humanWin
+	}
+
+	return true, computerWin
+}
+
 // Create variable for empty cell, filled with X and with O
 // Return row of cells based on slice length, target index of slice and assign one of the 3 cell types
 // Return column of cells based and do the same as with the row
