@@ -31,6 +31,6 @@ func valid(input string, freeCellSlice []int) bool {
 		return true
 	}
 
-	fmt.Printf("'%v' is already taken! Try another choice\n", intInput)
+	fmt.Printf("'%d' is already taken! Try another choice\n", intInput)
 	return false
 }
