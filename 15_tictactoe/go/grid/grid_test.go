@@ -25,6 +25,8 @@ func TestString(t *testing.T) {
 }
 
 func TestIsWin(t *testing.T) {
+	computerWin := "Computer wins!"
+	humanWin := "Human wins!"
 	tests := []struct {
 		g          Grid
 		wantIsWin  bool
@@ -35,14 +37,36 @@ func TestIsWin(t *testing.T) {
 				Cells: [9]string{"X", "X", "X", "", "O", "X", "", "X", "X"},
 			},
 			wantIsWin:  true,
-			wantWinner: "Human wins!",
+			wantWinner: humanWin,
 		},
 		{
 			g: Grid{
 				Cells: [9]string{},
 			},
 			wantIsWin:  false,
-			wantWinner: "Computer wins!"},
+			wantWinner: computerWin,
+		},
+		{
+			g: Grid{
+				Cells: [9]string{"O", " ", "X", "O", " ", "X", "O", "X", " "},
+			},
+			wantIsWin:  true,
+			wantWinner: computerWin,
+		},
+		{
+			g: Grid{
+				Cells: [9]string{"X", " ", "O", " ", "X", " ", "O", " ", "X"},
+			},
+			wantIsWin:  true,
+			wantWinner: humanWin,
+		},
+		{
+			g: Grid{
+				Cells: [9]string{"X", " ", " ", " ", " ", " ", " ", " ", " "},
+			},
+			wantIsWin:  false,
+			wantWinner: "No winner",
+		},
 	}
 
 	for _, test := range tests {
