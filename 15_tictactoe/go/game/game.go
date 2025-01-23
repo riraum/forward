@@ -38,7 +38,7 @@ func Play() {
 		fmt.Println("Available choices:", freeCellSlice)
 		// User choice
 		if i%2 == 0 {
-			PlayerMove := io.Read("What's your choice?")
+			PlayerMove := io.Read("What's your choice?", freeCellSlice)
 			fmt.Println("You chose", PlayerMove)
 			// Add player marker to correct index of grid
 			g.Cells[PlayerMove] = "X"
@@ -61,7 +61,7 @@ func Play() {
 			break
 		}
 		// Output grid to visualize result
-		freeCellSlice = g.FreeCells()
+		// freeCellSlice = g.FreeCells()
 		// fmt.Println("Free cells:", freeCellSlice)
 		// fmt.Println(g.String())
 		if len(freeCellSlice) == 0 {
