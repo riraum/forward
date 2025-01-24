@@ -52,7 +52,15 @@ func (g Grid) checkLine(x, y, z int) (bool, string) {
 		return true, humanWin
 	}
 
-	return true, computerWin
+	if g.Cells[x] != g.Cells[y] || g.Cells[x] != g.Cells[z] {
+		return false, ""
+	}
+
+	if g.Cells[x] == "O" {
+		return true, computerWin
+	}
+
+	return false, ""
 }
 
 // Create variable for empty cell, filled with X and with O
@@ -63,12 +71,27 @@ func (g Grid) IsWin() (bool, string) {
 	if win, winner := g.checkLine(0, 1, 2); win {
 		return win, winner
 	}
+	if win, winner := g.checkLine(3, 4, 5); win {
+		return win, winner
+	}
+	if win, winner := g.checkLine(6, 7, 8); win {
+		return win, winner
+	}
 	//  check vertical
 	if win, winner := g.checkLine(0, 3, 6); win {
 		return win, winner
 	}
+	if win, winner := g.checkLine(1, 4, 7); win {
+		return win, winner
+	}
+	if win, winner := g.checkLine(2, 5, 8); win {
+		return win, winner
+	}
 	// check diagonally
 	if win, winner := g.checkLine(0, 4, 8); win {
+		return win, winner
+	}
+	if win, winner := g.checkLine(2, 4, 6); win {
 		return win, winner
 	}
 	return false, "No winner"
