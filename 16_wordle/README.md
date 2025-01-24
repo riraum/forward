@@ -11,19 +11,22 @@ guide you.
 
 - E.g. display:
 
-    ```shell
-    1 > T E S T A
-          🟨
-    2 > P L A N T
+  ```shell
+  1 > T E S T A
         🟨
-    3 > H U M I D
-    4 > S C O R E
-          🟨    🟩
-    5 > C R E P E
-        🟩🟩🟩🟩🟩
+  2 > X X Y Y Z
+  Invalid word!
 
-    You won!
-    ```
+  2 > P L A N T
+      🟨
+  3 > H U M I D
+  4 > S C O R E
+        🟨    🟩
+  5 > C R E P E
+      🟩🟩🟩🟩🟩
+
+  You won!
+  ```
 
 ## Stretch goals
 
