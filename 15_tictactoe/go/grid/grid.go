@@ -18,8 +18,6 @@ func EmptyGrid() Grid {
 }
 
 // print grid
-// loop for range to check if cell is free, if it is print index, if it's taken, print X/O
-
 func (g Grid) String() string {
 	var resultIndexArray []string
 	for index, value := range g.Cells {
@@ -42,53 +40,59 @@ func (g Grid) String() string {
 	)
 }
 
+func (g Grid) checkLine(x, y, z int) (bool, string) {
+	computerWin := "Computer wins!"
+	humanWin := "Human wins!"
+
+	if g.Cells[x] != g.Cells[y] || g.Cells[x] != g.Cells[z] {
+		return false, ""
+	}
+
+	if g.Cells[x] == "X" {
+		return true, humanWin
+	}
+
+	if g.Cells[x] != g.Cells[y] || g.Cells[x] != g.Cells[z] {
+		return false, ""
+	}
+
+	if g.Cells[x] == "O" {
+		return true, computerWin
+	}
+
+	return false, ""
+}
+
 // Create variable for empty cell, filled with X and with O
 // Return row of cells based on slice length, target index of slice and assign one of the 3 cell types
 // Return column of cells based and do the same as with the row
-
 func (g Grid) IsWin() (bool, string) {
-	// 1st row top to bottom horizontally
-	if g.Cells[0] == "X" && g.Cells[1] == "X" && g.Cells[2] == "X" ||
-		// 2nd row top to bottom horizontally
-		g.Cells[3] == "X" && g.Cells[4] == "X" && g.Cells[5] == "X" ||
-		// 3rd row top to bottom horizontally
-		g.Cells[6] == "X" && g.Cells[7] == "X" && g.Cells[8] == "X" ||
-		// 1st row top to bottom diagonally left to right
-		g.Cells[0] == "X" && g.Cells[4] == "X" && g.Cells[8] == "X" ||
-		// 2nd row top to bottom diagonally right to left
-		g.Cells[2] == "X" && g.Cells[4] == "X" && g.Cells[6] == "X" {
-		return true, "Human won"
+	// check horizontal
+	if win, winner := g.checkLine(0, 1, 2); win {
+		return win, winner
 	}
-
-	// 1st row top to bottom vertically
-	if g.Cells[0] == "X" && g.Cells[3] == "X" && g.Cells[6] == "X" ||
-		// 2nd row top to bottom vertically
-		g.Cells[1] == "X" && g.Cells[4] == "X" && g.Cells[7] == "X" ||
-		// 3rd row top to bottom vertically
-		g.Cells[2] == "X" && g.Cells[5] == "X" && g.Cells[8] == "X" {
-		return true, "Human won"
+	if win, winner := g.checkLine(3, 4, 5); win {
+		return win, winner
 	}
-
-	// 1st row top to bottom horizontally
-	if g.Cells[0] == "O" && g.Cells[1] == "O" && g.Cells[2] == "O" ||
-		// 2nd row top to bottom horizontally
-		g.Cells[3] == "O" && g.Cells[4] == "O" && g.Cells[5] == "O" ||
-		// 3rd row top to bottom horizontally
-		g.Cells[6] == "O" && g.Cells[7] == "O" && g.Cells[8] == "O" ||
-		// 1st row top to bottom diagonally left to right
-		g.Cells[0] == "O" && g.Cells[4] == "O" && g.Cells[8] == "O" ||
-		// 2nd row top to bottom diagonally right to left
-		g.Cells[2] == "O" && g.Cells[4] == "O" && g.Cells[6] == "O" {
-		return true, "Computer won"
+	if win, winner := g.checkLine(6, 7, 8); win {
+		return win, winner
 	}
-
-	// 1st row top to bottom vertically
-	if g.Cells[0] == "O" && g.Cells[3] == "O" && g.Cells[6] == "O" ||
-		// 2nd row top to bottom vertically
-		g.Cells[1] == "O" && g.Cells[4] == "O" && g.Cells[7] == "O" ||
-		// 3rd row top to bottom vertically
-		g.Cells[2] == "O" && g.Cells[5] == "O" && g.Cells[8] == "O" {
-		return true, "Computer Won"
+	//  check vertical
+	if win, winner := g.checkLine(0, 3, 6); win {
+		return win, winner
+	}
+	if win, winner := g.checkLine(1, 4, 7); win {
+		return win, winner
+	}
+	if win, winner := g.checkLine(2, 5, 8); win {
+		return win, winner
+	}
+	// check diagonally
+	if win, winner := g.checkLine(0, 4, 8); win {
+		return win, winner
+	}
+	if win, winner := g.checkLine(2, 4, 6); win {
+		return win, winner
 	}
 	return false, "No winner"
 }

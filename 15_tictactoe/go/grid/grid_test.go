@@ -25,6 +25,8 @@ func TestString(t *testing.T) {
 }
 
 func TestIsWin(t *testing.T) {
+	computerWin := "Computer wins!"
+	humanWin := "Human wins!"
 	tests := []struct {
 		g          Grid
 		wantIsWin  bool
@@ -32,17 +34,99 @@ func TestIsWin(t *testing.T) {
 	}{
 		{
 			g: Grid{
-				Cells: [9]string{"X", "X", "X", "", "O", "X", "", "X", "X"},
+				Cells: [9]string{
+					"X", "O", "X",
+					" ", "O", "X",
+					" ", "X", "X",
+				},
 			},
 			wantIsWin:  true,
-			wantWinner: "X",
+			wantWinner: humanWin,
 		},
 		{
 			g: Grid{
 				Cells: [9]string{},
 			},
 			wantIsWin:  false,
-			wantWinner: ""},
+			wantWinner: computerWin,
+		},
+		{
+			g: Grid{
+				Cells: [9]string{
+					"O", " ", "X",
+					"O", " ", "X",
+					"O", "X", " ",
+				},
+			},
+			wantIsWin:  true,
+			wantWinner: computerWin,
+		},
+		{
+			g: Grid{
+				Cells: [9]string{
+					"X", "O", "X",
+					"X", "O", "X",
+					"X", "X", " ",
+				},
+			},
+			wantIsWin:  true,
+			wantWinner: computerWin,
+		},
+		{
+			g: Grid{
+				Cells: [9]string{
+					"O", " ", "X",
+					"O", "O", "X",
+					"X", "X", "O",
+				},
+			},
+			wantIsWin:  true,
+			wantWinner: computerWin,
+		},
+		{
+			g: Grid{
+				Cells: [9]string{
+					"X", " ", "O",
+					" ", "X", " ",
+					"O", " ", "X",
+				},
+			},
+			wantIsWin:  true,
+			wantWinner: humanWin,
+		},
+		{
+			g: Grid{
+				Cells: [9]string{
+					"O", "O", "O",
+					" ", "X", " ",
+					"O", " ", "X",
+				},
+			},
+			wantIsWin:  true,
+			wantWinner: humanWin,
+		},
+		{
+			g: Grid{
+				Cells: [9]string{
+					"X", "X", "X",
+					" ", " ", " ",
+					"O", " ", "X",
+				},
+			},
+			wantIsWin:  true,
+			wantWinner: humanWin,
+		},
+		{
+			g: Grid{
+				Cells: [9]string{
+					"X", "O", "X",
+					"X", "X", "O",
+					"O", "X", "O",
+				},
+			},
+			wantIsWin:  false,
+			wantWinner: "No winner",
+		},
 	}
 
 	for _, test := range tests {
