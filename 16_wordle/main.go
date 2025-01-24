@@ -12,10 +12,10 @@ func main() {
 		fmt.Scan(&input)
 
 		if input == "Test" {
-			fmt.Print("Correct!\n")
+			fmt.Print("Correct word!\n")
 			break
 		} else {
-			fmt.Print("Not correct, try again!\n")
+			fmt.Print("Not correct word, try again!\n")
 		}
 	}
 }
