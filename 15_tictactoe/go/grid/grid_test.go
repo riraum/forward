@@ -119,9 +119,9 @@ func TestIsWin(t *testing.T) {
 		{
 			g: Grid{
 				Cells: [9]string{
-					"X", " ", " ",
-					" ", " ", " ",
-					" ", " ", " ",
+					"X", "O", "X",
+					"X", "X", "O",
+					"O", "X", "O",
 				},
 			},
 			wantIsWin:  false,
