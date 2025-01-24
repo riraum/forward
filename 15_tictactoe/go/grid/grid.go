@@ -63,9 +63,6 @@ func (g Grid) checkLine(x, y, z int) (bool, string) {
 	return false, ""
 }
 
-// Create variable for empty cell, filled with X and with O
-// Return row of cells based on slice length, target index of slice and assign one of the 3 cell types
-// Return column of cells based and do the same as with the row
 func (g Grid) IsWin() (bool, string) {
 	// check horizontal
 	if win, winner := g.checkLine(0, 1, 2); win {
@@ -101,7 +98,6 @@ func (g Grid) FreeCells() []int {
 	var resultIndexArray []int
 
 	for index, value := range g.Cells {
-		// for i := 0; i <= 8; i++ {
 		if value == " " {
 			resultIndexArray = append(resultIndexArray, index)
 		}
