@@ -36,8 +36,12 @@ func Play() {
 		fmt.Println(g.String())
 		freeCellSlice := g.FreeCells()
 		fmt.Println("Available choices:", freeCellSlice)
+		// Tie check
 		if len(freeCellSlice) == 0 {
-			fmt.Println(g.IsWin())
+			winTrue, winner := g.IsWin()
+			if !winTrue {
+				fmt.Println(winner)
+			}
 			break
 		}
 		// User choice
