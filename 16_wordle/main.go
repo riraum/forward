@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"fmt"
 	"log"
 	"os"
@@ -25,7 +26,9 @@ func main() {
 	}
 	os.Stdout.Write(data)
 	// debug
-	fmt.Print(data)
+	// fmt.Print(data)
+	// separate bytes
+	fmt.Printf("%q\n", bytes.Split([]byte(data), []byte("\n")))
 }
 
 // debug
