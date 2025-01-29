@@ -41,7 +41,7 @@ func main() {
 	// fmt.Printf("%q\n", bytes.Split([]byte(data), []byte("\n")))
 	// fmt.Println(bytes.Contains([]byte("brown"), formattedData))
 	for i := 0; ; i++ {
-		fmt.Printf("Enter 5 digit word\n>")
+		fmt.Printf("Enter 5 letter word\n>")
 		fmt.Scan(&input)
 		// check if word on list
 		if isValid(input, words) {
@@ -82,7 +82,7 @@ func isValid(word []byte, validWords [][]byte) bool {
 		}
 	}
 	// debug
-	fmt.Print("Invalid word!\n")
+	fmt.Print("Invalid word, try again!\n")
 	return false
 }
 
