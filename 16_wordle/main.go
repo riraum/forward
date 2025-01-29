@@ -16,17 +16,12 @@ import (
 
 func main() {
 	var input []byte
-	// var wl []string
-	// wl = word_list.wordSlice
-	// Read word list
+
 	data, err := os.ReadFile("word_list/word_list")
 	if err != nil {
 		log.Fatal(err)
 	}
 	// os.Stdout.Write(data)
-	// debug
-	// fmt.Print(data)
-	// separate bytes
 	words := bytes.Split([]byte(data), []byte("\n"))
 	// debug
 	// fmt.Printf("%q\n", formattedData)
