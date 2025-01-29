@@ -62,8 +62,8 @@ func isValid(word []byte, validWords [][]byte) bool {
 	return false
 }
 
-func isChosen(word, chosen []byte) bool {
-	if bytes.Equal(word, chosen) {
+func isChosen(word, chosenWord []byte) bool {
+	if bytes.Equal(word, chosenWord) {
 		fmt.Print("Chosen word, yay!\n")
 		return true
 	}
