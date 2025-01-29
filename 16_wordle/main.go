@@ -34,11 +34,13 @@ func main() {
 		fmt.Printf("Enter 5 letter word\n>")
 		fmt.Scan(&input)
 		// check if word on list
-		if isValid(input, words) {
-			if isChosen(input, chosenWordArray) {
-				break
-			}
+		if isValid(input, words) && isChosen(input, chosenWordArray) {
+			break
 		}
+		if isValid(input, words) && !isChosen(input, chosenWordArray) {
+			fmt.Print("But not chosen word, try again!\n")
+		}
+
 	}
 }
 
