@@ -43,40 +43,48 @@ func main() {
 	for i := 0; ; i++ {
 		fmt.Printf("Enter 5 digit word\n>")
 		fmt.Scan(&input)
-
-		for _, value := range words {
-			// bytes.Equal(value, input)
-			// if valid(input, word_list.wordSlice) {
-			if bytes.Equal(value, input) {
-				fmt.Print("Correct word!\n")
-				// if valid(input, word_list.wordSlice) {
-				break
-			}
-			// debug
-			// fmt.Print("Not correct word!\n")
-			// range loop
-			// break
+		// check if word on list
+		if isValid(input, words) {
+			break
 		}
-		// input loop
+
+		// for _, value := range words {
+		// 	// bytes.Equal(value, input)
+		// 	// if valid(input, word_list.wordSlice) {
+		// 	if bytes.Equal(value, input) {
+		// 		fmt.Print("Correct word!\n")
+		// 		// if valid(input, word_list.wordSlice) {
+		// 		break
+		// 	}
+		// debug
+		// fmt.Print("Not correct word!\n")
+		// range loop
 		// break
 	}
-	// end main
+	// input loop
+	// break
 }
 
-// func equal(input [][]byte, value []byte) bool {
-// 	for _, value := range formattedData {
-// 		bytes.Equal(value, input)
-// 		// if valid(input, word_list.wordSlice) {
-// 		if bytes.Equal(value, input) {
-// 			fmt.Print("Correct word!\n")
-// 			// if valid(input, word_list.wordSlice) {
-// 			return true
-// 		} else {
-// 			fmt.Print("Not correct word, try again!\n")
-// 			return false
-// 		}
-// 	}
+// end main
 // }
+
+func isValid(word []byte, validWords [][]byte) bool {
+	// if slices.Contains(validWords, word) {
+	// 	return true
+	// }
+	for _, value := range validWords {
+		// bytes.Equal(word, input)
+		// if valid(input, word_list.wordSlice) {
+		if bytes.Equal(word, value) {
+			fmt.Print("Valid word!\n")
+			// if valid(input, word_list.wordSlice) {
+			return true
+		}
+	}
+	// debug
+	fmt.Print("Invalid word!\n")
+	return false
+}
 
 //
 // 	for _, value := range formattedData {
