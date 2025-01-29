@@ -14,14 +14,6 @@ import (
 // 	return false
 // }
 
-// func (slice []string) checkValid(input) bool {
-// 	for value := range slice {
-// 		if input ==  value {
-// 			return true
-// 		}
-// 	}
-// }
-
 func main() {
 	var input []byte
 	// var wl []string
@@ -47,26 +39,8 @@ func main() {
 		if isValid(input, words) {
 			break
 		}
-
-		// for _, value := range words {
-		// 	// bytes.Equal(value, input)
-		// 	// if valid(input, word_list.wordSlice) {
-		// 	if bytes.Equal(value, input) {
-		// 		fmt.Print("Correct word!\n")
-		// 		// if valid(input, word_list.wordSlice) {
-		// 		break
-		// 	}
-		// debug
-		// fmt.Print("Not correct word!\n")
-		// range loop
-		// break
 	}
-	// input loop
-	// break
 }
-
-// end main
-// }
 
 func isValid(word []byte, validWords [][]byte) bool {
 	// if slices.Contains(validWords, word) {
@@ -85,57 +59,3 @@ func isValid(word []byte, validWords [][]byte) bool {
 	fmt.Print("Invalid word, try again!\n")
 	return false
 }
-
-//
-// 	for _, value := range formattedData {
-// 		if bytes.Equal(value, input) {
-// 			// if valid(input, word_list.wordSlice) {
-// 			break
-// 		} else {
-// 			fmt.Print("Not correct word, try again!\n")
-// 			// break
-// 		}
-// 		// range loop
-// 		fmt.Print("Correct word!\n")
-// 		break
-// 	}
-// 	// input loop
-// }
-
-// debug
-// 	scanner := bufio.NewScanner(strings.NewReader(string(data)))
-// 	scanner.Split(bufio.ScanWords)
-// 	count := 0
-// 	for scanner.Scan() {
-// 		count++
-// 	}
-
-// 	if err := scanner.Err(); err != nil {
-// 		fmt.Println(os.Stderr, "reading input:", err)
-// 	}
-// 	fmt.Printf("%d\n", count)
-// }
-
-// for i := 0; ; i++ {
-// 	fmt.Printf("Enter 5 digit word\n>")
-// 	fmt.Scan(&input)
-
-// for value, index := range wordSlice {
-// 	if input == value {
-// 		// if valid(input, word_list.wordSlice) {
-// 		fmt.Print("Correct word!\n")
-// 		break
-// 	} else {
-// 		fmt.Print("Not correct word, try again!\n")
-// 	}
-// }
-
-// func (slice []string) checkValid(input) bool {
-// 	for value := range slice {
-// 		if input ==  value {
-// 			return true
-// 		}
-// 	}
-// }
-// }
-// }
