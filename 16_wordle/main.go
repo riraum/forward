@@ -35,7 +35,7 @@ func main() {
 	// debug
 	// fmt.Print(data)
 	// separate bytes
-	formattedData := bytes.Split([]byte(data), []byte("\n"))
+	words := bytes.Split([]byte(data), []byte("\n"))
 	// debug
 	// fmt.Printf("%q\n", formattedData)
 	// fmt.Printf("%q\n", bytes.Split([]byte(data), []byte("\n")))
@@ -44,7 +44,7 @@ func main() {
 		fmt.Printf("Enter 5 digit word\n>")
 		fmt.Scan(&input)
 
-		for _, value := range formattedData {
+		for _, value := range words {
 			// bytes.Equal(value, input)
 			// if valid(input, word_list.wordSlice) {
 			if bytes.Equal(value, input) {
