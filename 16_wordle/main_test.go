@@ -14,49 +14,49 @@ func TestIsValid(t *testing.T) {
 	}
 	words := bytes.Split([]byte(data), []byte("\n"))
 
-	word1 := "brown"
-	word1Arr := []byte(word1)
-	word2 := "aaaa"
-	word2Arr := []byte(word2)
+	word1Str := "brown"
+	word1 := []byte(word1Str)
+	word2Str := "aaaa"
+	word2 := []byte(word2Str)
 
 	tests := []struct {
-		wordArr []byte
-		words   [][]byte
-		want    bool
+		word  []byte
+		words [][]byte
+		want  bool
 	}{
-		{word1Arr, words, true},
-		{word2Arr, words, false},
+		{word1, words, true},
+		{word2, words, false},
 	}
 	for _, test := range tests {
-		got := isValid(test.wordArr, test.words)
+		got := isValid(test.word, test.words)
 
 		if got != test.want {
-			t.Errorf("valid = %v, want %v", test.wordArr, test.want)
+			t.Errorf("valid = %v, want %v", test.word, test.want)
 		}
 	}
 }
 
 func TestIsChosen(t *testing.T) {
-	word1 := "brown"
-	word1Arr := []byte(word1)
-	word2 := "aaaa"
-	word2Arr := []byte(word2)
+	word1Str := "brown"
+	word1 := []byte(word1Str)
+	word2Str := "aaaa"
+	word2 := []byte(word2Str)
 
-	chosenWord := word1Arr
+	chosenWord := word1
 
 	tests := []struct {
-		wordArr    []byte
+		word       []byte
 		chosenWord []byte
 		want       bool
 	}{
-		{word1Arr, chosenWord, true},
-		{word2Arr, chosenWord, false},
+		{word1, chosenWord, true},
+		{word2, chosenWord, false},
 	}
 	for _, test := range tests {
-		got := isChosen(test.wordArr, chosenWord)
+		got := isChosen(test.word, chosenWord)
 
 		if got != test.want {
-			t.Errorf("chosen = %v, want %v", test.wordArr, test.want)
+			t.Errorf("chosen = %v, want %v", test.word, test.want)
 		}
 	}
 }

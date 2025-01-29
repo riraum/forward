@@ -10,23 +10,23 @@ import (
 func main() {
 	var input []byte
 
-	data, err := os.ReadFile("word_list/word_list")
+	rawWordList, err := os.ReadFile("word_list/word_list")
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	words := bytes.Split([]byte(data), []byte("\n"))
-	chosenWord := "brown"
-	chosenWordArray := []byte(chosenWord)
+	validWords := bytes.Split([]byte(rawWordList), []byte("\n"))
+	chosenWordStr := "brown"
+	chosenWord := []byte(chosenWordStr)
 
 	for i := 0; ; i++ {
 		fmt.Printf("Enter 5 letter word\n>")
 		fmt.Scan(&input)
-		if isChosen(input, chosenWordArray) {
+		if isChosen(input, chosenWord) {
 			fmt.Print("Chosen word, yay!\n")
 			break
 		}
-		if isValid(input, words) {
+		if isValid(input, validWords) {
 			fmt.Print("Valid word, but not chosen word, try again!\n")
 			continue
 		}
