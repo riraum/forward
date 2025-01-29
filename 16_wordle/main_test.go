@@ -14,10 +14,8 @@ func TestIsValid(t *testing.T) {
 	}
 	words := bytes.Split([]byte(data), []byte("\n"))
 
-	word1Str := "brown"
-	word1 := []byte(word1Str)
-	word2Str := "aaaa"
-	word2 := []byte(word2Str)
+	word1 := []byte("brown")
+	word2 := []byte("aaaa")
 
 	tests := []struct {
 		word  []byte
@@ -37,10 +35,8 @@ func TestIsValid(t *testing.T) {
 }
 
 func TestIsChosen(t *testing.T) {
-	word1Str := "brown"
-	word1 := []byte(word1Str)
-	word2Str := "aaaa"
-	word2 := []byte(word2Str)
+	word1 := []byte("brown")
+	word2 := []byte("aaaa")
 
 	chosenWord := word1
 
