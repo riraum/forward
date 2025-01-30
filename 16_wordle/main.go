@@ -17,19 +17,12 @@ func main() {
 	}
 
 	validWords := bytes.Split([]byte(rawWordList), []byte("\n"))
-	// chosenWordStr := "brown"
-	// chosenWord := []byte(chosenWordStr)
-
-	randomInt := rand.IntN(len(validWords))
-	fmt.Println(len(validWords))
-	fmt.Println(randomInt)
-	randomChosenWord := validWords[randomInt]
-	fmt.Println(string(randomChosenWord))
+	chosenWord := randomWord(validWords)
 
 	for i := 0; ; i++ {
 		fmt.Printf("Enter 5 letter word\n>")
 		fmt.Scan(&input)
-		if isChosen(input, randomChosenWord) {
+		if isChosen(input, chosenWord) {
 			fmt.Print("Chosen word, yay!\n")
 			break
 		}
@@ -54,7 +47,9 @@ func isChosen(word, chosenWord []byte) bool {
 	return bytes.Equal(word, chosenWord)
 }
 
-// func randomWord(number int, validWords [][]byte) []byte {
-// 	// random
-
-// }
+func randomWord(validWords [][]byte) []byte {
+	randomInt := rand.IntN(len(validWords))
+	// debug
+	fmt.Println(string(validWords[randomInt]))
+	return validWords[randomInt]
+}
