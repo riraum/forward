@@ -5,18 +5,14 @@ import (
 )
 
 func TestIsValid(t *testing.T) {
-	word1 := []byte("brown")
-	word2 := []byte("aaaa")
-	word3 := []byte("possa")
-
-	words := [][]byte{word1, word3}
+	words := [][]byte{[]byte("brown"), []byte("possa")}
 
 	tests := []struct {
 		word []byte
 		want bool
 	}{
-		{word1, true},
-		{word2, false},
+		{[]byte("brown"), true},
+		{[]byte("aaaa"), false},
 	}
 	for _, test := range tests {
 		got := isValid(test.word, words)
@@ -28,20 +24,16 @@ func TestIsValid(t *testing.T) {
 }
 
 func TestIsChosen(t *testing.T) {
-	word1 := []byte("brown")
-	word2 := []byte("aaaa")
-
-	chosenWord := word1
-
 	tests := []struct {
-		word []byte
-		want bool
+		word       []byte
+		chosenWord []byte
+		want       bool
 	}{
-		{word1, true},
-		{word2, false},
+		{word: []byte("brown"), chosenWord: []byte("brown"), want: true},
+		{word: []byte("aaaa"), chosenWord: []byte("brown"), want: false},
 	}
 	for _, test := range tests {
-		got := isChosen(test.word, chosenWord)
+		got := isChosen(test.word, []byte("brown"))
 
 		if got != test.want {
 			t.Errorf("chosen = %v, want %v", test.word, test.want)
