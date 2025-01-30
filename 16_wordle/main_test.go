@@ -1,21 +1,20 @@
 package main
 
 import (
-	"bytes"
-	"log"
-	"os"
 	"testing"
 )
 
 func TestIsValid(t *testing.T) {
-	data, err := os.ReadFile("word_list/word_list")
-	if err != nil {
-		log.Fatal(err)
-	}
-	words := bytes.Split([]byte(data), []byte("\n"))
+	// data, err := os.ReadFile("word_list/word_list")
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
 
 	word1 := []byte("brown")
 	word2 := []byte("aaaa")
+	word3 := []byte("possa")
+
+	words := [][]byte{word1, word3}
 
 	tests := []struct {
 		word  []byte
