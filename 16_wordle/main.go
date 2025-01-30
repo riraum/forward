@@ -8,6 +8,10 @@ import (
 	"os"
 )
 
+type List struct {
+	words [][]byte
+}
+
 func main() {
 	var input []byte
 
@@ -17,7 +21,21 @@ func main() {
 	}
 
 	validWords := bytes.Split([]byte(rawWordList), []byte("\n"))
-	chosenWord := randomWord(validWords)
+	// debug
+	// fmt.Println(validWords)
+
+	// chosenWord := randomWord(validWords)
+
+	validWordsStruct := List{
+		words: validWords,
+	}
+	// debug
+	// fmt.Println(validWordsStruct)
+	// fmt.Println(string(validWordsStruct.words[0]))
+
+	chosenWord := randomWord(validWordsStruct.words)
+	// debug
+	// fmt.Println(string(chosenWord))
 
 	for i := 0; ; i++ {
 		fmt.Printf("Enter 5 letter word\n>")
@@ -32,6 +50,15 @@ func main() {
 		}
 		fmt.Print("Invalid word, try again!\n")
 	}
+}
+
+func (l List) IsValidList(word []byte) bool {
+	for _, value := range l.words {
+		if bytes.Equal(word, value) {
+			return true
+		}
+	}
+	return false
 }
 
 func isValid(word []byte, validWords [][]byte) bool {
