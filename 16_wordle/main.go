@@ -20,13 +20,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	validWords := bytes.Split([]byte(rawWordList), []byte("\n"))
+	wordList := bytes.Split([]byte(rawWordList), []byte("\n"))
 
-	validWordsStruct := List{
-		words: validWords,
+	validWords := List{
+		words: wordList,
 	}
 
-	chosenWord := validWordsStruct.Random()
+	chosenWord := validWords.Random()
 	// debug
 	fmt.Println(string(chosenWord))
 
@@ -39,7 +39,7 @@ func main() {
 			break
 		}
 
-		if validWordsStruct.Contains(input) {
+		if validWords.Contains(input) {
 			fmt.Print("Valid word, but not chosen word, try again!\n")
 			continue
 		}
