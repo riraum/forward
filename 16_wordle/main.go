@@ -33,7 +33,7 @@ func main() {
 	// fmt.Println(validWordsStruct)
 	// fmt.Println(string(validWordsStruct.words[0]))
 
-	chosenWord := validWordsStruct.Random(validWordsStruct.words)
+	chosenWord := validWordsStruct.Random()
 	// debug
 	fmt.Println(string(chosenWord))
 
@@ -45,7 +45,7 @@ func main() {
 		fmt.Printf("Enter 5 letter word\n>")
 		fmt.Scan(&input)
 
-		if validWordsStruct.Chosen(input, chosenWord) {
+		if bytes.Equal(input, chosenWord) {
 			fmt.Print("Chosen word, yay!\n")
 			break
 		}
@@ -89,20 +89,24 @@ func (l List) Contains(word []byte) bool {
 // 	return bytes.Equal(word, )
 // }
 
-func (l List) Chosen(word, chosenWord []byte) bool {
-	return bytes.Equal(word, chosenWord)
-}
+// func (l List) Chosen(word, chosenWord []byte) bool {
+// 	return bytes.Equal(word, chosenWord)
+// }
 
 // func isChosen(word, chosenWord []byte) bool {
 // 	return bytes.Equal(word, chosenWord)
 // }
 
-func (l List) Random(validWords [][]byte) []byte {
-	randomInt := rand.IntN(len(validWords))
-	// debug
-	// fmt.Println(validWords[randomInt])
-	return validWords[randomInt]
+func (l List) Random() []byte {
+	return l.words[rand.IntN(len(l.words))]
 }
+
+// func (l List) Random(validWords [][]byte) []byte {
+// 	randomInt := rand.IntN(len(validWords))
+// 	// debug
+// 	// fmt.Println(validWords[randomInt])
+// 	return validWords[randomInt]
+// }
 
 // func randomWord(validWords [][]byte) []byte {
 // 	randomInt := rand.IntN(len(validWords))
