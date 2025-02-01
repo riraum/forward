@@ -15,16 +15,18 @@ type List struct {
 func main() {
 	var input []byte
 
-	rawWordList, err := os.ReadFile("word_list/word_list")
-	if err != nil {
-		log.Fatal(err)
-	}
+	// rawWordList, err := os.ReadFile("word_list/word_list")
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
 
-	wordList := bytes.Split([]byte(rawWordList), []byte("\n"))
+	// wordList := bytes.Split([]byte(rawWordList), []byte("\n"))
 
-	validWords := List{
-		words: wordList,
-	}
+	// validWords := List{
+	// 	words: wordList,
+	// }
+
+	validWords, _ := NewList("word_list/word_list")
 
 	chosenWord := validWords.Random()
 	// debug
@@ -46,6 +48,21 @@ func main() {
 
 		fmt.Print("Invalid word, try again!\n")
 	}
+}
+
+func NewList(path string) (List, error) {
+	rawWordList, err := os.ReadFile(path)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	wordList := bytes.Split([]byte(rawWordList), []byte("\n"))
+
+	validWords := List{
+		words: wordList,
+	}
+	return validWords, err
 }
 
 func (l List) Contains(word []byte) bool {
