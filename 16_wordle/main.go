@@ -15,17 +15,6 @@ type List struct {
 func main() {
 	var input []byte
 
-	// rawWordList, err := os.ReadFile("word_list/word_list")
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-
-	// wordList := bytes.Split([]byte(rawWordList), []byte("\n"))
-
-	// validWords := List{
-	// 	words: wordList,
-	// }
-
 	validWords, _ := NewList("word_list/word_list")
 
 	chosenWord := validWords.Random()
