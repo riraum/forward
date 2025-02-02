@@ -6,6 +6,8 @@ import (
 	"log"
 	"math/rand/v2"
 	"os"
+	"slices"
+	"strings"
 )
 
 type List struct {
@@ -28,11 +30,25 @@ func main() {
 
 	chosenWord := validWords.Random()
 	// debug
-	fmt.Println(string(chosenWord))
+	chosenWordStr := string(chosenWord)
+	chosenWordSlice := strings.Split(chosenWordStr, "")
+	// debug
+	// fmt.Println(chosenWordSlice)
+	fmt.Println("chosenWord:", string(chosenWordStr))
 
 	for i := 0; ; i++ {
 		fmt.Printf("Enter 5 letter word\n>")
 		fmt.Scan(&input)
+
+		// check characters
+		inputStr := string(input)
+		inputSlice := strings.Split(inputStr, "")
+		// fmt.Println(inputSlice)
+		// fmt.Println(inputSlice[0])
+		// debug
+		// fmt.Println(slices.Contains(inputSlice, "e"))
+		// fmt.Println(slices.Contains(inputSlice, "t"))
+		fmt.Println("Contained characters:", checkChar(chosenWordSlice, inputSlice))
 
 		if bytes.Equal(input, chosenWord) {
 			fmt.Print("Chosen word, yay!\n")
@@ -59,4 +75,27 @@ func (l List) Contains(word []byte) bool {
 
 func (l List) Random() []byte {
 	return l.words[rand.IntN(len(l.words))]
+}
+
+/*
+	Check every character of `input` and return character(s) that are in `chosenWord`
+
+	Convert at some point between byte and string type to return human readable output
+
+	- Loop through each character
+	- Add character that is contained to new slice
+	- Return slice of contained characters
+*/
+
+func checkChar(chosenWordSlice []string, inputSlice []string) []string {
+	var containedSlice []string
+
+	for _, value := range inputSlice {
+		// debug
+		// fmt.Println("value print", value)
+		if slices.Contains(chosenWordSlice, value) {
+			containedSlice = append(containedSlice, value)
+		}
+	}
+	return containedSlice
 }
