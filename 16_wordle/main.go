@@ -44,6 +44,7 @@ func NewList(path string) (List, error) {
 
 	if err != nil {
 		log.Fatal(err)
+		return List{}, err
 	}
 
 	wordList := bytes.Split([]byte(rawWordList), []byte("\n"))
@@ -51,7 +52,7 @@ func NewList(path string) (List, error) {
 	validWords := List{
 		words: wordList,
 	}
-	return validWords, err
+	return validWords, nil
 }
 
 func (l List) Contains(word []byte) bool {
