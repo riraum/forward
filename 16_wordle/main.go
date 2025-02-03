@@ -48,7 +48,7 @@ func main() {
 		// debug
 		// fmt.Println(slices.Contains(inputSlice, "e"))
 		// fmt.Println(slices.Contains(inputSlice, "t"))
-		fmt.Println("Contained characters:", checkChar2(chosenWordSlice, inputSlice))
+		fmt.Println("Contained characters:", checkCharPrecise(chosenWordSlice, inputSlice))
 
 		if bytes.Equal(input, chosenWord) {
 			fmt.Print("Chosen word, yay!\n")
@@ -100,10 +100,22 @@ func checkChar(chosenWordSlice []string, inputSlice []string) []string {
 	return containedSlice
 }
 
-func checkChar2(chosenWordSlice []string, inputSlice []string) []int {
+func checkCharPrecise(chosenWordSlice []string, inputSlice []string) []int {
 	var containedSlice []int
+	// 1 = contained but incorrect loc
+	// 2 = contained in correc loc
+	// 0 not contained
+
+	// correct word check
+	if slices.Equal(chosenWordSlice, inputSlice) {
+		return []int{22222}
+	}
 
 	for _, inputValue := range inputSlice {
+		// if inputValue == chosenValue {
+		// 	// valueInt, _ := strconv.Atoi(inputValue)
+		// 	containedSlice = append(containedSlice, 2)
+		// }
 		for _, chosenValue := range chosenWordSlice {
 			if inputValue == chosenValue {
 				// valueInt, _ := strconv.Atoi(inputValue)
