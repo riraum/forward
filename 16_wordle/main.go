@@ -100,33 +100,33 @@ func checkChar(chosenWordSlice []string, inputSlice []string) []string {
 	return containedSlice
 }
 
-func checkCharPrecise(chosenWordSlice []string, inputSlice []string) []string {
-	var containedSlice []string
+func checkCharPrecise(chosenWordSlice []string, inputSlice []string) []int {
+	var containedSlice []int
 	// 1 = contained but incorrect loc
 	// 2 = contained in correc loc
 	// 0 not contained
 
 	// correct word check
 	if slices.Equal(chosenWordSlice, inputSlice) {
-		return []string{"Correct word!"}
+		return []int{2, 2, 2, 2, 2}
 	}
 
-	for iInput, inputValue := range inputSlice {
+	for inputIndex, inputValue := range inputSlice {
 		// if inputValue == chosenValue {
 		// 	// valueInt, _ := strconv.Atoi(inputValue)
 		// 	containedSlice = append(containedSlice, 2)
 		// }
-		for iChosen, chosenValue := range chosenWordSlice {
-			if iInput == iChosen {
+		for chosenIndex, chosenValue := range chosenWordSlice {
+			if inputIndex == chosenIndex {
 				if inputValue == chosenValue {
 					// valueInt, _ := strconv.Atoi(inputValue)
-					containedSlice = append(containedSlice, inputValue+" inplace")
+					containedSlice = append(containedSlice, 2)
 				}
 			}
-			if iInput != iChosen {
+			if chosenIndex != inputIndex {
 				if inputValue == chosenValue {
 					// valueInt, _ := strconv.Atoi(inputValue)
-					containedSlice = append(containedSlice, inputValue+" outofplace")
+					containedSlice = append(containedSlice, 1)
 				}
 				// if inputValue != chosenValue {
 				// 	containedSlice = append(containedSlice, inputValue+" not contained")
