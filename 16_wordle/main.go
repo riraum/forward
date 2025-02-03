@@ -111,28 +111,49 @@ func checkCharPrecise(chosenWordSlice []string, inputSlice []string) []int {
 		return []int{2, 2, 2, 2, 2}
 	}
 
+	// for inIndex, inChar := range in {
+	//   for chosenIndex, chosenChar := range chosen {
+	//     if inChar != chosenChar{
+	//       // TODO
+	//     } else {
+	//       if inIndex == chosenIndex {
+	//         // TODO
+	//       } else {
+	//         // TODO
+	//       }
+	//     }
+	//   }
+	// }
+
 	for inputIndex, inputValue := range inputSlice {
 		// if inputValue == chosenValue {
 		// 	// valueInt, _ := strconv.Atoi(inputValue)
 		// 	containedSlice = append(containedSlice, 2)
 		// }
 		for chosenIndex, chosenValue := range chosenWordSlice {
-			if inputIndex == chosenIndex {
-				if inputValue == chosenValue {
-					// valueInt, _ := strconv.Atoi(inputValue)
-					containedSlice = append(containedSlice, 2)
-				}
-			}
-			if chosenIndex != inputIndex {
-				if inputValue == chosenValue {
+			if inputValue != chosenValue {
+				if chosenIndex == inputIndex {
 					// valueInt, _ := strconv.Atoi(inputValue)
 					containedSlice = append(containedSlice, 1)
+				} else {
+					containedSlice = append(containedSlice, 0)
 				}
-				// if inputValue != chosenValue {
-				// 	containedSlice = append(containedSlice, inputValue+" not contained")
-				// }
+			} else {
+				if inputIndex == chosenIndex {
+					if inputValue == chosenValue {
+						// valueInt, _ := strconv.Atoi(inputValue)
+						containedSlice = append(containedSlice, 2)
+					} else {
+						containedSlice = append(containedSlice, 0)
+					}
+				}
 			}
 		}
+		// if inputValue != chosenValue {
+		// 	containedSlice = append(containedSlice, inputValue+" not contained")
+		// }
+		// 	}
+		// }
 
 		// if value ==
 		// if slices.Contains(chosenWordSlice, value) {

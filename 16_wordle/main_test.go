@@ -1,6 +1,7 @@
 package main
 
 import (
+	"slices"
 	"testing"
 )
 
@@ -34,4 +35,30 @@ func TestContains(t *testing.T) {
 			t.Errorf("Contains = %v, want %v and want %v", got1, got2, test.want)
 		}
 	}
+}
+
+func TestCheckCharPrecise(t *testing.T) {
+	tests := []struct {
+		input  []string
+		chosen []string
+		want   []int
+	}{
+		{input: []string{"a", "a", "a", "a", "a"},
+			chosen: []string{"a", "a", "a", "a", "b"},
+			want:   []int{2, 2, 2, 2, 0},
+		},
+		{
+			input:  []string{"a", "c", "a", "a", "b"},
+			chosen: []string{"a", "a", "a", "a", "b"},
+			want:   []int{2, 0, 2, 2, 1},
+		},
+	}
+	for _, test := range tests {
+		got := checkCharPrecise(test.chosen, test.input)
+
+		if !slices.Equal(got, test.want) {
+			t.Errorf("checkCharPrecise = %v, want %v", got, test.want)
+		}
+	}
+
 }
