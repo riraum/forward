@@ -100,27 +100,36 @@ func checkChar(chosenWordSlice []string, inputSlice []string) []string {
 	return containedSlice
 }
 
-func checkCharPrecise(chosenWordSlice []string, inputSlice []string) []int {
-	var containedSlice []int
+func checkCharPrecise(chosenWordSlice []string, inputSlice []string) []string {
+	var containedSlice []string
 	// 1 = contained but incorrect loc
 	// 2 = contained in correc loc
 	// 0 not contained
 
 	// correct word check
 	if slices.Equal(chosenWordSlice, inputSlice) {
-		return []int{22222}
+		return []string{"22222"}
 	}
 
-	for _, inputValue := range inputSlice {
+	for iInput, inputValue := range inputSlice {
 		// if inputValue == chosenValue {
 		// 	// valueInt, _ := strconv.Atoi(inputValue)
 		// 	containedSlice = append(containedSlice, 2)
 		// }
-		for _, chosenValue := range chosenWordSlice {
-			if inputValue == chosenValue {
-				// valueInt, _ := strconv.Atoi(inputValue)
-				containedSlice = append(containedSlice, 1)
+		for iChosen, chosenValue := range chosenWordSlice {
+			if iInput == iChosen {
+				if inputValue == chosenValue {
+					// valueInt, _ := strconv.Atoi(inputValue)
+					containedSlice = append(containedSlice, inputValue)
+				}
 			}
+			if iInput != iChosen {
+				if inputValue == chosenValue {
+					// valueInt, _ := strconv.Atoi(inputValue)
+					containedSlice = append(containedSlice, inputValue)
+				}
+			}
+
 		}
 		// if value ==
 		// if slices.Contains(chosenWordSlice, value) {
