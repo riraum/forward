@@ -126,40 +126,61 @@ func checkCharPrecise(chosenWordSlice []string, inputSlice []string) []int {
 	// }
 
 	for inputIndex, inputValue := range inputSlice {
-		// if inputValue == chosenValue {
-		// 	// valueInt, _ := strconv.Atoi(inputValue)
-		// 	containedSlice = append(containedSlice, 2)
-		// }
 		for chosenIndex, chosenValue := range chosenWordSlice {
 			if inputValue != chosenValue {
-				if chosenIndex == inputIndex {
-					// valueInt, _ := strconv.Atoi(inputValue)
-					containedSlice = append(containedSlice, 1)
-				} else {
+				if inputIndex == chosenIndex {
 					containedSlice = append(containedSlice, 0)
 				}
-			} else {
+				// if inputIndex != chosenIndex {
+				// 	containedSlice = append(containedSlice, 1)
+				// }
+			}
+			if inputValue == chosenValue {
 				if inputIndex == chosenIndex {
-					if inputValue == chosenValue {
-						// valueInt, _ := strconv.Atoi(inputValue)
-						containedSlice = append(containedSlice, 2)
-					} else {
-						containedSlice = append(containedSlice, 0)
-					}
+					// valueInt, _ := strconv.Atoi(inputValue)
+					// if inputValue != chosenValue {
+					containedSlice = append(containedSlice, 2)
 				}
+				// if inputIndex != chosenIndex {
+				// 	containedSlice = append(containedSlice, 1)
+				// }
+				// if inputValue == chosenValue {
+				// 	if inputIndex != chosenIndex {
+				// 		containedSlice = append(containedSlice, 1)
+				// 	}
+				// }
+				// if inputValue == chosenValue {
+				// 	if inputIndex != chosenIndex {
+				// 		// valueInt, _ := strconv.Atoi(inputValue)
+				// 		// if inputValue != chosenValue {
+				// 		containedSlice = append(containedSlice, 1)
+				// 	}
+				// }
+				// else {
+				// 	// if inputIndex == chosenIndex {
+				// 	// 	if inputValue == chosenValue {
+				// 	// valueInt, _ := strconv.Atoi(inputValue)
+				// 	// if inputValue == chosenValue {
+				// 	containedSlice = append(containedSlice, 1)
+				// 	// }
+				// }
+				// } else {
+				// 	containedSlice = append(containedSlice, 0)
+				// }
 			}
 		}
-		// if inputValue != chosenValue {
-		// 	containedSlice = append(containedSlice, inputValue+" not contained")
-		// }
-		// 	}
-		// }
-
-		// if value ==
-		// if slices.Contains(chosenWordSlice, value) {
-		// 	valueInt, _ := strconv.Atoi(value)
-		// 	containedSlice = append(containedSlice, valueInt)
-		// }
 	}
+	// if inputValue != chosenValue {
+	// 	containedSlice = append(containedSlice, inputValue+" not contained")
+	// }
+	// 	}
+	// }
+
+	// if value ==
+	// if slices.Contains(chosenWordSlice, value) {
+	// 	valueInt, _ := strconv.Atoi(value)
+	// 	containedSlice = append(containedSlice, valueInt)
+	// }
+	// }
 	return containedSlice
 }
