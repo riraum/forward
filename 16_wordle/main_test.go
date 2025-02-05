@@ -52,6 +52,11 @@ func TestCheckCharPrecise(t *testing.T) {
 			chosen: []string{"a", "a", "a", "b", "a"},
 			want:   []int{2, 0, 2, 1, 1},
 		},
+		{
+			input:  []string{"x", "y"},
+			chosen: []string{"a", "b"},
+			want:   []int{0, 0},
+		},
 	}
 	for _, test := range tests {
 		got := checkCharPrecise(test.chosen, test.input)
