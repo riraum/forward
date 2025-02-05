@@ -29,25 +29,19 @@ func main() {
 	}
 
 	chosenWord := validWords.Random()
-	// debug
-	chosenWordStr := string(chosenWord)
-	// chosenWordStrSlice := strings.Split(chosenWordStr, " ")
-	// debug
-	fmt.Println("chosenWord:", string(chosenWordStr))
+	fmt.Println("chosenWord:", string(chosenWord))
 
 	for i := 0; ; i++ {
 		fmt.Printf("Enter 5 letter word\n>")
 		fmt.Scan(&input)
 
 		// check characters
-		// fmt.Println(chosenWordStrSlice)
 		inputStr := string(input)
 		inputStrSlice := strings.Split(inputStr, "")
 		inputStrRdy := strings.Join(inputStrSlice[:], " ")
 		fmt.Println(inputStrRdy)
 
 		checkResult := checkChar(chosenWord, input)
-		// fmt.Println(checkResult)
 		coloredOutput := coloredResult(checkResult)
 		coloredOutputStr := strings.Join(coloredOutput[:], "")
 		fmt.Println(coloredOutputStr)
@@ -102,21 +96,21 @@ Check every character of `input` and return character(s) that are in `chosenWord
 - Add character that is contained to new slice
 - Return slice of contained characters
 */
-func checkChar(chosenWordSlice, inputSlice []byte) []int {
+func checkChar(chosenWord, input []byte) []int {
 	var containedSlice []int
 	// 1 = contained but incorrect loc
 	// 2 = contained in correct loc
 	// 0 not contained
 
 	// correct word check
-	if slices.Equal(chosenWordSlice, inputSlice) {
+	if slices.Equal(chosenWord, input) {
 		return []int{2, 2, 2, 2, 2}
 	}
 
-	for index, value := range inputSlice {
-		if value == chosenWordSlice[index] {
+	for index, value := range input {
+		if value == chosenWord[index] {
 			containedSlice = append(containedSlice, 2)
-		} else if slices.Contains(chosenWordSlice, inputSlice[index]) {
+		} else if slices.Contains(chosenWord, input[index]) {
 			containedSlice = append(containedSlice, 1)
 		} else {
 			containedSlice = append(containedSlice, 0)
