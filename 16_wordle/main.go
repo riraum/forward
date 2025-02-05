@@ -112,6 +112,17 @@ func checkCharPrecise(chosenWordSlice []string, inputSlice []string) []int {
 		return []int{2, 2, 2, 2, 2}
 	}
 
+	// WIP refactor
+	// for index, value := range chosenWordSlice {
+	// 	if value == chosenWordSlice[index] {
+	// 		containedSlice = append(containedSlice, 2)
+	// 	} else if slices.Contains(chosenWordSlice, inputSlice[index]) {
+	// 		containedSlice = append(containedSlice, 1)
+	// 	} else {
+	// 		containedSlice = append(containedSlice, 0)
+	// 	}
+	// }
+
 	if inputSlice[0] == chosenWordSlice[0] {
 		containedSlice = append(containedSlice, 2)
 	} else if slices.Contains(chosenWordSlice, inputSlice[0]) {
