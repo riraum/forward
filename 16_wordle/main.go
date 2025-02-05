@@ -33,7 +33,7 @@ func main() {
 	chosenWordStr := string(chosenWord)
 	chosenWordSlice := strings.Split(chosenWordStr, "")
 	// debug
-	// fmt.Println(chosenWordSlice)
+	fmt.Println(chosenWordSlice)
 	fmt.Println("chosenWord:", string(chosenWordStr))
 
 	for i := 0; ; i++ {
