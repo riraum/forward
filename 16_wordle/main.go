@@ -40,9 +40,6 @@ func main() {
 		fmt.Scan(&input)
 
 		// check characters
-		// inputStr := string(input)
-		// inputSlice := strings.Split(inputStr, "")
-		// fmt.Println(inputSlice)
 		fmt.Println(checkChar(chosenWord, input))
 		fmt.Println(chosenWordStrSlice)
 

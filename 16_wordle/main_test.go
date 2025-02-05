@@ -39,22 +39,22 @@ func TestContains(t *testing.T) {
 
 func TestCheckChar(t *testing.T) {
 	tests := []struct {
-		input  []string
-		chosen []string
+		input  []byte
+		chosen []byte
 		want   []int
 	}{
-		{input: []string{"a", "a", "a", "a", "a"},
-			chosen: []string{"a", "a", "a", "a", "b"},
+		{input: []byte("aaaaa"),
+			chosen: []byte("aaaab"),
 			want:   []int{2, 2, 2, 2, 1},
 		},
 		{
-			input:  []string{"a", "c", "a", "a", "b"},
-			chosen: []string{"a", "a", "a", "b", "a"},
+			input:  []byte("acaab"),
+			chosen: []byte("aaaba"),
 			want:   []int{2, 0, 2, 1, 1},
 		},
 		{
-			input:  []string{"x", "y"},
-			chosen: []string{"a", "b"},
+			input:  []byte("xy"),
+			chosen: []byte("ab"),
 			want:   []int{0, 0},
 		},
 	}
