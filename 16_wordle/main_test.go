@@ -37,7 +37,7 @@ func TestContains(t *testing.T) {
 	}
 }
 
-func TestCheckCharPrecise(t *testing.T) {
+func TestCheckChar(t *testing.T) {
 	tests := []struct {
 		input  []string
 		chosen []string
@@ -59,7 +59,7 @@ func TestCheckCharPrecise(t *testing.T) {
 		},
 	}
 	for _, test := range tests {
-		got := checkCharPrecise(test.chosen, test.input)
+		got := checkChar(test.chosen, test.input)
 
 		if !slices.Equal(got, test.want) {
 			t.Errorf("checkCharPrecise = %v, want %v", got, test.want)
