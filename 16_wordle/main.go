@@ -36,15 +36,12 @@ func main() {
 		fmt.Scan(&input)
 
 		// check characters
-		inputStr := string(input)
-		inputStrSlice := strings.Split(inputStr, "")
-		inputStrRdy := strings.Join(inputStrSlice[:], " ")
-		fmt.Println(inputStrRdy)
+		inputOutput := bytes.Split(input, []byte(""))
+		fmt.Println(string(bytes.Join(inputOutput[:], []byte(" "))))
 
-		checkResult := checkChar(chosenWord, input)
-		coloredOutput := coloredResult(checkResult)
-		coloredOutputStr := strings.Join(coloredOutput[:], "")
-		fmt.Println(coloredOutputStr)
+		getResult := checkChar(chosenWord, input)
+		coloredOutput := strings.Join(coloredResult(getResult)[:], "")
+		fmt.Println(coloredOutput)
 
 		if bytes.Equal(input, chosenWord) {
 			fmt.Print("Chosen word, yay!\n")
