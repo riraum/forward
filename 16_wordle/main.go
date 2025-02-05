@@ -49,7 +49,7 @@ func main() {
 		// fmt.Println(slices.Contains(inputSlice, "e"))
 		// fmt.Println(slices.Contains(inputSlice, "t"))
 		fmt.Println(inputSlice)
-		fmt.Println(checkCharPrecise(chosenWordSlice, inputSlice))
+		fmt.Println(checkChar(chosenWordSlice, inputSlice))
 
 		if bytes.Equal(input, chosenWord) {
 			fmt.Print("Chosen word, yay!\n")
@@ -79,29 +79,15 @@ func (l List) Random() []byte {
 }
 
 /*
-	Check every character of `input` and return character(s) that are in `chosenWord`
+Check every character of `input` and return character(s) that are in `chosenWord`
 
-	Convert at some point between byte and string type to return human readable output
+# Convert at some point between byte and string type to return human readable output
 
-	- Loop through each character
-	- Add character that is contained to new slice
-	- Return slice of contained characters
+- Loop through each character
+- Add character that is contained to new slice
+- Return slice of contained characters
 */
-
-// func checkChar(chosenWordSlice []string, inputSlice []string) []string {
-// 	var containedSlice []string
-
-// 	for _, value := range inputSlice {
-// 		// debug
-// 		// fmt.Println("value print", value)
-// 		if slices.Contains(chosenWordSlice, value) {
-// 			containedSlice = append(containedSlice, value)
-// 		}
-// 	}
-// 	return containedSlice
-// }
-
-func checkCharPrecise(chosenWordSlice []string, inputSlice []string) []int {
+func checkChar(chosenWordSlice []string, inputSlice []string) []int {
 	var containedSlice []int
 	// 1 = contained but incorrect loc
 	// 2 = contained in correc loc
