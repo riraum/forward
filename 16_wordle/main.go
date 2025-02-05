@@ -31,9 +31,8 @@ func main() {
 	chosenWord := validWords.Random()
 	// debug
 	chosenWordStr := string(chosenWord)
-	chosenWordSlice := strings.Split(chosenWordStr, "")
+	chosenWordStrSlice := strings.Split(chosenWordStr, "")
 	// debug
-	fmt.Println(chosenWordSlice)
 	fmt.Println("chosenWord:", string(chosenWordStr))
 
 	for i := 0; ; i++ {
@@ -41,15 +40,11 @@ func main() {
 		fmt.Scan(&input)
 
 		// check characters
-		inputStr := string(input)
-		inputSlice := strings.Split(inputStr, "")
+		// inputStr := string(input)
+		// inputSlice := strings.Split(inputStr, "")
 		// fmt.Println(inputSlice)
-		// fmt.Println(inputSlice[0])
-		// debug
-		// fmt.Println(slices.Contains(inputSlice, "e"))
-		// fmt.Println(slices.Contains(inputSlice, "t"))
-		fmt.Println(inputSlice)
-		// fmt.Println(checkChar(chosenWordSlice, inputSlice))
+		fmt.Println(checkChar(chosenWord, input))
+		fmt.Println(chosenWordStrSlice)
 
 		if bytes.Equal(input, chosenWord) {
 			fmt.Print("Chosen word, yay!\n")
@@ -87,7 +82,7 @@ Check every character of `input` and return character(s) that are in `chosenWord
 - Add character that is contained to new slice
 - Return slice of contained characters
 */
-func checkChar(chosenWordSlice []string, inputSlice []string) []int {
+func checkChar(chosenWordSlice, inputSlice []byte) []int {
 	var containedSlice []int
 	// 1 = contained but incorrect loc
 	// 2 = contained in correct loc
