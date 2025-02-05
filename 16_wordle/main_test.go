@@ -1,6 +1,7 @@
 package main
 
 import (
+	"os"
 	"testing"
 )
 
@@ -34,4 +35,11 @@ func TestContains(t *testing.T) {
 			t.Errorf("Contains = %v, want %v and want %v", got1, got2, test.want)
 		}
 	}
+}
+
+func TestNewList(t *testing.T) {
+	testDir := t.TempDir()
+	tests := []struct {
+	}
+	os.WriteFile("testDir", []byte("abc"), 0666)
 }
