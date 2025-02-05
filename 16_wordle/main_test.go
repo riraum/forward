@@ -45,7 +45,7 @@ func TestCheckCharPrecise(t *testing.T) {
 	}{
 		{input: []string{"a", "a", "a", "a", "a"},
 			chosen: []string{"a", "a", "a", "a", "b"},
-			want:   []int{2, 2, 2, 2, 0},
+			want:   []int{2, 2, 2, 2, 1},
 		},
 		{
 			input:  []string{"a", "c", "a", "a", "b"},

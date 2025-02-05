@@ -87,18 +87,18 @@ func (l List) Random() []byte {
 	- Return slice of contained characters
 */
 
-func checkChar(chosenWordSlice []string, inputSlice []string) []string {
-	var containedSlice []string
+// func checkChar(chosenWordSlice []string, inputSlice []string) []string {
+// 	var containedSlice []string
 
-	for _, value := range inputSlice {
-		// debug
-		// fmt.Println("value print", value)
-		if slices.Contains(chosenWordSlice, value) {
-			containedSlice = append(containedSlice, value)
-		}
-	}
-	return containedSlice
-}
+// 	for _, value := range inputSlice {
+// 		// debug
+// 		// fmt.Println("value print", value)
+// 		if slices.Contains(chosenWordSlice, value) {
+// 			containedSlice = append(containedSlice, value)
+// 		}
+// 	}
+// 	return containedSlice
+// }
 
 func checkCharPrecise(chosenWordSlice []string, inputSlice []string) []int {
 	var containedSlice []int
@@ -111,76 +111,45 @@ func checkCharPrecise(chosenWordSlice []string, inputSlice []string) []int {
 		return []int{2, 2, 2, 2, 2}
 	}
 
-	// for inIndex, inChar := range in {
-	//   for chosenIndex, chosenChar := range chosen {
-	//     if inChar != chosenChar{
-	//       // TODO
-	//     } else {
-	//       if inIndex == chosenIndex {
-	//         // TODO
-	//       } else {
-	//         // TODO
-	//       }
-	//     }
-	//   }
-	// }
-
-	for inputIndex, inputValue := range inputSlice {
-		for chosenIndex, chosenValue := range chosenWordSlice {
-			if inputValue != chosenValue {
-				if inputIndex == chosenIndex {
-					containedSlice = append(containedSlice, 0)
-				}
-				// if inputIndex != chosenIndex {
-				// 	containedSlice = append(containedSlice, 1)
-				// }
-			}
-			if inputValue == chosenValue {
-				if inputIndex == chosenIndex {
-					// valueInt, _ := strconv.Atoi(inputValue)
-					// if inputValue != chosenValue {
-					containedSlice = append(containedSlice, 2)
-				}
-				// if inputIndex != chosenIndex {
-				// 	containedSlice = append(containedSlice, 1)
-				// }
-				// if inputValue == chosenValue {
-				// 	if inputIndex != chosenIndex {
-				// 		containedSlice = append(containedSlice, 1)
-				// 	}
-				// }
-				// if inputValue == chosenValue {
-				// 	if inputIndex != chosenIndex {
-				// 		// valueInt, _ := strconv.Atoi(inputValue)
-				// 		// if inputValue != chosenValue {
-				// 		containedSlice = append(containedSlice, 1)
-				// 	}
-				// }
-				// else {
-				// 	// if inputIndex == chosenIndex {
-				// 	// 	if inputValue == chosenValue {
-				// 	// valueInt, _ := strconv.Atoi(inputValue)
-				// 	// if inputValue == chosenValue {
-				// 	containedSlice = append(containedSlice, 1)
-				// 	// }
-				// }
-				// } else {
-				// 	containedSlice = append(containedSlice, 0)
-				// }
-			}
-		}
+	if inputSlice[0] == chosenWordSlice[0] {
+		containedSlice = append(containedSlice, 2)
+	} else if slices.Contains(chosenWordSlice, inputSlice[0]) {
+		containedSlice = append(containedSlice, 1)
+	} else {
+		containedSlice = append(containedSlice, 0)
 	}
-	// if inputValue != chosenValue {
-	// 	containedSlice = append(containedSlice, inputValue+" not contained")
-	// }
-	// 	}
-	// }
 
-	// if value ==
-	// if slices.Contains(chosenWordSlice, value) {
-	// 	valueInt, _ := strconv.Atoi(value)
-	// 	containedSlice = append(containedSlice, valueInt)
-	// }
-	// }
+	if inputSlice[1] == chosenWordSlice[1] {
+		containedSlice = append(containedSlice, 2)
+	} else if slices.Contains(chosenWordSlice, inputSlice[1]) {
+		containedSlice = append(containedSlice, 1)
+	} else {
+		containedSlice = append(containedSlice, 0)
+	}
+
+	if inputSlice[2] == chosenWordSlice[2] {
+		containedSlice = append(containedSlice, 2)
+	} else if slices.Contains(chosenWordSlice, inputSlice[2]) {
+		containedSlice = append(containedSlice, 1)
+	} else {
+		containedSlice = append(containedSlice, 0)
+	}
+
+	if inputSlice[3] == chosenWordSlice[3] {
+		containedSlice = append(containedSlice, 2)
+	} else if slices.Contains(chosenWordSlice, inputSlice[3]) {
+		containedSlice = append(containedSlice, 1)
+	} else {
+		containedSlice = append(containedSlice, 0)
+	}
+
+	if inputSlice[4] == chosenWordSlice[4] {
+		containedSlice = append(containedSlice, 2)
+	} else if slices.Contains(chosenWordSlice, inputSlice[4]) {
+		containedSlice = append(containedSlice, 1)
+	} else {
+		containedSlice = append(containedSlice, 0)
+	}
+
 	return containedSlice
 }
