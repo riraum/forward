@@ -31,7 +31,7 @@ func main() {
 	chosenWord := validWords.Random()
 	// debug
 	chosenWordStr := string(chosenWord)
-	chosenWordStrSlice := strings.Split(chosenWordStr, "")
+	// chosenWordStrSlice := strings.Split(chosenWordStr, " ")
 	// debug
 	fmt.Println("chosenWord:", string(chosenWordStr))
 
@@ -40,11 +40,17 @@ func main() {
 		fmt.Scan(&input)
 
 		// check characters
-		fmt.Println(chosenWordStrSlice)
+		// fmt.Println(chosenWordStrSlice)
+		inputStr := string(input)
+		inputStrSlice := strings.Split(inputStr, "")
+		inputStrRdy := strings.Join(inputStrSlice[:], " ")
+		fmt.Println(inputStrRdy)
+
 		checkResult := checkChar(chosenWord, input)
 		// fmt.Println(checkResult)
 		coloredOutput := coloredResult(checkResult)
-		fmt.Println(coloredOutput)
+		coloredOutputStr := strings.Join(coloredOutput[:], "")
+		fmt.Println(coloredOutputStr)
 
 		if bytes.Equal(input, chosenWord) {
 			fmt.Print("Chosen word, yay!\n")
