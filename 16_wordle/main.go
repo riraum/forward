@@ -48,7 +48,8 @@ func main() {
 		// debug
 		// fmt.Println(slices.Contains(inputSlice, "e"))
 		// fmt.Println(slices.Contains(inputSlice, "t"))
-		fmt.Println("Contained characters:", checkCharPrecise(chosenWordSlice, inputSlice))
+		fmt.Println(inputSlice)
+		fmt.Println(checkCharPrecise(chosenWordSlice, inputSlice))
 
 		if bytes.Equal(input, chosenWord) {
 			fmt.Print("Chosen word, yay!\n")
