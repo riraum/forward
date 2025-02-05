@@ -49,7 +49,7 @@ func main() {
 		// fmt.Println(slices.Contains(inputSlice, "e"))
 		// fmt.Println(slices.Contains(inputSlice, "t"))
 		fmt.Println(inputSlice)
-		fmt.Println(checkChar(chosenWordSlice, inputSlice))
+		// fmt.Println(checkChar(chosenWordSlice, inputSlice))
 
 		if bytes.Equal(input, chosenWord) {
 			fmt.Print("Chosen word, yay!\n")
@@ -90,7 +90,7 @@ Check every character of `input` and return character(s) that are in `chosenWord
 func checkChar(chosenWordSlice []string, inputSlice []string) []int {
 	var containedSlice []int
 	// 1 = contained but incorrect loc
-	// 2 = contained in correc loc
+	// 2 = contained in correct loc
 	// 0 not contained
 
 	// correct word check
