@@ -43,7 +43,8 @@ func main() {
 		fmt.Println(chosenWordStrSlice)
 		checkResult := checkChar(chosenWord, input)
 		// fmt.Println(checkResult)
-		fmt.Println(coloredResult(checkResult))
+		coloredOutput := coloredResult(checkResult)
+		fmt.Println(coloredOutput)
 
 		if bytes.Equal(input, chosenWord) {
 			fmt.Print("Chosen word, yay!\n")
@@ -67,7 +68,7 @@ func coloredResult(checkResult []int) []string {
 		} else if value == 1 {
 			result = append(result, "🟨")
 		} else {
-			result = append(result, "R")
+			result = append(result, "🟥")
 		}
 	}
 	return result
