@@ -40,8 +40,10 @@ func main() {
 		fmt.Scan(&input)
 
 		// check characters
-		fmt.Println(checkChar(chosenWord, input))
 		fmt.Println(chosenWordStrSlice)
+		checkResult := checkChar(chosenWord, input)
+		// fmt.Println(checkResult)
+		fmt.Println(coloredResult(checkResult))
 
 		if bytes.Equal(input, chosenWord) {
 			fmt.Print("Chosen word, yay!\n")
@@ -55,6 +57,20 @@ func main() {
 
 		fmt.Print("Invalid word, try again!\n")
 	}
+}
+
+func coloredResult(checkResult []int) []string {
+	var result []string
+	for _, value := range checkResult {
+		if value == 2 {
+			result = append(result, "🟩")
+		} else if value == 1 {
+			result = append(result, "🟨")
+		} else {
+			result = append(result, "R")
+		}
+	}
+	return result
 }
 
 func (l List) Contains(word []byte) bool {
