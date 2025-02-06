@@ -29,19 +29,19 @@ func main() {
 	}
 
 	chosenWord := validWords.Random()
-	// debug
-	chosenWordStr := string(chosenWord)
-	chosenWordStrSlice := strings.Split(chosenWordStr, "")
-	// debug
-	fmt.Println("chosenWord:", string(chosenWordStr))
+	fmt.Println("chosenWord:", string(chosenWord))
 
 	for i := 0; ; i++ {
 		fmt.Printf("Enter 5 letter word\n>")
 		fmt.Scan(&input)
+		formatInput(input)
 
-		// check characters
-		fmt.Println(checkChar(chosenWord, input))
-		fmt.Println(chosenWordStrSlice)
+		inputOutput := bytes.Join(bytes.Split(input, []byte("")), []byte(" "))
+		fmt.Println(string(inputOutput))
+
+		getResult := checkChar(chosenWord, input)
+		coloredOutput := strings.Join(coloredResult(getResult)[:], "")
+		fmt.Println(coloredOutput)
 
 		if bytes.Equal(input, chosenWord) {
 			fmt.Print("Chosen word, yay!\n")
@@ -55,6 +55,26 @@ func main() {
 
 		fmt.Print("Invalid word, try again!\n")
 	}
+}
+
+func formatInput(input []byte) string {
+	inputOutput := bytes.Join(bytes.Split(input, []byte("")), []byte(" "))
+	return string(inputOutput)
+}
+
+func coloredResult(checkResult []int) []string {
+	var result []string
+	for _, value := range checkResult {
+		switch value {
+		case 2:
+			result = append(result, "🟩")
+		case 1:
+			result = append(result, "🟨")
+		default:
+			result = append(result, "🟥")
+		}
+	}
+	return result
 }
 
 func (l List) Contains(word []byte) bool {
@@ -79,21 +99,21 @@ Check every character of `input` and return character(s) that are in `chosenWord
 - Add character that is contained to new slice
 - Return slice of contained characters
 */
-func checkChar(chosenWordSlice, inputSlice []byte) []int {
+func checkChar(chosenWord, input []byte) []int {
 	var containedSlice []int
 	// 1 = contained but incorrect loc
 	// 2 = contained in correct loc
 	// 0 not contained
 
 	// correct word check
-	if slices.Equal(chosenWordSlice, inputSlice) {
+	if slices.Equal(chosenWord, input) {
 		return []int{2, 2, 2, 2, 2}
 	}
 
-	for index, value := range inputSlice {
-		if value == chosenWordSlice[index] {
+	for index, value := range input {
+		if value == chosenWord[index] {
 			containedSlice = append(containedSlice, 2)
-		} else if slices.Contains(chosenWordSlice, inputSlice[index]) {
+		} else if slices.Contains(chosenWord, input[index]) {
 			containedSlice = append(containedSlice, 1)
 		} else {
 			containedSlice = append(containedSlice, 0)
