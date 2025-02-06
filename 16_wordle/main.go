@@ -16,6 +16,8 @@ func main() {
 	var input []byte
 
 	validWords, _ := NewList("word_list/word_list")
+	// debug
+	fmt.Println(validWords)
 
 	chosenWord := validWords.Random()
 	// debug

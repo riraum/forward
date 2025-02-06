@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log"
 	"os"
 	"testing"
 )
@@ -38,16 +39,31 @@ func TestContains(t *testing.T) {
 }
 
 func TestNewList(t *testing.T) {
-	tmpDir := t.TempDir()
-	testFile := os.WriteFile("tmpDir/testList", []byte("rossa"), ("jetty"), ("wizza"), 0666)
-
-	tests := []struct {
-		file []byte
-			want List
-		}{
-			file: testFile,
-			want: 
-		}
+	// tmpDir := t.TempDir()
+	err := os.WriteFile("t.TempDir(dir/list)", []byte("brown"), []byte("rossa"), 0666)
+	if err != nil {
+		log.Fatal(err)
 	}
 
+	got, _ := NewList("dir/list")
+
+	if got != List{
+				words: [][]byte{
+					[]byte("brown", []byte("rossa")),
+		{
+			t.Errorf("NewList = %v", got)
+		}
+	}
+	}
 }
+
+// 	tests := []struct {
+// 		file []byte
+// 		want List
+// 	}{
+// 		{
+// 			file: testFile,
+// 			want: aaa,
+// 		},
+// 	}
+// }
