@@ -34,6 +34,7 @@ func main() {
 	for i := 0; ; i++ {
 		fmt.Printf("Enter 5 letter word\n>")
 		fmt.Scan(&input)
+		fmt.Println(formatInput(input))
 
 		inputOutput := bytes.Join(bytes.Split(input, []byte("")), []byte(" "))
 		fmt.Println(string(inputOutput))
@@ -54,6 +55,11 @@ func main() {
 
 		fmt.Print("Invalid word, try again!\n")
 	}
+}
+
+func formatInput(input []byte) string {
+	inputOutput := bytes.Join(bytes.Split(input, []byte("")), []byte(" "))
+	return string(inputOutput)
 }
 
 func coloredResult(checkResult []int) []string {
