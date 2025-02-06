@@ -44,7 +44,7 @@ func TestContains(t *testing.T) {
 func TestNewList(t *testing.T) {
 	tmpDir := t.TempDir()
 
-	listPath := filepath.Join(tmpDir, "list")
+	listPath := filepath.Join(tmpDir, "listPath")
 
 	err := os.WriteFile(listPath, []byte("brown"), 0666)
 	if err != nil {
