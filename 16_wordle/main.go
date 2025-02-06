@@ -34,7 +34,7 @@ func main() {
 	for i := 0; ; i++ {
 		fmt.Printf("Enter 5 letter word\n>")
 		fmt.Scan(&input)
-		fmt.Println(formatInput(input))
+		formatInput(input)
 
 		inputOutput := bytes.Join(bytes.Split(input, []byte("")), []byte(" "))
 		fmt.Println(string(inputOutput))
@@ -67,17 +67,11 @@ func coloredResult(checkResult []int) []string {
 	for _, value := range checkResult {
 		switch value {
 		case 2:
-			{
-				result = append(result, "🟩")
-			}
+			result = append(result, "🟩")
 		case 1:
-			{
-				result = append(result, "🟨")
-			}
+			result = append(result, "🟨")
 		default:
-			{
-				result = append(result, "🟥")
-			}
+			result = append(result, "🟥")
 		}
 	}
 	return result
