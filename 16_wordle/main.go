@@ -50,7 +50,6 @@ func main() {
 	}
 }
 
-
 func NewList(path string) (List, error) {
 	rawWordList, err := os.ReadFile(path)
 
@@ -65,6 +64,7 @@ func NewList(path string) (List, error) {
 		words: wordList,
 	}
 	return validWords, nil
+}
 
 func formatInput(input []byte) string {
 	inputOutput := bytes.Join(bytes.Split(input, []byte("")), []byte(" "))

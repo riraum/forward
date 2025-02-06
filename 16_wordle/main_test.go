@@ -62,6 +62,7 @@ func TestNewList(t *testing.T) {
 	if !reflect.DeepEqual(got, want) {
 		t.Errorf("want: %v, but got: %v", want, got)
 	}
+}
 
 func TestCheckChar(t *testing.T) {
 	tests := []struct {
