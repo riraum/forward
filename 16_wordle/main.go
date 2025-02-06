@@ -35,9 +35,8 @@ func main() {
 		fmt.Printf("Enter 5 letter word\n>")
 		fmt.Scan(&input)
 
-		// check characters
-		inputOutput := bytes.Split(input, []byte(""))
-		fmt.Println(string(bytes.Join(inputOutput[:], []byte(" "))))
+		inputOutput := bytes.Join(bytes.Split(input, []byte("")), []byte(" "))
+		fmt.Println(string(inputOutput))
 
 		getResult := checkChar(chosenWord, input)
 		coloredOutput := strings.Join(coloredResult(getResult)[:], "")
