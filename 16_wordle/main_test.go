@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"os"
+	"reflect"
 	"testing"
 )
 
@@ -46,10 +47,15 @@ func TestNewList(t *testing.T) {
 	}
 
 	got, _ := NewList("dir/list")
-	want := [][]byte{
-		[]byte("brown")}
+	// want := [][]byte{
+	// 	[]byte("brown")}
 
-	if got != want {
+	want := List{
+		words: [][]byte{
+			[]byte("brown"),
+		},
+	}
+	if !reflect.DeepEqual(got, want) {
 		t.Errorf("want: %v, but got: %v", want, got)
 	}
 }
