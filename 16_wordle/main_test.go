@@ -38,8 +38,16 @@ func TestContains(t *testing.T) {
 }
 
 func TestNewList(t *testing.T) {
-	testDir := t.TempDir()
+	tmpDir := t.TempDir()
+	testFile := os.WriteFile("tmpDir/testList", []byte("rossa"), ("jetty"), ("wizza"), 0666)
+
 	tests := []struct {
+		file []byte
+			want List
+		}{
+			file: testFile,
+			want: 
+		}
 	}
-	os.WriteFile("testDir", []byte("abc"), 0666)
+
 }
