@@ -44,14 +44,14 @@ func TestContains(t *testing.T) {
 func TestNewList(t *testing.T) {
 	tmpDir := t.TempDir()
 
-	list := filepath.Join(tmpDir, "list")
+	listPath := filepath.Join(tmpDir, "list")
 
-	err := os.WriteFile(list, []byte("brown"), 0666)
+	err := os.WriteFile(listPath, []byte("brown"), 0666)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	got, _ := NewList(list)
+	got, _ := NewList(listPath)
 
 	want := List{
 		words: [][]byte{
