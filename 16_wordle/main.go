@@ -34,14 +34,10 @@ func main() {
 	for i := 0; ; i++ {
 		fmt.Printf("Enter 5 letter word\n>")
 		fmt.Scan(&input)
-		formatInput(input)
-
-		inputOutput := bytes.Join(bytes.Split(input, []byte("")), []byte(" "))
-		fmt.Println(string(inputOutput))
+		fmt.Println(formatInput(input))
 
 		getResult := checkChar(chosenWord, input)
-		coloredOutput := strings.Join(coloredResult(getResult)[:], "")
-		fmt.Println(coloredOutput)
+		fmt.Println(strings.Join(coloredResult(getResult)[:], ""))
 
 		if bytes.Equal(input, chosenWord) {
 			fmt.Print("Chosen word, yay!\n")
