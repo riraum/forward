@@ -47,26 +47,14 @@ func TestNewList(t *testing.T) {
 	}
 
 	got, _ := NewList("dir/list")
-	// want := [][]byte{
-	// 	[]byte("brown")}
 
 	want := List{
 		words: [][]byte{
 			[]byte("brown"),
 		},
 	}
+
 	if !reflect.DeepEqual(got, want) {
 		t.Errorf("want: %v, but got: %v", want, got)
 	}
 }
-
-// 	tests := []struct {
-// 		file []byte
-// 		want List
-// 	}{
-// 		{
-// 			file: testFile,
-// 			want: aaa,
-// 		},
-// 	}
-// }
