@@ -43,12 +43,6 @@ func TestContains(t *testing.T) {
 func TestNewList(t *testing.T) {
 	tmpDir := t.TempDir()
 
-	// file, err := os.CreateTemp(tmpDir, "prefix")
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-	// f, err := os.CreateTemp(tmpDir, "sample")
-
 	list := filepath.Join(tmpDir, "list")
 
 	err := os.WriteFile(list, []byte("brown"), 0666)
@@ -56,7 +50,7 @@ func TestNewList(t *testing.T) {
 		log.Fatal(err)
 	}
 
-	got, _ := NewList("tmpDir/list")
+	got, _ := NewList(list)
 
 	want := List{
 		words: [][]byte{
