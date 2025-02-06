@@ -40,20 +40,17 @@ func TestContains(t *testing.T) {
 
 func TestNewList(t *testing.T) {
 	// tmpDir := t.TempDir()
-	err := os.WriteFile("t.TempDir(dir/list)", []byte("brown"), []byte("rossa"), 0666)
+	err := os.WriteFile("t.TempDir(dir/list)", []byte("brown"), 0666)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	got, _ := NewList("dir/list")
+	want := [][]byte{
+		[]byte("brown")}
 
-	if got != List{
-				words: [][]byte{
-					[]byte("brown", []byte("rossa")),
-		{
-			t.Errorf("NewList = %v", got)
-		}
-	}
+	if got != want {
+		t.Errorf("want: %v, but got: %v", want, got)
 	}
 }
 
