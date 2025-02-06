@@ -60,12 +60,19 @@ func main() {
 func coloredResult(checkResult []int) []string {
 	var result []string
 	for _, value := range checkResult {
-		if value == 2 {
-			result = append(result, "🟩")
-		} else if value == 1 {
-			result = append(result, "🟨")
-		} else {
-			result = append(result, "🟥")
+		switch value {
+		case 2:
+			{
+				result = append(result, "🟩")
+			}
+		case 1:
+			{
+				result = append(result, "🟨")
+			}
+		default:
+			{
+				result = append(result, "🟥")
+			}
 		}
 	}
 	return result
