@@ -46,7 +46,7 @@ func TestNewList(t *testing.T) {
 
 	listPath := filepath.Join(tmpDir, "listPath")
 
-	err := os.WriteFile(listPath, []byte("brown"), 0666)
+	err := os.WriteFile(listPath, []byte("brown\nrossa\ncuppy"), 0666)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -55,7 +55,7 @@ func TestNewList(t *testing.T) {
 
 	want := List{
 		words: [][]byte{
-			[]byte("brown"),
+			[]byte("brown"), []byte("rossa"), []byte("cuppy"),
 		},
 	}
 
