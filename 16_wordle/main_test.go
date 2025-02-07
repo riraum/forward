@@ -55,7 +55,7 @@ func TestNewList(t *testing.T) {
 
 	want := List{
 		words: [][]byte{
-			[]byte("cossy"), []byte("rossa"), []byte("cuppy"),
+			[]byte("brown"), []byte("rossa"), []byte("cuppy"),
 		},
 	}
 
