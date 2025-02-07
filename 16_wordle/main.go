@@ -29,7 +29,7 @@ func main() {
 	}
 
 	chosenWord := validWords.Random()
-	fmt.Println("chosenWord:", string(chosenWord))
+	fmt.Println("chosenWord:", string(validWords.Random()))
 
 	for i := 0; ; i++ {
 		fmt.Printf("Enter 5 letter word\n>")
@@ -54,8 +54,7 @@ func main() {
 }
 
 func formatInput(input []byte) string {
-	inputOutput := bytes.Join(bytes.Split(input, []byte("")), []byte(" "))
-	return string(inputOutput)
+	return string(bytes.Join(bytes.Split(input, []byte("")), []byte(" ")))
 }
 
 func coloredResult(checkResult []int) []string {
@@ -75,9 +74,7 @@ func coloredResult(checkResult []int) []string {
 
 func (l List) Contains(word []byte) bool {
 	for _, value := range l.words {
-		if bytes.Equal(word, value) {
-			return true
-		}
+		return bytes.Equal(word, value)
 	}
 	return false
 }
@@ -100,8 +97,6 @@ func checkChar(chosenWord, input []byte) []int {
 	// 1 = contained but incorrect loc
 	// 2 = contained in correct loc
 	// 0 not contained
-
-	// correct word check
 	if slices.Equal(chosenWord, input) {
 		return []int{2, 2, 2, 2, 2}
 	}
@@ -115,6 +110,5 @@ func checkChar(chosenWord, input []byte) []int {
 			containedSlice = append(containedSlice, 0)
 		}
 	}
-
 	return containedSlice
 }
