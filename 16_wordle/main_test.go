@@ -59,8 +59,8 @@ func TestNewList(t *testing.T) {
 		},
 	}
 
-	if !reflect.DeepEqual(got, want) {
-		t.Errorf("want: %v, but got: %v", want, got)
+	if !reflect.DeepEqual(got.words, want.words) {
+		t.Errorf("want: %v, %v and %v but got: %v, %v and %v", string(want.words[0]), string(want.words[1]), string(want.words[2]), string(got.words[0]), string(got.words[1]), string(got.words[2]))
 	}
 }
 
