@@ -55,12 +55,12 @@ func TestNewList(t *testing.T) {
 
 	want := List{
 		words: [][]byte{
-			[]byte("brown"), []byte("rossa"), []byte("cuppy"),
+			[]byte("cossy"), []byte("rossa"), []byte("cuppy"),
 		},
 	}
 
 	if !reflect.DeepEqual(got.words, want.words) {
-		t.Errorf("want: %v, %v and %v but got: %v, %v and %v", string(want.words[0]), string(want.words[1]), string(want.words[2]), string(got.words[0]), string(got.words[1]), string(got.words[2]))
+		t.Errorf("want: %s\n %s\n %s\n but got: %s\n %s\n %s\n", want.words[0], want.words[1], want.words[2], got.words[0], got.words[1], got.words[2])
 	}
 }
 
