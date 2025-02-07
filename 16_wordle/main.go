@@ -54,8 +54,7 @@ func main() {
 }
 
 func formatInput(input []byte) string {
-	inputOutput := bytes.Join(bytes.Split(input, []byte("")), []byte(" "))
-	return string(inputOutput)
+	return string(bytes.Join(bytes.Split(input, []byte("")), []byte(" ")))
 }
 
 func coloredResult(checkResult []int) []string {
