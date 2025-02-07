@@ -83,15 +83,6 @@ func (l List) Random() []byte {
 	return l.words[rand.IntN(len(l.words))]
 }
 
-/*
-Check every character of `input` and return character(s) that are in `chosenWord`
-
-# Convert at some point between byte and string type to return human readable output
-
-- Loop through each character
-- Add character that is contained to new slice
-- Return slice of contained characters
-*/
 func checkChar(chosenWord, input []byte) []int {
 	var containedSlice []int
 	// 1 = contained but incorrect loc
