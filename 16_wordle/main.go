@@ -34,14 +34,10 @@ func main() {
 	for i := 0; ; i++ {
 		fmt.Printf("Enter 5 letter word\n>")
 		fmt.Scan(&input)
-		formatInput(input)
-
-		inputOutput := bytes.Join(bytes.Split(input, []byte("")), []byte(" "))
-		fmt.Println(string(inputOutput))
+		fmt.Println(formatInput(input))
 
 		getResult := checkChar(chosenWord, input)
-		coloredOutput := strings.Join(coloredResult(getResult)[:], "")
-		fmt.Println(coloredOutput)
+		fmt.Println(strings.Join(coloredResult(getResult)[:], ""))
 
 		if bytes.Equal(input, chosenWord) {
 			fmt.Print("Chosen word, yay!\n")
@@ -58,8 +54,7 @@ func main() {
 }
 
 func formatInput(input []byte) string {
-	inputOutput := bytes.Join(bytes.Split(input, []byte("")), []byte(" "))
-	return string(inputOutput)
+	return string(bytes.Join(bytes.Split(input, []byte("")), []byte(" ")))
 }
 
 func coloredResult(checkResult []int) []string {
@@ -79,9 +74,7 @@ func coloredResult(checkResult []int) []string {
 
 func (l List) Contains(word []byte) bool {
 	for _, value := range l.words {
-		if bytes.Equal(word, value) {
-			return true
-		}
+		return bytes.Equal(word, value)
 	}
 	return false
 }
@@ -90,22 +83,11 @@ func (l List) Random() []byte {
 	return l.words[rand.IntN(len(l.words))]
 }
 
-/*
-Check every character of `input` and return character(s) that are in `chosenWord`
-
-# Convert at some point between byte and string type to return human readable output
-
-- Loop through each character
-- Add character that is contained to new slice
-- Return slice of contained characters
-*/
 func checkChar(chosenWord, input []byte) []int {
 	var containedSlice []int
 	// 1 = contained but incorrect loc
 	// 2 = contained in correct loc
 	// 0 not contained
-
-	// correct word check
 	if slices.Equal(chosenWord, input) {
 		return []int{2, 2, 2, 2, 2}
 	}
@@ -119,6 +101,5 @@ func checkChar(chosenWord, input []byte) []int {
 			containedSlice = append(containedSlice, 0)
 		}
 	}
-
 	return containedSlice
 }
