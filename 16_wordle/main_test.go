@@ -53,14 +53,14 @@ func TestNewList(t *testing.T) {
 				},
 			},
 		},
-		// {
-		// 	content: "rossa\ncuppy",
-		// 	want: List{
-		// 		words: [][]byte{
-		// 			[]byte("rossa"), []byte("cuppy"),
-		// 		},
-		// 	},
-		// },
+		{
+			content: "rossa\ncuppy",
+			want: List{
+				words: [][]byte{
+					[]byte("rossa"), []byte("cuppy"),
+				},
+			},
+		},
 	}
 
 	for index, test := range tests {
@@ -68,7 +68,7 @@ func TestNewList(t *testing.T) {
 			tmpDir := t.TempDir()
 			listPath := filepath.Join(tmpDir, "listPath")
 
-			err := os.WriteFile(listPath, []byte("brown\nrossa\ncuppy"), 0666)
+			err := os.WriteFile(listPath, []byte(test.content), 0666)
 			if err != nil {
 				log.Fatal(err)
 			}
