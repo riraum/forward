@@ -77,9 +77,11 @@ func TestNewList(t *testing.T) {
 	// 	},
 	// }
 
-	// if len(got.words) == len(want.words) {
-	// 	continue
-	// }
+	for _, test := range tests {
+		if len(got.words) != len(test.want.words) {
+			t.Errorf("want: %s\n but got: %s\n", len(test.want.words), len(got.words))
+		}
+	}
 	// slices.Equal(got.words, want.words)
 	// for index := range got.words {
 	// 	want.words[index] != got.words[index]
@@ -90,8 +92,8 @@ func TestNewList(t *testing.T) {
 
 	for index, test := range tests {
 		// if len(got.words) == len(test.want.words) {
-			if got.words[index] == test.want.words[index] {
-				t.Errorf("want: %s\n but got: %s\n", test.want.words[index], got.words[index]),
+		if got.words[index] != test.want.words[index] {
+			t.Errorf("want: %s\n but got: %s\n", test.want.words[index], got.words[index])
 		}
 	}
 
