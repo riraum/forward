@@ -1,7 +1,6 @@
 package main
 
 import (
-	"log"
 	"os"
 	"path/filepath"
 	"slices"
@@ -70,7 +69,7 @@ func TestNewList(t *testing.T) {
 
 			err := os.WriteFile(listPath, []byte(test.content), 0666)
 			if err != nil {
-				log.Fatal(err)
+				t.Fatal(err)
 			}
 
 			got, _ := NewList(listPath)
