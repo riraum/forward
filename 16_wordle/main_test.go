@@ -41,19 +41,12 @@ func TestContains(t *testing.T) {
 }
 
 func TestNewList(t *testing.T) {
-	tmpDir := t.TempDir()
-
-	listPath := filepath.Join(tmpDir, "listPath")
-
-	err := os.WriteFile(listPath, []byte("brown\nrossa\ncuppy"), 0666)
-	if err != nil {
-		log.Fatal(err)
-	}
-
 	tests := []struct {
-		want List
+		content string
+		want    List
 	}{
 		{
+			content: "brown\nrossa\ncuppy",
 			want: List{
 				words: [][]byte{
 					[]byte("brown"), []byte("rossa"), []byte("cuppy"),
@@ -68,10 +61,18 @@ func TestNewList(t *testing.T) {
 		// 	},
 		// },
 	}
+	tmpDir := t.TempDir()
+	listPath := filepath.Join(tmpDir, "listPath")
+
+	err := os.WriteFile(listPath, []byte("brown\nrossa\ncuppy"), 0666)
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	got, _ := NewList(listPath)
 
 	for _, test := range tests {
+
 		if len(got.words) != len(test.want.words) {
 			t.Errorf("want len: %v\n but got len: %v\n", len(test.want.words), len(got.words))
 		}
