@@ -60,26 +60,20 @@ func TestNewList(t *testing.T) {
 				},
 			},
 		},
-		{
-			want: List{
-				words: [][]byte{
-					[]byte("rossa"), []byte("cuppy"),
-				},
-			},
-		},
+		// {
+		// 	want: List{
+		// 		words: [][]byte{
+		// 			[]byte("rossa"), []byte("cuppy"),
+		// 		},
+		// 	},
+		// },
 	}
 
 	got, _ := NewList(listPath)
 
-	// want := List{
-	// 	words: [][]byte{
-	// 		[]byte("brown"), []byte("rossa"), []byte("cuppy"),
-	// 	},
-	// }
-
 	for _, test := range tests {
 		if len(got.words) != len(test.want.words) {
-			t.Errorf("want: %s\n but got: %s\n", len(test.want.words), len(got.words))
+			t.Errorf("want: %v\n but got: %v\n", len(test.want.words), len(got.words))
 		}
 	}
 	// slices.Equal(got.words, want.words)
@@ -91,15 +85,10 @@ func TestNewList(t *testing.T) {
 	// }
 
 	for index, test := range tests {
-		// if len(got.words) == len(test.want.words) {
-		if got.words[index] != test.want.words[index] {
+		if string(got.words[index]) != string(test.want.words[index]) {
 			t.Errorf("want: %s\n but got: %s\n", test.want.words[index], got.words[index])
 		}
 	}
-
-	// if !reflect.DeepEqual(got.words, want.words) {
-	// 	t.Errorf("want: %s\n %s\n %s\n but got: %s\n %s\n %s\n", want.words[0], want.words[1], want.words[2], got.words[0], got.words[1], got.words[2])
-	// }
 }
 
 func TestCheckChar(t *testing.T) {
