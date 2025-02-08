@@ -105,6 +105,11 @@ func TestCheckChar(t *testing.T) {
 			chosen: []byte("ab"),
 			want:   []int{0, 0},
 		},
+		{
+			input:  []byte("brown"),
+			chosen: []byte("brown"),
+			want:   []int{2, 2, 2, 2, 2},
+		},
 	}
 	for _, test := range tests {
 		got := checkChar(test.chosen, test.input)
