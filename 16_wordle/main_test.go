@@ -1,6 +1,8 @@
 package main
 
 import (
+	"os"
+	"path/filepath"
 	"slices"
 	"testing"
 )
@@ -34,6 +36,52 @@ func TestContains(t *testing.T) {
 		if got1 != test.want && got2 != test.want {
 			t.Errorf("Contains = %v, want %v and want %v", got1, got2, test.want)
 		}
+	}
+}
+
+func TestNewList(t *testing.T) {
+	tests := []struct {
+		content string
+		want    List
+	}{
+		{
+			content: "brown\nrossa\ncuppy",
+			want: List{
+				words: [][]byte{
+					[]byte("brown"), []byte("rossa"), []byte("cuppy"),
+				},
+			},
+		},
+		{
+			content: "rossa\ncuppy",
+			want: List{
+				words: [][]byte{
+					[]byte("rossa"), []byte("cuppy"),
+				},
+			},
+		},
+	}
+
+	for index, test := range tests {
+		t.Run("", func(t *testing.T) {
+			tmpDir := t.TempDir()
+			listPath := filepath.Join(tmpDir, "listPath")
+
+			err := os.WriteFile(listPath, []byte(test.content), 0666)
+			if err != nil {
+				t.Fatal(err)
+			}
+
+			got, _ := NewList(listPath)
+
+			if len(got.words) != len(test.want.words) {
+				t.Errorf("want len: %v\n but got len: %v\n", len(test.want.words), len(got.words))
+			}
+
+			if string(got.words[index]) != string(test.want.words[index]) {
+				t.Errorf("want: %s\n but got: %s\n", test.want.words[index], got.words[index])
+			}
+		})
 	}
 }
 
