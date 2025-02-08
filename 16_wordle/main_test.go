@@ -73,7 +73,7 @@ func TestNewList(t *testing.T) {
 
 	for _, test := range tests {
 		if len(got.words) != len(test.want.words) {
-			t.Errorf("want: %v\n but got: %v\n", len(test.want.words), len(got.words))
+			t.Errorf("want len: %v\n but got len: %v\n", len(test.want.words), len(got.words))
 		}
 	}
 	// slices.Equal(got.words, want.words)
