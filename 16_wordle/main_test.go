@@ -18,7 +18,7 @@ func TestContains(t *testing.T) {
 					[]byte("brown"),
 				},
 			},
-			want: false,
+			want: true,
 		},
 		{
 			l: List{
@@ -28,14 +28,29 @@ func TestContains(t *testing.T) {
 			},
 			want: false,
 		},
+		{
+			l: List{
+				words: [][]byte{
+					[]byte("cuppy"),
+					[]byte("brown"),
+				},
+			},
+			want: true,
+		},
 	}
 	for _, test := range tests {
-		got1 := test.l.Contains([]byte("brown"))
-		got2 := test.l.Contains([]byte("aaaa"))
+		// got1 := test.l.Contains([]byte("brown"))
+		// got2 := test.l.Contains([]byte("aaaa"))
 
-		if got1 != test.want && got2 != test.want {
-			t.Errorf("Contains = %v, want %v and want %v", got1, got2, test.want)
+		got := test.l.Contains([]byte("brown"))
+
+		if got != test.want {
+			t.Errorf("Contains = %v, want %v", got, test.want)
 		}
+
+		// if got1 != test.want && got2 != test.want {
+		// 	t.Errorf("Contains = %v, want %v and want %v", got1, got2, test.want)
+		// }
 	}
 }
 

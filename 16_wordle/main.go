@@ -17,18 +17,35 @@ type List struct {
 func main() {
 	var input []byte
 
-	validWords, _ := NewList("word_list/word_list")
+	validWords, err := NewList("word_list/word_list")
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	chosenWord := validWords.Random()
-	fmt.Println("chosenWord:", string(chosenWord))
+	// debug
+	// fmt.Println("chosenWord:", string(chosenWord))
+	fmt.Printf("Enter 5 letter word. You have 5 tries\n")
 
-	for i := 0; ; i++ {
-		fmt.Printf("Enter 5 letter word\n>")
-		fmt.Scan(&input)
-		fmt.Println(formatInput(input))
+	for i := 1; i < 6; i++ {
+		_, err := fmt.Scan(&input)
+		if err != nil {
+			fmt.Fprintln(os.Stderr, err)
+		}
+
+		if i == 5 {
+			fmt.Printf("%v/5 Did you really try 5 times with words that don't even have 5 characters?Goodbye!\n", i)
+			break
+		}
+
+		if len(string(input)) != 5 {
+			fmt.Printf("%v/5 5 characters required. Try again!11!!\n", i)
+			continue
+		}
+
+		fmt.Printf("%v/5 %v\n", i, formatInput(input))
 
 		getResult := checkChar(chosenWord, input)
-		fmt.Println(strings.Join(coloredResult(getResult)[:], ""))
 
 		if bytes.Equal(input, chosenWord) {
 			fmt.Print("Chosen word, yay!\n")
@@ -36,7 +53,9 @@ func main() {
 		}
 
 		if validWords.Contains(input) {
-			fmt.Print("Valid word, but not chosen word, try again!\n")
+			fmt.Println("   ", strings.Join(coloredResult(getResult)[:], ""))
+
+			fmt.Print("Valid, but not chosen word, try again!\n")
 			continue
 		}
 
@@ -46,18 +65,14 @@ func main() {
 
 func NewList(path string) (List, error) {
 	rawWordList, err := os.ReadFile(path)
-
 	if err != nil {
-		log.Fatal(err)
 		return List{}, err
 	}
+	wordList := bytes.Split((rawWordList), []byte("\n"))
 
-	wordList := bytes.Split([]byte(rawWordList), []byte("\n"))
-
-	validWords := List{
+	return List{
 		words: wordList,
-	}
-	return validWords, nil
+	}, err
 }
 
 func formatInput(input []byte) string {
@@ -82,7 +97,9 @@ func coloredResult(checkResult []int) []string {
 
 func (l List) Contains(word []byte) bool {
 	for _, value := range l.words {
-		return bytes.Equal(word, value)
+		if bytes.Equal(word, value) {
+			return true
+		}
 	}
 	return false
 }
