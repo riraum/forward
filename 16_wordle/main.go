@@ -33,8 +33,8 @@ func main() {
 		if err != nil {
 			fmt.Fprintln(os.Stderr, err)
 		}
-		if len(string(input)) > 5 {
-			fmt.Println("MAX 5 CHAR!11!!")
+		if len(string(input)) != 5 {
+			fmt.Println("5 CHAR!11!!")
 			break
 		}
 		fmt.Println(formatInput(input))
