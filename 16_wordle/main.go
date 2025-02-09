@@ -34,14 +34,12 @@ func main() {
 			fmt.Fprintln(os.Stderr, err)
 		}
 		if len(string(input)) != 5 {
-			fmt.Println("5 CHAR!11!!")
-			break
+			fmt.Println("5 characters required. Try again!11!!")
+			continue
 		}
 		fmt.Println(formatInput(input))
 
 		getResult := checkChar(chosenWord, input)
-
-		fmt.Println(strings.Join(coloredResult(getResult)[:], ""))
 
 		if bytes.Equal(input, chosenWord) {
 			fmt.Print("Chosen word, yay!\n")
@@ -49,6 +47,8 @@ func main() {
 		}
 
 		if validWords.Contains(input) {
+			fmt.Println(strings.Join(coloredResult(getResult)[:], ""))
+
 			fmt.Print("Valid word, but not chosen word, try again!\n")
 			continue
 		}
