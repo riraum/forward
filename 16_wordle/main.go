@@ -40,6 +40,7 @@ func main() {
 		fmt.Println(formatInput(input))
 
 		getResult := checkChar(chosenWord, input)
+
 		fmt.Println(strings.Join(coloredResult(getResult)[:], ""))
 
 		if bytes.Equal(input, chosenWord) {
