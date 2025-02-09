@@ -20,10 +20,17 @@ func main() {
 	validWords, _ := NewList("word_list/word_list")
 
 	chosenWord := validWords.Random()
-	fmt.Println("chosenWord:", string(chosenWord))
+	// debug
+	// fmt.Println("chosenWord:", string(chosenWord))
+	fmt.Printf("Enter 5 letter word\n")
 
 	for i := 0; ; i++ {
-		fmt.Printf("Enter 5 letter word\n>")
+		// input validation
+		_, err := fmt.Scan()
+		if err != nil {
+			fmt.Println("Character lenght has to be 5!")
+		}
+		fmt.Printf(">")
 		fmt.Scan(&input)
 		fmt.Println(formatInput(input))
 
