@@ -34,7 +34,7 @@ func main() {
 		}
 
 		if i == 5 {
-			fmt.Println("Did you really try 5 times with words that don't even have 5 characters??? Goodbye!")
+			fmt.Printf("%v/5 Did you really try 5 times with words that don't even have 5 characters?Goodbye!\n", i)
 			break
 		}
 
