@@ -60,6 +60,9 @@ func main() {
 
 func NewList(path string) (List, error) {
 	rawWordList, err := os.ReadFile(path)
+	if err != nil {
+		return List{}, err
+	}
 	wordList := bytes.Split((rawWordList), []byte("\n"))
 
 	return List{
