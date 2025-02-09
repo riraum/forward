@@ -17,7 +17,11 @@ type List struct {
 func main() {
 	var input []byte
 
-	validWords, _ := NewList("word_list/word_list")
+	validWords, err := NewList("word_list/word_list")
+	if err != nil {
+		log.Fatal(err)
+		fmt.Println(err)
+	}
 
 	chosenWord := validWords.Random()
 	// debug
@@ -53,17 +57,11 @@ func main() {
 
 func NewList(path string) (List, error) {
 	rawWordList, err := os.ReadFile(path)
-
-	if err != nil {
-		log.Fatal(err)
-		return List{}, err
-	}
-
-	wordList := bytes.Split([]byte(rawWordList), []byte("\n"))
+	wordList := bytes.Split((rawWordList), []byte("\n"))
 
 	return List{
 		words: wordList,
-	}, nil
+	}, err
 }
 
 func formatInput(input []byte) string {
