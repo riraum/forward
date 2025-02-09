@@ -42,7 +42,7 @@ func TestContains(t *testing.T) {
 		// got1 := test.l.Contains([]byte("brown"))
 		// got2 := test.l.Contains([]byte("aaaa"))
 
-		got := test.l.Contains([]byte("cuppy"))
+		got := test.l.Contains([]byte("brown"))
 
 		if got != test.want {
 			t.Errorf("Contains = %v, want %v", got, test.want)

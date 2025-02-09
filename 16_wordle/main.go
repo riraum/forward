@@ -88,7 +88,9 @@ func coloredResult(checkResult []int) []string {
 
 func (l List) Contains(word []byte) bool {
 	for _, value := range l.words {
-		return bytes.Equal(word, value)
+		if bytes.Equal(word, value) {
+			return true
+		}
 	}
 	return false
 }
