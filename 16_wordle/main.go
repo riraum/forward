@@ -33,8 +33,13 @@ func main() {
 			fmt.Fprintln(os.Stderr, err)
 		}
 
+		if i == 5 {
+			fmt.Println("Did you really try 5 times with words that don't even have 5 characters??? Goodbye!")
+			break
+		}
+
 		if len(string(input)) != 5 {
-			fmt.Println("5 characters required. Try again!11!!")
+			fmt.Printf("%v/5 5 characters required. Try again!11!!\n", i)
 			continue
 		}
 
