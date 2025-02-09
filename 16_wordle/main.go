@@ -25,19 +25,20 @@ func main() {
 	chosenWord := validWords.Random()
 	// debug
 	fmt.Println("chosenWord:", string(chosenWord))
-	fmt.Printf("Enter 5 letter word\n")
+	fmt.Printf("Enter 5 letter word. You have 5 tries\n")
 
-	for i := 0; ; i++ {
-		// input validation
+	for i := 1; i < 6; i++ {
 		_, err := fmt.Scan(&input)
 		if err != nil {
 			fmt.Fprintln(os.Stderr, err)
 		}
+
 		if len(string(input)) != 5 {
 			fmt.Println("5 characters required. Try again!11!!")
 			continue
 		}
-		fmt.Println(formatInput(input))
+
+		fmt.Printf("%v/5 %v\n", i, formatInput(input))
 
 		getResult := checkChar(chosenWord, input)
 
@@ -47,9 +48,9 @@ func main() {
 		}
 
 		if validWords.Contains(input) {
-			fmt.Println(strings.Join(coloredResult(getResult)[:], ""))
+			fmt.Println("   ", strings.Join(coloredResult(getResult)[:], ""))
 
-			fmt.Print("Valid word, but not chosen word, try again!\n")
+			fmt.Print("Valid, but not chosen word, try again!\n")
 			continue
 		}
 
