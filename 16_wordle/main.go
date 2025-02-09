@@ -24,7 +24,7 @@ func main() {
 
 	chosenWord := validWords.Random()
 	// debug
-	fmt.Println("chosenWord:", string(chosenWord))
+	// fmt.Println("chosenWord:", string(chosenWord))
 	fmt.Printf("Enter 5 letter word. You have 5 tries\n")
 
 	for i := 1; i < 6; i++ {
