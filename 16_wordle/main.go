@@ -20,22 +20,23 @@ func main() {
 	validWords, err := NewList("word_list/word_list")
 	if err != nil {
 		log.Fatal(err)
-		fmt.Println(err)
 	}
 
 	chosenWord := validWords.Random()
 	// debug
-	// fmt.Println("chosenWord:", string(chosenWord))
+	fmt.Println("chosenWord:", string(chosenWord))
 	fmt.Printf("Enter 5 letter word\n")
 
 	for i := 0; ; i++ {
 		// input validation
-		_, err := fmt.Scan()
+		_, err := fmt.Scan(&input)
 		if err != nil {
-			fmt.Println("Character lenght has to be 5!")
+			fmt.Fprintln(os.Stderr, err)
 		}
-		fmt.Printf(">")
-		fmt.Scan(&input)
+		if len(string(input)) > 5 {
+			fmt.Println("MAX 5 CHAR!11!!")
+			break
+		}
 		fmt.Println(formatInput(input))
 
 		getResult := checkChar(chosenWord, input)
