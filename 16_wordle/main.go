@@ -61,10 +61,9 @@ func NewList(path string) (List, error) {
 
 	wordList := bytes.Split([]byte(rawWordList), []byte("\n"))
 
-	validWords := List{
+	return List{
 		words: wordList,
-	}
-	return validWords, nil
+	}, nil
 }
 
 func formatInput(input []byte) string {
